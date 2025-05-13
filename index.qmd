@@ -6,7 +6,7 @@ subtitle: "Your quick start to perform probabilistic risk modelling"
 # Getting started
 
 ::: {.callout-note appearance="minimal"}
-**This section will introduce to:**
+**This section will introduce you to:**
 
 -   Description of the main interface
 
