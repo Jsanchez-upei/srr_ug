@@ -10,7 +10,7 @@ subtitle: "Your quick start to perform probabilistic risk modelling"
 
 -   Description of the main interface
 
--   Loading an "rrisk" file that contains the the complete documentation and executable code of your model.
+-   Loading an "shiny srrisk" file that contains the the complete documentation and executable code of your model.
 :::
 
 ![Main screen, top row of shiny rrisk.](ManagingFiles.png){#fig-ManagingFiles width="100%"}
@@ -18,7 +18,7 @@ subtitle: "Your quick start to perform probabilistic risk modelling"
 The top row of the app displays the version of the app and provides basic functionality for managing models (@fig-ManagingFiles).
 
 |  |  |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | [NEW]{style="color:#0d6efd"} | Check here if you wish to create a new model and enter a Model name. |
 | [OPEN]{style="color:#0d6efd"} | Open a locally saved model or one of the demo models implemented in the tool. The extension of model files is “rrisk”. |
 | [SAVE]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] Save the model, results or the model report to your local system. |
@@ -80,7 +80,7 @@ At the end of this section, you will be able to build a model from scratch.
 A model in shiny rrisk consists of so-called nodes. The user may also define fixed parameters and functions available for the definition of nodes (see @FixedParametersFunctions).
 
 |  |  |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | [Add node]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] Create a new node and launch its verbal description and mathematical definition. |
 | [Check model]{style="color:#0d6efd"} | Verify that a simulation model can be built from the mathematical and numerical model input you have provided. |
 
@@ -140,7 +140,7 @@ Read here how easily you will generate an integrated documentation of each node.
 Upon launching [Add node]{.underline}, a window pops-up with several free-text fields.
 
 |  |  |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | [Name]{style="color:#0d6efd"}[\*]{style="color:Red"} | [@Robert[: consider change of button]{.mark}] Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry. |
 | [Unit]{style="color:#0d6efd"} | The physical measurement unit should be entered here if applicable. |
 | [Grouping]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation. |
@@ -198,7 +198,7 @@ Several options are available for defining a node, including user defined, param
 ![Choose user defined to enter a mathematical expression.](NodeUserDefined.png){#fig-NodeUserDefined width="100%"}
 
 |  |  |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | [Expression]{style="color:#0d6efd"} | [@Robert[: consider change button name]{.mark}]A mathematical expression is entered here that can be evaluated similar to a line of code in the [software R](https://www.r-project.org/). At least one term of the expression is another (distribution) node, which is referred to as a "parent node". Parent nodes that do not yet exist in the model are referred to as “implicit nodes” and will be generated automatically by shiny rrisk. |
 
 : {tbl-colwidths="\[12,88\]"}
@@ -245,7 +245,7 @@ Upon completing this section, you will master the use of probability distributio
 Once you have selected [parametric distributions]{.underline} you can choose from a number of discrete and continuous distribution families (@fig-ParametricDistributions).
 
 |  |  |
-|------------------|------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | [Choose parametric distribution]{style="color:#0d6efd"} | Select here the distribution family for the new node. |
 
 : {tbl-colwidths="\[30,70\]"}
