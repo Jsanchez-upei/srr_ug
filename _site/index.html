@@ -233,11 +233,11 @@ window.Quarto = {
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
   <li><a href="#model-creation" id="toc-model-creation" class="nav-link" data-scroll-target="#model-creation">Model creation</a>
   <ul class="collapse">
-  <li><a href="#verbal-definition-of-a-node" id="toc-verbal-definition-of-a-node" class="nav-link" data-scroll-target="#verbal-definition-of-a-node">Verbal definition of a node</a></li>
+  <li><a href="#verbal-definition-of-a-node" id="toc-verbal-definition-of-a-node" class="nav-link" data-scroll-target="#verbal-definition-of-a-node">Verbal definition of a node <!--# Should this be Add Node: Node Definition - Not sure what it means Verbal  --></a></li>
   <li><a href="#mathematical-definition-of-a-node" id="toc-mathematical-definition-of-a-node" class="nav-link" data-scroll-target="#mathematical-definition-of-a-node">Mathematical definition of a node</a>
   <ul class="collapse">
-  <li><a href="#user-defined-expression" id="toc-user-defined-expression" class="nav-link" data-scroll-target="#user-defined-expression">User defined expression</a></li>
-  <li><a href="#parametric-distributions" id="toc-parametric-distributions" class="nav-link" data-scroll-target="#parametric-distributions">Parametric distributions</a></li>
+  <li><a href="#user-defined" id="toc-user-defined" class="nav-link" data-scroll-target="#user-defined">User defined</a></li>
+  <li><a href="#parametric-distributions" id="toc-parametric-distributions" class="nav-link" data-scroll-target="#parametric-distributions">Parametric distributions <!--# Maybe need to re-consider this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general) --></a></li>
   </ul></li>
   </ul></li>
   <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
@@ -269,6 +269,7 @@ window.Quarto = {
 
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
+<p>This is a test</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -521,7 +522,7 @@ Read more
 </div>
 </div>
 <section id="verbal-definition-of-a-node" class="level2">
-<h2 class="anchored" data-anchor-id="verbal-definition-of-a-node">Verbal definition of a node</h2>
+<h2 class="anchored" data-anchor-id="verbal-definition-of-a-node">Verbal definition of a node <!--# Should this be Add Node: Node Definition - Not sure what it means Verbal  --></h2>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -542,6 +543,7 @@ Figure&nbsp;4: Descriptive part of node definition.
 </figcaption>
 </figure>
 </div>
+<!--# The screeen should have Add Node instead of Add new item -->
 <p>Upon launching <u>Add node</u>, a window pops-up with several free-text fields.</p>
 <table class="caption-top table">
 <colgroup>
@@ -594,7 +596,7 @@ Avoid loss of your data
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example for markdown syntax (Alizarin red S in Eel)
+Example for markdown syntax (Alizarin red S in Eel) <!--# move this after read more? or as another Tip callout? -->
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -677,9 +679,10 @@ Figure&nbsp;6: Mathematical part of node definition.<span class="citation" data-
 </figcaption>
 </figure>
 </div>
-<p>Several options are available for defining a node, including user defined, parametric distribution, bootstrapping and EFSA EKE. The first option allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;7</a>).</p>
-<section id="user-defined-expression" class="level3">
-<h3 class="anchored" data-anchor-id="user-defined-expression">User defined expression</h3>
+<p>Several options are available for defininig the mathematical properties of a node, including user defined, parametric distribution, bootstrapping and EFSA EKE. <!--# maybe change EFSA EKE to just expert elicitation --></p>
+<p>The first option allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;7</a>).</p>
+<section id="user-defined" class="level3">
+<h3 class="anchored" data-anchor-id="user-defined">User defined</h3>
 <div id="fig-NodeUserDefined" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-NodeUserDefined-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -783,14 +786,14 @@ Read more
 </div>
 </section>
 <section id="parametric-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="parametric-distributions">Parametric distributions</h3>
+<h3 class="anchored" data-anchor-id="parametric-distributions">Parametric distributions <!--# Maybe need to re-consider this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general) --></h3>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Upon completing this section, you will master the use of probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model.</p>
+<p>Upon completing this section, you will master the use of probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model. <!--# variability and uncertainty can be reflected in general under the mathematical definition of a node --></p>
 </div>
 </div>
 </div>
@@ -913,6 +916,7 @@ Read more
 <div class="callout-body-container callout-body">
 <section id="quick-guide-for-choosing-appropriate-distributions" class="level4">
 <h4 class="anchored" data-anchor-id="quick-guide-for-choosing-appropriate-distributions">Quick guide for choosing appropriate distributions</h4>
+<p>Please refers to this compendium of distributions to select the apprpriated distributions and distribution parameters: <a href="https://www.vosesoftware.com/knowledgebase/whitepapers/pdf/ebookdistributions.pdf">Compendium of Distribution</a> <!--# we could download the pdf so we will be sure that always it is there, in case website changes --></p>
 <p>Some text required here.</p>
 </section>
 <section id="defining-variability-and-uncertainty" class="level4">
@@ -976,8 +980,8 @@ Figure&nbsp;12: Parameterisations of distributions to reflect variability and un
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(glossary_df, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-5ae18ba89e32e1c400a6" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-5ae18ba89e32e1c400a6">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["<a name=\"rrisk\">rrisk<\/a>","<a name=\"node\">node<\/a>","<a name=\"dose-response\">Dose-response<\/a>","<a name=\"pawn\">PAWN<\/a>","<a name=\"beta-poisson\">Beta-Poisson<\/a>"],["A model file with extension rrisk created by shiny rrisk.","A shiny rrisk object to represent an event","Relationship between dose and effect.","A global sensitivity analysis method using CDFs.","A nonlinear dose-response model used in QMRA."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Term<\/th>\n      <th>Definition<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Term","targets":1},{"name":"Definition","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-19aefddca8666d65f418" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-19aefddca8666d65f418">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["<a name=\"rrisk\">rrisk<\/a>","<a name=\"node\">node<\/a>","<a name=\"dose-response\">Dose-response<\/a>","<a name=\"pawn\">PAWN<\/a>","<a name=\"beta-poisson\">Beta-Poisson<\/a>"],["A model file with extension rrisk created by shiny rrisk.","A shiny rrisk object to represent an event","Relationship between dose and effect.","A global sensitivity analysis method using CDFs.","A nonlinear dose-response model used in QMRA."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Term<\/th>\n      <th>Definition<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Term","targets":1},{"name":"Definition","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
