@@ -136,13 +136,15 @@ It is recommended to sketch a visual representation of the conceptual model. The
 ![Example for a conceptual model (made with yEd).](ConceptualModelEIA.png)
 :::
 
-## Verbal definition of a node
+## Verbal definition of a node <!--# Should this be Add Node: Node Definition - Not sure what it means Verbal  -->
 
 ::: {.callout-note appearance="minimal"}
 Read here how easily you will generate an integrated documentation of each node.
 :::
 
 ![Descriptive part of node definition.](AddNode.png){#fig-AddNode width="100%"}
+
+<!--# The screeen should have Add Node instead of Add new item -->
 
 Upon launching [Add node]{.underline}, a window pops-up with several free-text fields.
 
@@ -164,7 +166,7 @@ Remember to save your model after adding each node.
 :::
 
 ::: {.callout-note collapse="false"}
-### Example for markdown syntax (Alizarin red S in Eel)
+### Example for markdown syntax (Alizarin red S in Eel) <!--# move this after read more? or as another Tip callout? -->
 
 Markdown syntax is available in all free text fields in shiny rrisk to generate formatted output in the report file. Some examples are given below (@fig-Markdown).
 
@@ -190,7 +192,7 @@ You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/a
 -   Node names may be changed later on if needed (see section on editing model). In this case shiny rrisk automatically updates all references in the mathematical expressions (not in the free-text fields) to maintain consistency.
 :::
 
-## Mathematical definition of a node
+## Mathematical definition of a node 
 
 ::: {.callout-note appearance="minimal"}
 You will understand how to define a node in shiny rrisk, which is the essential tasks in model creation.
@@ -198,9 +200,11 @@ You will understand how to define a node in shiny rrisk, which is the essential 
 
 ![Mathematical part of node definition.[@Robert[: consider change to "Choose node defintion\*"]{.mark}]](MathematicalDefinition.png){#fig-MathematicalDefinition width="100%"}
 
-Several options are available for defining a node, including user defined, parametric distribution, bootstrapping and EFSA EKE. The first option allows you to define a node using a mathematical expression (@fig-NodeUserDefined).
+Several options are available for defininig the mathematical properties of a node, including user defined, parametric distribution, bootstrapping and EFSA EKE. <!--# maybe change EFSA EKE to just expert elicitation -->
 
-### User defined expression
+The first option allows you to define a node using a mathematical expression (@fig-NodeUserDefined).
+
+### User defined
 
 ![Choose user defined to enter a mathematical expression.](NodeUserDefined.png){#fig-NodeUserDefined width="100%"}
 
@@ -241,10 +245,10 @@ The user can start creating the model by defining the node $A$. As a result, shi
 The tool’s ability to create implicit nodes allows users to define a model by starting with the result function and working backwards to define all parent nodes until the complete model is created. This offers maximum flexibility when building a model.
 :::
 
-### Parametric distributions
+### Parametric distributions <!--# Maybe need to re-consider this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general) -->
 
 ::: {.callout-note appearance="minimal"}
-Upon completing this section, you will master the use of probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model.
+Upon completing this section, you will master the use of probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model. <!--# variability and uncertainty can be reflected in general under the mathematical definition of a node -->
 :::
 
 ![Choose a distribution family.](ParametricDistributions.png){#fig-ParametricDistributions width="100%"}
@@ -309,6 +313,8 @@ The objective of the [L.monocytogenes in cheese]{.underline} model is to estimat
 ## Read more
 
 #### Quick guide for choosing appropriate distributions
+
+Please refers to this compendium of distributions to select the apprpriated distributions and distribution parameters: [Compendium of Distribution](https://www.vosesoftware.com/knowledgebase/whitepapers/pdf/ebookdistributions.pdf) <!--# we could download the pdf so we will be sure that always it is there, in case website changes -->
 
 Some text required here.
 
