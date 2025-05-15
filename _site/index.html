@@ -233,12 +233,15 @@ window.Quarto = {
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
   <li><a href="#model-creation" id="toc-model-creation" class="nav-link" data-scroll-target="#model-creation">Model creation</a>
   <ul class="collapse">
-  <li><a href="#verbal-definition-of-a-node" id="toc-verbal-definition-of-a-node" class="nav-link" data-scroll-target="#verbal-definition-of-a-node">Verbal definition of a node <!--# Should this be Add Node: Node Definition - Not sure what it means Verbal  --></a></li>
+  <li><a href="#verbal-definition-of-a-node" id="toc-verbal-definition-of-a-node" class="nav-link" data-scroll-target="#verbal-definition-of-a-node">Verbal definition of a node</a></li>
   <li><a href="#mathematical-definition-of-a-node" id="toc-mathematical-definition-of-a-node" class="nav-link" data-scroll-target="#mathematical-definition-of-a-node">Mathematical definition of a node</a>
   <ul class="collapse">
   <li><a href="#user-defined" id="toc-user-defined" class="nav-link" data-scroll-target="#user-defined">User defined</a></li>
-  <li><a href="#parametric-distributions" id="toc-parametric-distributions" class="nav-link" data-scroll-target="#parametric-distributions">Parametric distributions <!--# Maybe need to re-consider this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general) --></a></li>
+  <li><a href="#parametric-distributions" id="toc-parametric-distributions" class="nav-link" data-scroll-target="#parametric-distributions">Parametric distributions</a></li>
+  <li><a href="#table-node" id="toc-table-node" class="nav-link" data-scroll-target="#table-node">Table Node</a></li>
+  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph">Graph</a></li>
   </ul></li>
+  <li><a href="#check-model" id="toc-check-model" class="nav-link" data-scroll-target="#check-model">Check Model</a></li>
   </ul></li>
   <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
   </ul>
@@ -269,7 +272,6 @@ window.Quarto = {
 
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
-<p>This is a test</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -522,7 +524,8 @@ Read more
 </div>
 </div>
 <section id="verbal-definition-of-a-node" class="level2">
-<h2 class="anchored" data-anchor-id="verbal-definition-of-a-node">Verbal definition of a node <!--# Should this be Add Node: Node Definition - Not sure what it means Verbal  --></h2>
+<h2 class="anchored" data-anchor-id="verbal-definition-of-a-node">Verbal definition of a node</h2>
+<p><span class="citation" data-cites="MG">[@MG[: consider change to Add Node: Node Definition - Not sure what it means Verbal]{.mark}]</span></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -543,7 +546,7 @@ Figure&nbsp;4: Descriptive part of node definition.
 </figcaption>
 </figure>
 </div>
-<!--# The screeen should have Add Node instead of Add new item -->
+<p><span class="citation" data-cites="MG">[@MG[: The figure should have "Add Node" instead of Add new item]{.mark}]</span></p>
 <p>Upon launching <u>Add node</u>, a window pops-up with several free-text fields.</p>
 <table class="caption-top table">
 <colgroup>
@@ -552,7 +555,8 @@ Figure&nbsp;4: Descriptive part of node definition.
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><span style="color:#0d6efd">Name</span><span style="color:Red">*</span></td>
+<td><p><span style="color:#0d6efd">Name</span><span style="color:Red">*</span></p>
+<p><span class="citation" data-cites="MG">@MG</span> here you can mention editing the name of a node</p></td>
 <td><span class="citation" data-cites="Robert">[@Robert[: consider change of button]{.mark}]</span> Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry.</td>
 </tr>
 <tr class="even">
@@ -596,12 +600,13 @@ Avoid loss of your data
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example for markdown syntax (Alizarin red S in Eel) <!--# move this after read more? or as another Tip callout? -->
+Example for markdown syntax (Alizarin red S in Eel)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
+<p><span class="citation" data-cites="MG">[@MG[:move this after read more? or as another Tip callout?]{.mark}]</span></p>
 <p>Markdown syntax is available in all free text fields in shiny rrisk to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;5</a>).</p>
 <div id="fig-Markdown" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -679,7 +684,8 @@ Figure&nbsp;6: Mathematical part of node definition.<span class="citation" data-
 </figcaption>
 </figure>
 </div>
-<p>Several options are available for defininig the mathematical properties of a node, including user defined, parametric distribution, bootstrapping and EFSA EKE. <!--# maybe change EFSA EKE to just expert elicitation --></p>
+<p>Several options are available for defining the mathematical properties of a node, including user defined, parametric distribution, bootstrapping and EFSA EKE.</p>
+<p><code>@MG [: maybe change EFSA EKE to just expert elicitation]</code></p>
 <p>The first option allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;7</a>).</p>
 <section id="user-defined" class="level3">
 <h3 class="anchored" data-anchor-id="user-defined">User defined</h3>
@@ -786,14 +792,16 @@ Read more
 </div>
 </section>
 <section id="parametric-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="parametric-distributions">Parametric distributions <!--# Maybe need to re-consider this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general) --></h3>
+<h3 class="anchored" data-anchor-id="parametric-distributions">Parametric distributions</h3>
+<p><span class="citation" data-cites="MG">@MG [re-consider this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general)]</span></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>Upon completing this section, you will master the use of probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model. <!--# variability and uncertainty can be reflected in general under the mathematical definition of a node --></p>
+<p>Upon completing this section, you will master the use of probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model.</p>
+<p><span class="citation" data-cites="MG">@MG [**variability and uncertainty can be reflected in general under the mathematical definition of a node, since it won't only apply to the distributions, but also to formulas using nodes represented by a distribution**]</span></p>
 </div>
 </div>
 </div>
@@ -916,7 +924,8 @@ Read more
 <div class="callout-body-container callout-body">
 <section id="quick-guide-for-choosing-appropriate-distributions" class="level4">
 <h4 class="anchored" data-anchor-id="quick-guide-for-choosing-appropriate-distributions">Quick guide for choosing appropriate distributions</h4>
-<p>Please refers to this compendium of distributions to select the apprpriated distributions and distribution parameters: <a href="https://www.vosesoftware.com/knowledgebase/whitepapers/pdf/ebookdistributions.pdf">Compendium of Distribution</a> <!--# we could download the pdf so we will be sure that always it is there, in case website changes --></p>
+<p>Please refers to this compendium of distributions to select the apprpriated distributions and distribution parameters: <a href="https://www.vosesoftware.com/knowledgebase/whitepapers/pdf/ebookdistributions.pdf">Compendium of Distribution</a></p>
+<p><span class="citation" data-cites="MG">@MG [ we could download the pdf so we will be sure that always it is there, in case website changes]</span></p>
 <p>Some text required here.</p>
 </section>
 <section id="defining-variability-and-uncertainty" class="level4">
@@ -950,6 +959,40 @@ Figure&nbsp;12: Parameterisations of distributions to reflect variability and un
 </section>
 </section>
 </section>
+<section id="table-node" class="level3">
+<h3 class="anchored" data-anchor-id="table-node">Table Node</h3>
+<p>After nodes are created, the following table will be created in shiny rrisk containing a the information of each node in the model.</p>
+<div class="quarto-figure quarto-figure-center" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);">
+<figure class="figure">
+<p><img src="images/nodetable-shiny.png" class="img-fluid figure-img"></p>
+<figcaption>Node table created by shiny rrisk after the creation of nodes</figcaption>
+</figure>
+</div>
+<p>The table contains the node ID, a sequence number according to the order a node was created during the the model creation. The rest of the columns present the information of each node that was entered during the node creation.</p>
+<p>The table allows the user to sort each column separately, delete a node and search for particular terms. This later is very helpful when working with large models.</p>
+</section>
+<section id="graph" class="level3">
+<h3 class="anchored" data-anchor-id="graph">Graph</h3>
+<p>As soon as a node is created, a shape (square, circle or star) with a given color will appear in the screen. The star is the node representing the outcome(s), or the node that has no dependent nodes (or “child” nodes).</p>
+<p><span class="citation" data-cites="MG/RO">@MG/RO</span> - define Circle represents and squares - Is there any standards?</p>
+<p>There are two check boxes the user can choose to change the layout of the graph created by shiny rrisk.</p>
+<p>The user can leave unchecked the option “stretch model graph” so all the shapes can be moved freely by clicking with the mouse on a node. Otherwise by selecting “stretch model graph” all the shapes will be automatically organized with the”outcome” node located at the far right. If this option is selected, the user can only move the shapes up and down. This feature will help organizing very quickly the model’s graph and improve the visualization, especially for models with large number of nodes.</p>
+<div class="quarto-figure quarto-figure-center" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);">
+<figure class="figure">
+<p><img src="images/uncheckstrechgraph.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>E. coli in hamburger meat model. Graph with stretch model graph unchecked</figcaption>
+</figure>
+</div>
+<p>The next figure depicts the same model but with stretch model graph checked</p>
+<p><img src="images/checkstrechgraph.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p>The other check box is “collapse groups”. If checked, all the nodes identified with the same “group name” will be hidden under the node identified with that group name. This is very useful when presenting a model with many nodes.</p>
+<p><img src="images/uncheckstrechgraph_collapse.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p>The user can click the mouse in any place on the screen that occupies the graph in order to move the whole graph, also the user can zoom in/zoom out using the appropriated combination of keys according to operating system (eg. Windows or MAC) or using the mouse. The user can double click on a node to open the node definition window (explained above).</p>
+<p>In order to move down to the definition table, the user should move the mouse out of the graph window or use the siding bar on the screen.</p>
+</section>
+</section>
+<section id="check-model" class="level2">
+<h2 class="anchored" data-anchor-id="check-model">Check Model</h2>
 </section>
 </section>
 <section id="glossary" class="level1">
@@ -980,8 +1023,8 @@ Figure&nbsp;12: Parameterisations of distributions to reflect variability and un
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(glossary_df, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-9002d74426540f5543b3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-9002d74426540f5543b3">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["<a name=\"rrisk\">rrisk<\/a>","<a name=\"node\">node<\/a>","<a name=\"dose-response\">Dose-response<\/a>","<a name=\"pawn\">PAWN<\/a>","<a name=\"beta-poisson\">Beta-Poisson<\/a>"],["A model file with extension rrisk created by shiny rrisk.","A shiny rrisk object to represent an event","Relationship between dose and effect.","A global sensitivity analysis method using CDFs.","A nonlinear dose-response model used in QMRA."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Term<\/th>\n      <th>Definition<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Term","targets":1},{"name":"Definition","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-79461a1cce4f6c30c5a5" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-79461a1cce4f6c30c5a5">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5"],["<a name=\"rrisk\">rrisk<\/a>","<a name=\"node\">node<\/a>","<a name=\"dose-response\">Dose-response<\/a>","<a name=\"pawn\">PAWN<\/a>","<a name=\"beta-poisson\">Beta-Poisson<\/a>"],["A model file with extension rrisk created by shiny rrisk.","A shiny rrisk object to represent an event","Relationship between dose and effect.","A global sensitivity analysis method using CDFs.","A nonlinear dose-response model used in QMRA."]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Term<\/th>\n      <th>Definition<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Term","targets":1},{"name":"Definition","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 

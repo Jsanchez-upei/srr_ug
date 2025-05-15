@@ -24,12 +24,15 @@ execute:
 
 The top row of the app displays the version of the app and provides basic functionality for managing models (@fig-ManagingFiles).
 
-|  |  |
-|------------------------------------|------------------------------------|
-| [NEW]{style="color:#0d6efd"} | Check here if you wish to create a new model and assign a Model name. |
-| [OPEN]{style="color:#0d6efd"} | Open a saved model or one of the demo models implemented in the tool. The extension of model files is [`“rrisk”`](#rrisk). |
-| [SAVE]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] Save the model, results or the model report to your local system. |
-| [ABOUT]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] Check out here for important information about the app . |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| [NEW]{style="color:#0d6efd"}   | Check here if you wish to create a new model and assign a Model name.                                                      |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| [OPEN]{style="color:#0d6efd"}  | Open a saved model or one of the demo models implemented in the tool. The extension of model files is [`“rrisk”`](#rrisk). |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| [SAVE]{style="color:#0d6efd"}  | [@Robert[: consider change of button name]{.mark}] Save the model, results or the model report to your local system.       |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+| [ABOUT]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] Check out here for important information about the app .                |
++--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[10,90\]"}
 
@@ -86,10 +89,11 @@ At the end of this section, you will be able to create a model in shiny rrisk.
 
 A model in shiny rrisk consists of so-called nodes. The user may also define fixed parameters and functions available for the definition of nodes (see @FixedParametersFunctions).
 
-|  |  |
-|------------------------------------|------------------------------------|
-| [Add node]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] Create a new node and launch its verbal description and mathematical definition. |
-| [Check model]{style="color:#0d6efd"} | Verify that a simulation model can be built from the mathematical and numerical model input you have provided. |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| [Add node]{style="color:#0d6efd"}    | [@Robert[: consider change of button name]{.mark}] Create a new node and launch its verbal description and mathematical definition. |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+| [Check model]{style="color:#0d6efd"} | Verify that a simulation model can be built from the mathematical and numerical model input you have provided.                      |
++--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[12,88\]"}
 
@@ -136,7 +140,9 @@ It is recommended to sketch a visual representation of the conceptual model. The
 ![Example for a conceptual model (made with yEd).](ConceptualModelEIA.png)
 :::
 
-## Verbal definition of a node <!--# Should this be Add Node: Node Definition - Not sure what it means Verbal  -->
+## Verbal definition of a node
+
+[@MG[: consider change to Add Node: Node Definition - Not sure what it means Verbal]{.mark}]
 
 ::: {.callout-note appearance="minimal"}
 Read here how easily you will generate an integrated documentation of each node.
@@ -144,18 +150,25 @@ Read here how easily you will generate an integrated documentation of each node.
 
 ![Descriptive part of node definition.](AddNode.png){#fig-AddNode width="100%"}
 
-<!--# The screeen should have Add Node instead of Add new item -->
+[@MG[: The figure should have "Add Node" instead of Add new item]{.mark}]
 
 Upon launching [Add node]{.underline}, a window pops-up with several free-text fields.
 
-|  |  |
-|------------------------------------|------------------------------------|
-| [Name]{style="color:#0d6efd"}[\*]{style="color:Red"} | [@Robert[: consider change of button]{.mark}] Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry. |
-| [Unit]{style="color:#0d6efd"} | The physical measurement unit should be entered here if applicable. |
-| [Grouping]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation. |
-| [Source]{style="color:#0d6efd"} | The source of information about the node should be provided according to good scientific practice. If a bibliographic reference is available it should be entered using the format “Author(s), Year (doi code )”. |
-| [Description]{style="color:#0d6efd"} | A verbal account of all relevant information required for documentation and review should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax below). |
-| [\*]{style="color:Red"} | Required |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Name]{style="color:#0d6efd"}[\*]{style="color:Red"} | [@Robert[: consider change of button]{.mark}] Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry.                                                                                                                                                                                           |
+|                                                      |                                                                                                                                                                                                                                                                                                                                                                                                |
+| @MG here you can mention editing the name of a node  |                                                                                                                                                                                                                                                                                                                                                                                                |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Unit]{style="color:#0d6efd"}                        | The physical measurement unit should be entered here if applicable.                                                                                                                                                                                                                                                                                                                            |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Grouping]{style="color:#0d6efd"}                    | [@Robert[: consider change of button name]{.mark}] A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation. |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Source]{style="color:#0d6efd"}                      | The source of information about the node should be provided according to good scientific practice. If a bibliographic reference is available it should be entered using the format “Author(s), Year (doi code )”.                                                                                                                                                                              |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Description]{style="color:#0d6efd"}                 | A verbal account of all relevant information required for documentation and review should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax below).                                                                                                                                    |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [\*]{style="color:Red"}                              | Required                                                                                                                                                                                                                                                                                                                                                                                       |
++------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[12,88\]"}
 
@@ -166,7 +179,9 @@ Remember to save your model after adding each node.
 :::
 
 ::: {.callout-note collapse="false"}
-### Example for markdown syntax (Alizarin red S in Eel) <!--# move this after read more? or as another Tip callout? -->
+### Example for markdown syntax (Alizarin red S in Eel)
+
+[@MG[:move this after read more? or as another Tip callout?]{.mark}]
 
 Markdown syntax is available in all free text fields in shiny rrisk to generate formatted output in the report file. Some examples are given below (@fig-Markdown).
 
@@ -192,7 +207,7 @@ You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/a
 -   Node names may be changed later on if needed (see section on editing model). In this case shiny rrisk automatically updates all references in the mathematical expressions (not in the free-text fields) to maintain consistency.
 :::
 
-## Mathematical definition of a node 
+## Mathematical definition of a node
 
 ::: {.callout-note appearance="minimal"}
 You will understand how to define a node in shiny rrisk, which is the essential tasks in model creation.
@@ -200,7 +215,9 @@ You will understand how to define a node in shiny rrisk, which is the essential 
 
 ![Mathematical part of node definition.[@Robert[: consider change to "Choose node defintion\*"]{.mark}]](MathematicalDefinition.png){#fig-MathematicalDefinition width="100%"}
 
-Several options are available for defininig the mathematical properties of a node, including user defined, parametric distribution, bootstrapping and EFSA EKE. <!--# maybe change EFSA EKE to just expert elicitation -->
+Several options are available for defining the mathematical properties of a node, including user defined, parametric distribution, bootstrapping and EFSA EKE.
+
+`@MG [: maybe change EFSA EKE to just expert elicitation]`
 
 The first option allows you to define a node using a mathematical expression (@fig-NodeUserDefined).
 
@@ -208,9 +225,9 @@ The first option allows you to define a node using a mathematical expression (@f
 
 ![Choose user defined to enter a mathematical expression.](NodeUserDefined.png){#fig-NodeUserDefined width="100%"}
 
-|  |  |
-|------------------------------------|------------------------------------|
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | [Expression]{style="color:#0d6efd"} | [@Robert[: consider change button name]{.mark}]A mathematical expression is entered here that can be evaluated similar to a line of code in the [software R](https://www.r-project.org/). At least one term of the expression is another (distribution) node, which is referred to as a "parent node". Parent nodes that do not yet exist in the model are referred to as “implicit nodes” and will be generated automatically by shiny rrisk. |
++-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[12,88\]"}
 
@@ -245,19 +262,23 @@ The user can start creating the model by defining the node $A$. As a result, shi
 The tool’s ability to create implicit nodes allows users to define a model by starting with the result function and working backwards to define all parent nodes until the complete model is created. This offers maximum flexibility when building a model.
 :::
 
-### Parametric distributions <!--# Maybe need to re-consider this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general) -->
+### Parametric distributions
+
+@MG [re-consider this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general)]
 
 ::: {.callout-note appearance="minimal"}
-Upon completing this section, you will master the use of probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model. <!--# variability and uncertainty can be reflected in general under the mathematical definition of a node -->
+Upon completing this section, you will master the use of probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model.
+
+@MG [**variability and uncertainty can be reflected in general under the mathematical definition of a node, since it won't only apply to the distributions, but also to formulas using nodes represented by a distribution**]
 :::
 
 ![Choose a distribution family.](ParametricDistributions.png){#fig-ParametricDistributions width="100%"}
 
 Once you have selected [parametric distributions]{.underline} you can choose from a number of discrete and continuous distribution families (@fig-ParametricDistributions).
 
-|  |  |
-|------------------------------------|------------------------------------|
++---------------------------------------------------------+-------------------------------------------------------+
 | [Choose parametric distribution]{style="color:#0d6efd"} | Select here the distribution family for the new node. |
++---------------------------------------------------------+-------------------------------------------------------+
 
 : {tbl-colwidths="\[30,70\]"}
 
@@ -314,7 +335,9 @@ The objective of the [L.monocytogenes in cheese]{.underline} model is to estimat
 
 #### Quick guide for choosing appropriate distributions
 
-Please refers to this compendium of distributions to select the apprpriated distributions and distribution parameters: [Compendium of Distribution](https://www.vosesoftware.com/knowledgebase/whitepapers/pdf/ebookdistributions.pdf) <!--# we could download the pdf so we will be sure that always it is there, in case website changes -->
+Please refers to this compendium of distributions to select the apprpriated distributions and distribution parameters: [Compendium of Distribution](https://www.vosesoftware.com/knowledgebase/whitepapers/pdf/ebookdistributions.pdf)
+
+@MG [ we could download the pdf so we will be sure that always it is there, in case website changes]
 
 Some text required here.
 
@@ -338,6 +361,44 @@ Last but not least consider a node in your model that directly represents a para
 
 ![Parameterisations of distributions to reflect variability and uncertainty. Typical situations are shaded in blue. See text for more details.](Parameterisations.png){#fig-Parameterisations width="100%"}
 :::
+
+### Table Node
+
+After nodes are created, the following table will be created in shiny rrisk containing a the information of each node in the model.
+
+![Node table created by shiny rrisk after the creation of nodes](images/nodetable-shiny.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"}
+
+The table contains the node ID, a sequence number according to the order a node was created during the the model creation. The rest of the columns present the information of each node that was entered during the node creation.
+
+The table allows the user to sort each column separately, delete a node and search for particular terms. This later is very helpful when working with large models.
+
+### Graph
+
+As soon as a node is created, a shape (square, circle or star) with a given color will appear in the screen. The star is the node representing the outcome(s), or the node that has no dependent nodes (or "child" nodes).
+
+@MG/RO - define Circle represents and squares - Is there any standards?
+
+There are two check boxes the user can choose to change the layout of the graph created by shiny rrisk.
+
+The user can leave unchecked the option “stretch model graph” so all the shapes can be moved freely by clicking with the mouse on a node. Otherwise by selecting “stretch model graph” all the shapes will be automatically organized with the"outcome" node located at the far right. If this option is selected, the user can only move the shapes up and down. This feature will help organizing very quickly the model’s graph and improve the visualization, especially for models with large number of nodes.
+
+![E. coli in hamburger meat model. Graph with stretch model graph unchecked](images/uncheckstrechgraph.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+
+The next figure depicts the same model but with stretch model graph checked
+
+![](images/checkstrechgraph.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+
+The other check box is "collapse groups". If checked, all the nodes identified with the same "group name" will be hidden under the node identified with that group name. This is very useful when presenting a model with many nodes.
+
+![](images/uncheckstrechgraph_collapse.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+
+The user can click the mouse in any place on the screen that occupies the graph in order to move the whole graph, also the user can zoom in/zoom out using the appropriated combination of keys according to operating system (eg. Windows or MAC) or using the mouse. The user can double click on a node to open the node definition window (explained above).
+
+In order to move down to the definition table, the user should move the mouse out of the graph window or use the siding bar on the screen.
+
+## Check Model
+
+Once all the nodes have been properly defined, the user should select Check Model for model verification. The model verification features assures that all the nodes are linked and properly defined. An error will appear other wise. The user will need to check that there is no isolated nodes (which could be due to typo in the node’s names and/or an invalid equation)
 
 # Glossary
 
