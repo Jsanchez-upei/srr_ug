@@ -1,18 +1,11 @@
 ---
 title: "Shiny rrisk user guide"
 subtitle: "Your quick start to perform probabilistic risk modelling"
-format:
-  html:
-    toc: true
-    code-fold: true
-    df-print: paged
-execute:
-  echo: true
 ---
 
 # Getting started
 
-::: {.callout-note appearance="minimal"}
+::: callout-note
 **This section will introduce you to:**
 
 -   Description of the main interface
@@ -42,14 +35,14 @@ The top row of the app displays the version of the app and provides basic functi
 The app runs on a server provided by the German Federal Institute for Risk Assessment (BfR). Your data is not accessible to BfR or any other party and irretrievably lost upon termination of the browser session or interrupt of the server connection. It is highly recommended that you **Save** your model regularly after each important modification.
 :::
 
-::: {.callout-tip collapse="false"}
+::: {.callout-tip collapse="true"}
 #### Good practice
 
 -   We recommend using "$<$agent$>$in$<$commodity$>$" as standard format for naming models.
 -   We recommend discussing the model concept with stakeholders (see tip below) in order to clarify the task and available data and resources.
 :::
 
-::: {.callout-caution collapse="false"}
+::: {.callout-caution collapse="true"}
 ## Read more
 
 ### First things first
@@ -103,14 +96,14 @@ A model in shiny rrisk consists of so-called nodes. The user may also define fix
 Remember to save your model after adding each node.
 :::
 
-::: {.callout-tip collapse="false"}
+::: {.callout-tip collapse="true"}
 ## Good practice
 
 -   We recommend using "$<$agent$>$in$<$commodity$>$" as standard format for naming models.
 -   We recommend discussing the model concept with stakeholders (see tip below) in order to clarify the task and available data and resources.
 :::
 
-::: {.callout-caution collapse="false"}
+::: {.callout-caution collapse="true"}
 ## Read more
 
 ### First things first
@@ -175,10 +168,10 @@ Upon launching [Add node]{.underline}, a window pops-up with several free-text f
 ::: {.callout-warning appearance="simple"}
 ### Avoid loss of your data
 
-Remember to save your model after adding each node.
+Remember to save your model after adding nodes and/or making important changes in the model
 :::
 
-::: {.callout-note collapse="false"}
+::: {.callout-note collapse="true"}
 ### Example for markdown syntax (Alizarin red S in Eel)
 
 [@MG[:move this after read more? or as another Tip callout?]{.mark}]
@@ -190,7 +183,7 @@ Markdown syntax is available in all free text fields in shiny rrisk to generate 
 You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/authoring_basics.html) Also check out the documentation of the Alizarin red S in Eel model, which makes use of markdown in the description of the model and model parameters (e.g., bootstrapping).
 :::
 
-::: {.callout-tip collapse="false"}
+::: {.callout-tip collapse="true"}
 ### Good practice
 
 -   Be consistent with the style of node names within your project. Short names are preferred for reasons of readability and aesthetics in tables and figures (e.g., vowels can be omitted to shorten a name).
@@ -200,7 +193,7 @@ You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/a
 -   Use a consistent logic to define groups names. These groups may, for example, represent the sections of risk assessment (hazard identification, hazard characterisation, exposure, risk characterisation), steps of an exposure pathway or modules of a microbial risk assessment.
 :::
 
-::: {.callout-caution collapse="false"}
+::: {.callout-caution collapse="true"}
 ### Read more
 
 -   The rules for naming nodes in shiny rrisk are inherited from and ensure compatibility with the [software R](https://www.r-project.org/).
@@ -231,7 +224,7 @@ The first option allows you to define a node using a mathematical expression (@f
 
 : {tbl-colwidths="\[12,88\]"}
 
-::: {.callout-note collapse="false"}
+::: {.callout-note collapse="true"}
 ### Example for an expression using a parent node (Alizarin Red S in eel model)
 
 In the [Alizarin Red S in eel]{.underline} model the outcome $Y$ (dietary intake of ARS per kg body weight and year through consumption of eel marked with ARS) is defined in terms of $I$ (concentration of ARS in edible tissues at time of catch) and $M$ (mean consumption of European eel per year per body weight). Thus, $I$ and $M$ are both parents nodes of $Z$. This example also illustrates the common case that the final outcome is defined in terms of parent nodes (@fig-ARSoutcomeY).
@@ -239,7 +232,7 @@ In the [Alizarin Red S in eel]{.underline} model the outcome $Y$ (dietary intake
 ![Expression for the outcome Y in the Alizarin Red S in eel model.](ARSoutcomeY.png){#fig-ARSoutcomeY width="100%"}
 :::
 
-::: {.callout-note collapse="false"}
+::: {.callout-note collapse="true"}
 ### Example for an expression using implicit nodes
 
 Consider the simple model
@@ -249,14 +242,14 @@ $$A = B * C.$$
 The user can start creating the model by defining the node $A$. As a result, shiny rrisk generates not only the node $A$, but also two implicit nodes $B$ and $C$ based on the mathematical expression for $A$. However, the model cannot be executed until all implicit nodes are correctly defined. The same model could also be implemented in reverse order, starting with the independent nodes $B$ and $C$.
 :::
 
-::: {.callout-tip collapse="false"}
+::: {.callout-tip collapse="true"}
 ### Good practice
 
 -   Use the model graph (see later) to identify nodes that were implicitly generated based on a spelling mistake in the node definition.
 -   Code expressions may contain any function that is part of the R base package.
 :::
 
-::: {.callout-caution collapse="false"}
+::: {.callout-caution collapse="true"}
 ### Read more
 
 The tool’s ability to create implicit nodes allows users to define a model by starting with the result function and working backwards to define all parent nodes until the complete model is created. This offers maximum flexibility when building a model.
@@ -314,7 +307,7 @@ Distribution parameters can be entered as single numbers (see [HEV in liver saus
 
 In shiny rrisk, many distributions can be defined in a truncated version by defining a [lower]{.underline} and/or [upper]{.underline} limit.
 
-::: {.callout-note collapse="false"}
+::: {.callout-note collapse="true"}
 ### Example for parametric distribution (HEV in liver sausages)
 
 The objective of the example model [HEV in liver sausages]{.underline} is to estimate the exposure with Hepatitis E virus (HEV) via consumption of sausage products made from pork (see shiny rrisk model report for further details). The model contains the variable [Liver_prop]{.underline} to describe the amount of liver as ingredient in liver sausages in percent. This continuous quantity reflects variability (sausages contain variable amounts of liver depending on recipes and other factors). The modellers have chosen a modified PERT distribution with minimum 10%, mode 30% and maximum 50% for parameterisation. Note that shape parameter of 4 in the modified PERT is equivalent to the standard 3-parameter PERT model.
@@ -322,7 +315,7 @@ The objective of the example model [HEV in liver sausages]{.underline} is to est
 ![Modified Pert distribution model.](modPert.png){#fig-modPert width="100%"}
 :::
 
-::: {.callout-note collapse="false"}
+::: {.callout-note collapse="true"}
 ### Example for a distribution parameter with functional dependency (L.monocytogenes in cheese)
 
 The objective of the [L.monocytogenes in cheese]{.underline} model is to estimate the risk of infection with Listeria (L.) monocytogenes per meal. The model uses the variable dose of ingested L. monocytogenes per serving, $D_{dist}$ modelled as Poisson distribution (@fig-functionalPoissonLMono). The expression entered as distribution parameter $\lambda$ uses as parent nodes the serving size $S$ and the concentration of L. monocytogenes in the cheese at home $LMC_{home}$, both of which express variability as well. This results in a dispersion of dose $D_{dist}$ much wider than what would be expected with a fixed value for the distribution parameter $\lambda$.
@@ -330,7 +323,7 @@ The objective of the [L.monocytogenes in cheese]{.underline} model is to estimat
 ![Poisson distribution model with functional dependency.](functionalPoissonLMono.png){#fig-functionalPoissonLMono width="50%"}
 :::
 
-::: {.callout-caution collapse="false"}
+::: {.callout-caution collapse="true"}
 ## Read more
 
 #### Quick guide for choosing appropriate distributions
@@ -362,7 +355,7 @@ Last but not least consider a node in your model that directly represents a para
 ![Parameterisations of distributions to reflect variability and uncertainty. Typical situations are shaded in blue. See text for more details.](Parameterisations.png){#fig-Parameterisations width="100%"}
 :::
 
-### Table Node
+## Table Node
 
 After nodes are created, the following table will be created in shiny rrisk containing a the information of each node in the model.
 
@@ -372,7 +365,7 @@ The table contains the node ID, a sequence number according to the order a node 
 
 The table allows the user to sort each column separately, delete a node and search for particular terms. This later is very helpful when working with large models.
 
-### Graph
+## Graph
 
 As soon as a node is created, a shape (square, circle or star) with a given color will appear in the screen. The star is the node representing the outcome(s), or the node that has no dependent nodes (or "child" nodes).
 
@@ -400,23 +393,74 @@ In order to move down to the definition table, the user should move the mouse ou
 
 Once all the nodes have been properly defined, the user should select Check Model for model verification. The model verification features assures that all the nodes are linked and properly defined. An error will appear other wise. The user will need to check that there is no isolated nodes (which could be due to typo in the node’s names and/or an invalid equation)
 
+# Simulation
+
+::: callout-note
+**This section will introduce you to:**
+
+-   Obtain model results after creating and checking a model
+-   Familiarize with the shiny rrisk model result interface
+-   Interpret model' results
+-   Interpret the sensitivity analysis
+:::
+
+![](images/simulation.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"}
+
+@Robert - change set run parameter to Set simulation
+
+Before executing (run) the simulation, user can set up several parameters as presented below. After setting these parameters, click **Change Parameter.**
+
++-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| [SAMPLING TECHNIQUE]{style="color:#0d6efd"}                                             | Check here if you wish to create a new model and assign a Model name.                                 |
++-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| [NUMBER OF MONTE CARLO SIMULATIONS: VARIABILITY and UNCERTAINTY]{style="color:#0d6efd"} | Enter here the number of Monte Carlo random samples required for the simulation                       |
++-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| [QUANTILES: VARIABILITY and UNCERTAINTY]{style="color:#0d6efd"}                         | Enter here the percentiles for summarizing model results in the variability (1D) and uncertainty (2D) |
++-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+
+After setting all the parameters, select **Run Simulation.** After the simulation is completed, shiny rrisk will present the another screen, with the **general results** (by default) and **sensitivity plot.**
+
+@Robert - change to Sensitivity Analysis \[change names in boxes to upper case to be consistent with other boxes\]
+
+::: {.callout-warning appearance="simple"}
+#### Memory
+
+select the appropriate number of samples. shiny rrisk might not run if the memory is above \@\@\@
+:::
+
+::: {.callout-tip collapse="true"}
+### Good practice
+
+-   Setting the number of samples --\> conv. plot
+:::
+
+## General Results
+
+add Interpretation of results, with brief mention of main elements for interpretation to have this in the main text
+
+### Numerical result table
+
+### Histogram
+
+### ECDF plot
+
+### Convergence plot
+
+::: {.callout-caution collapse="true"}
+## Read more
+
+-MCMC sampling, 1D and 2D , Tables interpretation -MCMC Plots – Cumulative. Convergence plots,
+:::
+
+## Sensitivity Plot
+
+add interpretation of plots
+
+::: {.callout-caution collapse="true"}
+## Read more
+
+-Methods – Plots Tornado, 1D vs 2D \[eg including prob. Interval\]
+:::
+
 # Glossary
 
-```{r}
-library(yaml)
-library(DT)
-
-# Load YAML
- yaml_data <- yaml::read_yaml("terms.yaml")
-
-# Add anchor tags for linking
-glossary_df <- data.frame(
-  Term = sapply(yaml_data, function(x) 
-    paste0('<a name="', tolower(gsub("[^a-zA-Z0-9]", "-", x$term)), '">', x$term, '</a>')),
-  Definition = sapply(yaml_data, function(x) x$definition),
-  stringsAsFactors = FALSE
-)
-
-DT::datatable(glossary_df, escape = FALSE)
-
-```
