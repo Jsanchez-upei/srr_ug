@@ -6,8 +6,13 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Risk modelling
+
+      - href: distributionfitting.qmd
+        text: Distribution fitting
+    
+    right:
+    - about.qmd
 
   page-footer: "Greiner M, Sanchez J, and who else contributes, 2025" 
   

@@ -5,44 +5,37 @@ subtitle: "Your quick start to perform probabilistic risk modelling"
 
 # Getting started
 
-::: callout-note
-**This section will introduce you to:**
-
--   Description of the main interface
-
--   Loading an "shiny rrisk" file that contains the the complete documentation and executable code of your model.
+::: {.callout-note appearance="minimal"}
+Read here how to manage the data file that contains the complete documentation and executable code of your model.
 :::
 
 ![Main screen, top row of shiny rrisk.](ManagingFiles.png){#fig-ManagingFiles width="100%"}
 
 The top row of the app displays the version of the app and provides basic functionality for managing models (@fig-ManagingFiles).
 
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| [NEW]{style="color:#0d6efd"}   | Check here if you wish to create a new model and assign a Model name.                                                      |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| [OPEN]{style="color:#0d6efd"}  | Open a saved model or one of the demo models implemented in the tool. The extension of model files is [`“rrisk”`](#rrisk). |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| [SAVE]{style="color:#0d6efd"}  | [@Robert[: consider change of button name]{.mark}] Save the model, results or the model report to your local system.       |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| [ABOUT]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] Check out here for important information about the app .                |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+|  |  |
+|----|----|
+| [NEW]{style="color:#0d6efd"} | Check here if you wish to create a new model and enter a Model name. |
+| [OPEN]{style="color:#0d6efd"} | Open a locally saved model or one of the demo models implemented in the tool. The extension of model files is “rrisk”. |
+| [SAVE]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] Save the model, results or the model report to your local system. |
+| [ABOUT]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] Check out here for important information about the app . |
 
 : {tbl-colwidths="\[10,90\]"}
 
 ::: {.callout-warning appearance="simple"}
 #### Avoid loss of your data
 
-The app runs on a server provided by the German Federal Institute for Risk Assessment (BfR). Your data is not accessible to BfR or any other party and irretrievably lost upon termination of the browser session or interrupt of the server connection. It is highly recommended that you **Save** your model regularly after each important modification.
+The app runs on a server provided by the German Federal institute for Risk Assessment (BfR). Your data is not accessible to BfR or any other party and irretrievably lost upon termination of the browser session or interrupt of the server connection. Save your model locally after each important modification.
 :::
 
-::: {.callout-tip collapse="true"}
+::: {.callout-tip collapse="false"}
 #### Good practice
 
 -   We recommend using "$<$agent$>$in$<$commodity$>$" as standard format for naming models.
 -   We recommend discussing the model concept with stakeholders (see tip below) in order to clarify the task and available data and resources.
 :::
 
-::: {.callout-caution collapse="true"}
+::: {.callout-caution collapse="false"}
 ## Read more
 
 ### First things first
@@ -59,7 +52,7 @@ Before developing a mathematical or probabilistic model it is advisable to clari
 
 A probabilistic risk model typically represents a series of events or situations that can be linked together in a logical or chronological order, whereby the final event represents the outcome of interest. For example, consider the hypothetical shipment of one race horse from Argentina to Germany. The task is to quantify the probability of the horse to be infected with equine infectious anemia (EIA, see [FLI, 2017](https://www.fli.de/en/news/animal-disease-situation/equine-infectious-anemia/), accessed 9.5.2025). Note that this example is for illustration only. Each building block of the model requires clarifications and definitions which are tailored to the specific problem at hand. Some of the clarifications can only be provided by the customer (risk manager) and others by domain experts risk assessors. For larger projects, stakeholders should be involved in this process.
 
--   **Risk question:** defines the outcome of interest; what is the probability that the introduced horse is infected with EIA virus?
+-   **Risk question:** defines the outcome of interest; here the quantification of the probability that the introduced horse is infected with EIA virus.
 -   **Scope:** defines what is included or excluded from the assessment; here economic and epidemiological consequences are beyond the scope.
 -   **Pathway and scenario:** define all relevant steps and events; here the selection of the horse, legal and sanitary transport requirements, transport, border health checks shoud be considered.
 -   **Model parameters (denoted “nodes” in shiny rrisk):** define all input and output quantities required in the model; here the minimum set of parameters include the prevalence of EIA in Argentina, the probability of infection at boarding and the probability of infection at introduction of the animal after de-boarding formalities. Additional parameters may apply.
@@ -75,18 +68,17 @@ It is recommended to sketch a visual representation of the conceptual model. The
 # Model creation
 
 ::: {.callout-note appearance="minimal"}
-At the end of this section, you will be able to create a model in shiny rrisk.
+At the end of this section, you will be able to build a model from scratch.
 :::
 
 ![Main screen, second row of shiny rrisk.](ModelCreation.png){#fig-ModelCreation width="100%"}
 
 A model in shiny rrisk consists of so-called nodes. The user may also define fixed parameters and functions available for the definition of nodes (see @FixedParametersFunctions).
 
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| [Add node]{style="color:#0d6efd"}    | [@Robert[: consider change of button name]{.mark}] Create a new node and launch its verbal description and mathematical definition. |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| [Check model]{style="color:#0d6efd"} | Verify that a simulation model can be built from the mathematical and numerical model input you have provided.                      |
-+--------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+|  |  |
+|----|----|
+| [Add node]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] Create a new node and launch its verbal description and mathematical definition. |
+| [Check model]{style="color:#0d6efd"} | Verify that a simulation model can be built from the mathematical and numerical model input you have provided. |
 
 : {tbl-colwidths="\[12,88\]"}
 
@@ -96,14 +88,14 @@ A model in shiny rrisk consists of so-called nodes. The user may also define fix
 Remember to save your model after adding each node.
 :::
 
-::: {.callout-tip collapse="true"}
+::: {.callout-tip collapse="false"}
 ## Good practice
 
 -   We recommend using "$<$agent$>$in$<$commodity$>$" as standard format for naming models.
 -   We recommend discussing the model concept with stakeholders (see tip below) in order to clarify the task and available data and resources.
 :::
 
-::: {.callout-caution collapse="true"}
+::: {.callout-caution collapse="false"}
 ## Read more
 
 ### First things first
@@ -135,46 +127,33 @@ It is recommended to sketch a visual representation of the conceptual model. The
 
 ## Verbal definition of a node
 
-[@MG[: consider change to Add Node: Node Definition - Not sure what it means Verbal]{.mark}]
-
 ::: {.callout-note appearance="minimal"}
 Read here how easily you will generate an integrated documentation of each node.
 :::
 
 ![Descriptive part of node definition.](AddNode.png){#fig-AddNode width="100%"}
 
-[@MG[: The figure should have "Add Node" instead of Add new item]{.mark}]
-
 Upon launching [Add node]{.underline}, a window pops-up with several free-text fields.
 
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| [Name]{style="color:#0d6efd"}[\*]{style="color:Red"} | [@Robert[: consider change of button]{.mark}] Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry.                                                                                                                                                                                           |
-|                                                      |                                                                                                                                                                                                                                                                                                                                                                                                |
-| @MG here you can mention editing the name of a node  |                                                                                                                                                                                                                                                                                                                                                                                                |
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| [Unit]{style="color:#0d6efd"}                        | The physical measurement unit should be entered here if applicable.                                                                                                                                                                                                                                                                                                                            |
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| [Grouping]{style="color:#0d6efd"}                    | [@Robert[: consider change of button name]{.mark}] A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation. |
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| [Source]{style="color:#0d6efd"}                      | The source of information about the node should be provided according to good scientific practice. If a bibliographic reference is available it should be entered using the format “Author(s), Year (doi code )”.                                                                                                                                                                              |
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| [Description]{style="color:#0d6efd"}                 | A verbal account of all relevant information required for documentation and review should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax below).                                                                                                                                    |
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| [\*]{style="color:Red"}                              | Required                                                                                                                                                                                                                                                                                                                                                                                       |
-+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  |  |
+|----|----|
+| [Name]{style="color:#0d6efd"}[\*]{style="color:Red"} | [@Robert[: consider change of button]{.mark}] Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry. |
+| [Unit]{style="color:#0d6efd"} | The physical measurement unit should be entered here if applicable. |
+| [Grouping]{style="color:#0d6efd"} | [@Robert[: consider change of button name]{.mark}] A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation. |
+| [Source]{style="color:#0d6efd"} | The source of information about the node should be provided according to good scientific practice. If a bibliographic reference is available it should be entered using the format “Author(s), Year (doi code )”. |
+| [Description]{style="color:#0d6efd"} | A verbal account of all relevant information required for documentation and review should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax below). |
+| [\*]{style="color:Red"} | Required |
 
 : {tbl-colwidths="\[12,88\]"}
 
 ::: {.callout-warning appearance="simple"}
 ### Avoid loss of your data
 
-Remember to save your model after adding nodes and/or making important changes in the model
+Remember to save your model after adding each node.
 :::
 
-::: {.callout-note collapse="true"}
-### Example for markdown syntax (Alizarin red S in Eel)
-
-[@MG[:move this after read more? or as another Tip callout?]{.mark}]
+::: {.callout-note collapse="false"}
+### Example for markdown syntax (Alizarin red S in Eel model)
 
 Markdown syntax is available in all free text fields in shiny rrisk to generate formatted output in the report file. Some examples are given below (@fig-Markdown).
 
@@ -183,7 +162,7 @@ Markdown syntax is available in all free text fields in shiny rrisk to generate 
 You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/authoring_basics.html) Also check out the documentation of the Alizarin red S in Eel model, which makes use of markdown in the description of the model and model parameters (e.g., bootstrapping).
 :::
 
-::: {.callout-tip collapse="true"}
+::: {.callout-tip collapse="false"}
 ### Good practice
 
 -   Be consistent with the style of node names within your project. Short names are preferred for reasons of readability and aesthetics in tables and figures (e.g., vowels can be omitted to shorten a name).
@@ -193,7 +172,7 @@ You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/a
 -   Use a consistent logic to define groups names. These groups may, for example, represent the sections of risk assessment (hazard identification, hazard characterisation, exposure, risk characterisation), steps of an exposure pathway or modules of a microbial risk assessment.
 :::
 
-::: {.callout-caution collapse="true"}
+::: {.callout-caution collapse="false"}
 ### Read more
 
 -   The rules for naming nodes in shiny rrisk are inherited from and ensure compatibility with the [software R](https://www.r-project.org/).
@@ -208,23 +187,19 @@ You will understand how to define a node in shiny rrisk, which is the essential 
 
 ![Mathematical part of node definition.[@Robert[: consider change to "Choose node defintion\*"]{.mark}]](MathematicalDefinition.png){#fig-MathematicalDefinition width="100%"}
 
-Several options are available for defining the mathematical properties of a node, including user defined, parametric distribution, bootstrapping and EFSA EKE.
+Several options are available for defining a node, including user defined, parametric distribution, bootstrapping and EFSA EKE. The first option allows you to define a node using a mathematical expression (@fig-NodeUserDefined).
 
-`@MG [: maybe change EFSA EKE to just expert elicitation]`
-
-The first option allows you to define a node using a mathematical expression (@fig-NodeUserDefined).
-
-### User defined
+### User defined expression
 
 ![Choose user defined to enter a mathematical expression.](NodeUserDefined.png){#fig-NodeUserDefined width="100%"}
 
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  |  |
+|----|----|
 | [Expression]{style="color:#0d6efd"} | [@Robert[: consider change button name]{.mark}]A mathematical expression is entered here that can be evaluated similar to a line of code in the [software R](https://www.r-project.org/). At least one term of the expression is another (distribution) node, which is referred to as a "parent node". Parent nodes that do not yet exist in the model are referred to as “implicit nodes” and will be generated automatically by shiny rrisk. |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[12,88\]"}
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="false"}
 ### Example for an expression using a parent node (Alizarin Red S in eel model)
 
 In the [Alizarin Red S in eel]{.underline} model the outcome $Y$ (dietary intake of ARS per kg body weight and year through consumption of eel marked with ARS) is defined in terms of $I$ (concentration of ARS in edible tissues at time of catch) and $M$ (mean consumption of European eel per year per body weight). Thus, $I$ and $M$ are both parents nodes of $Z$. This example also illustrates the common case that the final outcome is defined in terms of parent nodes (@fig-ARSoutcomeY).
@@ -232,7 +207,7 @@ In the [Alizarin Red S in eel]{.underline} model the outcome $Y$ (dietary intake
 ![Expression for the outcome Y in the Alizarin Red S in eel model.](ARSoutcomeY.png){#fig-ARSoutcomeY width="100%"}
 :::
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="false"}
 ### Example for an expression using implicit nodes
 
 Consider the simple model
@@ -242,14 +217,14 @@ $$A = B * C.$$
 The user can start creating the model by defining the node $A$. As a result, shiny rrisk generates not only the node $A$, but also two implicit nodes $B$ and $C$ based on the mathematical expression for $A$. However, the model cannot be executed until all implicit nodes are correctly defined. The same model could also be implemented in reverse order, starting with the independent nodes $B$ and $C$.
 :::
 
-::: {.callout-tip collapse="true"}
+::: {.callout-tip collapse="false"}
 ### Good practice
 
 -   Use the model graph (see later) to identify nodes that were implicitly generated based on a spelling mistake in the node definition.
 -   Code expressions may contain any function that is part of the R base package.
 :::
 
-::: {.callout-caution collapse="true"}
+::: {.callout-caution collapse="false"}
 ### Read more
 
 The tool’s ability to create implicit nodes allows users to define a model by starting with the result function and working backwards to define all parent nodes until the complete model is created. This offers maximum flexibility when building a model.
@@ -257,21 +232,17 @@ The tool’s ability to create implicit nodes allows users to define a model by 
 
 ### Parametric distributions
 
-@MG [re-consider this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general)]
-
 ::: {.callout-note appearance="minimal"}
 Upon completing this section, you will master the use of probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model.
-
-@MG [**variability and uncertainty can be reflected in general under the mathematical definition of a node, since it won't only apply to the distributions, but also to formulas using nodes represented by a distribution**]
 :::
 
 ![Choose a distribution family.](ParametricDistributions.png){#fig-ParametricDistributions width="100%"}
 
 Once you have selected [parametric distributions]{.underline} you can choose from a number of discrete and continuous distribution families (@fig-ParametricDistributions).
 
-+---------------------------------------------------------+-------------------------------------------------------+
+|  |  |
+|----|----|
 | [Choose parametric distribution]{style="color:#0d6efd"} | Select here the distribution family for the new node. |
-+---------------------------------------------------------+-------------------------------------------------------+
 
 : {tbl-colwidths="\[30,70\]"}
 
@@ -307,7 +278,7 @@ Distribution parameters can be entered as single numbers (see [HEV in liver saus
 
 In shiny rrisk, many distributions can be defined in a truncated version by defining a [lower]{.underline} and/or [upper]{.underline} limit.
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="false"}
 ### Example for parametric distribution (HEV in liver sausages)
 
 The objective of the example model [HEV in liver sausages]{.underline} is to estimate the exposure with Hepatitis E virus (HEV) via consumption of sausage products made from pork (see shiny rrisk model report for further details). The model contains the variable [Liver_prop]{.underline} to describe the amount of liver as ingredient in liver sausages in percent. This continuous quantity reflects variability (sausages contain variable amounts of liver depending on recipes and other factors). The modellers have chosen a modified PERT distribution with minimum 10%, mode 30% and maximum 50% for parameterisation. Note that shape parameter of 4 in the modified PERT is equivalent to the standard 3-parameter PERT model.
@@ -315,7 +286,7 @@ The objective of the example model [HEV in liver sausages]{.underline} is to est
 ![Modified Pert distribution model.](modPert.png){#fig-modPert width="100%"}
 :::
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="false"}
 ### Example for a distribution parameter with functional dependency (L.monocytogenes in cheese)
 
 The objective of the [L.monocytogenes in cheese]{.underline} model is to estimate the risk of infection with Listeria (L.) monocytogenes per meal. The model uses the variable dose of ingested L. monocytogenes per serving, $D_{dist}$ modelled as Poisson distribution (@fig-functionalPoissonLMono). The expression entered as distribution parameter $\lambda$ uses as parent nodes the serving size $S$ and the concentration of L. monocytogenes in the cheese at home $LMC_{home}$, both of which express variability as well. This results in a dispersion of dose $D_{dist}$ much wider than what would be expected with a fixed value for the distribution parameter $\lambda$.
@@ -323,14 +294,10 @@ The objective of the [L.monocytogenes in cheese]{.underline} model is to estimat
 ![Poisson distribution model with functional dependency.](functionalPoissonLMono.png){#fig-functionalPoissonLMono width="50%"}
 :::
 
-::: {.callout-caution collapse="true"}
+::: {.callout-caution collapse="false"}
 ## Read more
 
 #### Quick guide for choosing appropriate distributions
-
-Please refers to this compendium of distributions to select the apprpriated distributions and distribution parameters: [Compendium of Distribution](https://www.vosesoftware.com/knowledgebase/whitepapers/pdf/ebookdistributions.pdf)
-
-@MG [ we could download the pdf so we will be sure that always it is there, in case website changes]
 
 Some text required here.
 
@@ -355,7 +322,7 @@ Last but not least consider a node in your model that directly represents a para
 ![Parameterisations of distributions to reflect variability and uncertainty. Typical situations are shaded in blue. See text for more details.](Parameterisations.png){#fig-Parameterisations width="100%"}
 :::
 
-## Table Node
+### Bootstrapping
 
 After nodes are created, the following table will be created in shiny rrisk containing a the information of each node in the model.
 
@@ -369,7 +336,7 @@ The table allows the user to sort each column separately, delete a node and sear
 
 As soon as a node is created, a shape (square, circle or star) with a given color will appear in the screen. The star is the node representing the outcome(s), or the node that has no dependent nodes (or "child" nodes).
 
-[@MG/RO - define Circle represents and squares - Is there any standards?]{.mark}
+@MG/RO[ - define Circle represents and squares - Is there any standards?]{.mark}
 
 There are two check boxes the user can choose to change the layout of the graph created by shiny rrisk.
 
@@ -395,71 +362,128 @@ Once all the nodes have been properly defined, the user should select Check Mode
 
 # Simulation
 
-::: callout-note
+::::::::: callout-note
 **This section will introduce you to:**
 
 -   Obtain model results after creating and checking a model
 -   Familiarize with the shiny rrisk model result interface
 -   Interpret model' results
 -   Interpret the sensitivity analysis
+
+::: {.callout-note appearance="minimal"}
+In this section you can explore how to use bootstrapping for generating distributions that represent statistical parameter uncertainty without specifying a distribution family.
 :::
 
-![](images/simulation.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"}
+![Bootstrap nodes always represent parameter uncertainty.](BootstrapNode1.png){#fig-BootstrapNode1 width="100%"}
 
-@Robert - change set run parameter to Set simulation
+Non-parametric bootstrapping is available to generate uncertainty distributions for one or more statistics of a given data set (@fig-BootstrapNode1). Details are illustrated using the example below.
 
-Before executing (run) the simulation, user can set up several parameters as presented below. After setting these parameters, click **Change Parameter.**
+#### Application of bootstrapping
 
-+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| [SAMPLING TECHNIQUE]{style="color:#0d6efd"}                                             | Check here if you wish to create a new model and assign a Model name.                                 |
-+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| [NUMBER OF MONTE CARLO SIMULATIONS: VARIABILITY and UNCERTAINTY]{style="color:#0d6efd"} | Enter here the number of Monte Carlo random samples required for the simulation                       |
-+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| [QUANTILES: VARIABILITY and UNCERTAINTY]{style="color:#0d6efd"}                         | Enter here the percentiles for summarizing model results in the variability (1D) and uncertainty (2D) |
-+-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+The application of bootstrapping in shiny rrrisk involves three steps.
 
-After setting all the parameters, select **Run Simulation.** After the simulation is completed, shiny rrisk will present the another screen, with the **general results** (by default) and **sensitivity plot.**
+1.  Defining a bootstrap node, which involves documenting the data source and defining node names and corresponding statistics.
+2.  Generating a bootstrap distribution node for each statistic requested in step 1 (automatically by shiny rrisk).
+3.  Using the distribution node(s) generated in step 2 as parent nodes in the definition of further nodes.
 
-@Robert - change to Sensitivity Analysis \[change names in boxes to upper case to be consistent with other boxes\]
+::: {.callout-note collapse="false"}
+### Example for non-parametric bootstrap (Alizarin red S in Eel model)
 
-::: {.callout-warning appearance="simple"}
-#### Memory
+An exposure model for [Alizarin Red S (ARS) in eel]{.underline} has been developed to estimate the intake of ARS with consumed eel (see shiny rrisk model report for further details). A small (n=14) data set is available for individual consumption of eel per kg body weight. The task is to characterise the uncertainty of the population mean and standard deviation for individual consumption with accounting for the small data set and the correlation between the uncertainty distributions of mean and standard deviation (@fig-BootstrapNode2).
 
-select the appropriate number of samples. shiny rrisk might not run if the memory is above \@\@\@
+![Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).](BootstrapNode2.png){#fig-BootstrapNode2 width="100%"}
+
+|  |  |
+|----|----|
+| [Open data]{style="color:#0d6efd"} | @Robert [:][please capitalise "open" and check the file requirements]{.mark} A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column. |
+| [Provided data]{style="color:#0d6efd"} | Alternatively, comma-separated source data can be entered manually. Decimal point “.” should be used if required. |
+| [Node name]{style="color:#0d6efd"} | @Robert [:][please consider change to Node name]{.mark}Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution. |
+| [Summary statistic]{style="color:#0d6efd"} | @Robert [:][please capitalise "summary"]{.mark}For each node a proper name of the requested statistic is to be provided using R terminology. |
+
+: {tbl-colwidths="\[15,85\]"}
+
+The three steps in this example are the following.
+
+1.  Defining the bootstrapping node [X]{.underline}, providing a data source and requesting the two nodes [Xmean]{.underline} and [Xsd]{.underline} for the mean and standard deviation, respectively (@fig-BootstrapNode2).
+2.  Generating two nodes containing the bootstrap distributions [Xmean]{.underline} and [Xsd]{.underline} (automatically by shiny rrisk).
+3.  Using the two nodes for defining a new node [C]{.underline} for the population variability in consumption of eel per body weight consumed on single meal (@fig-ARSnodeC).
+
+![Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details).](ARSnodeC.png){#fig-ARSnodeC width="100%"}
 :::
 
-::: {.callout-tip collapse="true"}
-### Good practice
-
--   Setting the number of samples --\> conv. plot
-:::
-
-## General Results
-
-add Interpretation of results, with brief mention of main elements for interpretation to have this in the main text
-
-### Numerical result table
-
-### Histogram
-
-### ECDF plot
-
-### Convergence plot
-
-::: {.callout-caution collapse="true"}
+::: {.callout-caution collapse="false"}
 ## Read more
 
--MCMC sampling, 1D and 2D , Tables interpretation -MCMC Plots – Cumulative. Convergence plots,
+#### Bootstrapping - how does it work?
+
+@Robert [ to check whether this description matches with the implementation] Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the [software R](https://www.r-project.org/) can be requested such as `sum`, `mean`, `median`, `quantile(x, probs=.95)` (95th percentile), `var` and `sd` to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000[?]{.mark} in shiny rrisk. The bootstrap algorithm is shown in @fig-BootstrapConcep.
+
+![Schematic representation of the bootstrap method (Greiner, 2022, unpublishes course notes).](BootstrapConcept.png){#fig-BootstrapConcep width="80%"}
+
+#### What can be limitations of bootstrapping?
+
+An advantage of non-parametric bootstrapping is that you don't need to make any assumption about the mathematical distribution of the original data or the uncertainty distribution of the required statistic. The latter emerges from bootstrapping and resembles the mathematically "correct" distribution. On the other hand, bs is not able to generate information about the population beyond what you have in form of the original data. You should not expect to obtain very useful information from very small, say $n<5$ data sets. This is mainly due to the limited empirical support, even under the so-called assumption of independent, identically distributed observations in the sample.
+
+A further limitation of non-parametric bootstrap is that distributions take a discrete shape for very small size of the original data sample. Sampling with replacement of $n$ observations can result in exactly $2n-1\choose n-1$ possible permutations of sampling $n$ out of $n$. The table below shows that more than 5 observations are needed to obtain only 126 permutations can occur. If the original data set contains outlier values, the discreteness can present a further limitation. [I'll add the example above with one outlier to show this effect...]{.mark}
+
+|  |  |  |  |  |  |  |  |  |
+|----|----|----|----|----|----|----|----|----|
+| Size of original data ($n$) | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| Number of possible permutations $2n-1\choose n-1$ | 10 | 35 | 126 | 462 | 1716 | 6435 | 24310 | 92378 |
 :::
 
-## Sensitivity Plot
+### Expert knowledge elicitation (EKE)
 
-add interpretation of plots
+::: {.callout-note appearance="minimal"}
+This section demonstrates how you can use typical results from an expert elicitation to parameterise a node in shiny rrisk [Needs major revision when the distribution app becomes available; Olaf Mosbach-Schulz should review the section]{.mark}.
+:::
 
-::: {.callout-caution collapse="true"}
+![EFSA EKE node for defining a Pert distribution node.](EKE0.png){#fig-EKE0 width="100%"}
+
+|  |  |
+|----|----|
+| [Choose node definition]{style="color:#0d6efd"} | [to be updated]{.mark} Select EFSA EKE. |
+| [Distribution represents]{style="color:#0d6efd"} | Select either variability or uncertainty. |
+| [Quantiles]{style="color:#0d6efd"} | Enter any number of quantiles, comma-separated. |
+| [Cumulative probability]{style="color:#0d6efd"} | Enter one cumulative probability for each of the quantiles, beginning with the value zero, comma-separated. |
+
+: {tbl-colwidths="\[20,80\]"}
+
+``` (r)
+d -> choose(3,3)
+print(d)
+```
+
+#### Defining an EFSA EKE node in shiny rrisk
+
+The European Food Safety Authority (EFSA) have described a process for eliciting expert knowledge (REF). The use of EFSA EKE node involves three steps.
+
+1.  Conduct of the EFSA EKE protocol, which includes the definition of a target quantity, elicitation protocol and results in the descdocumenting the data source and defining node names and corresponding statistics.
+2.  A distribution node parameterised using input from an EFSA EKE may refer to variability or uncertainty, depending on the question formulation of the EKE process. The final result of the EKE consists of five percentiles that to be entered manually for fitting a Pert distribution (@fig-EKE0). Details are illustrated using the example below.
+
+::: {.callout-note collapse="false"}
+### Example for EFSA EKE (L. lignosellus in asparagus)
+
+(@fig-EKE1).
+
+![Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).](EKE1.png){#fig-EKE1 width="100%"}
+
+The three steps in this example are the following.
+
+1.  Defining the bootstrapping node [X]{.underline}, providing a data source and requesting the two nodes [Xmean]{.underline} and [Xsd]{.underline} for the mean and standard deviation, respectively (@fig-BootstrapNode2).
+2.  Generating two nodes containing the bootstrap distributions [Xmean]{.underline} and [Xsd]{.underline} (automatically by shiny rrisk).
+3.  Using the two nodes for defining a new node [C]{.underline} for the population variability in consumption of eel per body weight consumed on single meal (@fig-ARSnodeC).
+
+![EKE2.](EKE2.png){#fig-EKE2 width="100%"}
+:::
+
+::: {.callout-caution collapse="false"}
 ## Read more
 
--Methods – Plots Tornado, 1D vs 2D \[eg including prob. Interval\]
+#### EFSA EKE
+
+@Robert [ or Thomas to contribute] Brief description of the EFSA EKE or more description how shiny rrisk deals with EKE more generally.
 :::
 
-# Glossary
+# \# Glossary
+:::::::::
