@@ -119,8 +119,14 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">Risk modelling</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./distributionfitting.html"> 
+<span class="menu-text">Distribution fitting</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About shiny rrisk</span></a>
@@ -162,6 +168,12 @@ window.Quarto = {
  <span class="menu-text">About shiny rrisk</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distributionfitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Distribution fitting</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -178,25 +190,12 @@ window.Quarto = {
   <li><a href="#verbal-definition-of-a-node" id="toc-verbal-definition-of-a-node" class="nav-link" data-scroll-target="#verbal-definition-of-a-node">Verbal definition of a node</a></li>
   <li><a href="#mathematical-definition-of-a-node" id="toc-mathematical-definition-of-a-node" class="nav-link" data-scroll-target="#mathematical-definition-of-a-node">Mathematical definition of a node</a>
   <ul class="collapse">
-  <li><a href="#user-defined" id="toc-user-defined" class="nav-link" data-scroll-target="#user-defined">User defined</a></li>
+  <li><a href="#user-defined-expression" id="toc-user-defined-expression" class="nav-link" data-scroll-target="#user-defined-expression">User defined expression</a></li>
   <li><a href="#parametric-distributions" id="toc-parametric-distributions" class="nav-link" data-scroll-target="#parametric-distributions">Parametric distributions</a></li>
+  <li><a href="#bootstrapping" id="toc-bootstrapping" class="nav-link" data-scroll-target="#bootstrapping">Bootstrapping</a></li>
+  <li><a href="#expert-knowledge-elicitation-eke" id="toc-expert-knowledge-elicitation-eke" class="nav-link" data-scroll-target="#expert-knowledge-elicitation-eke">Expert knowledge elicitation (EKE)</a></li>
   </ul></li>
-  <li><a href="#table-node" id="toc-table-node" class="nav-link" data-scroll-target="#table-node">Table Node</a></li>
-  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph">Graph</a></li>
-  <li><a href="#check-model" id="toc-check-model" class="nav-link" data-scroll-target="#check-model">Check Model</a></li>
   </ul></li>
-  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a>
-  <ul class="collapse">
-  <li><a href="#general-results" id="toc-general-results" class="nav-link" data-scroll-target="#general-results">General Results</a>
-  <ul class="collapse">
-  <li><a href="#numerical-result-table" id="toc-numerical-result-table" class="nav-link" data-scroll-target="#numerical-result-table">Numerical result table</a></li>
-  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram">Histogram</a></li>
-  <li><a href="#ecdf-plot" id="toc-ecdf-plot" class="nav-link" data-scroll-target="#ecdf-plot">ECDF plot</a></li>
-  <li><a href="#convergence-plot" id="toc-convergence-plot" class="nav-link" data-scroll-target="#convergence-plot">Convergence plot</a></li>
-  </ul></li>
-  <li><a href="#sensitivity-plot" id="toc-sensitivity-plot" class="nav-link" data-scroll-target="#sensitivity-plot">Sensitivity Plot</a></li>
-  </ul></li>
-  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
   </ul>
 </nav>
     </div>
@@ -225,21 +224,14 @@ window.Quarto = {
 
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
+<div class="callout-body-container">
+<p>Read here how to manage the data file that contains the complete documentation and executable code of your model.</p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>This section will introduce you to:</strong></p>
-<ul>
-<li><p>Description of the main interface</p></li>
-<li><p>Loading an “shiny rrisk” file that contains the the complete documentation and executable code of your model.</p></li>
-</ul>
 </div>
 </div>
 <div id="fig-ManagingFiles" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -261,11 +253,11 @@ Figure&nbsp;1: Main screen, top row of shiny rrisk.
 <tbody>
 <tr class="odd">
 <td><span style="color:#0d6efd">NEW</span></td>
-<td>Check here if you wish to create a new model and assign a Model name.</td>
+<td>Check here if you wish to create a new model and enter a Model name.</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">OPEN</span></td>
-<td>Open a saved model or one of the demo models implemented in the tool. The extension of model files is <a href="#rrisk"><code>“rrisk”</code></a>.</td>
+<td>Open a locally saved model or one of the demo models implemented in the tool. The extension of model files is “rrisk”.</td>
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">SAVE</span></td>
@@ -287,11 +279,11 @@ Avoid loss of your data
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The app runs on a server provided by the German Federal Institute for Risk Assessment (BfR). Your data is not accessible to BfR or any other party and irretrievably lost upon termination of the browser session or interrupt of the server connection. It is highly recommended that you <strong>Save</strong> your model regularly after each important modification.</p>
+<p>The app runs on a server provided by the German Federal institute for Risk Assessment (BfR). Your data is not accessible to BfR or any other party and irretrievably lost upon termination of the browser session or interrupt of the server connection. Save your model locally after each important modification.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -300,7 +292,7 @@ Good practice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
 <li>We recommend using “<span class="math inline">\(&lt;\)</span>agent<span class="math inline">\(&gt;\)</span>in<span class="math inline">\(&lt;\)</span>commodity<span class="math inline">\(&gt;\)</span>” as standard format for naming models.</li>
@@ -310,7 +302,7 @@ Good practice
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -319,7 +311,7 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <section id="first-things-first" class="level3">
 <h3 class="anchored" data-anchor-id="first-things-first">First things first</h3>
@@ -336,7 +328,7 @@ Read more
 <h3 class="anchored" data-anchor-id="building-blocks-of-a-model">Building blocks of a model</h3>
 <p>A probabilistic risk model typically represents a series of events or situations that can be linked together in a logical or chronological order, whereby the final event represents the outcome of interest. For example, consider the hypothetical shipment of one race horse from Argentina to Germany. The task is to quantify the probability of the horse to be infected with equine infectious anemia (EIA, see <a href="https://www.fli.de/en/news/animal-disease-situation/equine-infectious-anemia/">FLI, 2017</a>, accessed 9.5.2025). Note that this example is for illustration only. Each building block of the model requires clarifications and definitions which are tailored to the specific problem at hand. Some of the clarifications can only be provided by the customer (risk manager) and others by domain experts risk assessors. For larger projects, stakeholders should be involved in this process.</p>
 <ul>
-<li><strong>Risk question:</strong> defines the outcome of interest; what is the probability that the introduced horse is infected with EIA virus?</li>
+<li><strong>Risk question:</strong> defines the outcome of interest; here the quantification of the probability that the introduced horse is infected with EIA virus.</li>
 <li><strong>Scope:</strong> defines what is included or excluded from the assessment; here economic and epidemiological consequences are beyond the scope.</li>
 <li><strong>Pathway and scenario:</strong> define all relevant steps and events; here the selection of the horse, legal and sanitary transport requirements, transport, border health checks shoud be considered.</li>
 <li><strong>Model parameters (denoted “nodes” in shiny rrisk):</strong> define all input and output quantities required in the model; here the minimum set of parameters include the prevalence of EIA in Argentina, the probability of infection at boarding and the probability of infection at introduction of the animal after de-boarding formalities. Additional parameters may apply.</li>
@@ -369,7 +361,7 @@ Figure&nbsp;2: Example for a conceptual model (made with yEd).
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>At the end of this section, you will be able to create a model in shiny rrisk.</p>
+<p>At the end of this section, you will be able to build a model from scratch.</p>
 </div>
 </div>
 </div>
@@ -414,7 +406,7 @@ Avoid loss of your data
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -423,7 +415,7 @@ Good practice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
 <li>We recommend using “<span class="math inline">\(&lt;\)</span>agent<span class="math inline">\(&gt;\)</span>in<span class="math inline">\(&lt;\)</span>commodity<span class="math inline">\(&gt;\)</span>” as standard format for naming models.</li>
@@ -433,7 +425,7 @@ Good practice
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -442,7 +434,7 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <section id="first-things-first-1" class="level3">
 <h3 class="anchored" data-anchor-id="first-things-first-1">First things first</h3>
@@ -481,7 +473,6 @@ Read more
 </div>
 <section id="verbal-definition-of-a-node" class="level2">
 <h2 class="anchored" data-anchor-id="verbal-definition-of-a-node">Verbal definition of a node</h2>
-<p><span class="citation" data-cites="MG">[@MG[: consider change to Add Node: Node Definition - Not sure what it means Verbal]{.mark}]</span></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -502,7 +493,6 @@ Figure&nbsp;4: Descriptive part of node definition.
 </figcaption>
 </figure>
 </div>
-<p><span class="citation" data-cites="MG">[@MG[: The figure should have "Add Node" instead of Add new item]{.mark}]</span></p>
 <p>Upon launching <u>Add node</u>, a window pops-up with several free-text fields.</p>
 <table class="caption-top table">
 <colgroup>
@@ -511,8 +501,7 @@ Figure&nbsp;4: Descriptive part of node definition.
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><span style="color:#0d6efd">Name</span><span style="color:Red">*</span></p>
-<p><span class="citation" data-cites="MG">@MG</span> here you can mention editing the name of a node</p></td>
+<td><span style="color:#0d6efd">Name</span><span style="color:Red">*</span></td>
 <td><span class="citation" data-cites="Robert">[@Robert[: consider change of button]{.mark}]</span> Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry.</td>
 </tr>
 <tr class="even">
@@ -547,22 +536,21 @@ Avoid loss of your data
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Remember to save your model after adding nodes and/or making important changes in the model</p>
+<p>Remember to save your model after adding each node.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example for markdown syntax (Alizarin red S in Eel)
+Example for markdown syntax (Alizarin red S in Eel model)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p><span class="citation" data-cites="MG">[@MG[:move this after read more? or as another Tip callout?]{.mark}]</span></p>
 <p>Markdown syntax is available in all free text fields in shiny rrisk to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;5</a>).</p>
 <div id="fig-Markdown" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -579,7 +567,7 @@ Figure&nbsp;5: Selection of common markdown commands for use in free-text fields
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -588,7 +576,7 @@ Good practice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
 <li><p>Be consistent with the style of node names within your project. Short names are preferred for reasons of readability and aesthetics in tables and figures (e.g., vowels can be omitted to shorten a name).</p></li>
@@ -599,7 +587,7 @@ Good practice
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -608,7 +596,7 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
 <li>The rules for naming nodes in shiny rrisk are inherited from and ensure compatibility with the <a href="https://www.r-project.org/">software R</a>.</li>
@@ -640,11 +628,9 @@ Figure&nbsp;6: Mathematical part of node definition.<span class="citation" data-
 </figcaption>
 </figure>
 </div>
-<p>Several options are available for defining the mathematical properties of a node, including user defined, parametric distribution, bootstrapping and EFSA EKE.</p>
-<p><code>@MG [: maybe change EFSA EKE to just expert elicitation]</code></p>
-<p>The first option allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;7</a>).</p>
-<section id="user-defined" class="level3">
-<h3 class="anchored" data-anchor-id="user-defined">User defined</h3>
+<p>Several options are available for defining a node, including user defined, parametric distribution, bootstrapping and EFSA EKE. The first option allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;7</a>).</p>
+<section id="user-defined-expression" class="level3">
+<h3 class="anchored" data-anchor-id="user-defined-expression">User defined expression</h3>
 <div id="fig-NodeUserDefined" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-NodeUserDefined-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -668,7 +654,7 @@ Figure&nbsp;7: Choose user defined to enter a mathematical expression.
 </tbody>
 </table>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -677,7 +663,7 @@ Example for an expression using a parent node (Alizarin Red S in eel model)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>In the <u>Alizarin Red S in eel</u> model the outcome <span class="math inline">\(Y\)</span> (dietary intake of ARS per kg body weight and year through consumption of eel marked with ARS) is defined in terms of <span class="math inline">\(I\)</span> (concentration of ARS in edible tissues at time of catch) and <span class="math inline">\(M\)</span> (mean consumption of European eel per year per body weight). Thus, <span class="math inline">\(I\)</span> and <span class="math inline">\(M\)</span> are both parents nodes of <span class="math inline">\(Z\)</span>. This example also illustrates the common case that the final outcome is defined in terms of parent nodes (<a href="#fig-ARSoutcomeY" class="quarto-xref">Figure&nbsp;8</a>).</p>
 <div id="fig-ARSoutcomeY" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -694,7 +680,7 @@ Figure&nbsp;8: Expression for the outcome Y in the Alizarin Red S in eel model.
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -703,7 +689,7 @@ Example for an expression using implicit nodes
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Consider the simple model</p>
 <p><span class="math display">\[A = B * C.\]</span></p>
@@ -712,7 +698,7 @@ Example for an expression using implicit nodes
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -721,7 +707,7 @@ Good practice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Use the model graph (see later) to identify nodes that were implicitly generated based on a spelling mistake in the node definition.</li>
@@ -731,7 +717,7 @@ Good practice
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -740,7 +726,7 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>The tool’s ability to create implicit nodes allows users to define a model by starting with the result function and working backwards to define all parent nodes until the complete model is created. This offers maximum flexibility when building a model.</p>
 </div>
@@ -749,7 +735,6 @@ Read more
 </section>
 <section id="parametric-distributions" class="level3">
 <h3 class="anchored" data-anchor-id="parametric-distributions">Parametric distributions</h3>
-<p><span class="citation" data-cites="MG">@MG [re-consider this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general)]</span></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -757,7 +742,6 @@ Read more
 </div>
 <div class="callout-body-container">
 <p>Upon completing this section, you will master the use of probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model.</p>
-<p><span class="citation" data-cites="MG">@MG [**variability and uncertainty can be reflected in general under the mathematical definition of a node, since it won't only apply to the distributions, but also to formulas using nodes represented by a distribution**]</span></p>
 </div>
 </div>
 </div>
@@ -815,7 +799,7 @@ Figure&nbsp;9: Choose a distribution family.
 <h5 class="anchored">Lower and/or upper limit for truncated distribution</h5>
 <p>In shiny rrisk, many distributions can be defined in a truncated version by defining a <u>lower</u> and/or <u>upper</u> limit.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -824,7 +808,7 @@ Example for parametric distribution (HEV in liver sausages)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>The objective of the example model <u>HEV in liver sausages</u> is to estimate the exposure with Hepatitis E virus (HEV) via consumption of sausage products made from pork (see shiny rrisk model report for further details). The model contains the variable <u>Liver_prop</u> to describe the amount of liver as ingredient in liver sausages in percent. This continuous quantity reflects variability (sausages contain variable amounts of liver depending on recipes and other factors). The modellers have chosen a modified PERT distribution with minimum 10%, mode 30% and maximum 50% for parameterisation. Note that shape parameter of 4 in the modified PERT is equivalent to the standard 3-parameter PERT model.</p>
 <div id="fig-modPert" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -841,7 +825,7 @@ Figure&nbsp;10: Modified Pert distribution model.
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -850,7 +834,7 @@ Example for a distribution parameter with functional dependency (L.monocytogenes
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>The objective of the <u>L.monocytogenes in cheese</u> model is to estimate the risk of infection with Listeria (L.) monocytogenes per meal. The model uses the variable dose of ingested L. monocytogenes per serving, <span class="math inline">\(D_{dist}\)</span> modelled as Poisson distribution (<a href="#fig-functionalPoissonLMono" class="quarto-xref">Figure&nbsp;11</a>). The expression entered as distribution parameter <span class="math inline">\(\lambda\)</span> uses as parent nodes the serving size <span class="math inline">\(S\)</span> and the concentration of L. monocytogenes in the cheese at home <span class="math inline">\(LMC_{home}\)</span>, both of which express variability as well. This results in a dispersion of dose <span class="math inline">\(D_{dist}\)</span> much wider than what would be expected with a fixed value for the distribution parameter <span class="math inline">\(\lambda\)</span>.</p>
 <div id="fig-functionalPoissonLMono" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -867,7 +851,7 @@ Figure&nbsp;11: Poisson distribution model with functional dependency.
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -876,12 +860,10 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <section id="quick-guide-for-choosing-appropriate-distributions" class="level4">
 <h4 class="anchored" data-anchor-id="quick-guide-for-choosing-appropriate-distributions">Quick guide for choosing appropriate distributions</h4>
-<p>Please refers to this compendium of distributions to select the apprpriated distributions and distribution parameters: <a href="https://www.vosesoftware.com/knowledgebase/whitepapers/pdf/ebookdistributions.pdf">Compendium of Distribution</a></p>
-<p><span class="citation" data-cites="MG">@MG [ we could download the pdf so we will be sure that always it is there, in case website changes]</span></p>
 <p>Some text required here.</p>
 </section>
 <section id="defining-variability-and-uncertainty" class="level4">
@@ -915,136 +897,105 @@ Figure&nbsp;12: Parameterisations of distributions to reflect variability and un
 </section>
 </section>
 </section>
-</section>
-<section id="table-node" class="level2">
-<h2 class="anchored" data-anchor-id="table-node">Table Node</h2>
-<p>After nodes are created, the following table will be created in shiny rrisk containing a the information of each node in the model.</p>
-<div class="quarto-figure quarto-figure-center" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);">
-<figure class="figure">
-<p><img src="images/nodetable-shiny.png" class="img-fluid figure-img"></p>
-<figcaption>Node table created by shiny rrisk after the creation of nodes</figcaption>
+<section id="bootstrapping" class="level3">
+<h3 class="anchored" data-anchor-id="bootstrapping">Bootstrapping</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>In this section you can explore how to use bootstrapping for generating distributions that represent statistical parameter uncertainty without specifying a distribution family.</p>
+</div>
+</div>
+</div>
+<div id="fig-BootstrapNode1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-BootstrapNode1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="BootstrapNode1.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BootstrapNode1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Bootstrap nodes always represent parameter uncertainty.
+</figcaption>
 </figure>
 </div>
-<p>The table contains the node ID, a sequence number according to the order a node was created during the the model creation. The rest of the columns present the information of each node that was entered during the node creation.</p>
-<p>The table allows the user to sort each column separately, delete a node and search for particular terms. This later is very helpful when working with large models.</p>
-</section>
-<section id="graph" class="level2">
-<h2 class="anchored" data-anchor-id="graph">Graph</h2>
-<p>As soon as a node is created, a shape (square, circle or star) with a given color will appear in the screen. The star is the node representing the outcome(s), or the node that has no dependent nodes (or “child” nodes).</p>
-<p><mark><span class="citation" data-cites="MG/RO">@MG/RO</span> - define Circle represents and squares - Is there any standards?</mark></p>
-<p>There are two check boxes the user can choose to change the layout of the graph created by shiny rrisk.</p>
-<p>The user can leave unchecked the option “stretch model graph” so all the shapes can be moved freely by clicking with the mouse on a node. Otherwise by selecting “stretch model graph” all the shapes will be automatically organized with the”outcome” node located at the far right. If this option is selected, the user can only move the shapes up and down. This feature will help organizing very quickly the model’s graph and improve the visualization, especially for models with large number of nodes.</p>
-<div class="quarto-figure quarto-figure-center" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);">
-<figure class="figure">
-<p><img src="images/uncheckstrechgraph.png" class="img-fluid figure-img" width="500"></p>
-<figcaption>E. coli in hamburger meat model. Graph with stretch model graph unchecked</figcaption>
-</figure>
-</div>
-<p>The next figure depicts the same model but with stretch model graph checked</p>
-<p><img src="images/checkstrechgraph.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
-<p>The other check box is “collapse groups”. If checked, all the nodes identified with the same “group name” will be hidden under the node identified with that group name. This is very useful when presenting a model with many nodes.</p>
-<p><img src="images/uncheckstrechgraph_collapse.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
-<p>The user can click the mouse in any place on the screen that occupies the graph in order to move the whole graph, also the user can zoom in/zoom out using the appropriated combination of keys according to operating system (eg. Windows or MAC) or using the mouse. The user can double click on a node to open the node definition window (explained above).</p>
-<p>In order to move down to the definition table, the user should move the mouse out of the graph window or use the siding bar on the screen.</p>
-</section>
-<section id="check-model" class="level2">
-<h2 class="anchored" data-anchor-id="check-model">Check Model</h2>
-<p>Once all the nodes have been properly defined, the user should select Check Model for model verification. The model verification features assures that all the nodes are linked and properly defined. An error will appear other wise. The user will need to check that there is no isolated nodes (which could be due to typo in the node’s names and/or an invalid equation)</p>
-</section>
-</section>
-<section id="simulation" class="level1">
-<h1>Simulation</h1>
+<p>Non-parametric bootstrapping is available to generate uncertainty distributions for one or more statistics of a given data set (<a href="#fig-BootstrapNode1" class="quarto-xref">Figure&nbsp;13</a>). Details are illustrated using the example below.</p>
+<section id="application-of-bootstrapping" class="level4">
+<h4 class="anchored" data-anchor-id="application-of-bootstrapping">Application of bootstrapping</h4>
+<p>The application of bootstrapping in shiny rrrisk involves three steps.</p>
+<ol type="1">
+<li>Defining a bootstrap node, which involves documenting the data source and defining node names and corresponding statistics.</li>
+<li>Generating a bootstrap distribution node for each statistic requested in step 1 (automatically by shiny rrisk).</li>
+<li>Using the distribution node(s) generated in step 2 as parent nodes in the definition of further nodes.</li>
+</ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Example for non-parametric bootstrap (Alizarin red S in Eel model)
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p><strong>This section will introduce you to:</strong></p>
-<ul>
-<li>Obtain model results after creating and checking a model</li>
-<li>Familiarize with the shiny rrisk model result interface</li>
-<li>Interpret model’ results</li>
-<li>Interpret the sensitivity analysis</li>
-</ul>
+<p>An exposure model for <u>Alizarin Red S (ARS) in eel</u> has been developed to estimate the intake of ARS with consumed eel (see shiny rrisk model report for further details). A small (n=14) data set is available for individual consumption of eel per kg body weight. The task is to characterise the uncertainty of the population mean and standard deviation for individual consumption with accounting for the small data set and the correlation between the uncertainty distributions of mean and standard deviation (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;14</a>).</p>
+<div id="fig-BootstrapNode2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-BootstrapNode2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="BootstrapNode2.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BootstrapNode2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
+</figcaption>
+</figure>
 </div>
-<p><img src="images/simulation.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"></p>
-<p><span class="citation" data-cites="Robert">@Robert</span> - change set run parameter to Set simulation</p>
-<p>Before executing (run) the simulation, user can set up several parameters as presented below. After setting these parameters, click <strong>Change Parameter.</strong></p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 46%">
-<col style="width: 53%">
+<col style="width: 15%">
+<col style="width: 85%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><span style="color:#0d6efd">SAMPLING TECHNIQUE</span></td>
-<td>Check here if you wish to create a new model and assign a Model name.</td>
+<td><span style="color:#0d6efd">Open data</span></td>
+<td><span class="citation" data-cites="Robert">@Robert [:]</span><mark>please capitalise “open” and check the file requirements</mark> A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column.</td>
 </tr>
 <tr class="even">
-<td><span style="color:#0d6efd">NUMBER OF MONTE CARLO SIMULATIONS: VARIABILITY and UNCERTAINTY</span></td>
-<td>Enter here the number of Monte Carlo random samples required for the simulation</td>
+<td><span style="color:#0d6efd">Provided data</span></td>
+<td>Alternatively, comma-separated source data can be entered manually. Decimal point “.” should be used if required.</td>
 </tr>
 <tr class="odd">
-<td><span style="color:#0d6efd">QUANTILES: VARIABILITY and UNCERTAINTY</span></td>
-<td>Enter here the percentiles for summarizing model results in the variability (1D) and uncertainty (2D)</td>
+<td><span style="color:#0d6efd">Node name</span></td>
+<td><span class="citation" data-cites="Robert">@Robert [:]</span><mark>please consider change to Node name</mark>Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution.</td>
+</tr>
+<tr class="even">
+<td><span style="color:#0d6efd">Summary statistic</span></td>
+<td><span class="citation" data-cites="Robert">@Robert [:]</span><mark>please capitalise “summary”</mark>For each node a proper name of the requested statistic is to be provided using R terminology.</td>
 </tr>
 </tbody>
 </table>
-<p>After setting all the parameters, select <strong>Run Simulation.</strong> After the simulation is completed, shiny rrisk will present the another screen, with the <strong>general results</strong> (by default) and <strong>sensitivity plot.</strong></p>
-<p><span class="citation" data-cites="Robert">@Robert</span> - change to Sensitivity Analysis [change names in boxes to upper case to be consistent with other boxes]</p>
-<div class="callout callout-style-simple callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>The three steps in this example are the following.</p>
+<ol type="1">
+<li>Defining the bootstrapping node <u>X</u>, providing a data source and requesting the two nodes <u>Xmean</u> and <u>Xsd</u> for the mean and standard deviation, respectively (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;14</a>).</li>
+<li>Generating two nodes containing the bootstrap distributions <u>Xmean</u> and <u>Xsd</u> (automatically by shiny rrisk).</li>
+<li>Using the two nodes for defining a new node <u>C</u> for the population variability in consumption of eel per body weight consumed on single meal (<a href="#fig-ARSnodeC" class="quarto-xref">Figure&nbsp;15</a>).</li>
+</ol>
+<div id="fig-ARSnodeC" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ARSnodeC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ARSnodeC.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
-<div class="callout-title-container flex-fill">
-Memory
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>select the appropriate number of samples. shiny rrisk might not run if the memory is above @@@</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Good practice
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ul>
-<li>Setting the number of samples –&gt; conv. plot</li>
-</ul>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ARSnodeC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details).
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-<section id="general-results" class="level2">
-<h2 class="anchored" data-anchor-id="general-results">General Results</h2>
-<p>add Interpretation of results, with brief mention of main elements for interpretation to have this in the main text</p>
-<section id="numerical-result-table" class="level3">
-<h3 class="anchored" data-anchor-id="numerical-result-table">Numerical result table</h3>
-</section>
-<section id="histogram" class="level3">
-<h3 class="anchored" data-anchor-id="histogram">Histogram</h3>
-</section>
-<section id="ecdf-plot" class="level3">
-<h3 class="anchored" data-anchor-id="ecdf-plot">ECDF plot</h3>
-</section>
-<section id="convergence-plot" class="level3">
-<h3 class="anchored" data-anchor-id="convergence-plot">Convergence plot</h3>
+</div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1053,19 +1004,168 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>-MCMC sampling, 1D and 2D , Tables interpretation -MCMC Plots – Cumulative. Convergence plots,</p>
+<section id="bootstrapping---how-does-it-work" class="level4">
+<h4 class="anchored" data-anchor-id="bootstrapping---how-does-it-work">Bootstrapping - how does it work?</h4>
+<p><span class="citation" data-cites="Robert">@Robert [ to check whether this description matches with the implementation]</span> Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the <a href="https://www.r-project.org/">software R</a> can be requested such as <code>sum</code>, <code>mean</code>, <code>median</code>, <code>quantile(x, probs=.95)</code> (95th percentile), <code>var</code> and <code>sd</code> to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000<mark>?</mark> in shiny rrisk. The bootstrap algorithm is shown in <a href="#fig-BootstrapConcep" class="quarto-xref">Figure&nbsp;16</a>.</p>
+<div id="fig-BootstrapConcep" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-BootstrapConcep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="BootstrapConcept.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BootstrapConcep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16: Schematic representation of the bootstrap method (Greiner, 2022, unpublishes course notes).
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-can-be-limitations-of-bootstrapping" class="level4">
+<h4 class="anchored" data-anchor-id="what-can-be-limitations-of-bootstrapping">What can be limitations of bootstrapping?</h4>
+<p>An advantage of non-parametric bootstrapping is that you don’t need to make any assumption about the mathematical distribution of the original data or the uncertainty distribution of the required statistic. The latter emerges from bootstrapping and resembles the mathematically “correct” distribution. On the other hand, bs is not able to generate information about the population beyond what you have in form of the original data. You should not expect to obtain very useful information from very small, say <span class="math inline">\(n&lt;5\)</span> data sets. This is mainly due to the limited empirical support, even under the so-called assumption of independent, identically distributed observations in the sample.</p>
+<p>A further limitation of non-parametric bootstrap is that distributions take a discrete shape for very small size of the original data sample. Sampling with replacement of <span class="math inline">\(n\)</span> observations can result in exactly <span class="math inline">\(2n-1\choose n-1\)</span> possible permutations of sampling <span class="math inline">\(n\)</span> out of <span class="math inline">\(n\)</span>. The table below shows that more than 5 observations are needed to obtain only 126 permutations can occur. If the original data set contains outlier values, the discreteness can present a further limitation. <mark>I’ll add the example above with one outlier to show this effect…</mark></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 59%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 6%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Size of original data (<span class="math inline">\(n\)</span>)</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Number of possible permutations <span class="math inline">\(2n-1\choose n-1\)</span></td>
+<td>10</td>
+<td>35</td>
+<td>126</td>
+<td>462</td>
+<td>1716</td>
+<td>6435</td>
+<td>24310</td>
+<td>92378</td>
+</tr>
+</tbody>
+</table>
+</section>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="sensitivity-plot" class="level2">
-<h2 class="anchored" data-anchor-id="sensitivity-plot">Sensitivity Plot</h2>
-<p>add interpretation of plots</p>
+<section id="expert-knowledge-elicitation-eke" class="level3">
+<h3 class="anchored" data-anchor-id="expert-knowledge-elicitation-eke">Expert knowledge elicitation (EKE)</h3>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This section demonstrates how you can use typical results from an expert elicitation to parameterise a node in shiny rrisk <mark>Needs major revision when the distribution app becomes available; Olaf Mosbach-Schulz should review the section</mark>.</p>
+</div>
+</div>
+</div>
+<div id="fig-EKE0" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-EKE0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="EKE0.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17: EFSA EKE node for defining a Pert distribution node.
+</figcaption>
+</figure>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span style="color:#0d6efd">Choose node definition</span></td>
+<td><mark>to be updated</mark> Select EFSA EKE.</td>
+</tr>
+<tr class="even">
+<td><span style="color:#0d6efd">Distribution represents</span></td>
+<td>Select either variability or uncertainty.</td>
+</tr>
+<tr class="odd">
+<td><span style="color:#0d6efd">Quantiles</span></td>
+<td>Enter any number of quantiles, comma-separated.</td>
+</tr>
+<tr class="even">
+<td><span style="color:#0d6efd">Cumulative probability</span></td>
+<td>Enter one cumulative probability for each of the quantiles, beginning with the value zero, comma-separated.</td>
+</tr>
+</tbody>
+</table>
+<pre class="(r)"><code>d -&gt; choose(3,3)
+print(d)</code></pre>
+<section id="defining-an-efsa-eke-node-in-shiny-rrisk" class="level4">
+<h4 class="anchored" data-anchor-id="defining-an-efsa-eke-node-in-shiny-rrisk">Defining an EFSA EKE node in shiny rrisk</h4>
+<p>The European Food Safety Authority (EFSA) have described a process for eliciting expert knowledge (REF). The use of EFSA EKE node involves three steps.</p>
+<ol type="1">
+<li>Conduct of the EFSA EKE protocol, which includes the definition of a target quantity, elicitation protocol and results in the descdocumenting the data source and defining node names and corresponding statistics.</li>
+<li>A distribution node parameterised using input from an EFSA EKE may refer to variability or uncertainty, depending on the question formulation of the EKE process. The final result of the EKE consists of five percentiles that to be entered manually for fitting a Pert distribution (<a href="#fig-EKE0" class="quarto-xref">Figure&nbsp;17</a>). Details are illustrated using the example below.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example for EFSA EKE (L. lignosellus in asparagus)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>(<a href="#fig-EKE1" class="quarto-xref">Figure&nbsp;18</a>).</p>
+<div id="fig-EKE1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-EKE1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="EKE1.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
+</figcaption>
+</figure>
+</div>
+<p>The three steps in this example are the following.</p>
+<ol type="1">
+<li>Defining the bootstrapping node <u>X</u>, providing a data source and requesting the two nodes <u>Xmean</u> and <u>Xsd</u> for the mean and standard deviation, respectively (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;14</a>).</li>
+<li>Generating two nodes containing the bootstrap distributions <u>Xmean</u> and <u>Xsd</u> (automatically by shiny rrisk).</li>
+<li>Using the two nodes for defining a new node <u>C</u> for the population variability in consumption of eel per body weight consumed on single meal (<a href="#fig-ARSnodeC" class="quarto-xref">Figure&nbsp;15</a>).</li>
+</ol>
+<div id="fig-EKE2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-EKE2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="EKE2.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19: EKE2.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1074,18 +1174,18 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>-Methods – Plots Tornado, 1D vs 2D [eg including prob. Interval]</p>
-</div>
-</div>
-</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse show">
+<section id="efsa-eke" class="level4 callout-body-container callout-body">
+<h4 class="anchored" data-anchor-id="efsa-eke">EFSA EKE</h4>
+<p><span class="citation" data-cites="Robert">@Robert [ or Thomas to contribute]</span> Brief description of the EFSA EKE or more description how shiny rrisk deals with EKE more generally.</p>
 </section>
-</section>
-<section id="glossary" class="level1">
-<h1>Glossary</h1>
+</div>
+</div>
 
 
+</section>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
