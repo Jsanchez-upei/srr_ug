@@ -369,7 +369,7 @@ The table allows the user to sort each column separately, delete a node and sear
 
 As soon as a node is created, a shape (square, circle or star) with a given color will appear in the screen. The star is the node representing the outcome(s), or the node that has no dependent nodes (or "child" nodes).
 
-@MG/RO - define Circle represents and squares - Is there any standards?
+[@MG/RO - define Circle represents and squares - Is there any standards?]{.mark}
 
 There are two check boxes the user can choose to change the layout of the graph created by shiny rrisk.
 
@@ -463,4 +463,3 @@ add interpretation of plots
 :::
 
 # Glossary
-
