@@ -1,0 +1,14 @@
+- term: rrisk 
+  definition: A model file with extension rrisk created by shiny rrisk.
+
+- term: node
+  definition: A shiny rrisk object to represent an event
+
+- term: Dose-response
+  definition: Relationship between dose and effect.
+
+- term: PAWN
+  definition: A global sensitivity analysis method using CDFs.
+
+- term: Beta-Poisson
+  definition: A nonlinear dose-response model used in QMRA.

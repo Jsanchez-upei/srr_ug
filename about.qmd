@@ -1,0 +1,21 @@
+---
+title: "About shiny rrisk"
+---
+
+### About shiny rrisk
+
+shiny rrisk is a free, web-based tool for probabilistic risk modelling, developed at the German Federal Institute for Risk Assessment (BfR). The name of the tool is an acknowledgement of the use of [Shiny](https://shiny.rstudio.com) for the development of an application based on the [software R](https://www.r-project.org/) for risk modelling. Key features of the tool include its flexibility to create complex models from scratch, two-dimensional Monte Carlo simulation to account for uncertainties and fully integrated model documentation to automatically generate a model report. (Ref basic paper). The tool can be accessed at [http://shiny.bfr.bund.de/apps/shiny-rrisk](http://shiny.bfr.bund.de/apps/shiny-rrisk).
+
+
+### User Guide 
+The user guide describes essential steps for using shiny rrisk for probabilistic risk modelling following a typical workflow. It also provides some background information and illustrates important design features using example models. 
+
+### Example models 
+This tutorial uses models that are provided with the application for illustrative purposes. These demo models are provided without warranty by the developers of shiny rrisk or the BfR. A description of these models is available via the automatic reporting function. 
+
+- HEV in liver sausages
+- Y. enterocolitica in minced meat
+- Alizarin Red S in eel (2D MC)
+- L monocytogenes in cheese
+- E. coli in hamburger patties (2D MC)
+- E. lignosellus in asparagus
