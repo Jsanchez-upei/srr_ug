@@ -416,11 +416,11 @@ An advantage of non-parametric bootstrapping is that you don't need to make any 
 
 A further limitation of non-parametric bootstrap is that distributions take a discrete shape for very small size of the original data sample. Sampling with replacement of $n$ observations can result in exactly $2n-1\choose n-1$ possible permutations of sampling $n$ out of $n$. The table below shows that more than 5 observations are needed to obtain only 126 permutations can occur. If the original data set contains outlier values, the discreteness can present a further limitation. [I'll add the example above with one outlier to show this effect...]{.mark}
 
-+---------------------------------------------------+------+------+------+------+------+------+-------+-------+
-| Size of original data ($n$)                       | 3    | 4    | 5    | 6    | 7    | 8    | 9     | 10    |
-+---------------------------------------------------+------+------+------+------+------+------+-------+-------+
-| Number of possible permutations $2n-1\choose n-1$ | 10   | 35   | 126  | 462  | 1716 | 6435 | 24310 | 92378 |
-+---------------------------------------------------+------+------+------+------+------+------+-------+-------+
++---------------------------------------------------+----+----+-----+-----+------+------+-------+-------+
+| Size of original data ($n$)                       | 3  | 4  | 5   | 6   | 7    | 8    | 9     | 10    |
++---------------------------------------------------+----+----+-----+-----+------+------+-------+-------+
+| Number of possible permutations $2n-1\choose n-1$ | 10 | 35 | 126 | 462 | 1716 | 6435 | 24310 | 92378 |
++---------------------------------------------------+----+----+-----+-----+------+------+-------+-------+
 :::
 
 ### Expert knowledge elicitation (EKE)
@@ -481,7 +481,7 @@ The three steps in this example are the following.
 
 ## Node Table
 
-After nodes are created, the following table will be created in shiny rrisk containing a the information of each node in the model.
+After nodes are created, the following table will be created in shiny rrisk the information of each node in the model.
 
 ![Node table created by shiny rrisk after the creation of nodes](images/nodetable-shiny.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"}
 
@@ -524,22 +524,28 @@ Once all the nodes have been properly defined, the user should select Check Mode
 
 -   Obtain model results after creating and checking a model
 -   Familiarize with the shiny rrisk model result interface
--   Interpret model' results
--   Interpret the sensitivity analysis
+-   Interpret model results
+-   Interpret sensitivity analysis
 :::
 
 ![](images/simulation.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"}
 
-@Robert - change set run parameter to Set simulation
+@Robert - change set run parameter to Set simulation parameters
 
-Before executing (run) the simulation, user can set up several parameters as presented below. After setting these parameters, click **Change Parameter.**
+Before executing (run) the simulation, user can set up several parameters by clicking **Set run parameter**. After setting these parameters, click **Change Parameter.**
+
+![](images/setrunparameter.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="334"}
 
 +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| [SAMPLING TECHNIQUE]{style="color:#0d6efd"}                                             | Check here if you wish to create a new model and assign a Model name.                                 |
+| [SAMPLING TECHNIQUE]{style="color:#0d6efd"}                                             | Select the random sampling method                                                                     |
 +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | [NUMBER OF MONTE CARLO SIMULATIONS: VARIABILITY and UNCERTAINTY]{style="color:#0d6efd"} | Enter here the number of Monte Carlo random samples required for the simulation                       |
 +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | [QUANTILES: VARIABILITY and UNCERTAINTY]{style="color:#0d6efd"}                         | Enter here the percentiles for summarizing model results in the variability (1D) and uncertainty (2D) |
++-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| [SEED VALUE]{style="color:#0d6efd"}                                                     | Enter the integer number, this will allow to reproduce the same results                               |
++-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| [TYPE]{style="color:#0d6efd"}                                                           | ?@Robert                                                                                              |
 +-----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 After setting all the parameters, select **Run Simulation.** After the simulation is completed, shiny rrisk will present the another screen, with the **general results** (by default) and **sensitivity plot.**
