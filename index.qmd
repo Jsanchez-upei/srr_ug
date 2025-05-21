@@ -355,7 +355,131 @@ Last but not least consider a node in your model that directly represents a para
 ![Parameterisations of distributions to reflect variability and uncertainty. Typical situations are shaded in blue. See text for more details.](Parameterisations.png){#fig-Parameterisations width="100%"}
 :::
 
-## Table Node
+### Bootstrapping
+
+::: {.callout-note appearance="minimal"}
+In this section you can explore how to use bootstrapping for generating distributions that represent statistical parameter uncertainty without specifying a distribution family.
+:::
+
+![Bootstrap nodes always represent parameter uncertainty.](BootstrapNode1.png){#fig-BootstrapNode1 width="100%"}
+
+Non-parametric bootstrapping is available to generate uncertainty distributions for one or more statistics of a given data set (@fig-BootstrapNode1). Details are illustrated using the example below.
+
+#### Application of bootstrapping
+
+The application of bootstrapping in shiny rrrisk involves three steps.
+
+1.  Defining a bootstrap node, which involves documenting the data source and defining node names and corresponding statistics.
+2.  Generating a bootstrap distribution node for each statistic requested in step 1 (automatically by shiny rrisk).
+3.  Using the distribution node(s) generated in step 2 as parent nodes in the definition of further nodes.
+
+::: {.callout-note collapse="true"}
+### Example for non-parametric bootstrap (Alizarin red S in Eel model)
+
+An exposure model for [Alizarin Red S (ARS) in eel]{.underline} has been developed to estimate the intake of ARS with consumed eel (see shiny rrisk model report for further details). A small (n=14) data set is available for individual consumption of eel per kg body weight. The task is to characterise the uncertainty of the population mean and standard deviation for individual consumption with accounting for the small data set and the correlation between the uncertainty distributions of mean and standard deviation (@fig-BootstrapNode2).
+
+![Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).](BootstrapNode2.png){#fig-BootstrapNode2 width="100%"}
+
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Open data]{style="color:#0d6efd"}         | @Robert [:]\[please capitalise "open" and check the file requirements\] A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column. |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Provided data]{style="color:#0d6efd"}     | Alternatively, comma-separated source data can be entered manually. Decimal point “.” should be used if required.                                                                                                                                          |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Node name]{style="color:#0d6efd"}         | @Robert [:]\[please consider change to Node name\]Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution.                                                                                      |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [Summary statistic]{style="color:#0d6efd"} | @Robert [:]\[please capitalise "summary"\]For each node a proper name of the requested statistic is to be provided using R terminology.                                                                                                                    |
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+: {tbl-colwidths="\[15,85\]"}
+
+The three steps in this example are the following.
+
+1.  Defining the bootstrapping node [X]{.underline}, providing a data source and requesting the two nodes [Xmean]{.underline} and [Xsd]{.underline} for the mean and standard deviation, respectively (@fig-BootstrapNode2).
+2.  Generating two nodes containing the bootstrap distributions [Xmean]{.underline} and [Xsd]{.underline} (automatically by shiny rrisk).
+3.  Using the two nodes for defining a new node [C]{.underline} for the population variability in consumption of eel per body weight consumed on single meal (@fig-ARSnodeC).
+
+![Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details).](ARSnodeC.png){#fig-ARSnodeC width="100%"}
+:::
+
+::: {.callout-caution collapse="true"}
+## Read more
+
+#### Bootstrapping - how does it work?
+
+@Robert [ to check whether this description matches with the implementation] Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the [software R](https://www.r-project.org/) can be requested such as `sum`, `mean`, `median`, `quantile(x, probs=.95)` (95th percentile), `var` and `sd` to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000[?]{.mark} in shiny rrisk. The bootstrap algorithm is shown in @fig-BootstrapConcep.
+
+![Schematic representation of the bootstrap method (Greiner, 2022, unpublishes course notes).](BootstrapConcept.png){#fig-BootstrapConcep width="80%"}
+
+#### What can be limitations of bootstrapping?
+
+An advantage of non-parametric bootstrapping is that you don't need to make any assumption about the mathematical distribution of the original data or the uncertainty distribution of the required statistic. The latter emerges from bootstrapping and resembles the mathematically "correct" distribution. On the other hand, bs is not able to generate information about the population beyond what you have in form of the original data. You should not expect to obtain very useful information from very small, say $n<5$ data sets. This is mainly due to the limited empirical support, even under the so-called assumption of independent, identically distributed observations in the sample.
+
+A further limitation of non-parametric bootstrap is that distributions take a discrete shape for very small size of the original data sample. Sampling with replacement of $n$ observations can result in exactly $2n-1\choose n-1$ possible permutations of sampling $n$ out of $n$. The table below shows that more than 5 observations are needed to obtain only 126 permutations can occur. If the original data set contains outlier values, the discreteness can present a further limitation. [I'll add the example above with one outlier to show this effect...]{.mark}
+
++---------------------------------------------------+------+------+------+------+------+------+-------+-------+
+| Size of original data ($n$)                       | 3    | 4    | 5    | 6    | 7    | 8    | 9     | 10    |
++---------------------------------------------------+------+------+------+------+------+------+-------+-------+
+| Number of possible permutations $2n-1\choose n-1$ | 10   | 35   | 126  | 462  | 1716 | 6435 | 24310 | 92378 |
++---------------------------------------------------+------+------+------+------+------+------+-------+-------+
+:::
+
+### Expert knowledge elicitation (EKE)
+
+::: {.callout-note appearance="minimal"}
+This section demonstrates how you can use typical results from an expert elicitation to parameterise a node in shiny rrisk [Needs major revision when the distribution app becomes available; Olaf Mosbach-Schulz should review the section]{.mark}.
+:::
+
+![EFSA EKE node for defining a Pert distribution node.](EKE0.png){#fig-EKE0 width="100%"}
+
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| [Choose node definition]{style="color:#0d6efd"}  | [to be updated]{.mark} Select EFSA EKE.                                                                     |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| [Distribution represents]{style="color:#0d6efd"} | Select either variability or uncertainty.                                                                   |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| [Quantiles]{style="color:#0d6efd"}               | Enter any number of quantiles, comma-separated.                                                             |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| [Cumulative probability]{style="color:#0d6efd"}  | Enter one cumulative probability for each of the quantiles, beginning with the value zero, comma-separated. |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+
+: {tbl-colwidths="\[20,80\]"}
+
+``` (r)
+d -> choose(3,3)
+print(d)
+```
+
+#### Defining an EFSA EKE node in shiny rrisk
+
+The European Food Safety Authority (EFSA) have described a process for eliciting expert knowledge (REF). The use of EFSA EKE node involves three steps.
+
+1.  Conduct of the EFSA EKE protocol, which includes the definition of a target quantity, elicitation protocol and results in the descdocumenting the data source and defining node names and corresponding statistics.
+2.  A distribution node parameterised using input from an EFSA EKE may refer to variability or uncertainty, depending on the question formulation of the EKE process. The final result of the EKE consists of five percentiles that to be entered manually for fitting a Pert distribution (@fig-EKE0). Details are illustrated using the example below.
+
+::: {.callout-note collapse="true"}
+### Example for EFSA EKE (L. lignosellus in asparagus)
+
+(@fig-EKE1).
+
+![Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).](EKE1.png){#fig-EKE1 width="100%"}
+
+The three steps in this example are the following.
+
+1.  Defining the bootstrapping node [X]{.underline}, providing a data source and requesting the two nodes [Xmean]{.underline} and [Xsd]{.underline} for the mean and standard deviation, respectively (@fig-BootstrapNode2).
+2.  Generating two nodes containing the bootstrap distributions [Xmean]{.underline} and [Xsd]{.underline} (automatically by shiny rrisk).
+3.  Using the two nodes for defining a new node [C]{.underline} for the population variability in consumption of eel per body weight consumed on single meal (@fig-ARSnodeC).
+
+![EKE2.](EKE2.png){#fig-EKE2 width="100%"}
+:::
+
+::: {.callout-caution collapse="true"}
+## Read more
+
+#### EFSA EKE
+
+@Robert [ or Thomas to contribute] Brief description of the EFSA EKE or more description how shiny rrisk deals with EKE more generally.
+:::
+
+## Node Table
 
 After nodes are created, the following table will be created in shiny rrisk containing a the information of each node in the model.
 
@@ -369,7 +493,7 @@ The table allows the user to sort each column separately, delete a node and sear
 
 As soon as a node is created, a shape (square, circle or star) with a given color will appear in the screen. The star is the node representing the outcome(s), or the node that has no dependent nodes (or "child" nodes).
 
-[@MG/RO - define Circle represents and squares - Is there any standards?]{.mark}
+@MG/RO [ - define Circle represents and squares - Is there any standards?]
 
 There are two check boxes the user can choose to change the layout of the graph created by shiny rrisk.
 
