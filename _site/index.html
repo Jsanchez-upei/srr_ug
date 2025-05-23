@@ -168,6 +168,12 @@ window.Quarto = {
  <span class="menu-text">Distribution fitting</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sampling_efficiency_report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sampling Efficiency Report: Monte Carlo vs Latin Hypercube</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -198,9 +204,7 @@ window.Quarto = {
   <li><a href="#general-results" id="toc-general-results" class="nav-link" data-scroll-target="#general-results">General Results</a>
   <ul class="collapse">
   <li><a href="#numerical-result-table" id="toc-numerical-result-table" class="nav-link" data-scroll-target="#numerical-result-table">Numerical result table</a></li>
-  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram">Histogram</a></li>
-  <li><a href="#ecdf-plot" id="toc-ecdf-plot" class="nav-link" data-scroll-target="#ecdf-plot">ECDF plot</a></li>
-  <li><a href="#convergence-plot" id="toc-convergence-plot" class="nav-link" data-scroll-target="#convergence-plot">Convergence plot</a></li>
+  <li><a href="#summary-plots" id="toc-summary-plots" class="nav-link" data-scroll-target="#summary-plots">Summary Plots</a></li>
   </ul></li>
   <li><a href="#sensitivity-plot" id="toc-sensitivity-plot" class="nav-link" data-scroll-target="#sensitivity-plot">Sensitivity Plot</a></li>
   </ul></li>
@@ -1052,15 +1056,15 @@ Figure&nbsp;16: Schematic representation of the bootstrap method (Greiner, 2022,
 <p>A further limitation of non-parametric bootstrap is that distributions take a discrete shape for very small size of the original data sample. Sampling with replacement of <span class="math inline">\(n\)</span> observations can result in exactly <span class="math inline">\(2n-1\choose n-1\)</span> possible permutations of sampling <span class="math inline">\(n\)</span> out of <span class="math inline">\(n\)</span>. The table below shows that more than 5 observations are needed to obtain only 126 permutations can occur. If the original data set contains outlier values, the discreteness can present a further limitation. <mark>I’ll add the example above with one outlier to show this effect…</mark></p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 44%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
+<col style="width: 46%">
+<col style="width: 4%">
+<col style="width: 4%">
 <col style="width: 5%">
 <col style="width: 5%">
 <col style="width: 6%">
 <col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1212,7 +1216,7 @@ Read more
 </section>
 <section id="node-table" class="level2">
 <h2 class="anchored" data-anchor-id="node-table">Node Table</h2>
-<p>After nodes are created, the following table will be created in shiny rrisk containing a the information of each node in the model.</p>
+<p>After nodes are created, the following table will be created in shiny rrisk the information of each node in the model.</p>
 <div class="quarto-figure quarto-figure-center" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);">
 <figure class="figure">
 <p><img src="images/nodetable-shiny.png" class="img-fluid figure-img"></p>
@@ -1262,14 +1266,15 @@ Note
 <ul>
 <li>Obtain model results after creating and checking a model</li>
 <li>Familiarize with the shiny rrisk model result interface</li>
-<li>Interpret model’ results</li>
-<li>Interpret the sensitivity analysis</li>
+<li>Interpret model results</li>
+<li>Interpret sensitivity analysis</li>
 </ul>
 </div>
 </div>
 <p><img src="images/simulation.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"></p>
-<p><span class="citation" data-cites="Robert">@Robert</span> - change set run parameter to Set simulation</p>
-<p>Before executing (run) the simulation, user can set up several parameters as presented below. After setting these parameters, click <strong>Change Parameter.</strong></p>
+<p><span class="citation" data-cites="Robert">@Robert</span> - change set run parameter to Set simulation parameters</p>
+<p>Before executing (run) the simulation, user can set up several parameters by clicking <strong>Set run parameter</strong>. After setting these parameters, click <strong>Change Parameter.</strong></p>
+<p><img src="images/setrunparameter.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="334"></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 46%">
@@ -1278,7 +1283,7 @@ Note
 <tbody>
 <tr class="odd">
 <td><span style="color:#0d6efd">SAMPLING TECHNIQUE</span></td>
-<td>Check here if you wish to create a new model and assign a Model name.</td>
+<td>Select the random sampling method</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">NUMBER OF MONTE CARLO SIMULATIONS: VARIABILITY and UNCERTAINTY</span></td>
@@ -1287,6 +1292,14 @@ Note
 <tr class="odd">
 <td><span style="color:#0d6efd">QUANTILES: VARIABILITY and UNCERTAINTY</span></td>
 <td>Enter here the percentiles for summarizing model results in the variability (1D) and uncertainty (2D)</td>
+</tr>
+<tr class="even">
+<td><span style="color:#0d6efd">SEED VALUE</span></td>
+<td>Enter the integer number, this will allow to reproduce the same results</td>
+</tr>
+<tr class="odd">
+<td><span style="color:#0d6efd">TYPE</span></td>
+<td>?<span class="citation" data-cites="Robert">@Robert</span></td>
 </tr>
 </tbody>
 </table>
@@ -1302,7 +1315,7 @@ Memory
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>select the appropriate number of samples. shiny rrisk might not run if the memory is above @@@</p>
+<p>The shiny rrisk server allocates a maximum memory of @@@ ro run the simulation. The amount of memory used is influenced by the number of nodes and the number of number samples required in the variability and uncertainty dimensions.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1311,55 +1324,138 @@ Memory
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Good practice
+Good practice - Number of MC samples
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ul>
-<li>Setting the number of samples –&gt; conv. plot</li>
-</ul>
+<p>Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples.</p>
+<p>Usually, the number of samples are selected based on standard “magic” numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number.</p>
+<p>Usually, in risk and exposure assessments, the outcome is rare and large number of samples are required to obtain meaningful statistics.</p>
+<p>If the true risk is rare, and you want at least n occurrences of the event, then you can use:</p>
+<p><span class="math inline">\(N&gt;= n/p\)</span></p>
+<p>Example: to observe at least 1 event with a p = 10-4</p>
+<p>N&nbsp;&gt;=&nbsp;1/0.00001&nbsp;=&nbsp;10,0000&nbsp;samples</p>
+<p>Usually, the appropriated number of samples is an iterative exercise, where different simulations are run until we obtain consistent values for up to two/three digits of the mean or median.</p>
+<p>Also, we can use consistent values within 0.005 for the 2.5% and 97.5% percentiles.</p>
+<p>The convergence plot presented below can also be used as a guidance about the number of samples required to obtain a consistent mean estimate.</p>
+<p><span class="citation" data-cites="need">@need</span> something about sampling methods maybe here for efficient number of samples</p>
 </div>
 </div>
 </div>
-<section id="general-results" class="level2">
-<h2 class="anchored" data-anchor-id="general-results">General Results</h2>
-<p>add Interpretation of results, with brief mention of main elements for interpretation to have this in the main text</p>
-<section id="numerical-result-table" class="level3">
-<h3 class="anchored" data-anchor-id="numerical-result-table">Numerical result table</h3>
-</section>
-<section id="histogram" class="level3">
-<h3 class="anchored" data-anchor-id="histogram">Histogram</h3>
-</section>
-<section id="ecdf-plot" class="level3">
-<h3 class="anchored" data-anchor-id="ecdf-plot">ECDF plot</h3>
-</section>
-<section id="convergence-plot" class="level3">
-<h3 class="anchored" data-anchor-id="convergence-plot">Convergence plot</h3>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Read more
+Read more - Sampling methods
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>-MCMC sampling, 1D and 2D , Tables interpretation -MCMC Plots – Cumulative. Convergence plots,</p>
+<p>Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH) method is more efficient and will provide same accuracy as the Monte Carlo (MC) method with fewer samples. In addition the LH will assure that samples are taken from the whole distribution, which is also better for rare events. The LH might reduce the number of samples required by a factor of 10 compared with the MC method. The LH is the default method in shiny rrisk.</p>
+<p>The LH method divides each random variable’s range into equal probability intervals (strata) according the number of samples required in the simulation and then take one sample from each interval per variable. Then the full coverage of each variable is sampled.</p>
+<p>The graph below shows a simple example of how the LH sampling has a better coverage of the sampling space as compared to the MC method.</p>
+<p><img src="images/mc_lh_v2.png" class="img-fluid"></p>
+<p>The table below compare the sampling methods to the True risk after taken 80 samples for two variables</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Method</th>
+<th style="text-align: center;">Sample Size</th>
+<th style="text-align: center;">Mean Risk</th>
+<th style="text-align: center;">S.E.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">—-</td>
+<td style="text-align: center;">0.017</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Monte Carlo</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">0.038</td>
+<td style="text-align: center;">0.021</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Latin Hypercube</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">0.013</td>
+<td style="text-align: center;">0.012</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
+<section id="general-results" class="level2">
+<h2 class="anchored" data-anchor-id="general-results">General Results</h2>
+<p>The results of all the nodes can be visualized from the drop down menu under Node. By default, shiny rrisk will start with the final node (eg. star shape node - or outcome).</p>
+<section id="numerical-result-table" class="level3">
+<h3 class="anchored" data-anchor-id="numerical-result-table">Numerical result table</h3>
+<p>The output table will provide the summary statistics of each node according to the dimensions in variability and uncertainty. In addition, shiny rrisk will provide three plots in the natural scale or log10 transformed scale for summarizing the results.</p>
+<section id="one-dimension-monte-carlo-model-1d-mc---only-variability" class="level4">
+<h4 class="anchored" data-anchor-id="one-dimension-monte-carlo-model-1d-mc---only-variability">One dimension Monte Carlo Model (1D MC) - Only Variability</h4>
+<p>The table below shows the results of the one dimension simulation for the E. coli in beef patties model after selecting 5000 random samples.</p>
+<p><img src="images/general_results_out_var.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"></p>
+<p>For 1D models, the results will be presented in only one row representing the variability of the node.</p>
+</section>
+<section id="two-dimensions-monte-carlo-models-2d-mc--variability-and-uncertainty" class="level4">
+<h4 class="anchored" data-anchor-id="two-dimensions-monte-carlo-models-2d-mc--variability-and-uncertainty">Two dimensions Monte Carlo Models (2D MC)- Variability and Uncertainty</h4>
+<p>The table below shows the results of the two dimension simulation for the E. coli in beef patties model after selecting 5000 and 500 random samples for the variability and uncertainty dimensions, respectively.</p>
+<p><img src="images/general_results_out.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"></p>
+<p>For 2D models, the summary statistics are presented in a matrix format, where rows represent uncertainty and the columns, the variability of the node.</p>
+</section>
+</section>
+<section id="summary-plots" class="level3">
+<h3 class="anchored" data-anchor-id="summary-plots">Summary Plots</h3>
+<section id="histogram" class="level4">
+<h4 class="anchored" data-anchor-id="histogram">Histogram</h4>
+<p>This plot depicts the density distribution of the random values for a given node.</p>
+<p><img src="images/hist_ecoli_2d.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+</section>
+<section id="ecdf-plot" class="level4">
+<h4 class="anchored" data-anchor-id="ecdf-plot">ECDF plot</h4>
+<p>This is the empirical cumulative density function plot, it is presented as an ascending cumulative plot. See read more for the proper interpretation of the graph.</p>
+<p><img src="images/ecdf_ecoli_2d.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+</section>
+<section id="convergence-plot" class="level4">
+<h4 class="anchored" data-anchor-id="convergence-plot">Convergence plot</h4>
+<p><span class="citation" data-cites="Robert">@Robert</span> - how to interpret this one?</p>
+<p><img src="images/conv_ecoli_2d.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read more - 2d MC Models
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2d MC). <img src="images/clipboard-4283040366.png" class="img-fluid"></p>
+<p>The central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value in the y-axis of 0.5. The value is around 1e-11.</p>
+<p>The 95th percentile (P95) provides an estimate of the risk that captures 95% of the variability of the input parameters. It can be read from the graph by looking at the x-axis where upper red lines intersects with the dark blue line.</p>
+<p>The uncertainty of the median and 95th can be read from range of values across the red lines for each statistic. The red lines represents the 95% probability intervals for the median and 95th percentile. For instance, the upper boundary of a 95 % uncertainty range for the P95 estimate when accounting for uncertainty is 1e-10.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="sensitivity-plot" class="level2">
 <h2 class="anchored" data-anchor-id="sensitivity-plot">Sensitivity Plot</h2>
 <p>add interpretation of plots</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1368,7 +1464,7 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>-Methods – Plots Tornado, 1D vs 2D [eg including prob. Interval]</p>
 </div>

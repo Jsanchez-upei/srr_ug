@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About shiny rrisk – Shiny rrisk user guide</title>
+<title>sampling_efficiency_report – Shiny rrisk user guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./distributionfitting.html" rel="next">
+<link href="./distributionfitting.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +108,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./about.html">About shiny rrisk</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./sampling_efficiency_report.html">Sampling Efficiency Report: Monte Carlo vs Latin Hypercube</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link active">
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About shiny rrisk</span></a>
   </div>
 </li>
@@ -138,6 +138,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./distributionfitting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Distribution fitting</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sampling_efficiency_report.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Sampling Efficiency Report: Monte Carlo vs Latin Hypercube</span></a>
   </div>
 </li>
     </ul>
@@ -150,55 +156,82 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-shiny-rrisk" id="toc-about-shiny-rrisk" class="nav-link active" data-scroll-target="#about-shiny-rrisk">About shiny rrisk</a></li>
-  <li><a href="#user-guide" id="toc-user-guide" class="nav-link" data-scroll-target="#user-guide">User Guide</a></li>
-  <li><a href="#example-models" id="toc-example-models" class="nav-link" data-scroll-target="#example-models">Example models</a></li>
+  <li><a href="#sampling-efficiency-report-monte-carlo-vs-latin-hypercube" id="toc-sampling-efficiency-report-monte-carlo-vs-latin-hypercube" class="nav-link active" data-scroll-target="#sampling-efficiency-report-monte-carlo-vs-latin-hypercube">Sampling Efficiency Report: Monte Carlo vs Latin Hypercube</a>
+  <ul class="collapse">
+  <li><a href="#input-space-coverage-2d-projections" id="toc-input-space-coverage-2d-projections" class="nav-link" data-scroll-target="#input-space-coverage-2d-projections">1. Input Space Coverage (2D Projections)</a></li>
+  <li><a href="#single-estimate-comparison" id="toc-single-estimate-comparison" class="nav-link" data-scroll-target="#single-estimate-comparison">2. Single Estimate Comparison</a></li>
+  <li><a href="#bar-plot-estimate-vs-truth" id="toc-bar-plot-estimate-vs-truth" class="nav-link" data-scroll-target="#bar-plot-estimate-vs-truth">3. Bar Plot: Estimate vs Truth</a></li>
+  <li><a href="#repeated-estimates-100-trials" id="toc-repeated-estimates-100-trials" class="nav-link" data-scroll-target="#repeated-estimates-100-trials">4. Repeated Estimates (100 Trials)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About shiny rrisk</h1>
+
+
+
+<section id="sampling-efficiency-report-monte-carlo-vs-latin-hypercube" class="level1">
+<h1>Sampling Efficiency Report: Monte Carlo vs Latin Hypercube</h1>
+<section id="input-space-coverage-2d-projections" class="level2">
+<h2 class="anchored" data-anchor-id="input-space-coverage-2d-projections">1. Input Space Coverage (2D Projections)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="mc_lhs_grid.png" class="img-fluid figure-img"></p>
+<figcaption>Input Coverage</figcaption>
+</figure>
+</div>
+</section>
+<section id="single-estimate-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="single-estimate-comparison">2. Single Estimate Comparison</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Estimate</th>
+<th>Std. Error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Truth</td>
+<td>0.016965</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>MC</td>
+<td>0.037500</td>
+<td>0.021241</td>
+</tr>
+<tr class="odd">
+<td>LHS</td>
+<td>0.012500</td>
+<td>0.012422</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="bar-plot-estimate-vs-truth" class="level2">
+<h2 class="anchored" data-anchor-id="bar-plot-estimate-vs-truth">3. Bar Plot: Estimate vs Truth</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="barplot_estimates.png" class="img-fluid figure-img"></p>
+<figcaption>Estimates</figcaption>
+</figure>
+</div>
+</section>
+<section id="repeated-estimates-100-trials" class="level2">
+<h2 class="anchored" data-anchor-id="repeated-estimates-100-trials">4. Repeated Estimates (100 Trials)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="boxplot_replicates.png" class="img-fluid figure-img"></p>
+<figcaption>Replicates</figcaption>
+</figure>
 </div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="about-shiny-rrisk" class="level3">
-<h3 class="anchored" data-anchor-id="about-shiny-rrisk">About shiny rrisk</h3>
-<p>shiny rrisk is a free, web-based tool for probabilistic risk modelling, developed at the German Federal Institute for Risk Assessment (BfR). The name of the tool is an acknowledgement of the use of <a href="https://shiny.rstudio.com">Shiny</a> for the development of an application based on the <a href="https://www.r-project.org/">software R</a> for risk modelling. Key features of the tool include its flexibility to create complex models from scratch, two-dimensional Monte Carlo simulation to account for uncertainties and fully integrated model documentation to automatically generate a model report. (Ref basic paper). The tool can be accessed at <a href="http://shiny.bfr.bund.de/apps/shiny-rrisk">http://shiny.bfr.bund.de/apps/shiny-rrisk</a>.</p>
 </section>
-<section id="user-guide" class="level3">
-<h3 class="anchored" data-anchor-id="user-guide">User Guide</h3>
-<p>The user guide describes essential steps for using shiny rrisk for probabilistic risk modelling following a typical workflow. It also provides some background information and illustrates important design features using example models.</p>
-</section>
-<section id="example-models" class="level3">
-<h3 class="anchored" data-anchor-id="example-models">Example models</h3>
-<p>This tutorial uses models that are provided with the application for illustrative purposes. These demo models are provided without warranty by the developers of shiny rrisk or the BfR. A description of these models is available via the automatic reporting function.</p>
-<ul>
-<li>HEV in liver sausages</li>
-<li>Y. enterocolitica in minced meat</li>
-<li>Alizarin Red S in eel (2D MC)</li>
-<li>L monocytogenes in cheese</li>
-<li>E. coli in hamburger patties (2D MC)</li>
-<li>E. lignosellus in asparagus</li>
-</ul>
-
-
 </section>
 
 </main> <!-- /main -->
@@ -621,11 +654,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./distributionfitting.html" class="pagination-link" aria-label="Distribution fitting">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Distribution fitting</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./distributionfitting.html" class="pagination-link" aria-label="Distribution fitting">
-        <span class="nav-page-text">Distribution fitting</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

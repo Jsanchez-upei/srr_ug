@@ -113,7 +113,7 @@
     "href": "index.html#general-results",
     "title": "Shiny rrisk user guide",
     "section": "General Results",
-    "text": "General Results\nadd Interpretation of results, with brief mention of main elements for interpretation to have this in the main text\n\nNumerical result table\n\n\nHistogram\n\n\nECDF plot\n\n\nConvergence plot\n\n\n\n\n\n\nRead more\n\n\n\n\n\n-MCMC sampling, 1D and 2D , Tables interpretation -MCMC Plots – Cumulative. Convergence plots,"
+    "text": "General Results\nThe results of all the nodes can be visualized from the drop down menu under Node. By default, shiny rrisk will start with the final node (eg. star shape node - or outcome).\n\nNumerical result table\nThe output table will provide the summary statistics of each node according to the dimensions in variability and uncertainty. In addition, shiny rrisk will provide three plots in the natural scale or log10 transformed scale for summarizing the results.\n\nOne dimension Monte Carlo Model (1D MC) - Only Variability\nThe table below shows the results of the one dimension simulation for the E. coli in beef patties model after selecting 5000 random samples.\n\nFor 1D models, the results will be presented in only one row representing the variability of the node.\n\n\nTwo dimensions Monte Carlo Models (2D MC)- Variability and Uncertainty\nThe table below shows the results of the two dimension simulation for the E. coli in beef patties model after selecting 5000 and 500 random samples for the variability and uncertainty dimensions, respectively.\n\nFor 2D models, the summary statistics are presented in a matrix format, where rows represent uncertainty and the columns, the variability of the node.\n\n\n\nSummary Plots\n\nHistogram\nThis plot depicts the density distribution of the random values for a given node.\n\n\n\nECDF plot\nThis is the empirical cumulative density function plot, it is presented as an ascending cumulative plot. See read more for the proper interpretation of the graph.\n\n\n\nConvergence plot\n@Robert - how to interpret this one?\n\n\n\n\n\n\n\nRead more - 2d MC Models\n\n\n\n\n\nThe following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2d MC). \nThe central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value in the y-axis of 0.5. The value is around 1e-11.\nThe 95th percentile (P95) provides an estimate of the risk that captures 95% of the variability of the input parameters. It can be read from the graph by looking at the x-axis where upper red lines intersects with the dark blue line.\nThe uncertainty of the median and 95th can be read from range of values across the red lines for each statistic. The red lines represents the 95% probability intervals for the median and 95th percentile. For instance, the upper boundary of a 95 % uncertainty range for the P95 estimate when accounting for uncertainty is 1e-10."
   },
   {
     "objectID": "index.html#sensitivity-plot",
@@ -134,6 +134,72 @@
     "href": "index.html#node-table",
     "title": "Shiny rrisk user guide",
     "section": "Node Table",
-    "text": "Node Table\nAfter nodes are created, the following table will be created in shiny rrisk containing a the information of each node in the model.\n\n\n\nNode table created by shiny rrisk after the creation of nodes\n\n\nThe table contains the node ID, a sequence number according to the order a node was created during the the model creation. The rest of the columns present the information of each node that was entered during the node creation.\nThe table allows the user to sort each column separately, delete a node and search for particular terms. This later is very helpful when working with large models."
+    "text": "Node Table\nAfter nodes are created, the following table will be created in shiny rrisk the information of each node in the model.\n\n\n\nNode table created by shiny rrisk after the creation of nodes\n\n\nThe table contains the node ID, a sequence number according to the order a node was created during the the model creation. The rest of the columns present the information of each node that was entered during the node creation.\nThe table allows the user to sort each column separately, delete a node and search for particular terms. This later is very helpful when working with large models."
+  },
+  {
+    "objectID": "distributionfitting.html",
+    "href": "distributionfitting.html",
+    "title": "Distribution fitting",
+    "section": "",
+    "text": "to be done",
+    "crumbs": [
+      "Home",
+      "Distribution fitting"
+    ]
+  },
+  {
+    "objectID": "sampling_efficiency_report.html",
+    "href": "sampling_efficiency_report.html",
+    "title": "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube",
+    "section": "",
+    "text": "Input Coverage\n\n\n\n\n\n\n\n\nMethod\nEstimate\nStd. Error\n\n\n\n\nTruth\n0.016965\nNA\n\n\nMC\n0.037500\n0.021241\n\n\nLHS\n0.012500\n0.012422\n\n\n\n\n\n\n\n\n\nEstimates\n\n\n\n\n\n\n\n\nReplicates",
+    "crumbs": [
+      "Home",
+      "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube"
+    ]
+  },
+  {
+    "objectID": "sampling_efficiency_report.html#input-space-coverage-2d-projections",
+    "href": "sampling_efficiency_report.html#input-space-coverage-2d-projections",
+    "title": "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube",
+    "section": "",
+    "text": "Input Coverage",
+    "crumbs": [
+      "Home",
+      "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube"
+    ]
+  },
+  {
+    "objectID": "sampling_efficiency_report.html#single-estimate-comparison",
+    "href": "sampling_efficiency_report.html#single-estimate-comparison",
+    "title": "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube",
+    "section": "",
+    "text": "Method\nEstimate\nStd. Error\n\n\n\n\nTruth\n0.016965\nNA\n\n\nMC\n0.037500\n0.021241\n\n\nLHS\n0.012500\n0.012422",
+    "crumbs": [
+      "Home",
+      "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube"
+    ]
+  },
+  {
+    "objectID": "sampling_efficiency_report.html#bar-plot-estimate-vs-truth",
+    "href": "sampling_efficiency_report.html#bar-plot-estimate-vs-truth",
+    "title": "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube",
+    "section": "",
+    "text": "Estimates",
+    "crumbs": [
+      "Home",
+      "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube"
+    ]
+  },
+  {
+    "objectID": "sampling_efficiency_report.html#repeated-estimates-100-trials",
+    "href": "sampling_efficiency_report.html#repeated-estimates-100-trials",
+    "title": "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube",
+    "section": "",
+    "text": "Replicates",
+    "crumbs": [
+      "Home",
+      "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube"
+    ]
   }
 ]
