@@ -553,13 +553,13 @@ After setting all the parameters, select **Run Simulation.** After the simulatio
 @Robert - change to Sensitivity Analysis \[change names in boxes to upper case to be consistent with other boxes\]
 
 ::: {.callout-warning appearance="simple"}
-#### Memory 
+#### Memory
 
 The shiny rrisk server allocates a maximum memory of \@\@\@ ro run the simulation. The amount of memory used is influenced by the number of nodes and the number of number samples required in the variability and uncertainty dimensions.
 :::
 
 ::: {.callout-tip collapse="true"}
-### Good practice - Number of MC samples 
+### Good practice - Number of MC samples
 
 Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples.
 
@@ -662,12 +662,28 @@ The uncertainty of the median and 95th can be read from range of values across t
 
 ## Sensitivity Plot
 
-add interpretation of plots
+![](images/sens_analysis-01.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+
+The sensitivity analyses results can be visualized by selecting the **sensitivity plot** tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two stasticts, "Pearson correlation coefficient" and "Spearman rho statistic" (the R2 statistic will be implemented in future versions of shiny rrisk).
+
+The following plots presents the 2D tornado plot using the Pearson statistic for the E. coli model. All the input variables are postively correlation withe outcome (eg. the larger is the value of the input, the larger is the risk). However there are major differences in the influence of each input variable on the outcome. For instance the initial concentration of the pathogen (log10_C0) has a Pearson correlation coefficient of approximately 0.6 followed by the reduction facors and concentration.
+
+Since this is a 2D model, the tornado plot also present the 95%. probability interval due to the uncertainty of the risk outcome.
+
+![](images/tornado_pearson_ecoli.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
 
 ::: {.callout-caution collapse="true"}
-## Read more
+## Read more: Tornado plots
 
--Methods – Plots Tornado, 1D vs 2D \[eg including prob. Interval\]
+Tornado plots are commonly used in risk and exposure assessments models to assess the quantify the impact of input variables on the outcome of the model. This relationship is quantified using parametric (eg. Pearson correlation coefficient) or non-parametric (eg. Spearman rank correlation coefficient - rho -) statistics.
+
+The graphs is created using all the input variables on the y-axis and the statistic on the x-axis, then the relationship is depicted using horizontal bars where the length of the bar represents the value of the statistic. This value is constraint by the boundaries of the statistic (eg. between -1 and 1). Where values below 0 represent an inverse relationship and values greater than 0, otherwise. For instance negative values suggest that higher values of the input are associates with lower values of the outcome variable.
+
+In addition, for 2D models, each input variable has a line indicating the 95% probability interval of the relationship due to the uncertainty propagated in the model.
+
+**Pearson correlation coefficient**. The relationship is captured assuming a linear relationship between the input variable and the outcome using the Pearson correlation coefficient.
+
+**Spearman rank correlation**. The relationship is captured using the non-parametric rank correlation which does not assume any particulate shape of the relationship between the input and outcome.
+
+This graphs are called "tornado" because the shape of the graphs resembles a "tornado", funnel like shape since the variables ara sorted from highest values on the top to the lowest at the bottom.
 :::
-
-# Glossary

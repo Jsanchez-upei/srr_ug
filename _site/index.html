@@ -208,7 +208,6 @@ window.Quarto = {
   </ul></li>
   <li><a href="#sensitivity-plot" id="toc-sensitivity-plot" class="nav-link" data-scroll-target="#sensitivity-plot">Sensitivity Plot</a></li>
   </ul></li>
-  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary">Glossary</a></li>
   </ul>
 </nav>
     </div>
@@ -1453,29 +1452,35 @@ Read more - 2d MC Models
 </section>
 <section id="sensitivity-plot" class="level2">
 <h2 class="anchored" data-anchor-id="sensitivity-plot">Sensitivity Plot</h2>
-<p>add interpretation of plots</p>
+<p><img src="images/sens_analysis-01.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p>The sensitivity analyses results can be visualized by selecting the <strong>sensitivity plot</strong> tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two stasticts, “Pearson correlation coefficient” and “Spearman rho statistic” (the R2 statistic will be implemented in future versions of shiny rrisk).</p>
+<p>The following plots presents the 2D tornado plot using the Pearson statistic for the E. coli model. All the input variables are postively correlation withe outcome (eg. the larger is the value of the input, the larger is the risk). However there are major differences in the influence of each input variable on the outcome. For instance the initial concentration of the pathogen (log10_C0) has a Pearson correlation coefficient of approximately 0.6 followed by the reduction facors and concentration.</p>
+<p>Since this is a 2D model, the tornado plot also present the 95%. probability interval due to the uncertainty of the risk outcome.</p>
+<p><img src="images/tornado_pearson_ecoli.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Read more
+Read more: Tornado plots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>-Methods – Plots Tornado, 1D vs 2D [eg including prob. Interval]</p>
+<p>Tornado plots are commonly used in risk and exposure assessments models to assess the quantify the impact of input variables on the outcome of the model. This relationship is quantified using parametric (eg. Pearson correlation coefficient) or non-parametric (eg. Spearman rank correlation coefficient - rho -) statistics.</p>
+<p>The graphs is created using all the input variables on the y-axis and the statistic on the x-axis, then the relationship is depicted using horizontal bars where the length of the bar represents the value of the statistic. This value is constraint by the boundaries of the statistic (eg. between -1 and 1). Where values below 0 represent an inverse relationship and values greater than 0, otherwise. For instance negative values suggest that higher values of the input are associates with lower values of the outcome variable.</p>
+<p>In addition, for 2D models, each input variable has a line indicating the 95% probability interval of the relationship due to the uncertainty propagated in the model.</p>
+<p><strong>Pearson correlation coefficient</strong>. The relationship is captured assuming a linear relationship between the input variable and the outcome using the Pearson correlation coefficient.</p>
+<p><strong>Spearman rank correlation</strong>. The relationship is captured using the non-parametric rank correlation which does not assume any particulate shape of the relationship between the input and outcome.</p>
+<p>This graphs are called “tornado” because the shape of the graphs resembles a “tornado”, funnel like shape since the variables ara sorted from highest values on the top to the lowest at the bottom.</p>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="glossary" class="level1">
-<h1>Glossary</h1>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
