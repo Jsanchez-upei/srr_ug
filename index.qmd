@@ -725,7 +725,7 @@ The user can enter the following information under **Documentation and Reporting
 
     -   discussion of possible options for improvement,
 
-    -    extra data that would change the model or its results
+    -   extra data that would change the model or its results
 
 During the node development, the user can think about this information, that later will be used in shiny rrisk to create the report
 
