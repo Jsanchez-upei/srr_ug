@@ -3,6 +3,9 @@ title: "Shiny rrisk user guide"
 subtitle: "Your quick start to perform probabilistic risk modelling"
 ---
 
+Note: 25.6.2025 mgreineratgithub reconnected...
+
+
 # Getting started
 
 ::: callout-note
