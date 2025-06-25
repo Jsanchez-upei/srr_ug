@@ -187,7 +187,7 @@ window.Quarto = {
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
   <li><a href="#model-creation" id="toc-model-creation" class="nav-link" data-scroll-target="#model-creation">Model creation</a>
   <ul class="collapse">
-  <li><a href="#verbal-definition-of-a-node" id="toc-verbal-definition-of-a-node" class="nav-link" data-scroll-target="#verbal-definition-of-a-node">Verbal definition of a node</a></li>
+  <li><a href="#node-definition" id="toc-node-definition" class="nav-link" data-scroll-target="#node-definition">Node definition</a></li>
   <li><a href="#mathematical-definition-of-a-node" id="toc-mathematical-definition-of-a-node" class="nav-link" data-scroll-target="#mathematical-definition-of-a-node">Mathematical definition of a node</a>
   <ul class="collapse">
   <li><a href="#user-defined" id="toc-user-defined" class="nav-link" data-scroll-target="#user-defined">User defined</a></li>
@@ -219,13 +219,19 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Shiny rrisk user guide</h1>
-<p class="subtitle lead">Your quick start to perform probabilistic risk modelling</p>
+<p class="subtitle lead">Your quick start to perform probabilistic risk modelling using shiny rrisk</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>To be discussed whether this is an authored text. </p>
+          </div>
+  </div>
     
   
     
@@ -236,23 +242,21 @@ window.Quarto = {
 </header>
 
 
-<p>Note: 25.6.2025 mgreineratgithub reconnected…</p>
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+This section will introduce you to
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>This section will introduce you to:</strong></p>
 <ul>
-<li><p>Description of the main interface</p></li>
-<li><p>Loading an “shiny rrisk” file that contains the the complete documentation and executable code of your model.</p></li>
+<li>getting started with a shiny rrisk session and</li>
+<li>managing the data file that contains the complete documentation and executable code of your model.</li>
 </ul>
 </div>
 </div>
@@ -283,11 +287,11 @@ Figure&nbsp;1: Main screen, top row of shiny rrisk.
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">SAVE</span></td>
-<td><span class="citation" data-cites="Robert">[@Robert[: consider change of button name]{.mark}]</span> Save the model, results or the model report to your local system.</td>
+<td><span class="citation" data-cites="Robert">[@Robert: consider change of button name]</span> Save the model, results or the model report to your local system. |</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">ABOUT</span></td>
-<td><span class="citation" data-cites="Robert">[@Robert[: consider change of button name]{.mark}]</span> Check out here for important information about the app .</td>
+<td><span class="citation" data-cites="Robert">[@Robert: consider change of button name]</span> Check out here for important information about the app . |</td>
 </tr>
 </tbody>
 </table>
@@ -377,14 +381,19 @@ Figure&nbsp;2: Example for a conceptual model (made with yEd).
 </section>
 <section id="model-creation" class="level1">
 <h1>Model creation</h1>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>At the end of this section, you will be able to create a model in shiny rrisk.</p>
+<div class="callout-title-container flex-fill">
+This section will introduce you to
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>a step-by-step process for creating a model in shiny rrisk session.</li>
+</ul>
 </div>
 </div>
 <div id="fig-ModelCreation" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -406,7 +415,7 @@ Figure&nbsp;3: Main screen, second row of shiny rrisk.
 <tbody>
 <tr class="odd">
 <td><span style="color:#0d6efd">Add node</span></td>
-<td><span class="citation" data-cites="Robert">[@Robert[: consider change of button name]{.mark}]</span> Create a new node and launch its verbal description and mathematical definition.</td>
+<td><mark><span class="citation" data-cites="Robert">@Robert</span>: consider change of button name</mark>] Create a new node and launch its verbal description and mathematical definition. |</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Check model</span></td>
@@ -427,83 +436,21 @@ Avoid loss of your data
 <p>Remember to save your model after adding each node.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Good practice
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ul>
-<li>We recommend using “<span class="math inline">\(&lt;\)</span>agent<span class="math inline">\(&gt;\)</span>in<span class="math inline">\(&lt;\)</span>commodity<span class="math inline">\(&gt;\)</span>” as standard format for naming models.</li>
-<li>We recommend discussing the model concept with stakeholders (see tip below) in order to clarify the task and available data and resources.</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Read more
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<section id="first-things-first-1" class="level3">
-<h3 class="anchored" data-anchor-id="first-things-first-1">First things first</h3>
-<p>Before developing a mathematical or probabilistic model it is advisable to clarify some important points.</p>
-<ul>
-<li>What is the question you wish to answer?</li>
-<li>What is the starting point and final outcome of the scenario you wish to model?</li>
-<li>What are the relevant/influential events and pathways?</li>
-<li>What are the relevant populations and subgroups to be considered?</li>
-<li>If exposure factors and disease statuses are involved, are there accepted case definitions available?</li>
-</ul>
-</section>
-<section id="building-blocks-of-a-model-1" class="level3">
-<h3 class="anchored" data-anchor-id="building-blocks-of-a-model-1">Building blocks of a model</h3>
-<p>A probabilistic risk model typically represents a series of events or situations that can be linked together in a logical or chronological order, whereby the final event represents the outcome of interest. For example, consider the hypothetical shipment of one race horse from Argentina to Germany. The task is to quantify the probability of the horse to be infected with equine infectious anemia (EIA, see <a href="https://www.fli.de/en/news/animal-disease-situation/equine-infectious-anemia/">FLI, 2017</a>, accessed 9.5.2025). Note that this example is for illustration only. Each building block of the model requires clarifications and definitions which are tailored to the specific problem at hand. Some of the clarifications can only be provided by the customer (risk manager) and others by domain experts risk assessors. For larger projects, stakeholders should be involved in this process.</p>
-<ul>
-<li><strong>Risk question:</strong> defines the outcome of interest; here the quantification of the probability that the introduced horse is infected with EIA virus.</li>
-<li><strong>Scope:</strong> defines what is included or excluded from the assessment; here economic and epidemiological consequences are beyond the scope.</li>
-<li><strong>Pathway and scenario:</strong> define all relevant steps and events; here the selection of the horse, legal and sanitary transport requirements, transport, border health checks shoud be considered.</li>
-<li><strong>Model parameters (denoted “nodes” in shiny rrisk):</strong> define all input and output quantities required in the model; here the minimum set of parameters include the prevalence of EIA in Argentina, the probability of infection at boarding and the probability of infection at introduction of the animal after de-boarding formalities. Additional parameters may apply.</li>
-<li><strong>Components of the model:</strong> may structure the parameters into logical groups which makes it easier to discuss the model with individual domain experts and provides a useful structure of the report; typical components for a larger import risk models include the entry assessment, exposure assessment, consequence assessment and risk estimation (see <a href="https://www.woah.org/fileadmin/Home/eng/Health_standards/tahc/2018/en_chapitre_import_risk_analysis.htm">OIE, 2018</a>, accessed 9 May 2025).</li>
-</ul>
-</section>
-<section id="visualisation-1" class="level3">
-<h3 class="anchored" data-anchor-id="visualisation-1">Visualisation</h3>
-<p>It is recommended to sketch a visual representation of the conceptual model. The flowchart for the simple example above (<a href="#fig-ConceptualModelEIA" class="quarto-xref">Figure&nbsp;2</a>) may support the discussion about required data and additional nodes such as for diagnostic testing.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="ConceptualModelEIA.png" class="img-fluid figure-img"></p>
-<figcaption>Example for a conceptual model (made with yEd).</figcaption>
-</figure>
-</div>
-</section>
-</div>
-</div>
-</div>
-<section id="verbal-definition-of-a-node" class="level2">
-<h2 class="anchored" data-anchor-id="verbal-definition-of-a-node">Verbal definition of a node</h2>
-<p><span class="citation" data-cites="MG">[@MG[: consider change to Add Node: Node Definition - Not sure what it means Verbal]{.mark}]</span></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<section id="node-definition" class="level2">
+<h2 class="anchored" data-anchor-id="node-definition">Node definition</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>Read here how easily you will generate an integrated documentation of each node.</p>
+<div class="callout-title-container flex-fill">
+This section will introduce you to
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>the integrated annotation template that will guide you through a comprehensive documentation of each node.</li>
+</ul>
 </div>
 </div>
 <div id="fig-AddNode" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -516,7 +463,7 @@ Figure&nbsp;4: Descriptive part of node definition.
 </figcaption>
 </figure>
 </div>
-<p><span class="citation" data-cites="MG">[@MG[: The figure should have "Add Node" instead of Add new item]{.mark}]</span></p>
+<p><span class="citation" data-cites="Robert">[@Robert: Please use "Add Node" instead of Add new item]</span></p>
 <p>Upon launching <u>Add node</u>, a window pops-up with several free-text fields.</p>
 <table class="caption-top table">
 <colgroup>
@@ -525,9 +472,8 @@ Figure&nbsp;4: Descriptive part of node definition.
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><span style="color:#0d6efd">Name</span><span style="color:Red">*</span></p>
-<p><span class="citation" data-cites="MG">@MG</span> here you can mention editing the name of a node</p></td>
-<td><span class="citation" data-cites="Robert">[@Robert[: consider change of button]{.mark}]</span> Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry.</td>
+<td><span style="color:#0d6efd">Name</span><span style="color:Red">*</span></td>
+<td><mark><span class="citation" data-cites="Robert">@Robert</span>: consider change of button</mark>] Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry.</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Unit</span></td>
@@ -535,7 +481,7 @@ Figure&nbsp;4: Descriptive part of node definition.
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">Grouping</span></td>
-<td><span class="citation" data-cites="Robert">[@Robert[: consider change of button name]{.mark}]</span> A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation.</td>
+<td><mark><span class="citation" data-cites="Robert">@Robert</span>: consider change of button name</mark>] A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation.</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Source</span></td>
@@ -543,7 +489,7 @@ Figure&nbsp;4: Descriptive part of node definition.
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">Description</span></td>
-<td>A verbal account of all relevant information required for documentation and review should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax below).</td>
+<td>All relevant information required for documentation and verification should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax below).</td>
 </tr>
 <tr class="even">
 <td><span style="color:Red">*</span></td>
@@ -644,19 +590,10 @@ Read more
 </div>
 </div>
 </div>
-<div id="fig-MathematicalDefinition" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-MathematicalDefinition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="MathematicalDefinition.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-MathematicalDefinition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Mathematical part of node definition.<span class="citation" data-cites="Robert">[@Robert[: consider change to "Choose node defintion\*"]{.mark}]</span>
-</figcaption>
-</figure>
-</div>
+<p>![Mathematical part of node definition.<mark><span class="citation" data-cites="Robert">@Robert</span>: consider change to “Choose node defintion*”</mark>]](MathematicalDefinition.png){#fig-MathematicalDefinition width=“100%”}</p>
 <p>Several options are available for defining the mathematical properties of a node, including user defined, parametric distribution, bootstrapping and EFSA EKE.</p>
 <p><code>@MG [: maybe change EFSA EKE to just expert elicitation]</code></p>
-<p>The first option allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;7</a>).</p>
+<p>The first option allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;6</a>).</p>
 <section id="user-defined" class="level3">
 <h3 class="anchored" data-anchor-id="user-defined">User defined</h3>
 <div id="fig-NodeUserDefined" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -665,7 +602,7 @@ Figure&nbsp;6: Mathematical part of node definition.<span class="citation" data-
 <img src="NodeUserDefined.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-NodeUserDefined-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Choose user defined to enter a mathematical expression.
+Figure&nbsp;6: Choose user defined to enter a mathematical expression.
 </figcaption>
 </figure>
 </div>
@@ -677,7 +614,7 @@ Figure&nbsp;7: Choose user defined to enter a mathematical expression.
 <tbody>
 <tr class="odd">
 <td><span style="color:#0d6efd">Expression</span></td>
-<td><span class="citation" data-cites="Robert">[@Robert[: consider change button name]{.mark}]</span>A mathematical expression is entered here that can be evaluated similar to a line of code in the <a href="https://www.r-project.org/">software R</a>. At least one term of the expression is another (distribution) node, which is referred to as a “parent node”. Parent nodes that do not yet exist in the model are referred to as “implicit nodes” and will be generated automatically by shiny rrisk.</td>
+<td><mark><span class="citation" data-cites="Robert">@Robert</span>: consider change button name</mark>]A mathematical expression is entered here that can be evaluated similar to a line of code in the <a href="https://www.r-project.org/">software R</a>. At least one term of the expression is another (distribution) node, which is referred to as a “parent node”. Parent nodes that do not yet exist in the model are referred to as “implicit nodes” and will be generated automatically by shiny rrisk. |</td>
 </tr>
 </tbody>
 </table>
@@ -693,14 +630,14 @@ Example for an expression using a parent node (Alizarin Red S in eel model)
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In the <u>Alizarin Red S in eel</u> model the outcome <span class="math inline">\(Y\)</span> (dietary intake of ARS per kg body weight and year through consumption of eel marked with ARS) is defined in terms of <span class="math inline">\(I\)</span> (concentration of ARS in edible tissues at time of catch) and <span class="math inline">\(M\)</span> (mean consumption of European eel per year per body weight). Thus, <span class="math inline">\(I\)</span> and <span class="math inline">\(M\)</span> are both parents nodes of <span class="math inline">\(Z\)</span>. This example also illustrates the common case that the final outcome is defined in terms of parent nodes (<a href="#fig-ARSoutcomeY" class="quarto-xref">Figure&nbsp;8</a>).</p>
+<p>In the <u>Alizarin Red S in eel</u> model the outcome <span class="math inline">\(Y\)</span> (dietary intake of ARS per kg body weight and year through consumption of eel marked with ARS) is defined in terms of <span class="math inline">\(I\)</span> (concentration of ARS in edible tissues at time of catch) and <span class="math inline">\(M\)</span> (mean consumption of European eel per year per body weight). Thus, <span class="math inline">\(I\)</span> and <span class="math inline">\(M\)</span> are both parents nodes of <span class="math inline">\(Z\)</span>. This example also illustrates the common case that the final outcome is defined in terms of parent nodes (<a href="#fig-ARSoutcomeY" class="quarto-xref">Figure&nbsp;7</a>).</p>
 <div id="fig-ARSoutcomeY" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ARSoutcomeY-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="ARSoutcomeY.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ARSoutcomeY-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Expression for the outcome Y in the Alizarin Red S in eel model.
+Figure&nbsp;7: Expression for the outcome Y in the Alizarin Red S in eel model.
 </figcaption>
 </figure>
 </div>
@@ -781,11 +718,11 @@ Read more
 <img src="ParametricDistributions.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ParametricDistributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Choose a distribution family.
+Figure&nbsp;8: Choose a distribution family.
 </figcaption>
 </figure>
 </div>
-<p>Once you have selected <u>parametric distributions</u> you can choose from a number of discrete and continuous distribution families (<a href="#fig-ParametricDistributions" class="quarto-xref">Figure&nbsp;9</a>).</p>
+<p>Once you have selected <u>parametric distributions</u> you can choose from a number of discrete and continuous distribution families (<a href="#fig-ParametricDistributions" class="quarto-xref">Figure&nbsp;8</a>).</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 30%">
@@ -847,7 +784,7 @@ Example for parametric distribution (HEV in liver sausages)
 <img src="modPert.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-modPert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Modified Pert distribution model.
+Figure&nbsp;9: Modified Pert distribution model.
 </figcaption>
 </figure>
 </div>
@@ -866,14 +803,14 @@ Example for a distribution parameter with functional dependency (L.monocytogenes
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The objective of the <u>L.monocytogenes in cheese</u> model is to estimate the risk of infection with Listeria (L.) monocytogenes per meal. The model uses the variable dose of ingested L. monocytogenes per serving, <span class="math inline">\(D_{dist}\)</span> modelled as Poisson distribution (<a href="#fig-functionalPoissonLMono" class="quarto-xref">Figure&nbsp;11</a>). The expression entered as distribution parameter <span class="math inline">\(\lambda\)</span> uses as parent nodes the serving size <span class="math inline">\(S\)</span> and the concentration of L. monocytogenes in the cheese at home <span class="math inline">\(LMC_{home}\)</span>, both of which express variability as well. This results in a dispersion of dose <span class="math inline">\(D_{dist}\)</span> much wider than what would be expected with a fixed value for the distribution parameter <span class="math inline">\(\lambda\)</span>.</p>
+<p>The objective of the <u>L.monocytogenes in cheese</u> model is to estimate the risk of infection with Listeria (L.) monocytogenes per meal. The model uses the variable dose of ingested L. monocytogenes per serving, <span class="math inline">\(D_{dist}\)</span> modelled as Poisson distribution (<a href="#fig-functionalPoissonLMono" class="quarto-xref">Figure&nbsp;10</a>). The expression entered as distribution parameter <span class="math inline">\(\lambda\)</span> uses as parent nodes the serving size <span class="math inline">\(S\)</span> and the concentration of L. monocytogenes in the cheese at home <span class="math inline">\(LMC_{home}\)</span>, both of which express variability as well. This results in a dispersion of dose <span class="math inline">\(D_{dist}\)</span> much wider than what would be expected with a fixed value for the distribution parameter <span class="math inline">\(\lambda\)</span>.</p>
 <div id="fig-functionalPoissonLMono" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-functionalPoissonLMono-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="functionalPoissonLMono.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-functionalPoissonLMono-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Poisson distribution model with functional dependency.
+Figure&nbsp;10: Poisson distribution model with functional dependency.
 </figcaption>
 </figure>
 </div>
@@ -907,18 +844,18 @@ Read more
 </section>
 <section id="using-distributions-to-reflect-variability-and-uncertainty" class="level4">
 <h4 class="anchored" data-anchor-id="using-distributions-to-reflect-variability-and-uncertainty">Using distributions to reflect variability and uncertainty</h4>
-<p>A distribution node can be defined by the user to represent the variability of a variable of interest, e.g.&nbsp;body weight. One typical situation is to parameterise the distribution using a single value for each distribution parameter, e.g., a single mean and a single standard deviation for the distribution of body weight obtained from observed data. The same principle applies for distributions with one parameter (e.g., Poisson) or distributions with three parameters as shown in the example above using the modPert (<a href="#fig-modPert" class="quarto-xref">Figure&nbsp;10</a>). The variability of the quantity of interest is represented by one distribution node, which is parameterised with a single value for each distribution parameter. This is the standard situation for characterising variability (see top row shaded in blue in <a href="#fig-Parameterisations" class="quarto-xref">Figure&nbsp;12</a>).</p>
+<p>A distribution node can be defined by the user to represent the variability of a variable of interest, e.g.&nbsp;body weight. One typical situation is to parameterise the distribution using a single value for each distribution parameter, e.g., a single mean and a single standard deviation for the distribution of body weight obtained from observed data. The same principle applies for distributions with one parameter (e.g., Poisson) or distributions with three parameters as shown in the example above using the modPert (<a href="#fig-modPert" class="quarto-xref">Figure&nbsp;9</a>). The variability of the quantity of interest is represented by one distribution node, which is parameterised with a single value for each distribution parameter. This is the standard situation for characterising variability (see top row shaded in blue in <a href="#fig-Parameterisations" class="quarto-xref">Figure&nbsp;11</a>).</p>
 <p>More complex sources of variability may occur. For example, it may be known that a parameter of a distribution node for variability varies among sub-groups of the population. Typical examples include the litter effect in experimental animal studies or the cluster effect in observational studies. In this case the parent node for the distribution parameter represents variability at a higher aggregation level and “final” distribution node represents overdispersion, i.e.&nbsp;variability from various sources. Consider for example a Bernoulli distribution (for variability) with a binary outcome space (positive/negative), parameterised with a parameter for prevalence. It is a common finding in veterinary epidemiology that herd-level prevalences have a distribution. In such cases it may be possible to characterise the observed distribution of herd-level prevalences using a beta distribution and to use this beta as parent node to the Bernoulli.</p>
 <p>Additional variability may also be due to structural sources. For example, the mean value of bacterial load may depend on temperature. In this case, the mean of the variability distribution can be modeled as a function of temperature. The factor of interest can be continuous (e.g., temperature) or discrete (e.g., age groups). In both cases, the independent factor is represented as parent node in the model and the final variability node represents variability due to structural (or functional) sources of variability.</p>
 <p>The other motivation for using distributions in risk models is to represent parameter uncertainty. Assume you have a binomial distribution node in your model to represent variability of the random number of positive outcomes out of a fixed number of trials, given a defined outcome probability. A beta distribution for the latter would represent parameter uncertainty and act as parent node to the binomial distribution. The node <u>mean_log10_c0</u> from the <u>E.coli in beef</u> example is another illustration for an uncertainty parent node to a variability node. The bootstrap method provides a powerful solution for obtaining distributions for parameter uncertainty (see <mark>later</mark>). Independent of the technique used, the interpretation of the final distribution node is a quantification of variability accounting for parameter uncertainty.</p>
-<p>Last but not least consider a node in your model that directly represents a parameter uncertainty. The classical example for this is prevalence. The prevalence is an unknown single value, i.e.&nbsp;only one value can be true at the same time. The statistical uncertainty in the estimation of prevalence is represented by a beta distribution with parameters <span class="math inline">\(k+1\)</span> and <span class="math inline">\(n-k+1\)</span>, where <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span> denote the number of cases and sample size in estimation of prevalence. <mark>we don’t have a beta in our example models… unbelievable;)</mark>. Since prevalence is a common parameter in may risk models, its quantification of uncertainty using a single node is a typical situation in risk modelling (bottom row shaded blue in <a href="#fig-Parameterisations" class="quarto-xref">Figure&nbsp;12</a>).</p>
+<p>Last but not least consider a node in your model that directly represents a parameter uncertainty. The classical example for this is prevalence. The prevalence is an unknown single value, i.e.&nbsp;only one value can be true at the same time. The statistical uncertainty in the estimation of prevalence is represented by a beta distribution with parameters <span class="math inline">\(k+1\)</span> and <span class="math inline">\(n-k+1\)</span>, where <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span> denote the number of cases and sample size in estimation of prevalence. <mark>we don’t have a beta in our example models… unbelievable;)</mark>. Since prevalence is a common parameter in may risk models, its quantification of uncertainty using a single node is a typical situation in risk modelling (bottom row shaded blue in <a href="#fig-Parameterisations" class="quarto-xref">Figure&nbsp;11</a>).</p>
 <div id="fig-Parameterisations" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Parameterisations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Parameterisations.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Parameterisations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Parameterisations of distributions to reflect variability and uncertainty. Typical situations are shaded in blue. See text for more details.
+Figure&nbsp;11: Parameterisations of distributions to reflect variability and uncertainty. Typical situations are shaded in blue. See text for more details.
 </figcaption>
 </figure>
 </div>
@@ -947,11 +884,11 @@ Figure&nbsp;12: Parameterisations of distributions to reflect variability and un
 <img src="BootstrapNode1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BootstrapNode1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: Bootstrap nodes always represent parameter uncertainty.
+Figure&nbsp;12: Bootstrap nodes always represent parameter uncertainty.
 </figcaption>
 </figure>
 </div>
-<p>Non-parametric bootstrapping is available to generate uncertainty distributions for one or more statistics of a given data set (<a href="#fig-BootstrapNode1" class="quarto-xref">Figure&nbsp;13</a>). Details are illustrated using the example below.</p>
+<p>Non-parametric bootstrapping is available to generate uncertainty distributions for one or more statistics of a given data set (<a href="#fig-BootstrapNode1" class="quarto-xref">Figure&nbsp;12</a>). Details are illustrated using the example below.</p>
 <section id="application-of-bootstrapping" class="level4">
 <h4 class="anchored" data-anchor-id="application-of-bootstrapping">Application of bootstrapping</h4>
 <p>The application of bootstrapping in shiny rrrisk involves three steps.</p>
@@ -972,14 +909,14 @@ Example for non-parametric bootstrap (Alizarin red S in Eel model)
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>An exposure model for <u>Alizarin Red S (ARS) in eel</u> has been developed to estimate the intake of ARS with consumed eel (see shiny rrisk model report for further details). A small (n=14) data set is available for individual consumption of eel per kg body weight. The task is to characterise the uncertainty of the population mean and standard deviation for individual consumption with accounting for the small data set and the correlation between the uncertainty distributions of mean and standard deviation (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;14</a>).</p>
+<p>An exposure model for <u>Alizarin Red S (ARS) in eel</u> has been developed to estimate the intake of ARS with consumed eel (see shiny rrisk model report for further details). A small (n=14) data set is available for individual consumption of eel per kg body weight. The task is to characterise the uncertainty of the population mean and standard deviation for individual consumption with accounting for the small data set and the correlation between the uncertainty distributions of mean and standard deviation (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;13</a>).</p>
 <div id="fig-BootstrapNode2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-BootstrapNode2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="BootstrapNode2.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BootstrapNode2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
+Figure&nbsp;13: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
 </figcaption>
 </figure>
 </div>
@@ -991,7 +928,7 @@ Figure&nbsp;14: Bootstrapping of the mean and standard deviation of individual c
 <tbody>
 <tr class="odd">
 <td><span style="color:#0d6efd">Open data</span></td>
-<td><span class="citation" data-cites="Robert">@Robert [:]</span>[please capitalise “open” and check the file requirements] A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column.</td>
+<td><span class="citation" data-cites="Robert">[@Robert: please capitalise "open" and check the file requirements]</span> A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column. |</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Provided data</span></td>
@@ -999,19 +936,19 @@ Figure&nbsp;14: Bootstrapping of the mean and standard deviation of individual c
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">Node name</span></td>
-<td><span class="citation" data-cites="Robert">@Robert [:]</span>[please consider change to Node name]Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution.</td>
+<td><span class="citation" data-cites="Robert">[@Robert: please consider change to Node name]</span> Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution. |</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Summary statistic</span></td>
-<td><span class="citation" data-cites="Robert">@Robert [:]</span>[please capitalise “summary”]For each node a proper name of the requested statistic is to be provided using R terminology.</td>
+<td><span class="citation" data-cites="R">[@R=: please capitalise "summary"]</span> For each node a proper name of the requested statistic is to be provided using R terminology. |</td>
 </tr>
 </tbody>
 </table>
 <p>The three steps in this example are the following.</p>
 <ol type="1">
-<li>Defining the bootstrapping node <u>X</u>, providing a data source and requesting the two nodes <u>Xmean</u> and <u>Xsd</u> for the mean and standard deviation, respectively (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;14</a>).</li>
+<li>Defining the bootstrapping node <u>X</u>, providing a data source and requesting the two nodes <u>Xmean</u> and <u>Xsd</u> for the mean and standard deviation, respectively (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;13</a>).</li>
 <li>Generating two nodes containing the bootstrap distributions <u>Xmean</u> and <u>Xsd</u> (automatically by shiny rrisk).</li>
-<li>Using the two nodes for defining a new node <u>C</u> for the population variability in consumption of eel per body weight consumed on single meal (<a href="#fig-ARSnodeC" class="quarto-xref">Figure&nbsp;15</a>).</li>
+<li>Using the two nodes for defining a new node <u>C</u> for the population variability in consumption of eel per body weight consumed on single meal (<a href="#fig-ARSnodeC" class="quarto-xref">Figure&nbsp;14</a>).</li>
 </ol>
 <div id="fig-ARSnodeC" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1019,7 +956,7 @@ Figure&nbsp;14: Bootstrapping of the mean and standard deviation of individual c
 <img src="ARSnodeC.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ARSnodeC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;15: Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details).
+Figure&nbsp;14: Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details).
 </figcaption>
 </figure>
 </div>
@@ -1040,14 +977,14 @@ Read more
 <div class="callout-body-container callout-body">
 <section id="bootstrapping---how-does-it-work" class="level4">
 <h4 class="anchored" data-anchor-id="bootstrapping---how-does-it-work">Bootstrapping - how does it work?</h4>
-<p><span class="citation" data-cites="Robert">@Robert [ to check whether this description matches with the implementation]</span> Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the <a href="https://www.r-project.org/">software R</a> can be requested such as <code>sum</code>, <code>mean</code>, <code>median</code>, <code>quantile(x, probs=.95)</code> (95th percentile), <code>var</code> and <code>sd</code> to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000<mark>?</mark> in shiny rrisk. The bootstrap algorithm is shown in <a href="#fig-BootstrapConcep" class="quarto-xref">Figure&nbsp;16</a>.</p>
+<p><span class="citation" data-cites="Robert">[@Robert: please check whether this description matches with the implementation]</span> Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the <a href="https://www.r-project.org/">software R</a> can be requested such as <code>sum</code>, <code>mean</code>, <code>median</code>, <code>quantile(x, probs=.95)</code> (95th percentile), <code>var</code> and <code>sd</code> to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000<mark>?</mark> in shiny rrisk. The bootstrap algorithm is shown in <a href="#fig-BootstrapConcep" class="quarto-xref">Figure&nbsp;15</a>.</p>
 <div id="fig-BootstrapConcep" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-BootstrapConcep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="BootstrapConcept.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BootstrapConcep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16: Schematic representation of the bootstrap method (Greiner, 2022, unpublishes course notes).
+Figure&nbsp;15: Schematic representation of the bootstrap method (Greiner, 2022, unpublishes course notes).
 </figcaption>
 </figure>
 </div>
@@ -1117,7 +1054,7 @@ Figure&nbsp;16: Schematic representation of the bootstrap method (Greiner, 2022,
 <img src="EKE0.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17: EFSA EKE node for defining a Pert distribution node.
+Figure&nbsp;16: EFSA EKE node for defining a Pert distribution node.
 </figcaption>
 </figure>
 </div>
@@ -1152,7 +1089,7 @@ print(d)</code></pre>
 <p>The European Food Safety Authority (EFSA) have described a process for eliciting expert knowledge (REF). The use of EFSA EKE node involves three steps.</p>
 <ol type="1">
 <li>Conduct of the EFSA EKE protocol, which includes the definition of a target quantity, elicitation protocol and results in the descdocumenting the data source and defining node names and corresponding statistics.</li>
-<li>A distribution node parameterised using input from an EFSA EKE may refer to variability or uncertainty, depending on the question formulation of the EKE process. The final result of the EKE consists of five percentiles that to be entered manually for fitting a Pert distribution (<a href="#fig-EKE0" class="quarto-xref">Figure&nbsp;17</a>). Details are illustrated using the example below.</li>
+<li>A distribution node parameterised using input from an EFSA EKE may refer to variability or uncertainty, depending on the question formulation of the EKE process. The final result of the EKE consists of five percentiles that to be entered manually for fitting a Pert distribution (<a href="#fig-EKE0" class="quarto-xref">Figure&nbsp;16</a>). Details are illustrated using the example below.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
@@ -1166,22 +1103,22 @@ Example for EFSA EKE (L. lignosellus in asparagus)
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>(<a href="#fig-EKE1" class="quarto-xref">Figure&nbsp;18</a>).</p>
+<p>(<a href="#fig-EKE1" class="quarto-xref">Figure&nbsp;17</a>).</p>
 <div id="fig-EKE1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-EKE1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="EKE1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
+Figure&nbsp;17: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
 </figcaption>
 </figure>
 </div>
 <p>The three steps in this example are the following.</p>
 <ol type="1">
-<li>Defining the bootstrapping node <u>X</u>, providing a data source and requesting the two nodes <u>Xmean</u> and <u>Xsd</u> for the mean and standard deviation, respectively (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;14</a>).</li>
+<li>Defining the bootstrapping node <u>X</u>, providing a data source and requesting the two nodes <u>Xmean</u> and <u>Xsd</u> for the mean and standard deviation, respectively (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;13</a>).</li>
 <li>Generating two nodes containing the bootstrap distributions <u>Xmean</u> and <u>Xsd</u> (automatically by shiny rrisk).</li>
-<li>Using the two nodes for defining a new node <u>C</u> for the population variability in consumption of eel per body weight consumed on single meal (<a href="#fig-ARSnodeC" class="quarto-xref">Figure&nbsp;15</a>).</li>
+<li>Using the two nodes for defining a new node <u>C</u> for the population variability in consumption of eel per body weight consumed on single meal (<a href="#fig-ARSnodeC" class="quarto-xref">Figure&nbsp;14</a>).</li>
 </ol>
 <div id="fig-EKE2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1189,7 +1126,7 @@ Figure&nbsp;18: Bootstrapping of the mean and standard deviation of individual c
 <img src="EKE2.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;19: EKE2.
+Figure&nbsp;18: EKE2.
 </figcaption>
 </figure>
 </div>
@@ -1209,7 +1146,7 @@ Read more
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <section id="efsa-eke" class="level4 callout-body-container callout-body">
 <h4 class="anchored" data-anchor-id="efsa-eke">EFSA EKE</h4>
-<p><span class="citation" data-cites="Robert">@Robert [ or Thomas to contribute]</span> Brief description of the EFSA EKE or more description how shiny rrisk deals with EKE more generally.</p>
+<p><span class="citation" data-cites="O">[@O or Thomas to contribute]</span> Brief description of the EFSA EKE or more description how shiny rrisk deals with EKE more generally.</p>
 </section>
 </div>
 </div>
