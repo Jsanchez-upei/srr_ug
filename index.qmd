@@ -1,7 +1,11 @@
 ---
 title: "Shiny rrisk user guide"
 subtitle: "Your quick start to perform probabilistic risk modelling using shiny rrisk"
-authors: To be discussed whether this is an authored text.
+author:
+  - Matthias Greiner, German Federal Institute for Risk Assssment (BfR) and Veterinary University Hannover, Germany
+  - Javier Sanchez. University of Prince Edwards Island (UPEI), Canada
+  - and who else contributes
+      
 ---
 
 
