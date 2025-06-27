@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Matthias Greiner, German Federal Institute for Risk Assssment (BfR) and Veterinary University Hannover, Germany">
-<meta name="author" content="Javier Sanchez. University of Prince Edwards Island (UPEI), Canada">
+<meta name="author" content="Javier Sanchez, University of Prince Edwards Island (UPEI), Canada">
 <meta name="author" content="and who else contributes">
 
 <title>Shiny rrisk user guide</title>
@@ -33,6 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./sampling_efficiency_report.html" rel="next">
+<link href="./distributionfitting.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -121,11 +123,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">About shiny rrisk</span></a>
   </li>  
 </ul>
@@ -139,7 +141,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Shiny rrisk user guide</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lastedited_index.html">Shiny rrisk user guide</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -173,7 +175,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lastedited_index.html" class="sidebar-item-text sidebar-link">
+  <a href="./lastedited_index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Shiny rrisk user guide</span></a>
   </div>
 </li>
@@ -207,7 +209,6 @@ window.Quarto = {
   <li><a href="#node-table" id="toc-node-table" class="nav-link" data-scroll-target="#node-table">Node Table</a></li>
   <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph">Graph</a></li>
   <li><a href="#check-model" id="toc-check-model" class="nav-link" data-scroll-target="#check-model">Check Model</a></li>
-  <li><a href="#fixed-parameters-and-functions" id="toc-fixed-parameters-and-functions" class="nav-link" data-scroll-target="#fixed-parameters-and-functions">Fixed parameters and functions</a></li>
   </ul></li>
   <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a>
   <ul class="collapse">
@@ -240,7 +241,7 @@ window.Quarto = {
     <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
              <p>Matthias Greiner, German Federal Institute for Risk Assssment (BfR) and Veterinary University Hannover, Germany </p>
-             <p>Javier Sanchez. University of Prince Edwards Island (UPEI), Canada </p>
+             <p>Javier Sanchez, University of Prince Edwards Island (UPEI), Canada </p>
              <p>and who else contributes </p>
           </div>
   </div>
@@ -272,7 +273,6 @@ This section will introduce you to
 </ul>
 </div>
 </div>
-<!-- shadow added to screenshot in MS-Word: offset centre, 60%, 102%, 5pt, 0, 0pt -->
 <div id="fig-ManagingFiles" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ManagingFiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -292,7 +292,7 @@ Figure&nbsp;1: Main screen, top row of shiny rrisk.
 <tbody>
 <tr class="odd">
 <td><span style="color:#0d6efd">NEW</span></td>
-<td>Click here if you wish to create a new model and assign a Model name.</td>
+<td>Check here if you wish to create a new model and assign a Model name.</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">OPEN</span></td>
@@ -300,11 +300,11 @@ Figure&nbsp;1: Main screen, top row of shiny rrisk.
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">SAVE</span></td>
-<td>Download the model, results or the model report to your local system.</td>
+<td><span class="citation" data-cites="Robert">[@Robert: consider change of button name]</span> Save the model, results or the model report to your local system. |</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">ABOUT</span></td>
-<td>Check out here for a disclaimer, manual and contact information.</td>
+<td><span class="citation" data-cites="Robert">[@Robert: consider change of button name]</span> Check out here for important information about the app . |</td>
 </tr>
 </tbody>
 </table>
@@ -405,7 +405,7 @@ This section will introduce you to
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>creating a model using a step-by-step process.</li>
+<li>a step-by-step process for creating a model in shiny rrisk session.</li>
 </ul>
 </div>
 </div>
@@ -428,7 +428,7 @@ Figure&nbsp;3: Main screen, second row of shiny rrisk.
 <tbody>
 <tr class="odd">
 <td><span style="color:#0d6efd">Add node</span></td>
-<td><span class="citation" data-cites="Robert">@Robert</span> [:][consider change of button name]] Create a new node and launch its verbal description and mathematical definition. |</td>
+<td><mark><span class="citation" data-cites="Robert">@Robert</span>: consider change of button name</mark>] Create a new node and launch its verbal description and mathematical definition. |</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Check model</span></td>
@@ -486,7 +486,7 @@ Figure&nbsp;4: Descriptive part of node definition.
 <tbody>
 <tr class="odd">
 <td><span style="color:#0d6efd">Name</span><span style="color:Red">*</span></td>
-<td><span class="citation" data-cites="Robert">@Robert</span> [:][consider change of button]] Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry.</td>
+<td><mark><span class="citation" data-cites="Robert">@Robert</span>: consider change of button</mark>] Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry.</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Unit</span></td>
@@ -494,7 +494,7 @@ Figure&nbsp;4: Descriptive part of node definition.
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">Grouping</span></td>
-<td><span class="citation" data-cites="Robert">@Robert</span> [:][consider change of button name]] A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation.</td>
+<td><mark><span class="citation" data-cites="Robert">@Robert</span>: consider change of button name</mark>] A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation.</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Source</span></td>
@@ -603,7 +603,7 @@ Read more
 </div>
 </div>
 </div>
-<p>![Mathematical part of node definition.@Robert<mark>:consider change to “Choose node defintion*”</mark>]](MathematicalDefinition.png){#fig-MathematicalDefinition width=“100%”}</p>
+<p>![Mathematical part of node definition.<mark><span class="citation" data-cites="Robert">@Robert</span>: consider change to “Choose node defintion*”</mark>]](MathematicalDefinition.png){#fig-MathematicalDefinition width=“100%”}</p>
 <p>Several options are available for defining the mathematical properties of a node, including user defined, parametric distribution, bootstrapping and EFSA EKE.</p>
 <p><code>@MG [: maybe change EFSA EKE to just expert elicitation]</code></p>
 <p>The first option allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;6</a>).</p>
@@ -627,7 +627,7 @@ Figure&nbsp;6: Choose user defined to enter a mathematical expression.
 <tbody>
 <tr class="odd">
 <td><span style="color:#0d6efd">Expression</span></td>
-<td><span class="citation" data-cites="Robert">@Robert</span> [:][consider change button name]]A mathematical expression is entered here that can be evaluated similar to a line of code in the <a href="https://www.r-project.org/">software R</a>. At least one term of the expression is another (distribution) node, which is referred to as a “parent node”. Parent nodes that do not yet exist in the model are referred to as “implicit nodes” and will be generated automatically by shiny rrisk. |</td>
+<td><mark><span class="citation" data-cites="Robert">@Robert</span>: consider change button name</mark>]A mathematical expression is entered here that can be evaluated similar to a line of code in the <a href="https://www.r-project.org/">software R</a>. At least one term of the expression is another (distribution) node, which is referred to as a “parent node”. Parent nodes that do not yet exist in the model are referred to as “implicit nodes” and will be generated automatically by shiny rrisk. |</td>
 </tr>
 </tbody>
 </table>
@@ -1008,15 +1008,15 @@ Figure&nbsp;15: Schematic representation of the bootstrap method (Greiner, 2022,
 <p>A further limitation of non-parametric bootstrap is that distributions take a discrete shape for very small size of the original data sample. Sampling with replacement of <span class="math inline">\(n\)</span> observations can result in exactly <span class="math inline">\(2n-1\choose n-1\)</span> possible permutations of sampling <span class="math inline">\(n\)</span> out of <span class="math inline">\(n\)</span>. The table below shows that more than 5 observations are needed to obtain only 126 permutations can occur. If the original data set contains outlier values, the discreteness can present a further limitation. <mark>I’ll add the example above with one outlier to show this effect…</mark></p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 14%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
+<col style="width: 46%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1193,16 +1193,13 @@ Read more
 <p>The next figure depicts the same model but with stretch model graph checked</p>
 <p><img src="images/checkstrechgraph.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <p>The other check box is “collapse groups”. If checked, all the nodes identified with the same “group name” will be hidden under the node identified with that group name. This is very useful when presenting a model with many nodes.</p>
-<p><img src="images/uncheckstrechgraph_collapse.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 9px 0px 0px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p><img src="images/uncheckstrechgraph_collapse.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <p>The user can click the mouse in any place on the screen that occupies the graph in order to move the whole graph, also the user can zoom in/zoom out using the appropriated combination of keys according to operating system (eg. Windows or MAC) or using the mouse. The user can double click on a node to open the node definition window (explained above).</p>
 <p>In order to move down to the definition table, the user should move the mouse out of the graph window or use the siding bar on the screen.</p>
 </section>
 <section id="check-model" class="level2">
 <h2 class="anchored" data-anchor-id="check-model">Check Model</h2>
 <p>Once all the nodes have been properly defined, the user should select Check Model for model verification. The model verification features assures that all the nodes are linked and properly defined. An error will appear other wise. The user will need to check that there is no isolated nodes (which could be due to typo in the node’s names and/or an invalid equation)</p>
-</section>
-<section id="fixed-parameters-and-functions" class="level2">
-<h2 class="anchored" data-anchor-id="fixed-parameters-and-functions">Fixed parameters and functions</h2>
 </section>
 </section>
 <section id="simulation" class="level1">
@@ -1902,6 +1899,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./distributionfitting.html" class="pagination-link" aria-label="Distribution fitting">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Distribution fitting</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./sampling_efficiency_report.html" class="pagination-link" aria-label="Sampling Efficiency Report: Monte Carlo vs Latin Hypercube">
+        <span class="nav-page-text">Sampling Efficiency Report: Monte Carlo vs Latin Hypercube</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
