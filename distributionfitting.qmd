@@ -1,6 +1,85 @@
 ---
 title: "Distribution fitting"
+subtitle: "Your quick start to using shiny rrisk distributions"
+author:
+  - Matthias Greiner, German Federal Institute for Risk Assssment (BfR) and Veterinary University Hannover, Germany
+  - Javier Sanchez. University of Prince Edwards Island (UPEI), Canada
+  - and who else contributes
+
 ---
 
-### to be done 
+
+# Getting started
+
+::: {.callout-note appearance="minimal"}
+#### This section will introduce you to
+
+- fitting a distribution to your original  data or expert knowledge elicitation results  
+:::
+
+
+
+![Main screen, top row of rrisk distributions.](distributionfitting.png){#fig-distributionfitting width="100%"}
+The rrisk distributions supports two approaches for fitting a distribution, which are technically related to a probability density function (pdf) or cumulative density function (cdf) .
+
+
+|                                |                                                                                                                            |
+|-----------------|-------------------------------------------------------|
+| [pdf]{style="color:#0d6efd"}  | Choose this option when you have original data, typically a sample from a population of observations. |
+| [cdf]{style="color:#0d6efd"}  | Choose this option when you have percentiles, e.g. form an EKE process.                                                      |
+
+: {tbl-colwidths="\[10,90\]"}
+
+### Expert knowledge elicitation (EKE)
+
+::: {.callout-note appearance="minimal"}
+This section demonstrates how you can use typical results from an expert elicitation to parameterise a node in shiny rrisk [Needs major revision when the distribution app becomes available; Olaf Mosbach-Schulz should review the section]{.mark}.
+:::
+
+![EFSA EKE node for defining a Pert distribution node.](EKE0.png){#fig-EKE0 width="100%"}
+
+|                                                  |                                                                                                             |
+|-----------------------|-------------------------------------------------|
+| [Choose node definition]{style="color:#0d6efd"}  | [to be updated]{.mark} Select EFSA EKE.                                                                     |
+| [Distribution represents]{style="color:#0d6efd"} | Select either variability or uncertainty.                                                                   |
+| [Quantiles]{style="color:#0d6efd"}               | Enter any number of quantiles, comma-separated.                                                             |
+| [Cumulative probability]{style="color:#0d6efd"}  | Enter one cumulative probability for each of the quantiles, beginning with the value zero, comma-separated. |
+
+: {tbl-colwidths="\[20,80\]"}
+
+``` (r)
+d -> choose(3,3)
+print(d)
+```
+
+#### Defining an EFSA EKE node in shiny rrisk
+
+The European Food Safety Authority (EFSA) have described a process for eliciting expert knowledge (REF). The use of EFSA EKE node involves three steps.
+
+1.  Conduct of the EFSA EKE protocol, which includes the definition of a target quantity, elicitation protocol and results in the descdocumenting the data source and defining node names and corresponding statistics.
+2.  A distribution node parameterised using input from an EFSA EKE may refer to variability or uncertainty, depending on the question formulation of the EKE process. The final result of the EKE consists of five percentiles that to be entered manually for fitting a Pert distribution (@fig-EKE0). Details are illustrated using the example below.
+
+::: {.callout-note collapse="true"}
+### Example for EFSA EKE (L. lignosellus in asparagus)
+
+(@fig-EKE1).
+
+![Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).](EKE1.png){#fig-EKE1 width="100%"}
+
+The three steps in this example are the following.
+
+1.  Defining the bootstrapping node [X]{.underline}, providing a data source and requesting the two nodes [Xmean]{.underline} and [Xsd]{.underline} for the mean and standard deviation, respectively (@fig-BootstrapNode2).
+2.  Generating two nodes containing the bootstrap distributions [Xmean]{.underline} and [Xsd]{.underline} (automatically by shiny rrisk).
+3.  Using the two nodes for defining a new node [C]{.underline} for the population variability in consumption of eel per body weight consumed on single meal (@fig-ARSnodeC).
+
+![EKE2.](EKE2.png){#fig-EKE2 width="100%"}
+:::
+
+::: {.callout-caution collapse="true"}
+## Read more
+
+#### EFSA EKE
+
+[@O or Thomas to contribute] Brief description of the EFSA EKE or more description how shiny rrisk deals with EKE more generally.
+:::
 
