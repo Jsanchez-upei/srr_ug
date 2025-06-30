@@ -1,0 +1,55 @@
+# Documenting and reporting
+
+
+![Authors and free text model description are provided for model documentation.](images/Documentation.png){#fig-Documentation width="100%"}
+
+
+Under this menu you can save the **Model** (\*.rrisk) to your working device as explained before.
+
+The **Report** option will generate a word document report with all the information entered in shiny rrisk.
+
+The **Results** option will generate datasets in "\*.csv" format [@Robert **- no working so not sure what I am getting**]
+
+# Documentation and Reporting
+
+This tab is left to add additional information about the model authors and a general description of the model (eg. question of interest and model scope, methodology used, resources, etc).
+
+::: {.callout-tip collapse="true"}
+## Good practice: Developing a report
+
+Generally, risk and exposure assessment \[quantitative\] models are complex, and are difficult to communicate to decision makers. Shiny rrisk has a unique feature that allows user to produce reports that can improve the communication of the model results to the end user. As it has been described before, shiny rrisk provides the user many instances during the model creation to enter information about the each input variable that later will be used in the report.
+
+The user can enter the following information under **Documentation and Reporting**
+
+-   an overall summary of the model
+
+-   introduction to the problem
+
+-   questions addressed and those not addressed;
+
+-   overall discussion of data used and relation to model choice;
+
+    -   methods of addressing decision questions with available information;
+
+-   overview of model structure, how the sections relate together
+
+-   major model assumptions and the impact on the results if incorrect;
+
+-   critique of model, comment on validation
+
+    -   discussion of possible options for improvement,
+
+    -   extra data that would change the model or its results
+
+During the node development, the user can think about this information, that later will be used in shiny rrisk to create the report
+
+-   available data (references and datasets)
+
+-   assumptions
+
+-   explanation of equation derivations
+
+Results
+
+-   guide on how to interpret and use statistical and graphical outputs
+:::

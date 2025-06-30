@@ -13,31 +13,82 @@ author:
 ::: {.callout-note appearance="minimal"}
 #### This section will introduce you to
 
-- fitting a distribution to your original  data or expert knowledge elicitation results  
+- fitting a distribution to your original data or expert knowledge elicitation results
 :::
 
 
 
-![Main screen, top row of rrisk distributions.](distributionfitting.png){#fig-distributionfitting width="100%"}
+![Main screen, top row of rrisk distributions.](images/distributionfitting.png){#fig-distributionfitting width="100%"}
 
 
-Shiny rrisk distributions supports two approaches for fitting a distribution (@fig-distributionfitting). The first approach, fitting a probability density function (pdf), requires a sample of empirical observations to be uploaded. The app then supports the identification and parameterisation of the candidate distributions. The second approach, fitting a cumulative density function (cdf), requires the definition of percentiles, which are than used as support points for distribution fitting. The latter option is also applicable for fitting a distribution to the results of a expert knowledge elicitation (EKE).  In both cases, the results of the procedure can be imported into a shiny rrisk session. 
+
+|                                |                                                                                                                            |
+|-----------------|-------------------------------------------------------|
+| [NEW]{style="color:#0d6efd"}   | Click here if you wish to create a new distribution fitting project.                                                      |
+| [OPEN]{style="color:#0d6efd"}  | Open a csv-data file containing your original observations or a rrisk-dist file if you want to modify a distribution fitting project that you have created and downloaded. |
+| [SAVE]{style="color:#0d6efd"}  | Download the fitting project, report or export to shiny rrisk session.                                                     |
+| [ABOUT]{style="color:#0d6efd"} | Check out here for a disclaimer, manual and contact information.                                                           |
+
+: {tbl-colwidths="\[10,90\]"}
+
+shiny rrisk distributions supports two approaches for fitting a distribution (@fig-distributionfitting). The first approach involves fitting a probability density function (pdf) and requires you to upload a sample of empirical observations. The app then helps you to identify and parameterise candidate distributions that fit the provided data. The second approach involves fitting a cumulative density function (cdf), for which you must first define percentiles. These percentiles are then used as support points for distribution fitting. This option can also be used to fit a distribution to the results of an expert knowledge elicitation (EKE).  In both cases, the results of the procedure can be imported into a shiny rrisk session.
 
 |                                |                                                                                                                            |
 |-----------------|-------------------------------------------------------|
 | [pdf]{style="color:#0d6efd"}  | Choose this option when you have original data, typically a sample from a population of observations. |
-| [cdf]{style="color:#0d6efd"}  | Choose this option when you have percentiles, e.g. form an EKE process.                                                      |
+| [cdf]{style="color:#0d6efd"}  | Choose this option when you have percentiles, e.g. from an EKE process.                                                      |
 
 : {tbl-colwidths="\[10,90\]"}
 
-## Fitting a probability density function (pdf) 
+## Fitting a probability density function (pdf) {#sec-parametricdistr}
 
 ::: {.callout-note appearance="minimal"}
 #### This section will introduce you to
 
-- fitting a robability density function (pdf) to some empirical data
+- fitting a probability density function (pdf) to empirical data.
 :::
 
+
+#### Distribution families and goodness of fit
+
+The app currently supports the fit of Weibull, normal, gamma, triangular, log-normal, inverse gamma, cauchy and exponential distribution. You should be consult expert knowledge to select suitable candidate distributions for the data 
+
+(see @sec-parametricdistr ).
+
+
+
+::: {.callout-caution collapse="true"}
+## Read more
+
+##### Akaike information criterion (AIC)
+
+Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models. Thus, AIC provides a means for model selection.(Wikipedia contributors, 'Akaike information criterion', Wikipedia, The Free Encyclopedia, <https://en.wikipedia.org/w/index.php?title=Akaike_information_criterion&oldid=1298064517> [accessed 30 June 2025])
+
+:::
+
+
+
+Suppose that we have a statistical model of some data. Let k be the number of estimated parameters in the model. Let L ^ {\displaystyle {\hat {L}}} be the maximized value of the likelihood function for the model. Then the AIC value of the model is the following.[4][5]
+
+    A I C = 2 k − 2 ln ⁡ ( L ^ ) {\displaystyle \mathrm {AIC} \,=\,2k-2\ln({\hat {L}})}
+    
+    avg. neg. log-liklihood = 1.497
+
+BIC
+comparison of AIC/AICc and BIC is given by Burnham & Anderson (2002, §6.3-6.4), with follow-up remarks by Burnham & Anderson (2004). The authors show that AIC/AICc can be derived in the same Bayesian framework as BIC, just by using different prior probabilities. In the Bayesian derivation of BIC, though, each candidate model has a prior probability of 1/R (where R is the number of candidate models). Additionally, the authors present a few simulation studies that suggest AICc tends to have practical/performance advantages over BIC. 
+
+{\displaystyle \mathrm {BIC} =k\ln(n)-2\ln({\widehat {L}}).\ }
+
+Example 
+
+
+The exposure model of Alizarin red in eel contains the node X based on 19 observed individual intake  values of eel per kg body weight derived from 24h-recall data of the German National Consumption Survey II (MRI, 2008). This model demonstrates the advanced concept of using bootstrap to obtain uncertainty distribution for the log mean and log standard deviation. Now let’s explore a simpler approach, which is to use the 19 original intake values directly for distribution fitting (@fig-fitlognormal). 
+
+A log-normal distribution provides the best fit according to the AIC statistic. This result is consistent with the use of .. and BIC criterion (results not shown). The parameters of fitted log-normal distribution are  and respectively. Upon pressing .. the results can be exported to a shiny risk session. In shiny rrisk, a parametric distribution node is generated from the imported fitting object (@fig-importedfit).
+
+This, 
+
+Von meinem iPad gesendet
 
 ## Fitting a cumulative density function (cdf)
 
@@ -54,7 +105,7 @@ Shiny rrisk distributions supports two approaches for fitting a distribution (@f
 This section demonstrates how you can use typical results from an expert elicitation to parameterise a node in shiny rrisk [Needs major revision when the distribution app becomes available; Olaf Mosbach-Schulz should review the section]{.mark}.
 :::
 
-![EFSA EKE node for defining a Pert distribution node.](EKE0.png){#fig-EKE0 width="100%"}
+![EFSA EKE node for defining a Pert distribution node.](images/EKE0.png){#fig-EKE0 width="100%"}
 
 |                                                  |                                                                                                             |
 |-----------------------|-------------------------------------------------|
@@ -65,10 +116,6 @@ This section demonstrates how you can use typical results from an expert elicita
 
 : {tbl-colwidths="\[20,80\]"}
 
-``` (r)
-d -> choose(3,3)
-print(d)
-```
 
 #### Defining an EFSA EKE node in shiny rrisk
 
@@ -82,7 +129,7 @@ The European Food Safety Authority (EFSA) have described a process for eliciting
 
 (@fig-EKE1).
 
-![Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).](EKE1.png){#fig-EKE1 width="100%"}
+![Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).](images/EKE1.png){#fig-EKE1 width="100%"}
 
 The three steps in this example are the following.
 
@@ -90,7 +137,7 @@ The three steps in this example are the following.
 2.  Generating two nodes containing the bootstrap distributions [Xmean]{.underline} and [Xsd]{.underline} (automatically by shiny rrisk).
 3.  Using the two nodes for defining a new node [C]{.underline} for the population variability in consumption of eel per body weight consumed on single meal (@fig-ARSnodeC).
 
-![EKE2.](EKE2.png){#fig-EKE2 width="100%"}
+![EKE2.](images/EKE2.png){#fig-EKE2 width="100%"}
 :::
 
 ::: {.callout-caution collapse="true"}

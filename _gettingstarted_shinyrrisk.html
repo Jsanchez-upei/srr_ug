@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Matthias Greiner, German Federal Institute for Risk Assssment (BfR) and Veterinary University Hannover, Germany">
+<meta name="author" content="Javier Sanchez. University of Prince Edwards Island (UPEI), Canada">
 
-<title>Shiny rrisk user guide - About shiny rrisk</title>
+<title>Distribution fitting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,163 +25,72 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./distributionfitting.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+<script src="_gettingstarted_shinyrrisk_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_gettingstarted_shinyrrisk_files/libs/quarto-html/quarto.js"></script>
+<script src="_gettingstarted_shinyrrisk_files/libs/quarto-html/popper.min.js"></script>
+<script src="_gettingstarted_shinyrrisk_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_gettingstarted_shinyrrisk_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_gettingstarted_shinyrrisk_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_gettingstarted_shinyrrisk_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_gettingstarted_shinyrrisk_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_gettingstarted_shinyrrisk_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_gettingstarted_shinyrrisk_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
   }
-}</script>
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
-
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="fullcontent">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Shiny rrisk user guide</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
-<span class="menu-text">About shiny rrisk</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./about.html">About shiny rrisk</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">About shiny rrisk</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./distributionfitting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Distribution fitting</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./lastedited_index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Shiny rrisk user guide</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./sampling_efficiency_report.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sampling Efficiency Report: Monte Carlo vs Latin Hypercube</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#about-shiny-rrisk" id="toc-about-shiny-rrisk" class="nav-link active" data-scroll-target="#about-shiny-rrisk">About shiny rrisk</a></li>
-  <li><a href="#user-guide" id="toc-user-guide" class="nav-link" data-scroll-target="#user-guide">User Guide</a></li>
-  <li><a href="#example-models" id="toc-example-models" class="nav-link" data-scroll-target="#example-models">Example models</a></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About shiny rrisk</h1>
+<h1 class="title">Distribution fitting</h1>
+<p class="subtitle lead">Your quick start to using shiny rrisk distributions</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Matthias Greiner, German Federal Institute for Risk Assssment (BfR) and Veterinary University Hannover, Germany </p>
+             <p>Javier Sanchez. University of Prince Edwards Island (UPEI), Canada </p>
+          </div>
+  </div>
     
   
     
@@ -190,30 +101,147 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="about-shiny-rrisk" class="level3">
-<h3 class="anchored" data-anchor-id="about-shiny-rrisk">About shiny rrisk</h3>
-<p>shiny rrisk is a free, web-based tool for probabilistic risk modelling, developed at the German Federal Institute for Risk Assessment (BfR). The name of the tool is an acknowledgement of the use of <a href="https://shiny.rstudio.com">Shiny</a> for the development of an application based on the <a href="https://www.r-project.org/">software R</a> for risk modelling. Key features of the tool include its flexibility to create complex models from scratch, two-dimensional Monte Carlo simulation to account for uncertainties and fully integrated model documentation to automatically generate a model report. (Ref basic paper). The tool can be accessed at <a href="http://shiny.bfr.bund.de/apps/shiny-rrisk">http://shiny.bfr.bund.de/apps/shiny-rrisk</a>.</p>
-</section>
-<section id="user-guide" class="level3">
-<h3 class="anchored" data-anchor-id="user-guide">User Guide</h3>
-<p>The user guide describes essential steps for using shiny rrisk for probabilistic risk modelling following a typical workflow. It also provides some background information and illustrates important design features using example models.</p>
-</section>
-<section id="example-models" class="level3">
-<h3 class="anchored" data-anchor-id="example-models">Example models</h3>
-<p>This tutorial uses models that are provided with the application for illustrative purposes. These demo models are provided without warranty by the developers of shiny rrisk or the BfR. A description of these models is available via the automatic reporting function.</p>
+<section id="getting-started-srr" class="level1">
+<h1>Getting started (srr)</h1>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+This section will introduce you to
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>HEV in liver sausages</li>
-<li>Y. enterocolitica in minced meat</li>
-<li>Alizarin Red S in eel (2D MC)</li>
-<li>L monocytogenes in cheese</li>
-<li>E. coli in hamburger patties (2D MC)</li>
-<li>E. lignosellus in asparagus</li>
+<li>getting started with a shiny rrisk session and</li>
+<li>managing the data file that contains the complete documentation and executable code of your model.</li>
 </ul>
-
-
+</div>
+</div>
+<!-- shadow added to screenshot in MS-Word: offset centre, 60%, 102%, 5pt, 0, 0pt -->
+<div id="fig-ManagingFiles" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ManagingFiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ManagingFiles.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ManagingFiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Main screen, top row of shiny rrisk.
+</figcaption>
+</figure>
+</div>
+<p>The top row of the app displays the version of the app and provides basic functionality for managing models (<a href="#fig-ManagingFiles" class="quarto-xref">Figure&nbsp;1</a>).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span style="color:#0d6efd">NEW</span></td>
+<td>Click here if you wish to create a new model and assign a Model name.</td>
+</tr>
+<tr class="even">
+<td><span style="color:#0d6efd">OPEN</span></td>
+<td>Open a saved model or one of the demo models implemented in the tool. The extension of model files is <a href="#rrisk"><code>“rrisk”</code></a>.</td>
+</tr>
+<tr class="odd">
+<td><span style="color:#0d6efd">SAVE</span></td>
+<td>Download the model, results or the model report to your local system.</td>
+</tr>
+<tr class="even">
+<td><span style="color:#0d6efd">ABOUT</span></td>
+<td>Check out here for a disclaimer, manual and contact information.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avoid loss of your data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The app runs on a server provided by the German Federal Institute for Risk Assessment (BfR). Your data is not accessible to BfR or any other party and irretrievably lost upon termination of the browser session or interrupt of the server connection. It is highly recommended that you <strong>Save</strong> your model regularly after each important modification.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Good practice
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>We recommend using “<span class="math inline">\(&lt;\)</span>agent<span class="math inline">\(&gt;\)</span>in<span class="math inline">\(&lt;\)</span>commodity<span class="math inline">\(&gt;\)</span>” as standard format for naming models.</li>
+<li>We recommend discussing the model concept with stakeholders (see tip below) in order to clarify the task and available data and resources.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read more
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="first-things-first" class="level3">
+<h3 class="anchored" data-anchor-id="first-things-first">First things first</h3>
+<p>Before developing a mathematical or probabilistic model it is advisable to clarify some important points.</p>
+<ul>
+<li>What is the question you wish to answer?</li>
+<li>What is the starting point and final outcome of the scenario you wish to model?</li>
+<li>What are the relevant/influential events and pathways?</li>
+<li>What are the relevant populations and subgroups to be considered?</li>
+<li>If exposure factors and disease statuses are involved, are there accepted case definitions available?</li>
+</ul>
+</section>
+<section id="building-blocks-of-a-model" class="level3">
+<h3 class="anchored" data-anchor-id="building-blocks-of-a-model">Building blocks of a model</h3>
+<p>A probabilistic risk model typically represents a series of events or situations that can be linked together in a logical or chronological order, whereby the final event represents the outcome of interest. For example, consider the hypothetical shipment of one race horse from Argentina to Germany. The task is to quantify the probability of the horse to be infected with equine infectious anemia (EIA, see <a href="https://www.fli.de/en/news/animal-disease-situation/equine-infectious-anemia/">FLI, 2017</a>, accessed 9.5.2025). Note that this example is for illustration only. Each building block of the model requires clarifications and definitions which are tailored to the specific problem at hand. Some of the clarifications can only be provided by the customer (risk manager) and others by domain experts risk assessors. For larger projects, stakeholders should be involved in this process.</p>
+<ul>
+<li><strong>Risk question:</strong> defines the outcome of interest; what is the probability that the introduced horse is infected with EIA virus?</li>
+<li><strong>Scope:</strong> defines what is included or excluded from the assessment; here economic and epidemiological consequences are beyond the scope.</li>
+<li><strong>Pathway and scenario:</strong> define all relevant steps and events; here the selection of the horse, legal and sanitary transport requirements, transport, border health checks shoud be considered.</li>
+<li><strong>Model parameters (denoted “nodes” in shiny rrisk):</strong> define all input and output quantities required in the model; here the minimum set of parameters include the prevalence of EIA in Argentina, the probability of infection at boarding and the probability of infection at introduction of the animal after de-boarding formalities. Additional parameters may apply.</li>
+<li><strong>Components of the model:</strong> may structure the parameters into logical groups which makes it easier to discuss the model with individual domain experts and provides a useful structure of the report; typical components for a larger import risk models include the entry assessment, exposure assessment, consequence assessment and risk estimation (see <a href="https://www.woah.org/fileadmin/Home/eng/Health_standards/tahc/2018/en_chapitre_import_risk_analysis.htm">OIE, 2018</a>, accessed 9 May 2025).</li>
+</ul>
+</section>
+<section id="visualisation" class="level3">
+<h3 class="anchored" data-anchor-id="visualisation">Visualisation</h3>
+<p>It is recommended to sketch a visual representation of the conceptual model. The flowchart for the simple example above (<a href="#fig-ConceptualModelEIA" class="quarto-xref">Figure&nbsp;2</a>) may support the discussion about required data and additional nodes such as for diagnostic testing.</p>
+<div id="fig-ConceptualModelEIA" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ConceptualModelEIA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="ConceptualModelEIA.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ConceptualModelEIA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Example for a conceptual model (made with yEd).
+</figcaption>
+</figure>
+</div>
+</section>
+</div>
+</div>
+</div>
 </section>
 
-</main> <!-- /main -->
+</main>
+<!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -623,29 +651,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./distributionfitting.html" class="pagination-link" aria-label="Distribution fitting">
-        <span class="nav-page-text">Distribution fitting</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Greiner M, Sanchez J, 2025</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 

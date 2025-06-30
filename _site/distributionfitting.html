@@ -167,8 +167,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
   <ul class="collapse">
-  <li><a href="#fitting-a-probability-density-function-pdf" id="toc-fitting-a-probability-density-function-pdf" class="nav-link" data-scroll-target="#fitting-a-probability-density-function-pdf">Fitting a probability density function (pdf)</a></li>
-  <li><a href="#fitting-a-cumulative-density-function-pdf" id="toc-fitting-a-cumulative-density-function-pdf" class="nav-link" data-scroll-target="#fitting-a-cumulative-density-function-pdf">Fitting a cumulative density function (pdf)</a>
+  <li><a href="#sec-parametricdistr" id="toc-sec-parametricdistr" class="nav-link" data-scroll-target="#sec-parametricdistr">Fitting a probability density function (pdf)</a></li>
+  <li><a href="#fitting-a-cumulative-density-function-cdf" id="toc-fitting-a-cumulative-density-function-cdf" class="nav-link" data-scroll-target="#fitting-a-cumulative-density-function-cdf">Fitting a cumulative density function (cdf)</a>
   <ul class="collapse">
   <li><a href="#expert-knowledge-elicitation-eke" id="toc-expert-knowledge-elicitation-eke" class="nav-link" data-scroll-target="#expert-knowledge-elicitation-eke">Expert knowledge elicitation (EKE)</a></li>
   </ul></li>
@@ -219,22 +219,45 @@ This section will introduce you to
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>fitting a distribution to your original data or expert knowledge elicitation results<br>
-</li>
+<li>fitting a distribution to your original data or expert knowledge elicitation results</li>
 </ul>
 </div>
 </div>
 <div id="fig-distributionfitting" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-distributionfitting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="distributionfitting.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/distributionfitting.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distributionfitting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Main screen, top row of rrisk distributions.
 </figcaption>
 </figure>
 </div>
-<p>Shiny rrisk distributions supports two approaches for fitting a distribution. The first approach, fitting a probability density function (pdf), requires a sample of empirical observations to be uploaded. The app then supports the identification and parameterisation of the candidate distributions. The second approach, fitting a cumulative density function (cdf), requires the definition of percentiles, which are than used as support points for distribution fitting (<a href="#fig-distributionfitting" class="quarto-xref">Figure&nbsp;1</a>). The latter option is also applicable for fitting a distribution to the results of a expert knowledge elicitation (EKE). In both cases, the results of the procedure can be imported into a shiny rrisk session.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 90%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span style="color:#0d6efd">NEW</span></td>
+<td>Click here if you wish to create a new distribution fitting project.</td>
+</tr>
+<tr class="even">
+<td><span style="color:#0d6efd">OPEN</span></td>
+<td>Open a csv-data file containing your original observations or a rrisk-dist file if you want to modify a distribution fitting project that you have created and downloaded.</td>
+</tr>
+<tr class="odd">
+<td><span style="color:#0d6efd">SAVE</span></td>
+<td>Download the fitting project, report or export to shiny rrisk session.</td>
+</tr>
+<tr class="even">
+<td><span style="color:#0d6efd">ABOUT</span></td>
+<td>Check out here for a disclaimer, manual and contact information.</td>
+</tr>
+</tbody>
+</table>
+<p>shiny rrisk distributions supports two approaches for fitting a distribution (<a href="#fig-distributionfitting" class="quarto-xref">Figure&nbsp;1</a>). The first approach involves fitting a probability density function (pdf) and requires you to upload a sample of empirical observations. The app then helps you to identify and parameterise candidate distributions that fit the provided data. The second approach involves fitting a cumulative density function (cdf), for which you must first define percentiles. These percentiles are then used as support points for distribution fitting. This option can also be used to fit a distribution to the results of an expert knowledge elicitation (EKE). In both cases, the results of the procedure can be imported into a shiny rrisk session.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 10%">
@@ -247,12 +270,12 @@ Figure&nbsp;1: Main screen, top row of rrisk distributions.
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">cdf</span></td>
-<td>Choose this option when you have percentiles, e.g.&nbsp;form an EKE process.</td>
+<td>Choose this option when you have percentiles, e.g.&nbsp;from an EKE process.</td>
 </tr>
 </tbody>
 </table>
-<section id="fitting-a-probability-density-function-pdf" class="level2">
-<h2 class="anchored" data-anchor-id="fitting-a-probability-density-function-pdf">Fitting a probability density function (pdf)</h2>
+<section id="sec-parametricdistr" class="level2">
+<h2 class="anchored" data-anchor-id="sec-parametricdistr">Fitting a probability density function (pdf)</h2>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -264,13 +287,46 @@ This section will introduce you to
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>fitting a robability density function (pdf) to some empirical data</li>
+<li>fitting a probability density function (pdf) to empirical data.</li>
 </ul>
 </div>
 </div>
+<section id="distribution-families-and-goodness-of-fit" class="level4">
+<h4 class="anchored" data-anchor-id="distribution-families-and-goodness-of-fit">Distribution families and goodness of fit</h4>
+<p>The app currently supports the fit of Weibull, normal, gamma, triangular, log-normal, inverse gamma, cauchy and exponential distribution. You should be consult expert knowledge to select suitable candidate distributions for the data</p>
+<p>(see <a href="#sec-parametricdistr" class="quarto-xref">Section&nbsp;1.1</a> ).</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read more
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<section id="akaike-information-criterion-aic" class="level5 callout-body-container callout-body">
+<h5 class="anchored" data-anchor-id="akaike-information-criterion-aic">Akaike information criterion (AIC)</h5>
+<p>Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models. Thus, AIC provides a means for model selection.(Wikipedia contributors, ‘Akaike information criterion’, Wikipedia, The Free Encyclopedia, <a href="https://en.wikipedia.org/w/index.php?title=Akaike_information_criterion&amp;oldid=1298064517" class="uri">https://en.wikipedia.org/w/index.php?title=Akaike_information_criterion&amp;oldid=1298064517</a> [accessed 30 June 2025])</p>
 </section>
-<section id="fitting-a-cumulative-density-function-pdf" class="level2">
-<h2 class="anchored" data-anchor-id="fitting-a-cumulative-density-function-pdf">Fitting a cumulative density function (pdf)</h2>
+</div>
+</div>
+<p>Suppose that we have a statistical model of some data. Let k be the number of estimated parameters in the model. Let L ^ {} be the maximized value of the likelihood function for the model. Then the AIC value of the model is the following.[4][5]</p>
+<pre><code>A I C = 2 k − 2 ln ⁡ ( L ^ ) {\displaystyle \mathrm {AIC} \,=\,2k-2\ln({\hat {L}})}
+
+avg. neg. log-liklihood = 1.497</code></pre>
+<p>BIC comparison of AIC/AICc and BIC is given by Burnham &amp; Anderson (2002, §6.3-6.4), with follow-up remarks by Burnham &amp; Anderson (2004). The authors show that AIC/AICc can be derived in the same Bayesian framework as BIC, just by using different prior probabilities. In the Bayesian derivation of BIC, though, each candidate model has a prior probability of 1/R (where R is the number of candidate models). Additionally, the authors present a few simulation studies that suggest AICc tends to have practical/performance advantages over BIC.</p>
+<p>{ =k(n)-2({}).&nbsp;}</p>
+<p>Example</p>
+<p>The exposure model of Alizarin red in eel contains the node X based on 19 observed individual intake values of eel per kg body weight derived from 24h-recall data of the German National Consumption Survey II (MRI, 2008). This model demonstrates the advanced concept of using bootstrap to obtain uncertainty distribution for the log mean and log standard deviation. Now let’s explore a simpler approach, which is to use the 19 original intake values directly for distribution fitting (<strong>?@fig-fitlognormal</strong>).</p>
+<p>A log-normal distribution provides the best fit according to the AIC statistic. This result is consistent with the use of .. and BIC criterion (results not shown). The parameters of fitted log-normal distribution are and respectively. Upon pressing .. the results can be exported to a shiny risk session. In shiny rrisk, a parametric distribution node is generated from the imported fitting object (<strong>?@fig-importedfit</strong>).</p>
+<p>This,</p>
+<p>Von meinem iPad gesendet</p>
+</section>
+</section>
+<section id="fitting-a-cumulative-density-function-cdf" class="level2">
+<h2 class="anchored" data-anchor-id="fitting-a-cumulative-density-function-cdf">Fitting a cumulative density function (cdf)</h2>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -301,7 +357,7 @@ This section will introduce you to
 <div id="fig-EKE0" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-EKE0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="EKE0.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/EKE0.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: EFSA EKE node for defining a Pert distribution node.
@@ -332,8 +388,6 @@ Figure&nbsp;2: EFSA EKE node for defining a Pert distribution node.
 </tr>
 </tbody>
 </table>
-<pre class="(r)"><code>d -&gt; choose(3,3)
-print(d)</code></pre>
 <section id="defining-an-efsa-eke-node-in-shiny-rrisk" class="level4">
 <h4 class="anchored" data-anchor-id="defining-an-efsa-eke-node-in-shiny-rrisk">Defining an EFSA EKE node in shiny rrisk</h4>
 <p>The European Food Safety Authority (EFSA) have described a process for eliciting expert knowledge (REF). The use of EFSA EKE node involves three steps.</p>
@@ -342,7 +396,7 @@ print(d)</code></pre>
 <li>A distribution node parameterised using input from an EFSA EKE may refer to variability or uncertainty, depending on the question formulation of the EKE process. The final result of the EKE consists of five percentiles that to be entered manually for fitting a Pert distribution (<a href="#fig-EKE0" class="quarto-xref">Figure&nbsp;2</a>). Details are illustrated using the example below.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -351,13 +405,13 @@ Example for EFSA EKE (L. lignosellus in asparagus)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>(<a href="#fig-EKE1" class="quarto-xref">Figure&nbsp;3</a>).</p>
 <div id="fig-EKE1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-EKE1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="EKE1.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/EKE1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
@@ -373,7 +427,7 @@ Figure&nbsp;3: Bootstrapping of the mean and standard deviation of individual co
 <div id="fig-EKE2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-EKE2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="EKE2.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/EKE2.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: EKE2.
@@ -384,7 +438,7 @@ Figure&nbsp;4: EKE2.
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -393,7 +447,7 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <section id="efsa-eke" class="level4 callout-body-container callout-body">
 <h4 class="anchored" data-anchor-id="efsa-eke">EFSA EKE</h4>
 <p><span class="citation" data-cites="O">[@O or Thomas to contribute]</span> Brief description of the EFSA EKE or more description how shiny rrisk deals with EKE more generally.</p>
