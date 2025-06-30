@@ -21,9 +21,12 @@ author:
   -->
 
 <!-- To do's 
+  Matthias
+  Check notation for sigma distribution 
+  
   Javier
-  "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube" could be used as a "Read more" in Simulation section
-  We don't have section numbers in the other sections. 
+  "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube" could be used as a 
+  "Read more" in Simulation section, perhaps remove section numbers for consistency 
   
   Robert
   Proofreading 
