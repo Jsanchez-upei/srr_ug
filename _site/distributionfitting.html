@@ -8,7 +8,6 @@
 
 <meta name="author" content="Matthias Greiner, German Federal Institute for Risk Assssment (BfR) and Veterinary University Hannover, Germany">
 <meta name="author" content="Javier Sanchez. University of Prince Edwards Island (UPEI), Canada">
-<meta name="author" content="and who else contributes">
 
 <title>Shiny rrisk user guide - Distribution fitting</title>
 <style>
@@ -168,7 +167,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
   <ul class="collapse">
+  <li><a href="#fitting-a-probability-density-function-pdf" id="toc-fitting-a-probability-density-function-pdf" class="nav-link" data-scroll-target="#fitting-a-probability-density-function-pdf">Fitting a probability density function (pdf)</a></li>
+  <li><a href="#fitting-a-cumulative-density-function-pdf" id="toc-fitting-a-cumulative-density-function-pdf" class="nav-link" data-scroll-target="#fitting-a-cumulative-density-function-pdf">Fitting a cumulative density function (pdf)</a>
+  <ul class="collapse">
   <li><a href="#expert-knowledge-elicitation-eke" id="toc-expert-knowledge-elicitation-eke" class="nav-link" data-scroll-target="#expert-knowledge-elicitation-eke">Expert knowledge elicitation (EKE)</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -191,7 +194,6 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-title-meta-contents">
              <p>Matthias Greiner, German Federal Institute for Risk Assssment (BfR) and Veterinary University Hannover, Germany </p>
              <p>Javier Sanchez. University of Prince Edwards Island (UPEI), Canada </p>
-             <p>and who else contributes </p>
           </div>
   </div>
     
@@ -222,7 +224,17 @@ This section will introduce you to
 </ul>
 </div>
 </div>
-<p><img src="distributionfitting.png" id="fig-distributionfitting" class="img-fluid" style="width:100.0%" alt="Main screen, top row of rrisk distributions."> The rrisk distributions supports two approaches for fitting a distribution, which are technically related to a probability density function (pdf) or cumulative density function (cdf) .</p>
+<div id="fig-distributionfitting" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-distributionfitting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="distributionfitting.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-distributionfitting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Main screen, top row of rrisk distributions.
+</figcaption>
+</figure>
+</div>
+<p>Shiny rrisk distributions supports two approaches for fitting a distribution. The first approach, fitting a probability density function (pdf), requires a sample of empirical observations to be uploaded. The app then supports the identification and parameterisation of the candidate distributions. The second approach, fitting a cumulative density function (cdf), requires the definition of percentiles, which are than used as support points for distribution fitting (<a href="#fig-distributionfitting" class="quarto-xref">Figure&nbsp;1</a>). The latter option is also applicable for fitting a distribution to the results of a expert knowledge elicitation (EKE). In both cases, the results of the procedure can be imported into a shiny rrisk session.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 10%">
@@ -239,6 +251,41 @@ This section will introduce you to
 </tr>
 </tbody>
 </table>
+<section id="fitting-a-probability-density-function-pdf" class="level2">
+<h2 class="anchored" data-anchor-id="fitting-a-probability-density-function-pdf">Fitting a probability density function (pdf)</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+This section will introduce you to
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>fitting a robability density function (pdf) to some empirical data</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="fitting-a-cumulative-density-function-pdf" class="level2">
+<h2 class="anchored" data-anchor-id="fitting-a-cumulative-density-function-pdf">Fitting a cumulative density function (pdf)</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+This section will introduce you to
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>fitting a cumulative density function (cdf) to percentiles</li>
+</ul>
+</div>
+</div>
 <section id="expert-knowledge-elicitation-eke" class="level3">
 <h3 class="anchored" data-anchor-id="expert-knowledge-elicitation-eke">Expert knowledge elicitation (EKE)</h3>
 <div class="callout callout-style-simple callout-note no-icon">
@@ -257,7 +304,7 @@ This section will introduce you to
 <img src="EKE0.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: EFSA EKE node for defining a Pert distribution node.
+Figure&nbsp;2: EFSA EKE node for defining a Pert distribution node.
 </figcaption>
 </figure>
 </div>
@@ -292,10 +339,10 @@ print(d)</code></pre>
 <p>The European Food Safety Authority (EFSA) have described a process for eliciting expert knowledge (REF). The use of EFSA EKE node involves three steps.</p>
 <ol type="1">
 <li>Conduct of the EFSA EKE protocol, which includes the definition of a target quantity, elicitation protocol and results in the descdocumenting the data source and defining node names and corresponding statistics.</li>
-<li>A distribution node parameterised using input from an EFSA EKE may refer to variability or uncertainty, depending on the question formulation of the EKE process. The final result of the EKE consists of five percentiles that to be entered manually for fitting a Pert distribution (<a href="#fig-EKE0" class="quarto-xref">Figure&nbsp;1</a>). Details are illustrated using the example below.</li>
+<li>A distribution node parameterised using input from an EFSA EKE may refer to variability or uncertainty, depending on the question formulation of the EKE process. The final result of the EKE consists of five percentiles that to be entered manually for fitting a Pert distribution (<a href="#fig-EKE0" class="quarto-xref">Figure&nbsp;2</a>). Details are illustrated using the example below.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -304,16 +351,16 @@ Example for EFSA EKE (L. lignosellus in asparagus)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>(<a href="#fig-EKE1" class="quarto-xref">Figure&nbsp;2</a>).</p>
+<p>(<a href="#fig-EKE1" class="quarto-xref">Figure&nbsp;3</a>).</p>
 <div id="fig-EKE1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-EKE1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="EKE1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
+Figure&nbsp;3: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
 </figcaption>
 </figure>
 </div>
@@ -329,7 +376,7 @@ Figure&nbsp;2: Bootstrapping of the mean and standard deviation of individual co
 <img src="EKE2.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-EKE2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: EKE2.
+Figure&nbsp;4: EKE2.
 </figcaption>
 </figure>
 </div>
@@ -337,7 +384,7 @@ Figure&nbsp;3: EKE2.
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -346,7 +393,7 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <section id="efsa-eke" class="level4 callout-body-container callout-body">
 <h4 class="anchored" data-anchor-id="efsa-eke">EFSA EKE</h4>
 <p><span class="citation" data-cites="O">[@O or Thomas to contribute]</span> Brief description of the EFSA EKE or more description how shiny rrisk deals with EKE more generally.</p>
@@ -355,6 +402,7 @@ Read more
 </div>
 
 
+</section>
 </section>
 </section>
 </section>
@@ -788,7 +836,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Greiner M, Sanchez J, and who else contributes, 2025</p>
+<p>Greiner M, Sanchez J, 2025</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

@@ -9,7 +9,7 @@ website:
         text: Home
       - about.qmd
 
-  page-footer: "Greiner M, Sanchez J, and who else contributes, 2025" 
+  page-footer: "Greiner M, Sanchez J, 2025" 
   
   page-navigation: TRUE
   

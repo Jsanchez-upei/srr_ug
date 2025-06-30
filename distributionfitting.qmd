@@ -4,7 +4,6 @@ subtitle: "Your quick start to using shiny rrisk distributions"
 author:
   - Matthias Greiner, German Federal Institute for Risk Assssment (BfR) and Veterinary University Hannover, Germany
   - Javier Sanchez. University of Prince Edwards Island (UPEI), Canada
-  - and who else contributes
 
 ---
 
@@ -20,8 +19,9 @@ author:
 
 
 ![Main screen, top row of rrisk distributions.](distributionfitting.png){#fig-distributionfitting width="100%"}
-The rrisk distributions supports two approaches for fitting a distribution, which are technically related to a probability density function (pdf) or cumulative density function (cdf) .
 
+
+Shiny rrisk distributions supports two approaches for fitting a distribution (@fig-distributionfitting). The first approach, fitting a probability density function (pdf), requires a sample of empirical observations to be uploaded. The app then supports the identification and parameterisation of the candidate distributions. The second approach, fitting a cumulative density function (cdf), requires the definition of percentiles, which are than used as support points for distribution fitting. The latter option is also applicable for fitting a distribution to the results of a expert knowledge elicitation (EKE).  In both cases, the results of the procedure can be imported into a shiny rrisk session. 
 
 |                                |                                                                                                                            |
 |-----------------|-------------------------------------------------------|
@@ -29,6 +29,24 @@ The rrisk distributions supports two approaches for fitting a distribution, whic
 | [cdf]{style="color:#0d6efd"}  | Choose this option when you have percentiles, e.g. form an EKE process.                                                      |
 
 : {tbl-colwidths="\[10,90\]"}
+
+## Fitting a probability density function (pdf) 
+
+::: {.callout-note appearance="minimal"}
+#### This section will introduce you to
+
+- fitting a robability density function (pdf) to some empirical data
+:::
+
+
+## Fitting a cumulative density function (cdf)
+
+::: {.callout-note appearance="minimal"}
+#### This section will introduce you to
+
+- fitting a cumulative  density function (cdf) to percentiles
+:::
+
 
 ### Expert knowledge elicitation (EKE)
 
