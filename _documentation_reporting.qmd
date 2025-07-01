@@ -53,3 +53,14 @@ Results
 
 -   guide on how to interpret and use statistical and graphical outputs
 :::
+
+::: {.callout-note collapse="true"}
+### Markdown syntax
+
+Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (@fig-Markdown).
+
+![Selection of common markdown commands for use in free-text fields.](images/markdown.png){#fig-Markdown width="100%"}
+
+You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/authoring_basics.html) .
+:::
+

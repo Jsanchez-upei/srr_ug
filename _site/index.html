@@ -500,7 +500,7 @@ Figure&nbsp;4: Descriptive part of node definition (note that “item” will be
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">Description</span></td>
-<td>All relevant information required for documentation and verification should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax below).</td>
+<td>All relevant information required for documentation and verification should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax in section on Documentation).</td>
 </tr>
 <tr class="even">
 <td><span style="color:Red">*</span></td>
@@ -521,35 +521,8 @@ Avoid loss of your data
 <p>Remember to save your model after adding nodes and/or making important changes in the model</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Markdown syntax
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;5</a>).</p>
-<div id="fig-Markdown" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/markdown.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Selection of common markdown commands for use in free-text fields.
-</figcaption>
-</figure>
-</div>
-<p>You can find more information at <a href="https://rmarkdown.rstudio.com/authoring_basics.html">RStudio, 2016</a> .</p>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -558,7 +531,7 @@ Good practice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Be consistent with the style of node names within your project. Short names are preferred for reasons of readability and aesthetics in tables and figures (e.g., vowels can be omitted to shorten a name).</li>
@@ -569,7 +542,7 @@ Good practice
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -578,7 +551,7 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>The rules for naming nodes in shiny rrisk are inherited from and ensure compatibility with the <a href="https://www.r-project.org/">software R</a>.</li>
@@ -612,11 +585,11 @@ This section will introduce you to
 <img src="images/MathematicalDefinition.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-MathematicalDefinition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Mathematical part of node definition.
+Figure&nbsp;5: Mathematical part of node definition.
 </figcaption>
 </figure>
 </div>
-<p>Your options also include bootstrapping and the import from a distribution fitting project (see below). The first option <u>user defined</u> allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;7</a>).</p>
+<p>Your options also include bootstrapping and the import from a distribution fitting project (see below). The first option <u>user defined</u> allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;6</a>).</p>
 <section id="user-defined-expression" class="level3">
 <h3 class="anchored" data-anchor-id="user-defined-expression">User defined expression</h3>
 <div id="fig-NodeUserDefined" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -625,7 +598,7 @@ Figure&nbsp;6: Mathematical part of node definition.
 <img src="images/NodeUserDefined.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-NodeUserDefined-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Choose user defined to enter a mathematical expression (note that “Item Code” will be replaced with “Expression” in future updates).
+Figure&nbsp;6: Choose user defined to enter a mathematical expression (note that “Item Code” will be replaced with “Expression” in future updates).
 </figcaption>
 </figure>
 </div>
@@ -642,7 +615,7 @@ Figure&nbsp;7: Choose user defined to enter a mathematical expression (note that
 </tbody>
 </table>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -651,16 +624,16 @@ Example for an expression using a parent node (Alizarin Red S in eel model)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In the <u>Alizarin Red S in eel</u> model the outcome <span class="math inline">\(Y\)</span> (dietary intake of ARS per kg body weight and year through consumption of eel marked with ARS) is defined in terms of <span class="math inline">\(I\)</span> (concentration of ARS in edible tissues at time of catch) and <span class="math inline">\(M\)</span> (mean consumption of European eel per year per body weight). Thus, <span class="math inline">\(I\)</span> and <span class="math inline">\(M\)</span> are both parents nodes of <span class="math inline">\(Z\)</span>. This example also illustrates the common case that the final outcome is defined in terms of parent nodes (<a href="#fig-ARSoutcomeY" class="quarto-xref">Figure&nbsp;8</a>).</p>
+<p>In the <u>Alizarin Red S in eel</u> model the outcome <span class="math inline">\(Y\)</span> (dietary intake of ARS per kg body weight and year through consumption of eel marked with ARS) is defined in terms of <span class="math inline">\(I\)</span> (concentration of ARS in edible tissues at time of catch) and <span class="math inline">\(M\)</span> (mean consumption of European eel per year per body weight). Thus, <span class="math inline">\(I\)</span> and <span class="math inline">\(M\)</span> are both parents nodes of <span class="math inline">\(Z\)</span>. This example also illustrates the common case that the final outcome is defined in terms of parent nodes (<a href="#fig-ARSoutcomeY" class="quarto-xref">Figure&nbsp;7</a>).</p>
 <div id="fig-ARSoutcomeY" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ARSoutcomeY-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ARSoutcomeY.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ARSoutcomeY-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Expression for the outcome Y in the Alizarin Red S in eel model.
+Figure&nbsp;7: Expression for the outcome Y in the Alizarin Red S in eel model.
 </figcaption>
 </figure>
 </div>
@@ -668,7 +641,7 @@ Figure&nbsp;8: Expression for the outcome Y in the Alizarin Red S in eel model.
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -677,7 +650,7 @@ Example for an expression using implicit nodes
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Consider the simple model</p>
 <p><span class="math display">\[A = B * C.\]</span></p>
@@ -686,7 +659,7 @@ Example for an expression using implicit nodes
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -695,7 +668,7 @@ Good practice
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li>Use the model graph (see later) to identify nodes that were implicitly generated based on a spelling mistake in the node definition.</li>
@@ -705,7 +678,7 @@ Good practice
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -714,7 +687,7 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The tool’s ability to create implicit nodes allows users to define a model by starting with the result function and working backwards to define all parent nodes until the complete model is created. This offers maximum flexibility when building a model.</p>
 </div>
@@ -746,11 +719,11 @@ This section will introduce you to
 <img src="images/ParametricDistributions.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ParametricDistributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Choose a distribution family (note that “item” will be replaced with “node” in future updates).
+Figure&nbsp;8: Choose a distribution family (note that “item” will be replaced with “node” in future updates).
 </figcaption>
 </figure>
 </div>
-<p>Once you have selected <u>parametric distributions</u> you can choose from a number of discrete and continuous distribution families (<a href="#fig-ParametricDistributions" class="quarto-xref">Figure&nbsp;9</a>).</p>
+<p>Once you have selected <u>parametric distributions</u> you can choose from a number of discrete and continuous distribution families (<a href="#fig-ParametricDistributions" class="quarto-xref">Figure&nbsp;8</a>).</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 30%">
@@ -794,7 +767,7 @@ Figure&nbsp;9: Choose a distribution family (note that “item” will be replac
 <h5 class="anchored">Lower and/or upper limit for truncated distribution</h5>
 <p>In shiny rrisk, many distributions can be defined in a truncated version by defining a <u>lower</u> and/or <u>upper</u> limit.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -803,7 +776,7 @@ Example for parametric distribution (HEV in liver sausages)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The objective of the example model <u>HEV in liver sausages</u> is to estimate the exposure with Hepatitis E virus (HEV) via consumption of sausage products made from pork (see shiny rrisk model report for further details). The model contains the variable <u>Liver_prop</u> to describe the amount of liver as ingredient in liver sausages in percent. This continuous quantity reflects variability (sausages contain variable amounts of liver depending on recipes and other factors). The modellers have chosen a modified PERT distribution with minimum 10%, mode 30% and maximum 50% for parameterisation. Note that shape parameter of 4 in the modified PERT is equivalent to the standard 3-parameter PERT model.</p>
 <div id="fig-modPert" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -812,7 +785,7 @@ Example for parametric distribution (HEV in liver sausages)
 <img src="images/modPert.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-modPert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Modified Pert distribution model.
+Figure&nbsp;9: Modified Pert distribution model.
 </figcaption>
 </figure>
 </div>
@@ -820,7 +793,7 @@ Figure&nbsp;10: Modified Pert distribution model.
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -829,16 +802,16 @@ Example for a distribution parameter with functional dependency (L.monocytogenes
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The objective of the <u>L.monocytogenes in cheese</u> model is to estimate the risk of infection with Listeria (L.) monocytogenes per meal. The model uses the variable dose of ingested L. monocytogenes per serving, <span class="math inline">\(D_{dist}\)</span> modelled as Poisson distribution (<a href="#fig-functionalPoissonLMono" class="quarto-xref">Figure&nbsp;11</a>). The expression entered as distribution parameter <span class="math inline">\(\lambda\)</span> uses as parent nodes the serving size <span class="math inline">\(S\)</span> and the concentration of L. monocytogenes in the cheese at home <span class="math inline">\(LMC_{home}\)</span>, both of which express variability as well. This results in a dispersion of dose <span class="math inline">\(D_{dist}\)</span> much wider than what would be expected with a fixed value for the distribution parameter <span class="math inline">\(\lambda\)</span>.</p>
+<p>The objective of the <u>L.monocytogenes in cheese</u> model is to estimate the risk of infection with Listeria (L.) monocytogenes per meal. The model uses the variable dose of ingested L. monocytogenes per serving, <span class="math inline">\(D_{dist}\)</span> modelled as Poisson distribution (<a href="#fig-functionalPoissonLMono" class="quarto-xref">Figure&nbsp;10</a>). The expression entered as distribution parameter <span class="math inline">\(\lambda\)</span> uses as parent nodes the serving size <span class="math inline">\(S\)</span> and the concentration of L. monocytogenes in the cheese at home <span class="math inline">\(LMC_{home}\)</span>, both of which express variability as well. This results in a dispersion of dose <span class="math inline">\(D_{dist}\)</span> much wider than what would be expected with a fixed value for the distribution parameter <span class="math inline">\(\lambda\)</span>.</p>
 <div id="fig-functionalPoissonLMono" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-functionalPoissonLMono-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/functionalPoissonLMono.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-functionalPoissonLMono-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Poisson distribution model with functional dependency.
+Figure&nbsp;10: Poisson distribution model with functional dependency.
 </figcaption>
 </figure>
 </div>
@@ -846,7 +819,7 @@ Figure&nbsp;11: Poisson distribution model with functional dependency.
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -855,7 +828,7 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="quick-guide-for-choosing-appropriate-distributions" class="level4">
 <h4 class="anchored" data-anchor-id="quick-guide-for-choosing-appropriate-distributions">Quick guide for choosing appropriate distributions</h4>
@@ -872,18 +845,18 @@ Read more
 </section>
 <section id="using-distributions-to-reflect-variability-and-uncertainty" class="level4">
 <h4 class="anchored" data-anchor-id="using-distributions-to-reflect-variability-and-uncertainty">Using distributions to reflect variability and uncertainty</h4>
-<p>A distribution node can be defined by the user to represent the variability of a variable of interest, e.g.&nbsp;body weight. One typical situation is to parameterise the distribution using a single value for each distribution parameter, e.g., a single mean and a single standard deviation for the distribution of body weight obtained from observed data. The same principle applies for distributions with one parameter (e.g., Poisson) or distributions with three parameters as shown in the example above using the modPert (<a href="#fig-modPert" class="quarto-xref">Figure&nbsp;10</a>). The variability of the quantity of interest is represented by one distribution node, which is parameterised with a single value for each distribution parameter. This is the standard situation for characterising variability (see top row shaded in blue in <a href="#fig-Parameterisations" class="quarto-xref">Figure&nbsp;12</a>).</p>
+<p>A distribution node can be defined by the user to represent the variability of a variable of interest, e.g.&nbsp;body weight. One typical situation is to parameterise the distribution using a single value for each distribution parameter, e.g., a single mean and a single standard deviation for the distribution of body weight obtained from observed data. The same principle applies for distributions with one parameter (e.g., Poisson) or distributions with three parameters as shown in the example above using the modPert (<a href="#fig-modPert" class="quarto-xref">Figure&nbsp;9</a>). The variability of the quantity of interest is represented by one distribution node, which is parameterised with a single value for each distribution parameter. This is the standard situation for characterising variability (see top row shaded in blue in <a href="#fig-Parameterisations" class="quarto-xref">Figure&nbsp;11</a>).</p>
 <p>More complex sources of variability may occur. For example, it may be known that a parameter of a distribution node for variability varies among sub-groups of the population. Typical examples include the litter effect in experimental animal studies or the cluster effect in observational studies. In this case the parent node for the distribution parameter represents variability at a higher aggregation level and “final” distribution node represents overdispersion, i.e.&nbsp;variability from various sources. Consider for example a Bernoulli distribution (for variability) with a binary outcome space (positive/negative), parameterised with a parameter for prevalence. It is a common finding in veterinary epidemiology that herd-level prevalences have a distribution. In such cases it may be possible to characterise the observed distribution of herd-level prevalences using a beta distribution and to use this beta as parent node to the Bernoulli.</p>
 <p>Additional variability may also be due to structural sources. For example, the mean value of bacterial load may depend on temperature. In this case, the mean of the variability distribution can be modeled as a function of temperature. The factor of interest can be continuous (e.g., temperature) or discrete (e.g., age groups). In both cases, the independent factor is represented as parent node in the model and the final variability node represents variability due to structural (or functional) sources of variability.</p>
 <p>The other motivation for using distributions in risk models is to represent parameter uncertainty. Assume you have a binomial distribution node in your model to represent variability of the random number of positive outcomes out of a fixed number of trials, given a defined outcome probability. A beta distribution for the latter would represent parameter uncertainty and act as parent node to the binomial distribution. The node <u>mean_log10_c0</u> from the <u>E.coli in beef</u> example is another illustration for an uncertainty parent node to a variability node. The bootstrap method provides a powerful solution for obtaining distributions for parameter uncertainty (see <mark>later</mark>). Independent of the technique used, the interpretation of the final distribution node is a quantification of variability accounting for parameter uncertainty.</p>
-<p>Last but not least consider a node in your model that directly represents a parameter uncertainty. The classical example for this is prevalence. The prevalence is an unknown single value, i.e.&nbsp;only one value can be true at the same time. The statistical uncertainty in the estimation of prevalence is represented by a beta distribution with parameters <span class="math inline">\(k+1\)</span> and <span class="math inline">\(n-k+1\)</span>, where <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span> denote the number of cases and sample size in estimation of prevalence. <mark>we don’t have a beta in our example models… unbelievable;)</mark>. Since prevalence is a common parameter in may risk models, its quantification of uncertainty using a single node is a typical situation in risk modelling (bottom row shaded blue in <a href="#fig-Parameterisations" class="quarto-xref">Figure&nbsp;12</a>).</p>
+<p>Last but not least consider a node in your model that directly represents a parameter uncertainty. The classical example for this is prevalence. The prevalence is an unknown single value, i.e.&nbsp;only one value can be true at the same time. The statistical uncertainty in the estimation of prevalence is represented by a beta distribution with parameters <span class="math inline">\(k+1\)</span> and <span class="math inline">\(n-k+1\)</span>, where <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span> denote the number of cases and sample size in estimation of prevalence. <mark>we don’t have a beta in our example models… unbelievable;)</mark>. Since prevalence is a common parameter in may risk models, its quantification of uncertainty using a single node is a typical situation in risk modelling (bottom row shaded blue in <a href="#fig-Parameterisations" class="quarto-xref">Figure&nbsp;11</a>).</p>
 <div id="fig-Parameterisations" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Parameterisations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/Parameterisations.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Parameterisations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Parameterisations of distributions to reflect variability and uncertainty. Typical situations are shaded in blue. See text for more details.
+Figure&nbsp;11: Parameterisations of distributions to reflect variability and uncertainty. Typical situations are shaded in blue. See text for more details.
 </figcaption>
 </figure>
 </div>
@@ -892,7 +865,7 @@ Figure&nbsp;12: Parameterisations of distributions to reflect variability and un
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -901,7 +874,7 @@ About special distributions implemented in shiny rrisk
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="sigma-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="sigma-distribution">Sigma distribution</h3>
@@ -934,18 +907,18 @@ This section will introduce you to
 </ul>
 </div>
 </div>
-<p>Using the non-parametric bootstrap algorithm you can generate a distribution for any summary statistic of a data set. You don’t need to make any distributional assumption about the original data or the uncertainty distribution of the summary statistic you are interested in.</p>
+<p>Using the non-parametric bootstrap algorithm you can generate a distribution for any summary statistic of a data set. The advantage of this approach is that you don’t need to make any distributional assumption about the original data or the uncertainty distribution of the summary statistic you are interested in.</p>
 <div id="fig-BootstrapNode1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-BootstrapNode1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/BootstrapNode1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BootstrapNode1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: Bootstrap nodes always represent parameter uncertainty.
+Figure&nbsp;12: Bootstrap nodes always represent parameter uncertainty.
 </figcaption>
 </figure>
 </div>
-<p>Non-parametric bootstrapping is available to generate uncertainty distributions for one or more statistics of a given data set (<a href="#fig-BootstrapNode1" class="quarto-xref">Figure&nbsp;13</a>). Details are illustrated using the example below.</p>
+<p>Non-parametric bootstrapping is available to generate uncertainty distributions for one or more statistics of a given data set (<a href="#fig-BootstrapNode1" class="quarto-xref">Figure&nbsp;12</a>). Details are illustrated using the example below.</p>
 <section id="application-of-bootstrapping" class="level4">
 <h4 class="anchored" data-anchor-id="application-of-bootstrapping">Application of bootstrapping</h4>
 <p>The application of bootstrapping in shiny rrrisk involves three steps.</p>
@@ -955,7 +928,7 @@ Figure&nbsp;13: Bootstrap nodes always represent parameter uncertainty.
 <li>Using the distribution node(s) generated in step 2 as parent nodes in the definition of further nodes.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -964,16 +937,16 @@ Example for non-parametric bootstrap (Alizarin red S in Eel model)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>An exposure model for <u>Alizarin Red S (ARS) in eel</u> has been developed to estimate the intake of ARS with consumed eel (see shiny rrisk model report for further details). A small (n=14) data set is available for individual consumption of eel per kg body weight. The task is to characterise the uncertainty of the population mean and standard deviation for individual consumption with accounting for the small data set and the correlation between the uncertainty distributions of mean and standard deviation (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;14</a>).</p>
+<p>An exposure model for <u>Alizarin Red S (ARS) in eel</u> has been developed to estimate the intake of ARS with consumed eel (see shiny rrisk model report for further details). A small (n=14) data set is available for individual consumption of eel per kg body weight. The task is to characterise the uncertainty of the population mean and standard deviation for individual consumption with accounting for the small data set and the correlation between the uncertainty distributions of mean and standard deviation (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;13</a>).</p>
 <div id="fig-BootstrapNode2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-BootstrapNode2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/BootstrapNode2.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BootstrapNode2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
+Figure&nbsp;13: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
 </figcaption>
 </figure>
 </div>
@@ -1003,9 +976,9 @@ Figure&nbsp;14: Bootstrapping of the mean and standard deviation of individual c
 </table>
 <p>The three steps in this example are the following.</p>
 <ol type="1">
-<li>Defining the bootstrapping node <u>X</u>, providing a data source and requesting the two nodes <u>Xmean</u> and <u>Xsd</u> for the mean and standard deviation, respectively (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;14</a>).</li>
+<li>Defining the bootstrapping node <u>X</u>, providing a data source and requesting the two nodes <u>Xmean</u> and <u>Xsd</u> for the mean and standard deviation, respectively (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;13</a>).</li>
 <li>Generating two nodes containing the bootstrap distributions <u>Xmean</u> and <u>Xsd</u> (automatically by shiny rrisk).</li>
-<li>Using the two nodes for defining a new node <u>C</u> for the population variability in consumption of eel per body weight consumed on single meal (<a href="#fig-ARSnodeC" class="quarto-xref">Figure&nbsp;15</a>).</li>
+<li>Using the two nodes for defining a new node <u>C</u> for the population variability in consumption of eel per body weight consumed on single meal (<a href="#fig-ARSnodeC" class="quarto-xref">Figure&nbsp;14</a>).</li>
 </ol>
 <div id="fig-ARSnodeC" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1013,7 +986,7 @@ Figure&nbsp;14: Bootstrapping of the mean and standard deviation of individual c
 <img src="images/ARSnodeC.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ARSnodeC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;15: Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details).
+Figure&nbsp;14: Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details).
 </figcaption>
 </figure>
 </div>
@@ -1021,7 +994,7 @@ Figure&nbsp;15: Using a joint bootstrap distribution for mean and standard devia
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1030,18 +1003,18 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <section id="bootstrapping---how-does-it-work" class="level4">
 <h4 class="anchored" data-anchor-id="bootstrapping---how-does-it-work">Bootstrapping - how does it work?</h4>
-<p><span class="citation" data-cites="Robert">[@Robert: please check whether this description matches with the implementation]</span> Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the <a href="https://www.r-project.org/">software R</a> can be requested such as <code>sum</code>, <code>mean</code>, <code>median</code>, <code>quantile(x, probs=.95)</code> (95th percentile), <code>var</code> and <code>sd</code> to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000<mark>?</mark> in shiny rrisk. The bootstrap algorithm is shown in <a href="#fig-BootstrapConcep" class="quarto-xref">Figure&nbsp;16</a>.</p>
+<p><span class="citation" data-cites="Robert">[@Robert: please check whether this description matches with the implementation]</span> Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the <a href="https://www.r-project.org/">software R</a> can be requested such as <code>sum</code>, <code>mean</code>, <code>median</code>, <code>quantile(x, probs=.95)</code> (95th percentile), <code>var</code> and <code>sd</code> to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000<mark>?</mark> in shiny rrisk. The bootstrap algorithm is shown in <a href="#fig-BootstrapConcep" class="quarto-xref">Figure&nbsp;15</a>.</p>
 <div id="fig-BootstrapConcep" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-BootstrapConcep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/BootstrapConcept.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BootstrapConcep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16: Schematic representation of the bootstrap method (Greiner, 2022, unpublishes course notes).
+Figure&nbsp;15: Schematic representation of the bootstrap method (Greiner, 2022, unpublishes course notes).
 </figcaption>
 </figure>
 </div>
@@ -1158,7 +1131,7 @@ This section will introduce you to
 <img src="images/simulation.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17: Setting simulation parameters.
+Figure&nbsp;16: Setting simulation parameters.
 </figcaption>
 </figure>
 </div>
@@ -1208,7 +1181,7 @@ Memory
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1217,7 +1190,7 @@ Good practice - Number of MC samples
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples.</p>
 <p>Usually, the number of samples are selected based on standard “magic” numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number.</p>
@@ -1234,7 +1207,7 @@ Good practice - Number of MC samples
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1243,7 +1216,7 @@ Read more - Sampling methods
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH) method is more efficient and will provide same accuracy as the Monte Carlo (MC) method with fewer samples. In addition the LH will assure that samples are taken from the whole distribution, which is also better for rare events. The LH might reduce the number of samples required by a factor of 10 compared with the MC method. The LH is the default method in shiny rrisk.</p>
 <p>The LH method divides each random variable’s range into equal probability intervals (strata) according the number of samples required in the simulation and then take one sample from each interval per variable. Then the full coverage of each variable is sampled.</p>
@@ -1319,7 +1292,7 @@ Read more - Sampling methods
 <p><span class="citation" data-cites="Robert">@Robert</span> - how to interpret this one?</p>
 <p><img src="images/conv_ecoli_2d.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1328,7 +1301,7 @@ Read more - 2d MC Models
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2d MC). <img src="images/clipboard-4283040366.png" class="img-fluid"></p>
 <p>The central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value in the y-axis of 0.5. The value is around 1e-11.</p>
@@ -1348,7 +1321,7 @@ Read more - 2d MC Models
 <p>Since this is a 2D model, the tornado plot also present the 95%. probability interval due to the uncertainty of the risk outcome.</p>
 <p><img src="images/tornado_pearson_ecoli.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1357,7 +1330,7 @@ Read more: Tornado plots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Tornado plots are commonly used in risk and exposure assessments models to assess the quantify the impact of input variables on the outcome of the model. This relationship is quantified using parametric (eg. Pearson correlation coefficient) or non-parametric (eg. Spearman rank correlation coefficient - rho -) statistics.</p>
 <p>The graphs is created using all the input variables on the y-axis and the statistic on the x-axis, then the relationship is depicted using horizontal bars where the length of the bar represents the value of the statistic. This value is constraint by the boundaries of the statistic (eg. between -1 and 1). Where values below 0 represent an inverse relationship and values greater than 0, otherwise. For instance negative values suggest that higher values of the input are associates with lower values of the outcome variable.</p>
@@ -1378,7 +1351,7 @@ Read more: Tornado plots
 <img src="images/Documentation.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Documentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Authors and free text model description are provided for model documentation.
+Figure&nbsp;17: Authors and free text model description are provided for model documentation.
 </figcaption>
 </figure>
 </div>
@@ -1390,7 +1363,7 @@ Figure&nbsp;18: Authors and free text model description are provided for model d
 <h1>Documentation and Reporting</h1>
 <p>This tab is left to add additional information about the model authors and a general description of the model (eg. question of interest and model scope, methodology used, resources, etc).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1399,7 +1372,7 @@ Good practice: Developing a report
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Generally, risk and exposure assessment [quantitative] models are complex, and are difficult to communicate to decision makers. Shiny rrisk has a unique feature that allows user to produce reports that can improve the communication of the model results to the end user. As it has been described before, shiny rrisk provides the user many instances during the model creation to enter information about the each input variable that later will be used in the report.</p>
 <p>The user can enter the following information under <strong>Documentation and Reporting</strong></p>
@@ -1429,6 +1402,33 @@ Good practice: Developing a report
 <ul>
 <li>guide on how to interpret and use statistical and graphical outputs</li>
 </ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Markdown syntax
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;18</a>).</p>
+<div id="fig-Markdown" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/markdown.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18: Selection of common markdown commands for use in free-text fields.
+</figcaption>
+</figure>
+</div>
+<p>You can find more information at <a href="https://rmarkdown.rstudio.com/authoring_basics.html">RStudio, 2016</a> .</p>
 </div>
 </div>
 </div>

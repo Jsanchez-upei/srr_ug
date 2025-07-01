@@ -47,7 +47,7 @@ Upon launching [Add node]{.underline}, a window pops-up with several free-text f
 | [Unit]{style="color:#0d6efd"}                        | The physical measurement unit should be entered here if applicable.                                                                                                                                                                                                                                                                         |
 | [Grouping]{style="color:#0d6efd"}                    | A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation. |
 | [Source]{style="color:#0d6efd"}                      | The source of information about the node should be provided according to good scientific practice. If a bibliographic reference is available it should be entered using the format “Author(s), Year (doi code )”.                                                                                                                           |
-| [Description]{style="color:#0d6efd"}                 | All relevant information required for documentation and verification should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax below).                                                                                               |
+| [Description]{style="color:#0d6efd"}                 | All relevant information required for documentation and verification should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax in section on Documentation).                                                                                               |
 | [\*]{style="color:Red"}                              | Required                                                                                                                                                                                                                                                                                                                                    |
 
 : {tbl-colwidths="\[12,88\]"}
@@ -58,15 +58,6 @@ Upon launching [Add node]{.underline}, a window pops-up with several free-text f
 Remember to save your model after adding nodes and/or making important changes in the model
 :::
 
-::: {.callout-note collapse="true"}
-### Markdown syntax
-
-Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (@fig-Markdown).
-
-![Selection of common markdown commands for use in free-text fields.](images/markdown.png){#fig-Markdown width="100%"}
-
-You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/authoring_basics.html) .
-:::
 
 ::: {.callout-tip collapse="true"}
 ### Good practice
@@ -264,7 +255,7 @@ The Yule-Furry process is the stochastic model for an exponential growth model. 
 :::
 
 
-Using the non-parametric bootstrap algorithm you can generate a distribution for any summary statistic of a data set. You don't need to make any distributional assumption about the original data or the uncertainty distribution of the summary statistic you are interested in. 
+Using the non-parametric bootstrap algorithm you can generate a distribution for any summary statistic of a data set. The advantage of this approach is that you don't need to make any distributional assumption about the original data or the uncertainty distribution of the summary statistic you are interested in. 
 
 
 ![Bootstrap nodes always represent parameter uncertainty.](images/BootstrapNode1.png){#fig-BootstrapNode1 width="100%"}
