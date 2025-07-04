@@ -92,7 +92,7 @@ This section will introduce you to
 </ul>
 </div>
 </div>
-<p>Building a model is a complex process. Let’s assume that you have already defined the objective and scope and that you have a sketch of all important elements of the model (see section `Getting started’). It seems that you are ready to go!</p>
+<p>Building a model is a complex process. Let’s assume that you have already defined the objective and scope and that you have a sketch of all important elements of the model (see section “Getting started”). It seems that you are ready to go!</p>
 <div id="fig-ModelCreation" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ModelCreation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -106,8 +106,8 @@ Figure&nbsp;1: Main screen, second row of shiny rrisk.
 <p>A model in shiny rrisk consists of so-called nodes. You may also define fixed parameters and functions available for the definition of nodes.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 88%">
+<col style="width: 18%">
+<col style="width: 82%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -359,6 +359,7 @@ Good practice
 <ul>
 <li>Use the model graph (see later) to identify nodes that were implicitly generated based on a spelling mistake in the node definition.</li>
 <li>Code expressions may contain any function that is part of the R base package.</li>
+<li>Use either explicit or implicit nodes in your model consistently to obtain a logical order of nodes. This will make it easier to review your model.</li>
 </ul>
 </div>
 </div>
@@ -547,6 +548,11 @@ Figure&nbsp;9: Parameterisations of distributions to reflect variability and unc
 </figure>
 </div>
 </section>
+<section id="truncation-versus-censoring" class="level4">
+<h4 class="anchored" data-anchor-id="truncation-versus-censoring">Truncation versus censoring</h4>
+<p>A truncated distribution for reflecting variability accounts for plausible lower or upper limits of the underlying quantity. It is important to note that “quantity” refers to the substantial phenomenon being modelled. For example, the concentration of a chemical in a food commodity has a lower truncation point of zero, meaning that values below zero are excluded. This should not be confused with censoring. In our example, the measurement data of the chemical are typically censored due to the limit of detection and limit of quantification. The censored distribution of the measurement data is a surrogate for the underlying substance concentration. This introduces a bias which can be counteracted by estimating the distribution of the unobserved concentration data from the censored data set.</p>
+<p>A truncated distribution for reflecting parameter uncertainty may be useful to ensure that the distribution parameters are within their respective boundaries. However, this is typically achieved by choosing adequate distribution families (e.g., choosing a beta distribution for a prevalence parameter rather than a [0,1]-truncated distribution).</p>
+</section>
 </div>
 </div>
 </div>
@@ -632,7 +638,7 @@ Example for non-parametric bootstrap (Alizarin red S in Eel model)
 <img src="images/BootstrapNode2.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BootstrapNode2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).
+Figure&nbsp;11: Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details and note that “variable name” will be changed to “Node name” in update version).
 </figcaption>
 </figure>
 </div>
@@ -644,7 +650,7 @@ Figure&nbsp;11: Bootstrapping of the mean and standard deviation of individual c
 <tbody>
 <tr class="odd">
 <td><span style="color:#0d6efd">Open data</span></td>
-<td><span class="citation" data-cites="Robert">[@Robert: please capitalise "open" and check the file requirements]</span> A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column. |</td>
+<td>A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column. |</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Provided data</span></td>
@@ -652,11 +658,11 @@ Figure&nbsp;11: Bootstrapping of the mean and standard deviation of individual c
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">Node name</span></td>
-<td><span class="citation" data-cites="Robert">[@Robert: please consider change to Node name]</span> Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution. |</td>
+<td>Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution. |</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Summary statistic</span></td>
-<td><span class="citation" data-cites="R">[@R=: please capitalise "summary"]</span> For each node a proper name of the requested statistic is to be provided using R terminology. |</td>
+<td>For each node a proper name of the requested statistic is to be provided using R terminology. |</td>
 </tr>
 </tbody>
 </table>
@@ -672,7 +678,7 @@ Figure&nbsp;11: Bootstrapping of the mean and standard deviation of individual c
 <img src="images/ARSnodeC.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ARSnodeC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details).
+Figure&nbsp;12: Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details and note that this version of shiny rrisk displays the distribution only if the parameters have been entered as numerical values).
 </figcaption>
 </figure>
 </div>
@@ -693,7 +699,7 @@ Read more
 <div class="callout-body-container callout-body">
 <section id="bootstrapping---how-does-it-work" class="level4">
 <h4 class="anchored" data-anchor-id="bootstrapping---how-does-it-work">Bootstrapping - how does it work?</h4>
-<p><span class="citation" data-cites="Robert">[@Robert: please check whether this description matches with the implementation]</span> Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the <a href="https://www.r-project.org/">software R</a> can be requested such as <code>sum</code>, <code>mean</code>, <code>median</code>, <code>quantile(x, probs=.95)</code> (95th percentile), <code>var</code> and <code>sd</code> to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000<mark>?</mark> in shiny rrisk. The bootstrap algorithm is shown in <a href="#fig-BootstrapConcep" class="quarto-xref">Figure&nbsp;13</a>.</p>
+<p>Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the <a href="https://www.r-project.org/">software R</a> can be requested such as <code>sum</code>, <code>mean</code>, <code>median</code>, <code>quantile(x, probs=.95)</code> (95th percentile), <code>var</code> and <code>sd</code> to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000<mark>?</mark> in shiny rrisk. The bootstrap algorithm is shown in <a href="#fig-BootstrapConcep" class="quarto-xref">Figure&nbsp;13</a>.</p>
 <div id="fig-BootstrapConcep" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-BootstrapConcep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -751,6 +757,36 @@ Figure&nbsp;13: Schematic representation of the bootstrap method (Greiner, 2022,
 </div>
 </div>
 </section>
+</section>
+<section id="rrisk-distributions-import" class="level3">
+<h3 class="anchored" data-anchor-id="rrisk-distributions-import">rrisk distributions import</h3>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+This section will introduce you to
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>importing the mathematical definition of a distribution generated using rrisk distributions.</li>
+</ul>
+</div>
+</div>
+<p>Let’s assume that you have used the “rrisk distribution” app for defining a distribution based on observed sample data or percentiles (see tutorial for more information). You need to upload the fitting result for use in your shiny rrisk session.</p>
+<div id="fig-fitdistributionNode" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fitdistributionNode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fitdistributionNode.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fitdistributionNode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Uploading a distribution fitting file into the shiny rrisk session.
+</figcaption>
+</figure>
+</div>
+<p>After import of the rrisk distribution export file, the created node is completely defined.</p>
 </section>
 </section>
 <section id="node-table" class="level2">

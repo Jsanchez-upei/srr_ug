@@ -1,6 +1,8 @@
 # Documenting and reporting
 
 
+This tab is left to add additional information about the model authors and a general description of the model (eg. question of interest and model scope, methodology used, resources, etc).
+
 ![Authors and free text model description are provided for model documentation.](images/Documentation.png){#fig-Documentation width="100%"}
 
 
@@ -10,9 +12,6 @@ The **Report** option will generate a word document report with all the informat
 
 The **Results** option will generate datasets in "\*.csv" format [@Robert **- no working so not sure what I am getting**]
 
-# Documentation and Reporting
-
-This tab is left to add additional information about the model authors and a general description of the model (eg. question of interest and model scope, methodology used, resources, etc).
 
 ::: {.callout-tip collapse="true"}
 ## Good practice: Developing a report

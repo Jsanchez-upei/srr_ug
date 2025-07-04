@@ -7,7 +7,7 @@
 -   creating a model using a step-by-step process.
 :::
 
-Building a model is a complex process. Let's assume that you have already defined the objective and scope and that you have a sketch of all important elements of the model (see section `Getting started'). It seems that you are ready to go! 
+Building a model is a complex process. Let's assume that you have already defined the objective and scope and that you have a sketch of all important elements of the model (see section "Getting started"). It seems that you are ready to go! 
 
 ![Main screen, second row of shiny rrisk.](images/ModelCreation.png){#fig-ModelCreation width="100%"}
 
@@ -18,7 +18,7 @@ A model in shiny rrisk consists of so-called nodes. You may also define fixed pa
 | [Add node]{style="color:#0d6efd"}    | Create a new node and launch its description and mathematical definition.                                      |
 | [Check model]{style="color:#0d6efd"} | Verify that a simulation model can be built from the mathematical and numerical model input you have provided. |
 
-: {tbl-colwidths="\[12,88\]"}
+: {tbl-colwidths="\[18,82\]"}
 
 ::: {.callout-warning appearance="simple"}
 ## Avoid loss of your data
@@ -121,6 +121,7 @@ The user can start creating the model by defining the node $A$. As a result, shi
 
 -   Use the model graph (see later) to identify nodes that were implicitly generated based on a spelling mistake in the node definition.
 -   Code expressions may contain any function that is part of the R base package.
+- Use either explicit or implicit nodes in your model consistently to obtain a logical order of nodes. This will make it easier to review your model.
 :::
 
 ::: {.callout-caution collapse="true"}
@@ -230,6 +231,13 @@ The other motivation for using distributions in risk models is to represent para
 Last but not least consider a node in your model that directly represents a parameter uncertainty. The classical example for this is prevalence. The prevalence is an unknown single value, i.e. only one value can be true at the same time. The statistical uncertainty in the estimation of prevalence is represented by a beta distribution with parameters $k+1$ and $n-k+1$, where $k$ and $n$ denote the number of cases and sample size in estimation of prevalence. [we don't have a beta in our example models... unbelievable;)]{.mark}. Since prevalence is a common parameter in may risk models, its quantification of uncertainty using a single node is a typical situation in risk modelling (bottom row shaded blue in @fig-Parameterisations).
 
 ![Parameterisations of distributions to reflect variability and uncertainty. Typical situations are shaded in blue. See text for more details.](images/Parameterisations.png){#fig-Parameterisations width="100%"}
+
+#### Truncation versus censoring
+
+A truncated distribution for reflecting variability accounts for plausible lower or upper limits of the underlying quantity. It is important to note that "quantity" refers to the substantial phenomenon being modelled. For example, the concentration of a chemical in a food commodity has a lower truncation point of zero, meaning that values below zero are excluded. This should not be confused with censoring. In our example, the  measurement data of the chemical are typically censored due to the limit of detection and limit of quantification. The censored distribution of the measurement data is a surrogate for the underlying substance concentration. This introduces a bias which can be counteracted by estimating the distribution of the unobserved concentration data from the censored data set. 
+
+A truncated distribution for reflecting parameter uncertainty may be useful to ensure that the distribution parameters are within their respective boundaries. However, this is typically achieved by choosing adequate distribution families (e.g., choosing a beta distribution for a prevalence parameter rather than a [0,1]-truncated distribution). 
+
 :::
 
 ::: {.callout-caution collapse="true"}
@@ -275,14 +283,14 @@ The application of bootstrapping in shiny rrrisk involves three steps.
 
 An exposure model for [Alizarin Red S (ARS) in eel]{.underline} has been developed to estimate the intake of ARS with consumed eel (see shiny rrisk model report for further details). A small (n=14) data set is available for individual consumption of eel per kg body weight. The task is to characterise the uncertainty of the population mean and standard deviation for individual consumption with accounting for the small data set and the correlation between the uncertainty distributions of mean and standard deviation (@fig-BootstrapNode2).
 
-![Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details).](images/BootstrapNode2.png){#fig-BootstrapNode2 width="100%"}
+![Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details and note that "variable name" will be changed to "Node name" in update version).](images/BootstrapNode2.png){#fig-BootstrapNode2 width="100%"}
 
 |                                            |                                                                                                                                                                                                                                                           |
 |-----------------|-------------------------------------------------------|
-| [Open data]{style="color:#0d6efd"}         | [@Robert: please capitalise "open" and check the file requirements] A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column. \| |
+| [Open data]{style="color:#0d6efd"}         | A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column. \| |
 | [Provided data]{style="color:#0d6efd"}     | Alternatively, comma-separated source data can be entered manually. Decimal point “.” should be used if required.                                                                                                                                         |
-| [Node name]{style="color:#0d6efd"}         | [@Robert: please consider change to Node name] Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution. \|                                                                                     |
-| [Summary statistic]{style="color:#0d6efd"} | [@R=: please capitalise "summary"] For each node a proper name of the requested statistic is to be provided using R terminology. \|                                                                                                                       |
+| [Node name]{style="color:#0d6efd"}         | Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution. \|                                                                                     |
+| [Summary statistic]{style="color:#0d6efd"} | For each node a proper name of the requested statistic is to be provided using R terminology. \|                                                                                                                       |
 
 : {tbl-colwidths="\[15,85\]"}
 
@@ -292,7 +300,7 @@ The three steps in this example are the following.
 2.  Generating two nodes containing the bootstrap distributions [Xmean]{.underline} and [Xsd]{.underline} (automatically by shiny rrisk).
 3.  Using the two nodes for defining a new node [C]{.underline} for the population variability in consumption of eel per body weight consumed on single meal (@fig-ARSnodeC).
 
-![Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details).](images/ARSnodeC.png){#fig-ARSnodeC width="100%"}
+![Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details and note that this version of shiny rrisk displays the distribution only if the parameters have been entered as numerical values).](images/ARSnodeC.png){#fig-ARSnodeC width="100%"}
 
 :::
 
@@ -301,7 +309,7 @@ The three steps in this example are the following.
 
 #### Bootstrapping - how does it work?
 
-[@Robert: please check whether this description matches with the implementation] Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the [software R](https://www.r-project.org/) can be requested such as `sum`, `mean`, `median`, `quantile(x, probs=.95)` (95th percentile), `var` and `sd` to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000[?]{.mark} in shiny rrisk. The bootstrap algorithm is shown in @fig-BootstrapConcep.
+Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the [software R](https://www.r-project.org/) can be requested such as `sum`, `mean`, `median`, `quantile(x, probs=.95)` (95th percentile), `var` and `sd` to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000[?]{.mark} in shiny rrisk. The bootstrap algorithm is shown in @fig-BootstrapConcep.
 
 ![Schematic representation of the bootstrap method (Greiner, 2022, unpublishes course notes).](images/BootstrapConcept.png){#fig-BootstrapConcep width="80%"}
 
@@ -316,6 +324,23 @@ A further limitation of non-parametric bootstrap is that distributions take a di
 | Size of original data ($n$)                       | 3   | 4   | 5   | 6   | 7    | 8    | 9     | 10    |
 | Number of possible permutations $2n-1\choose n-1$ | 10  | 35  | 126 | 462 | 1716 | 6435 | 24310 | 92378 |
 :::
+
+### rrisk distributions import
+
+::: {.callout-note appearance="minimal"}
+
+#### This section will introduce you to
+
+-   importing the mathematical definition of a distribution generated using rrisk distributions.
+
+:::
+
+Let's assume that you have used the "rrisk distribution" app for defining a distribution based on observed sample data or percentiles (see tutorial for more information). You need to upload the fitting result  for use in your shiny rrisk session.
+
+
+![Uploading a distribution fitting file into the shiny rrisk session.](images/fitdistributionNode.png){#fig-fitdistributionNode width="100%"}
+
+After import of the rrisk distribution export file, the created node is completely defined.   
 
 ## Node Table
 

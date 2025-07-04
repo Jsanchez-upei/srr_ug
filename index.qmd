@@ -6,21 +6,35 @@ author:
   - Javier Sanchez. University of Prince Edwards Island (UPEI), Canada
 ---
 
-{{< include _gettingstarted_shinyrrisk.qmd >}}
-{{< include _modelcreation.qmd >}}
-{{< include _simulation.qmd >}}
+{{< include _gettingstarted_shinyrrisk.qmd >}} 
+{{< include _modelcreation.qmd >}} 
+{{< include _simulation.qmd >}} 
 {{< include _documentation_reporting.qmd >}}
 
 
-
+```{=html}
 <!-- workflow for adding screenshots
   1. go to the app and adjust browser window size to fit the tutorial layout
   2. use any screenshot tool and paste the results into MS word
   3. add shadow offset centre, 60%, 102%, 5pt, 0, 0pt 
   4. save as .png in image folder
   -->
+```
+```{=html}
+<!-- To do's
 
-<!-- To do's 
+  Adding standard layout and text boxes in ...
+    Building a model
+      Node table
+      Graph 
+    Running a simulation (almost finished)
+    Documenting and reporting (Mardown syntax pasted here)
+
+    
+  New section
+    Fixed parameters and functions (example?)
+    
+    
   Matthias
   Check notation for sigma distribution 
   
@@ -33,4 +47,4 @@ author:
   Adjust app terminology to fit the tutorial (mainly check the figure legends)
   Consider changing "Parametric distributions this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general)
   -->
-
+```
