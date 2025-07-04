@@ -1,22 +1,40 @@
 # Documenting and reporting
 
+## Adding general model description 
 
-This tab is left to add additional information about the model authors and a general description of the model (eg. question of interest and model scope, methodology used, resources, etc).
+::: {.callout-note appearance="minimal"}
+#### This section will introduce you to
 
-![Authors and free text model description are provided for model documentation.](images/Documentation.png){#fig-Documentation width="100%"}
+- using shiny rrisk's interface for a general model description,
+- structuring your description using simple markdown syntax and
+- adjusting the level of documentation to specific requirements 
+:::
+
+Quantitative risk and exposure assessment models are often complex and inhrently difficult to communicate to decision makers. Shiny rrisk has a unique feature that allows user to produce reports that can facilitate the communication of the model results to the end user. shiny rrisk provides the user many instances during the model creation to enter information about the each input variable that later will automatically be compiled into  the report. Here we focus on the general information about the model. 
+
+A key concept of shiny rrisk is the integrated documentation which you have already seen in the node definition. A complete documentation requires additional information about the model authors and a general description of the model (e.g., question of interest and model scope, methodology used, resources, etc). This part of documentation is optional but highly recommended.   
 
 
-Under this menu you can save the **Model** (\*.rrisk) to your working device as explained before.
+![Documentation of author names and a free text model description in shiny rrisk.](images/Documentation.png){#fig-Documentation width="100%"}
 
-The **Report** option will generate a word document report with all the information entered in shiny rrisk.
 
-The **Results** option will generate datasets in "\*.csv" format [@Robert **- no working so not sure what I am getting**]
+|                                |                                                                                                                            |
+|------------------|------------------------------------------------------|
+| [Author list]{style="color:#0d6efd"}   | Entry table for author names and contact information .            
+| [Model description]{style="color:#0d6efd"}   | Free text field for providing a general documentation of the model.                                                      |
+
+: {tbl-colwidths="\[25,75\]"}
+
+
+
+
+There is no commonly accepted standard structure to provide additional information about the model. Below you will find a few good practice recommendations that you can combine in the free text field to meet your specific reporting needs. A simple markdown syntax can be used to structure the description into sections and subsections. Moreover, the markdown syntax can be used to obtain some standard text formatting. 
+
 
 
 ::: {.callout-tip collapse="true"}
-## Good practice: Developing a report
+## Good practice: Generic structure of a 
 
-Generally, risk and exposure assessment \[quantitative\] models are complex, and are difficult to communicate to decision makers. Shiny rrisk has a unique feature that allows user to produce reports that can improve the communication of the model results to the end user. As it has been described before, shiny rrisk provides the user many instances during the model creation to enter information about the each input variable that later will be used in the report.
 
 The user can enter the following information under **Documentation and Reporting**
 
@@ -62,4 +80,21 @@ Markdown syntax is recommended to provide subheadings in free text fields. The A
 
 You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/authoring_basics.html) .
 :::
+
+
+
+## Automatic reporting 
+
+::: {.callout-note appearance="minimal"}
+#### This section will introduce you to
+
+- using shiny rrisk's interface for a general model description,
+- launching the automatic reporting function.
+:::
+
+Under this menu you can save the **Model** (\*.rrisk) to your working device as explained before.
+
+The **Report** option will generate a word document report with all the information entered in shiny rrisk.
+
+The **Results** option will generate datasets in "\*.csv" format [@Robert **- no working so not sure what I am getting**]
 
