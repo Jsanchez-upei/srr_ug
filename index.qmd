@@ -11,7 +11,6 @@ author:
 {{< include _simulation.qmd >}} 
 {{< include _documentation_reporting.qmd >}}
 
-
 ```{=html}
 <!-- workflow for adding screenshots
   1. go to the app and adjust browser window size to fit the tutorial layout
@@ -20,6 +19,7 @@ author:
   4. save as .png in image folder
   -->
 ```
+
 ```{=html}
 <!-- To do's
 
@@ -32,19 +32,20 @@ author:
 
     
   New section
-    Fixed parameters and functions (example?)
+  
+  Javier -  
+  Fixed parameters and functions (Yersinial growth example? Javier will provide text in word to Matthias)
     
     
   Matthias
   Check notation for sigma distribution 
-  
-  Javier
-  "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube" could be used as a 
-  "Read more" in Simulation section, perhaps remove section numbers for consistency 
+  Wwill add few sentences and remove the file :  "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube"
+  Create read more sections for uncertainty and distributions (develop a simple structure)
+   
   
   Robert
   Proofreading 
   Adjust app terminology to fit the tutorial (mainly check the figure legends)
-  Consider changing "Parametric distributions this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general)
+  Consider changing "Parametric distributions this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general) 
   -->
 ```

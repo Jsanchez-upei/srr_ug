@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9eb995e8644016eb670a0cb3bf478a26.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -114,7 +114,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -129,19 +129,19 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Shiny rrisk user guide</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -270,7 +270,7 @@ This section will introduce you to
 </div>
 </div>
 <p>The app shiny rrisk has been designed to support you in setting up, running and reporting a probabilistic risk model. The app requires no registration, subscription and is completely browser-based. All model input data as well as model results are only accessible to you during the browser session and must be saved on your device. The workflow of shiny rrisk has been designed to support good practices in in risk modelling and reporting.</p>
-<div id="fig-ManagingFiles" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-ManagingFiles" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ManagingFiles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ManagingFiles.png" class="img-fluid figure-img" style="width:100.0%">
@@ -374,7 +374,7 @@ Read more
 <section id="visualisation" class="level3">
 <h3 class="anchored" data-anchor-id="visualisation">Visualisation</h3>
 <p>It is recommended to sketch a visual representation of the conceptual model. The flowchart for the simple example above (<a href="#fig-ConceptualModelEIA" class="quarto-xref">Figure&nbsp;2</a>) may support the discussion about required data and additional nodes such as for diagnostic testing.</p>
-<div id="fig-ConceptualModelEIA" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-ConceptualModelEIA" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ConceptualModelEIA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ConceptualModelEIA.png" class="img-fluid figure-img">
@@ -407,7 +407,7 @@ This section will introduce you to
 </div>
 </div>
 <p>Building a model is a complex process. Let’s assume that you have already defined the objective and scope and that you have a sketch of all important elements of the model (see section “Getting started”). It seems that you are ready to go!</p>
-<div id="fig-ModelCreation" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-ModelCreation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ModelCreation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ModelCreation.png" class="img-fluid figure-img" style="width:100.0%">
@@ -465,7 +465,7 @@ This section will introduce you to
 </div>
 </div>
 <p>A so-called “node” in shiny rrisk is what you would refer to as a parameter or numerical model input. You will see later on that model parameters are actually nodes if you represent your model as a graph. This enables us to use powerful tools for visualisation and analysis.</p>
-<div id="fig-AddNode" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-AddNode" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-AddNode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/AddNode.png" class="img-fluid figure-img" style="width:100.0%">
@@ -579,7 +579,7 @@ This section will introduce you to
 </div>
 </div>
 <p>The mathematical buildings blocks available in shiny rrisk include expressions and distributions. Both can be defined in various ways to maximise your flexibility.</p>
-<div id="fig-MathematicalDefinition" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-MathematicalDefinition" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-MathematicalDefinition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/MathematicalDefinition.png" class="img-fluid figure-img" style="width:100.0%">
@@ -592,7 +592,7 @@ Figure&nbsp;5: Mathematical part of node definition.
 <p>Your options also include bootstrapping and the import from a distribution fitting project (see below). The first option <u>user defined</u> allows you to define a node using a mathematical expression (<a href="#fig-NodeUserDefined" class="quarto-xref">Figure&nbsp;6</a>).</p>
 <section id="user-defined-expression" class="level3">
 <h3 class="anchored" data-anchor-id="user-defined-expression">User defined expression</h3>
-<div id="fig-NodeUserDefined" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-NodeUserDefined" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-NodeUserDefined-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/NodeUserDefined.png" class="img-fluid figure-img" style="width:100.0%">
@@ -627,7 +627,7 @@ Example for an expression using a parent node (Alizarin Red S in eel model)
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>In the <u>Alizarin Red S in eel</u> model the outcome <span class="math inline">\(Y\)</span> (dietary intake of ARS per kg body weight and year through consumption of eel marked with ARS) is defined in terms of <span class="math inline">\(I\)</span> (concentration of ARS in edible tissues at time of catch) and <span class="math inline">\(M\)</span> (mean consumption of European eel per year per body weight). Thus, <span class="math inline">\(I\)</span> and <span class="math inline">\(M\)</span> are both parents nodes of <span class="math inline">\(Z\)</span>. This example also illustrates the common case that the final outcome is defined in terms of parent nodes (<a href="#fig-ARSoutcomeY" class="quarto-xref">Figure&nbsp;7</a>).</p>
-<div id="fig-ARSoutcomeY" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-ARSoutcomeY" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ARSoutcomeY-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ARSoutcomeY.png" class="img-fluid figure-img" style="width:100.0%">
@@ -714,7 +714,7 @@ This section will introduce you to
 </div>
 <p>The main characteristic of probabilistic risk models is the use of probability distributions to reflect either variability or uncertainty.</p>
 <!--- @JS can we fix this later: @MG [**variability and uncertainty can be reflected in general under the mathematical definition of a node, since it won't only apply to the distributions, but also to formulas using nodes represented by a distribution**] --->
-<div id="fig-ParametricDistributions" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-ParametricDistributions" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ParametricDistributions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ParametricDistributions.png" class="img-fluid figure-img" style="width:100.0%">
@@ -780,7 +780,7 @@ Example for parametric distribution (HEV in liver sausages)
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The objective of the example model <u>HEV in liver sausages</u> is to estimate the exposure with Hepatitis E virus (HEV) via consumption of sausage products made from pork (see shiny rrisk model report for further details). The model contains the variable <u>Liver_prop</u> to describe the amount of liver as ingredient in liver sausages in percent. This continuous quantity reflects variability (sausages contain variable amounts of liver depending on recipes and other factors). The modellers have chosen a modified PERT distribution with minimum 10%, mode 30% and maximum 50% for parameterisation. Note that shape parameter of 4 in the modified PERT is equivalent to the standard 3-parameter PERT model.</p>
-<div id="fig-modPert" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-modPert" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-modPert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/modPert.png" class="img-fluid figure-img" style="width:100.0%">
@@ -806,7 +806,7 @@ Example for a distribution parameter with functional dependency (L.monocytogenes
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The objective of the <u>L.monocytogenes in cheese</u> model is to estimate the risk of infection with Listeria (L.) monocytogenes per meal. The model uses the variable dose of ingested L. monocytogenes per serving, <span class="math inline">\(D_{dist}\)</span> modelled as Poisson distribution (<a href="#fig-functionalPoissonLMono" class="quarto-xref">Figure&nbsp;10</a>). The expression entered as distribution parameter <span class="math inline">\(\lambda\)</span> uses as parent nodes the serving size <span class="math inline">\(S\)</span> and the concentration of L. monocytogenes in the cheese at home <span class="math inline">\(LMC_{home}\)</span>, both of which express variability as well. This results in a dispersion of dose <span class="math inline">\(D_{dist}\)</span> much wider than what would be expected with a fixed value for the distribution parameter <span class="math inline">\(\lambda\)</span>.</p>
-<div id="fig-functionalPoissonLMono" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-functionalPoissonLMono" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-functionalPoissonLMono-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/functionalPoissonLMono.png" class="img-fluid figure-img" style="width:50.0%">
@@ -851,7 +851,7 @@ Read more
 <p>Additional variability may also be due to structural sources. For example, the mean value of bacterial load may depend on temperature. In this case, the mean of the variability distribution can be modeled as a function of temperature. The factor of interest can be continuous (e.g., temperature) or discrete (e.g., age groups). In both cases, the independent factor is represented as parent node in the model and the final variability node represents variability due to structural (or functional) sources of variability.</p>
 <p>The other motivation for using distributions in risk models is to represent parameter uncertainty. Assume you have a binomial distribution node in your model to represent variability of the random number of positive outcomes out of a fixed number of trials, given a defined outcome probability. A beta distribution for the latter would represent parameter uncertainty and act as parent node to the binomial distribution. The node <u>mean_log10_c0</u> from the <u>E.coli in beef</u> example is another illustration for an uncertainty parent node to a variability node. The bootstrap method provides a powerful solution for obtaining distributions for parameter uncertainty (see <mark>later</mark>). Independent of the technique used, the interpretation of the final distribution node is a quantification of variability accounting for parameter uncertainty.</p>
 <p>Last but not least consider a node in your model that directly represents a parameter uncertainty. The classical example for this is prevalence. The prevalence is an unknown single value, i.e.&nbsp;only one value can be true at the same time. The statistical uncertainty in the estimation of prevalence is represented by a beta distribution with parameters <span class="math inline">\(k+1\)</span> and <span class="math inline">\(n-k+1\)</span>, where <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span> denote the number of cases and sample size in estimation of prevalence. <mark>we don’t have a beta in our example models… unbelievable;)</mark>. Since prevalence is a common parameter in may risk models, its quantification of uncertainty using a single node is a typical situation in risk modelling (bottom row shaded blue in <a href="#fig-Parameterisations" class="quarto-xref">Figure&nbsp;11</a>).</p>
-<div id="fig-Parameterisations" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-Parameterisations" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Parameterisations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/Parameterisations.png" class="img-fluid figure-img" style="width:100.0%">
@@ -914,7 +914,7 @@ This section will introduce you to
 </div>
 </div>
 <p>Using the non-parametric bootstrap algorithm you can generate a distribution for any summary statistic of a data set. The advantage of this approach is that you don’t need to make any distributional assumption about the original data or the uncertainty distribution of the summary statistic you are interested in.</p>
-<div id="fig-BootstrapNode1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-BootstrapNode1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-BootstrapNode1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/BootstrapNode1.png" class="img-fluid figure-img" style="width:100.0%">
@@ -946,7 +946,7 @@ Example for non-parametric bootstrap (Alizarin red S in Eel model)
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>An exposure model for <u>Alizarin Red S (ARS) in eel</u> has been developed to estimate the intake of ARS with consumed eel (see shiny rrisk model report for further details). A small (n=14) data set is available for individual consumption of eel per kg body weight. The task is to characterise the uncertainty of the population mean and standard deviation for individual consumption with accounting for the small data set and the correlation between the uncertainty distributions of mean and standard deviation (<a href="#fig-BootstrapNode2" class="quarto-xref">Figure&nbsp;13</a>).</p>
-<div id="fig-BootstrapNode2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-BootstrapNode2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-BootstrapNode2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/BootstrapNode2.png" class="img-fluid figure-img" style="width:100.0%">
@@ -986,7 +986,7 @@ Figure&nbsp;13: Bootstrapping of the mean and standard deviation of individual c
 <li>Generating two nodes containing the bootstrap distributions <u>Xmean</u> and <u>Xsd</u> (automatically by shiny rrisk).</li>
 <li>Using the two nodes for defining a new node <u>C</u> for the population variability in consumption of eel per body weight consumed on single meal (<a href="#fig-ARSnodeC" class="quarto-xref">Figure&nbsp;14</a>).</li>
 </ol>
-<div id="fig-ARSnodeC" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-ARSnodeC" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ARSnodeC-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/ARSnodeC.png" class="img-fluid figure-img" style="width:100.0%">
@@ -1014,7 +1014,7 @@ Read more
 <section id="bootstrapping---how-does-it-work" class="level4">
 <h4 class="anchored" data-anchor-id="bootstrapping---how-does-it-work">Bootstrapping - how does it work?</h4>
 <p>Non-parametric bootstrapping (bs) is able to create an uncertainty distribution for any single-valued statistic of a data set such as, for example, a mean value or a standard deviation without using any assumption about the underlying distribution. In shiny rrisk, any statistic known to the <a href="https://www.r-project.org/">software R</a> can be requested such as <code>sum</code>, <code>mean</code>, <code>median</code>, <code>quantile(x, probs=.95)</code> (95th percentile), <code>var</code> and <code>sd</code> to mention the most relevant ones. The bs uses sampling with replacement from the original data, whereby the original sample size is maintained and the requested statistic is evaluated for each of those bs samples. The bs sampling size is set to 2000<mark>?</mark> in shiny rrisk. The bootstrap algorithm is shown in <a href="#fig-BootstrapConcep" class="quarto-xref">Figure&nbsp;15</a>.</p>
-<div id="fig-BootstrapConcep" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-BootstrapConcep" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-BootstrapConcep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/BootstrapConcept.png" class="img-fluid figure-img" style="width:80.0%">
@@ -1090,7 +1090,7 @@ This section will introduce you to
 </div>
 </div>
 <p>Let’s assume that you have used the “rrisk distribution” app for defining a distribution based on observed sample data or percentiles (see tutorial for more information). You need to upload the fitting result for use in your shiny rrisk session.</p>
-<div id="fig-fitdistributionNode" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-fitdistributionNode" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-fitdistributionNode-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/fitdistributionNode.png" class="img-fluid figure-img" style="width:100.0%">
@@ -1161,7 +1161,7 @@ This section will introduce you to
 </ul>
 </div>
 </div>
-<div id="fig-simulation" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-simulation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-simulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/simulation.png" class="img-fluid figure-img" style="width:100.0%">
@@ -1382,7 +1382,7 @@ Read more: Tornado plots
 <section id="documenting-and-reporting" class="level1">
 <h1>Documenting and reporting</h1>
 <p>This tab is left to add additional information about the model authors and a general description of the model (eg. question of interest and model scope, methodology used, resources, etc).</p>
-<div id="fig-Documentation" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-Documentation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Documentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/Documentation.png" class="img-fluid figure-img" style="width:100.0%">
@@ -1451,7 +1451,7 @@ Markdown syntax
 <div id="callout-32" class="callout-32-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;19</a>).</p>
-<div id="fig-Markdown" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-Markdown" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/markdown.png" class="img-fluid figure-img" style="width:100.0%">
@@ -1482,20 +1482,21 @@ Figure&nbsp;19: Selection of common markdown commands for use in free-text field
 
     
   New section
-    Fixed parameters and functions (example?)
+  
+  Javier -  
+  Fixed parameters and functions (Yersinial growth example? Javier will provide text in word to Matthias)
     
     
   Matthias
   Check notation for sigma distribution 
-  
-  Javier
-  "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube" could be used as a 
-  "Read more" in Simulation section, perhaps remove section numbers for consistency 
+  Wwill add few sentences and remove the file :  "Sampling Efficiency Report: Monte Carlo vs Latin Hypercube"
+  Create read more sections for uncertainty and distributions (develop a simple structure)
+   
   
   Robert
   Proofreading 
   Adjust app terminology to fit the tutorial (mainly check the figure legends)
-  Consider changing "Parametric distributions this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general)
+  Consider changing "Parametric distributions this name since some of the distributions are empirical and therefore non-parametric (cumulative, histogram, general) 
   -->
 
 
@@ -1537,18 +1538,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1580,7 +1570,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1588,7 +1598,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1685,7 +1695,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
