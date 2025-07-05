@@ -1159,6 +1159,7 @@ This section will introduce you to
 </div>
 <div class="callout-body-container callout-body">
 <ul>
+<li>setting simulation parameters</li>
 <li>obtaining model result interface</li>
 <li>interpreting model results</li>
 <li>Interpreting sensitivity analysis</li>
@@ -1171,12 +1172,21 @@ This section will introduce you to
 <img src="images/simulation.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;17: Setting simulation parameters.
+Figure&nbsp;17: Launching the simulation.
 </figcaption>
 </figure>
 </div>
-<p>Before executing (run) the simulation, user can set up several parameters by clicking <strong>Set run parameter</strong>. After setting these parameters, click <strong>Change Parameter.</strong></p>
-<p><img src="images/setrunparameter.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="334"></p>
+<p>Before running the simulation, you may <u>set run parameters</u> to increase the efficiency and control the reproducibility of your model.</p>
+<div id="fig-setrunparameter" class="quarto-figure quarto-figure-left quarto-float anchored" data-fig-align="left">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-setrunparameter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/setrunparameter.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-setrunparameter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18: Adjustment and control of simulation parameters
+</figcaption>
+</figure>
+</div>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 46%">
@@ -1184,22 +1194,26 @@ Figure&nbsp;17: Setting simulation parameters.
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><span style="color:#0d6efd">SAMPLING TECHNIQUE</span></td>
-<td>Select the random sampling method</td>
+<td><span style="color:#0d6efd">Sampling technique</span></td>
+<td>Choose between Monte-Carlo (default) and latin hypercube (enhanced efficiency)</td>
 </tr>
 <tr class="even">
-<td><span style="color:#0d6efd">NUMBER OF MONTE CARLO SIMULATIONS: VARIABILITY and UNCERTAINTY</span></td>
-<td>Enter here the number of Monte Carlo random samples required for the simulation</td>
+<td><span style="color:#0d6efd">Number of Monte Carlo replicates for variability</span></td>
+<td>Enter the number of random samples for nodes reflecting variability</td>
 </tr>
 <tr class="odd">
-<td><span style="color:#0d6efd">QUANTILES: VARIABILITY and UNCERTAINTY</span></td>
-<td>Enter here the percentiles for summarizing model results in the variability (1D) and uncertainty (2D)</td>
+<td><span style="color:#0d6efd">Number of Monte Carlo replicates for uncertainty</span></td>
+<td>Enter the number of random samples for nodes reflecting uncertainty</td>
 </tr>
 <tr class="even">
-<td><span style="color:#0d6efd">SEED VALUE</span></td>
-<td>Enter the integer number, this will allow to reproduce the same results</td>
+<td><span style="color:#0d6efd">Seed value</span></td>
+<td>Enter an integer number, which will allow to reproduce the random sampling results</td>
 </tr>
 <tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
 <td><span style="color:#0d6efd">TYPE</span></td>
 <td>?<span class="citation" data-cites="Robert">@Robert</span></td>
 </tr>
@@ -1412,7 +1426,7 @@ This section will introduce you to
 <img src="images/Documentation.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Documentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Documentation of author names and a free text model description in shiny rrisk.
+Figure&nbsp;19: Documentation of author names and a free text model description in shiny rrisk.
 </figcaption>
 </figure>
 </div>
@@ -1487,14 +1501,14 @@ Markdown syntax
 </div>
 <div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;19</a>).</p>
+<p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;20</a>).</p>
 <div id="fig-Markdown" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/markdown.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;19: Selection of common markdown commands for use in free-text fields.
+Figure&nbsp;20: Selection of common markdown commands for use in free-text fields.
 </figcaption>
 </figure>
 </div>

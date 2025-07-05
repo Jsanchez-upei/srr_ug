@@ -3,23 +3,28 @@
 ::: {.callout-note appearance="minimal"}
 #### This section will introduce you to
 
--   obtaining model result interface
+-   setting simulation parameters to enhance the efficiency  
+- obtaining model result interface
 -   interpreting model results
 -   Interpreting sensitivity analysis
 :::
 
-![Setting simulation parameters.](images/simulation.png){#fig-simulation width="100%"}
+Launching the simulation will bring you to your modelling results. 
 
-Before executing (run) the simulation, user can set up several parameters by clicking **Set run parameter**. After setting these parameters, click **Change Parameter.**
+![Launching the simulation.](images/simulation.png){#fig-simulation width="100%"}
 
-![](images/setrunparameter.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="334"}
+Before running the simulation, you may [set run parameters]{.underline} to increase the efficiency and control the reproducibility of your model. 
+
+
+![Adjustment and control of simulation parameters](images/setrunparameter.png){#fig-setrunparameter fig-align="left" width="60%"}
 
 |                                                                                         |                                                                                                       |
 |---------------------------------|--------------------------------------|
-| [SAMPLING TECHNIQUE]{style="color:#0d6efd"}                                             | Select the random sampling method                                                                     |
-| [NUMBER OF MONTE CARLO SIMULATIONS: VARIABILITY and UNCERTAINTY]{style="color:#0d6efd"} | Enter here the number of Monte Carlo random samples required for the simulation                       |
-| [QUANTILES: VARIABILITY and UNCERTAINTY]{style="color:#0d6efd"}                         | Enter here the percentiles for summarizing model results in the variability (1D) and uncertainty (2D) |
-| [SEED VALUE]{style="color:#0d6efd"}                                                     | Enter the integer number, this will allow to reproduce the same results                               |
+| [Sampling technique]{style="color:#0d6efd"}                                             | Choose between Monte-Carlo (default) and latin hypercube (enhanced efficiency)             |
+| [Number of Monte Carlo replicates for variability]{style="color:#0d6efd"} | Enter the number of random samples for nodes reflecting variability                        |
+| [Number of Monte Carlo replicates for uncertainty]{style="color:#0d6efd"} | Enter the number of random samples for nodes reflecting uncertainty                        |
+| [Seed value]{style="color:#0d6efd"}                                                     | Enter an integer number, which will allow to reproduce the random sampling results  | [Quantiles]{style="color:#0d6efd"}                         | Enter comma-sparated  percentiles for summarizing model results in the variability (1D) and uncertainty (2D) |
+                  |
 | [TYPE]{style="color:#0d6efd"}                                                           | ?@Robert                                                                                              |
 
 After setting all the parameters, select **Run Simulation.** After the simulation is completed, shiny rrisk will present the another screen, with the **general results** (by default) and **sensitivity plot.**
