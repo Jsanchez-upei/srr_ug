@@ -210,6 +210,8 @@ window.Quarto = {
   </ul></li>
   <li><a href="#running-a-simulation" id="toc-running-a-simulation" class="nav-link" data-scroll-target="#running-a-simulation">Running a simulation</a>
   <ul class="collapse">
+  <li><a href="#simulation-settings" id="toc-simulation-settings" class="nav-link" data-scroll-target="#simulation-settings">Simulation settings</a></li>
+  <li><a href="#run-simulation" id="toc-run-simulation" class="nav-link" data-scroll-target="#run-simulation">Run simulation</a></li>
   <li><a href="#general-results" id="toc-general-results" class="nav-link" data-scroll-target="#general-results">General Results</a>
   <ul class="collapse">
   <li><a href="#numerical-result-table" id="toc-numerical-result-table" class="nav-link" data-scroll-target="#numerical-result-table">Numerical result table</a></li>
@@ -1159,13 +1161,15 @@ This section will introduce you to
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>setting simulation parameters</li>
+<li>setting simulation parameters to enhance the efficiency<br>
+</li>
 <li>obtaining model result interface</li>
 <li>interpreting model results</li>
 <li>Interpreting sensitivity analysis</li>
 </ul>
 </div>
 </div>
+<p>Start the simulation to change the default simulation settings and get the results of your model.</p>
 <div id="fig-simulation" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-simulation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1176,21 +1180,40 @@ Figure&nbsp;17: Launching the simulation.
 </figcaption>
 </figure>
 </div>
-<p>Before running the simulation, you may <u>set run parameters</u> to increase the efficiency and control the reproducibility of your model.</p>
-<div id="fig-setrunparameter" class="quarto-figure quarto-figure-left quarto-float anchored" data-fig-align="left">
+<section id="simulation-settings" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-settings">Simulation settings</h2>
+<p>Before running the simulation, you may <strong>set run parameters</strong> to increase the efficiency and control the reproducibility of your model. Depending on whether your model involves a one-dimensional (1d) or two-dimensional (2d) simulation, the number of replicates is given in general or separately for variability and uncertainty (<a href="#fig-setrunparameter" class="quarto-xref">Figure&nbsp;18</a>).</p>
+<div id="fig-setrunparameter" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-setrunparameter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/setrunparameter.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:60.0%">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/setrunpara_1d.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>1d model</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/setrunpara_2d.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>2d model</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-setrunparameter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Adjustment and control of simulation parameters
+Figure&nbsp;18: Setting run parameters for a one-dimensional (1d) and two-dimensional (2d) simulation.
 </figcaption>
 </figure>
 </div>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 46%">
-<col style="width: 53%">
+<col style="width: 30%">
+<col style="width: 70%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1198,29 +1221,35 @@ Figure&nbsp;18: Adjustment and control of simulation parameters
 <td>Choose between Monte-Carlo (default) and latin hypercube (enhanced efficiency)</td>
 </tr>
 <tr class="even">
-<td><span style="color:#0d6efd">Number of Monte Carlo replicates for variability</span></td>
-<td>Enter the number of random samples for nodes reflecting variability</td>
+<td><span style="color:#0d6efd">Number of replicates<span style="color:Red">*</span></span></td>
+<td>Enter the number of random samples for all distribution nodes (1d model)</td>
 </tr>
 <tr class="odd">
-<td><span style="color:#0d6efd">Number of Monte Carlo replicates for uncertainty</span></td>
-<td>Enter the number of random samples for nodes reflecting uncertainty</td>
+<td><span style="color:#0d6efd">Number of replicates<span style="color:Red">*</span> for variability</span></td>
+<td>Enter the number of random samples for nodes reflecting variability (2d model)</td>
 </tr>
 <tr class="even">
+<td><span style="color:#0d6efd">Number of replicates<span style="color:Red">*</span> for uncertainty</span></td>
+<td>Enter the number of random samples for nodes reflecting uncertainty (2d model)</td>
+</tr>
+<tr class="odd">
 <td><span style="color:#0d6efd">Seed value</span></td>
 <td>Enter an integer number, which will allow to reproduce the random sampling results</td>
 </tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
 <tr class="even">
-<td><span style="color:#0d6efd">TYPE</span></td>
-<td>?<span class="citation" data-cites="Robert">@Robert</span></td>
+<td><span style="color:#0d6efd">Type</span></td>
+<td>Select quantile algorithm for calculating the precentiles</td>
+</tr>
+<tr class="odd">
+<td><span style="color:Red">*</span></td>
+<td>“Monte Carlo iterations” will be replaced with “replicates” since this applies to both Monte Carlo and latin hypercube sampling.</td>
 </tr>
 </tbody>
 </table>
-<p>After setting all the parameters, select <strong>Run Simulation.</strong> After the simulation is completed, shiny rrisk will present the another screen, with the <strong>general results</strong> (by default) and <strong>sensitivity plot.</strong></p>
-<p><span class="citation" data-cites="Robert">@Robert</span> - change to Sensitivity Analysis [change names in boxes to upper case to be consistent with other boxes]</p>
+<p>The setting of the <strong>Sampling technique</strong>, Monte Carlo (MC) versus mid latin hypercube (LH), is a technicality that can be ignored unless you have a specific preference (read more about sampling method below).</p>
+<p>The <strong>Number of replicates</strong> allows you to to set the sample size for the simulation that is adequate for the modelling task (read more about number of replicates below).</p>
+<p>Documentation of the <strong>Seed value</strong> allows you to exactly reproduce the numerical results of your model. This is possible because the random number generation uses a fully deterministic process. However, for practical purposes, the numbers generated using both the MC and LH algorithms can be assumed to be random numbers.</p>
+<p>The default setting of the <strong>Type</strong> for calculating percentiles follows the recommendation given by the developers of R’s quantile function (see <a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/quantile">package documentation</a> which is part of the R “stats” package (R Core Team, 2024. R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.).</p>
 <div class="callout callout-style-simple callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1231,7 +1260,7 @@ Memory
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The shiny rrisk server allocates a maximum memory of @@@ ro run the simulation. The amount of memory used is influenced by the number of nodes and the number of number samples required in the variability and uncertainty dimensions.</p>
+<p>The shiny rrisk server allocates a fixed size of memory to run the simulation. The amount of memory used is influenced by the number of nodes and the number of samples requested in the variability and uncertainty dimensions.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1240,23 +1269,16 @@ Memory
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Good practice - Number of MC samples
+Good practice - Number of replicates
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples.</p>
-<p>Usually, the number of samples are selected based on standard “magic” numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number.</p>
-<p>Usually, in risk and exposure assessments, the outcome is rare and large number of samples are required to obtain meaningful statistics.</p>
-<p>If the true risk is rare, and you want at least n occurrences of the event, then you can use:</p>
-<p><span class="math inline">\(N&gt;= n/p\)</span></p>
-<p>Example: to observe at least 1 event with a p = 10-4</p>
-<p>N&nbsp;&gt;=&nbsp;1/0.00001&nbsp;=&nbsp;10,0000&nbsp;samples</p>
-<p>Usually, the appropriated number of samples is an iterative exercise, where different simulations are run until we obtain consistent values for up to two/three digits of the mean or median.</p>
-<p>Also, we can use consistent values within 0.005 for the 2.5% and 97.5% percentiles.</p>
-<p>The convergence plot presented below can also be used as a guidance about the number of samples required to obtain a consistent mean estimate.</p>
-<p><span class="citation" data-cites="need">@need</span> something about sampling methods maybe here for efficient number of samples</p>
+<p>Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples. Usually, the number of samples is selected based on standard “magic” numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number. For this you need the probability of the event (which is typically low in risk and exposure assessments) and the minimum number of events you wish to model to obtain a statistically meaningful result.</p>
+<p>Let <span class="math inline">\(p\)</span> denote the (low) true risk and <span class="math inline">\(n\)</span> the minimum expected number of occurrences of the event you wish to model. You can approximate the required number of replicates <span class="math inline">\(N\)</span> using</p>
+<p><span class="math display">\[N\ge n/p.\]</span></p>
+<p>For example, to observe at least <span class="math inline">\(n=5\)</span> events with a <span class="math inline">\(p = 1/10000=10^{-4}\)</span>, you will need <span class="math inline">\(N\ge=5*10^4\)</span>, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained.<span class="citation" data-cites="Javier">[@Javier: can we omit the sentence "Also, we can use consistent values within 0.005 for the 2.5% and 97.5% percentiles."]</span> The <strong>convergence plot</strong> presented below can also be used as a guidance about the number of samples required to obtain a consistent mean estimate.</p>
 </div>
 </div>
 </div>
@@ -1266,7 +1288,7 @@ Good practice - Number of MC samples
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Read more - Sampling methods
+Read more - Monte Carlo (MC) vs.&nbsp;latin hypercube (LH) sampling
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1274,9 +1296,18 @@ Read more - Sampling methods
 <div class="callout-body-container callout-body">
 <p>Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH) method is more efficient and will provide same accuracy as the Monte Carlo (MC) method with fewer samples. In addition the LH will assure that samples are taken from the whole distribution, which is also better for rare events. The LH might reduce the number of samples required by a factor of 10 compared with the MC method. The LH is the default method in shiny rrisk.</p>
 <p>The LH method divides each random variable’s range into equal probability intervals (strata) according the number of samples required in the simulation and then take one sample from each interval per variable. Then the full coverage of each variable is sampled.</p>
-<p>The graph below shows a simple example of how the LH sampling has a better coverage of the sampling space as compared to the MC method.</p>
-<p><img src="images/mc_lh_v2.png" class="img-fluid"></p>
-<p>The table below compare the sampling methods to the True risk after taken 80 samples for two variables</p>
+<p><a href="#fig-mc_lh_v2" class="quarto-xref">Figure&nbsp;19</a> shows two input parameters of the simple risk model <span class="math inline">\(\mbox{Risk}=X_1*X_2\)</span>. Note that even with a small number of 80 sampling replicates, LH sampling results in a more homogeneous coverage of the sampling space as compared to the MC method.</p>
+<div id="fig-mc_lh_v2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mc_lh_v2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/mc_lh_v2.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mc_lh_v2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19: Scatter plot of two input quantities (80 sampling replicates).
+</figcaption>
+</figure>
+</div>
+<p>The table below compare the sampling methods to the true risk after taken 80 samples for the two input variables. The risk estimated using LH sampling is more accurate than the MC estimate.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1294,13 +1325,13 @@ Read more - Sampling methods
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Monte Carlo</td>
+<td style="text-align: center;">Monte Carlo (MC)</td>
 <td style="text-align: center;">80</td>
 <td style="text-align: center;">0.038</td>
 <td style="text-align: center;">0.021</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Latin Hypercube</td>
+<td style="text-align: center;">Latin Hypercube (LH)</td>
 <td style="text-align: center;">80</td>
 <td style="text-align: center;">0.013</td>
 <td style="text-align: center;">0.012</td>
@@ -1310,6 +1341,11 @@ Read more - Sampling methods
 </div>
 </div>
 </div>
+</section>
+<section id="run-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="run-simulation">Run simulation</h2>
+<p>After setting all the parameters, select <strong>Run Simulation.</strong> After the simulation is completed, shiny rrisk will present the another screen, with the <strong>general results</strong> (by default) and <strong>sensitivity plot.</strong></p>
+</section>
 <section id="general-results" class="level2">
 <h2 class="anchored" data-anchor-id="general-results">General Results</h2>
 <p>The results of all the nodes can be visualized from the drop down menu under Node. By default, shiny rrisk will start with the final node (eg. star shape node - or outcome).</p>
@@ -1426,7 +1462,7 @@ This section will introduce you to
 <img src="images/Documentation.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Documentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;19: Documentation of author names and a free text model description in shiny rrisk.
+Figure&nbsp;20: Documentation of author names and a free text model description in shiny rrisk.
 </figcaption>
 </figure>
 </div>
@@ -1501,14 +1537,14 @@ Markdown syntax
 </div>
 <div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;20</a>).</p>
+<p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;21</a>).</p>
 <div id="fig-Markdown" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/markdown.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20: Selection of common markdown commands for use in free-text fields.
+Figure&nbsp;21: Selection of common markdown commands for use in free-text fields.
 </figcaption>
 </figure>
 </div>

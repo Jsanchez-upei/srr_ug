@@ -9,79 +9,94 @@
 -   Interpreting sensitivity analysis
 :::
 
-Launching the simulation will bring you to your modelling results. 
+Start the simulation to change the default simulation settings and get the results of your model.
 
 ![Launching the simulation.](images/simulation.png){#fig-simulation width="100%"}
 
-Before running the simulation, you may [set run parameters]{.underline} to increase the efficiency and control the reproducibility of your model. 
+## Simulation settings
+
+Before running the simulation, you may **set run parameters** to increase the efficiency and control the reproducibility of your model. Depending on whether your model involves a one-dimensional (1d) or two-dimensional (2d) simulation, the number of replicates is given in general or separately for variability and uncertainty (@fig-setrunparameter).      
 
 
-![Adjustment and control of simulation parameters](images/setrunparameter.png){#fig-setrunparameter fig-align="left" width="60%"}
+::: {#fig-setrunparameter layout-ncol=2}
+
+![1d model](images/setrunpara_1d.png){width="100%"}
+
+![2d model](images/setrunpara_2d.png){width="100%"}
+
+Setting run parameters for a one-dimensional (1d) and two-dimensional (2d) simulation.
+:::
+
 
 |                                                                                         |                                                                                                       |
 |---------------------------------|--------------------------------------|
 | [Sampling technique]{style="color:#0d6efd"}                                             | Choose between Monte-Carlo (default) and latin hypercube (enhanced efficiency)             |
-| [Number of Monte Carlo replicates for variability]{style="color:#0d6efd"} | Enter the number of random samples for nodes reflecting variability                        |
-| [Number of Monte Carlo replicates for uncertainty]{style="color:#0d6efd"} | Enter the number of random samples for nodes reflecting uncertainty                        |
-| [Seed value]{style="color:#0d6efd"}                                                     | Enter an integer number, which will allow to reproduce the random sampling results  | [Quantiles]{style="color:#0d6efd"}                         | Enter comma-sparated  percentiles for summarizing model results in the variability (1D) and uncertainty (2D) |
-                  |
-| [TYPE]{style="color:#0d6efd"}                                                           | ?@Robert                                                                                              |
+| [Number of replicates[\*]{style="color:Red"}]{style="color:#0d6efd"} | Enter the number of random samples for all distribution nodes  (1d model)                        |
+| [Number of replicates[\*]{style="color:Red"} for variability]{style="color:#0d6efd"} | Enter the number of random samples for nodes reflecting variability (2d model)                        |
+| [Number of replicates[\*]{style="color:Red"} for uncertainty]{style="color:#0d6efd"} | Enter the number of random samples for nodes reflecting uncertainty (2d model)                        |
+| [Seed value]{style="color:#0d6efd"}                                                     | Enter an integer number, which will allow to reproduce the random sampling results  | [Quantiles]{style="color:#0d6efd"}                         | Enter comma-separated  percentiles for summarizing model results in the variability (1D) and uncertainty (2D) |
+| [Type]{style="color:#0d6efd"}   | Select quantile algorithm for calculating the percentiles|
+| [\*]{style="color:Red"}                              | "Monte Carlo iterations" will be replaced with "replicates" since this applies to both Monte Carlo and latin hypercube sampling.
 
-After setting all the parameters, select **Run Simulation.** After the simulation is completed, shiny rrisk will present the another screen, with the **general results** (by default) and **sensitivity plot.**
+: {tbl-colwidths="\[30,70\]"}
 
-@Robert - change to Sensitivity Analysis \[change names in boxes to upper case to be consistent with other boxes\]
+
+
+The setting of the **Sampling technique**,  Monte Carlo (MC) versus mid latin hypercube (LH), is a technicality that can be ignored unless you have a specific preference (read more about sampling method below). 
+
+The **Number of replicates** allows you to to set the sample size for the simulation that is adequate for the modelling task (read more about number of replicates below). 
+
+Documentation of the **Seed value** allows you to exactly reproduce the numerical results of your model. This is possible because the random number generation uses a fully deterministic process. However, for practical purposes, the numbers generated using both the MC and LH algorithms can be assumed to be random numbers.
+
+The default setting of the **Type** for calculating percentiles follows the recommendation given by the developers of R's "quantile" function (see [see documentation](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/quantile)), which is part of the R "stats" package (R Core Team, 2024. R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>).
+
 
 ::: {.callout-warning appearance="simple"}
 #### Memory
 
-The shiny rrisk server allocates a maximum memory of \@\@\@ ro run the simulation. The amount of memory used is influenced by the number of nodes and the number of number samples required in the variability and uncertainty dimensions.
+The shiny rrisk server allocates a fixed size of memory to run the simulation. The amount of memory used is influenced by the number of nodes and the number of samples requested in the variability and uncertainty dimensions.
 :::
 
 ::: {.callout-tip collapse="true"}
-### Good practice - Number of MC samples
+### Good practice - Number of replicates 
 
-Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples.
 
-Usually, the number of samples are selected based on standard "magic" numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number.
+Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples. Usually, the number of samples is selected based on standard "magic" numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number. For this you need the probability of the event (which is typically low in risk and exposure assessments) and the minimum number of events you wish to model to obtain a statistically meaningful result.
 
-Usually, in risk and exposure assessments, the outcome is rare and large number of samples are required to obtain meaningful statistics.
+Let $p$ denote the (low) true risk and $n$ the minimum expected number of occurrences of the event you wish to model. You can approximate the required number of replicates $N$ using 
 
-If the true risk is rare, and you want at least n occurrences of the event, then you can use:
+$$N\ge n/p.$$
 
-$N>= n/p$
-
-Example: to observe at least 1 event with a p = 10-4
-
-N \>= 1/0.00001 = 10,0000 samples
-
-Usually, the appropriated number of samples is an iterative exercise, where different simulations are run until we obtain consistent values for up to two/three digits of the mean or median.
-
-Also, we can use consistent values within 0.005 for the 2.5% and 97.5% percentiles.
-
-The convergence plot presented below can also be used as a guidance about the number of samples required to obtain a consistent mean estimate.
-
-@need something about sampling methods maybe here for efficient number of samples
+For example, to observe at least $n=5$ events with a $p = 1/10000=10^{-4}$, you will need $N\ge=5*10^4$, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained.[@Javier: can we omit the sentence "Also, we can use consistent values within 0.005 for the 2.5% and 97.5% percentiles."] The **convergence plot** presented below can also be used as a guidance about the number of samples required to obtain a consistent mean estimate.
 :::
 
+
 ::: {.callout-caution collapse="true"}
-## Read more - Sampling methods
+## Read more - Monte Carlo (MC) vs. latin hypercube (LH) sampling
 
 Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH) method is more efficient and will provide same accuracy as the Monte Carlo (MC) method with fewer samples. In addition the LH will assure that samples are taken from the whole distribution, which is also better for rare events. The LH might reduce the number of samples required by a factor of 10 compared with the MC method. The LH is the default method in shiny rrisk.
 
 The LH method divides each random variable's range into equal probability intervals (strata) according the number of samples required in the simulation and then take one sample from each interval per variable. Then the full coverage of each variable is sampled.
 
-The graph below shows a simple example of how the LH sampling has a better coverage of the sampling space as compared to the MC method.
+@fig-mc_lh_v2 shows two input parameters of the simple risk model $\mbox{Risk}=X_1*X_2$. Note that even with a small number of 80 sampling replicates, LH sampling results in a more homogeneous coverage of the sampling space as compared to the MC method.
 
-![](images/mc_lh_v2.png)
+![Scatter plot of two input quantities (80 sampling replicates).](images/mc_lh_v2.png){width="100%" #fig-mc_lh_v2}
 
-The table below compare the sampling methods to the True risk after taken 80 samples for two variables
+The table below compare the sampling methods to the true risk after taken 80 samples for the two input variables. The risk estimated using LH sampling is more accurate than the MC estimate. 
+
 
 |     Method      | Sample Size | Mean Risk | S.E.  |
 |:---------------:|:-----------:|:---------:|:-----:|
 |      True       |    ----     |   0.017   |  \-   |
-|   Monte Carlo   |     80      |   0.038   | 0.021 |
-| Latin Hypercube |     80      |   0.013   | 0.012 |
+|   Monte Carlo (MC)  |     80      |   0.038   | 0.021 |
+| Latin Hypercube (LH) |     80      |   0.013   | 0.012 |
 :::
+
+## Run simulation 
+
+After setting all the parameters, select **Run Simulation.** After the simulation is completed, shiny rrisk will present the another screen, with the **general results** (by default) and **sensitivity plot.**
+
+
 
 ## General Results
 
