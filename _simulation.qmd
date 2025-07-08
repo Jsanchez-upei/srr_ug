@@ -15,25 +15,25 @@ Start the simulation to change the default simulation settings and get the resul
 
 ## Simulation settings
 
-Before running the simulation, you may **set run parameters** to increase the efficiency and control the reproducibility of your model. Depending on whether your model involves a one-dimensional (1d) or two-dimensional (2d) simulation, the number of replicates is given in general or separately for variability and uncertainty (@fig-setrunparameter).      
+Before running the simulation, you may **set run parameters** to increase the efficiency and control the reproducibility of your model. Depending on whether your model involves a one-dimensional (1D) or two-dimensional (2D) simulation, the number of replicates is given in general or separately for variability and uncertainty (@fig-setrunparameter).      
 
 
 ::: {#fig-setrunparameter layout-ncol=2}
 
-![1d model](images/setrunpara_1d.png){width="100%"}
+![1D model](images/setrunpara_1D.png){width="100%"}
 
-![2d model](images/setrunpara_2d.png){width="100%"}
+![2D model](images/setrunpara_2D.png){width="100%"}
 
-Setting run parameters for a one-dimensional (1d) and two-dimensional (2d) simulation.
+Setting run parameters for a one-dimensional (1D) and two-dimensional (2D) simulation.
 :::
 
 
 |                                                                                         |                                                                                                       |
 |---------------------------------|--------------------------------------|
 | [Sampling technique]{style="color:#0d6efd"}                                             | Choose between Monte-Carlo (default) and latin hypercube (enhanced efficiency)             |
-| [Number of replicates[\*]{style="color:Red"}]{style="color:#0d6efd"} | Enter the number of random samples for all distribution nodes  (1d model)                        |
-| [Number of replicates[\*]{style="color:Red"} for variability]{style="color:#0d6efd"} | Enter the number of random samples for nodes reflecting variability (2d model)                        |
-| [Number of replicates[\*]{style="color:Red"} for uncertainty]{style="color:#0d6efd"} | Enter the number of random samples for nodes reflecting uncertainty (2d model)                        |
+| [Number of replicates[\*]{style="color:Red"}]{style="color:#0d6efd"} | Enter the number of random samples for all distribution nodes  (1D model)                        |
+| [Number of replicates[\*]{style="color:Red"} for variability]{style="color:#0d6efd"} | Enter the number of random samples for nodes reflecting variability (2D model)                        |
+| [Number of replicates[\*]{style="color:Red"} for uncertainty]{style="color:#0d6efd"} | Enter the number of random samples for nodes reflecting uncertainty (2D model)                        |
 | [Seed value]{style="color:#0d6efd"}                                                     | Enter an integer number, which will allow to reproduce the random sampling results  | [Quantiles]{style="color:#0d6efd"}                         | Enter comma-separated  percentiles for summarizing model results in the variability (1D) and uncertainty (2D) |
 | [Type]{style="color:#0d6efd"}   | Select quantile algorithm for calculating the percentiles|
 | [\*]{style="color:Red"}                              | "Monte Carlo iterations" will be replaced with "replicates" since this applies to both Monte Carlo and latin hypercube sampling.
@@ -61,13 +61,15 @@ The shiny rrisk server allocates a fixed size of memory to run the simulation. T
 ### Good practice - Number of replicates 
 
 
-Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples. Usually, the number of samples is selected based on standard "magic" numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number. For this you need the probability of the event (which is typically low in risk and exposure assessments) and the minimum number of events you wish to model to obtain a statistically meaningful result.
+Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples. Usually, the number of samples is selected based on standard "magic" numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number. For this you need the probability of the event being modelled as outcome (which is typically low in risk and exposure assessments) and the minimum number of events you wish to model to obtain a statistically meaningful result.
 
 Let $p$ denote the (low) true risk and $n$ the minimum expected number of occurrences of the event you wish to model. You can approximate the required number of replicates $N$ using 
 
 $$N\ge n/p.$$
 
-For example, to observe at least $n=5$ events with a $p = 1/10000=10^{-4}$, you will need $N\ge=5*10^4$, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained.[@Javier: can we omit the sentence "Also, we can use consistent values within 0.005 for the 2.5% and 97.5% percentiles."] The **convergence plot** presented below can also be used as a guidance about the number of samples required to obtain a consistent mean estimate.
+For example, to observe at least $n=5$ events with a $p = 1/10000=10^{-4}$, you will need $N\ge=5*10^4$, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained.[@Javier: can we omit the sentence "Also, we can use consistent values within 0.005 for the 2.5% and 97.5% percentiles."] 
+
+The  **convergence plot** is another tool for assessing the required number of replicates (see below).  The convergence plot displays the numerical result of you model as a function of the number of replicates. Therefore, you can use this approach also if some other metric than number of adverse events is the outcome of your model.
 :::
 
 
@@ -94,25 +96,31 @@ The table below compare the sampling methods to the true risk after taken 80 sam
 
 ## Run simulation 
 
-After setting all the parameters, select **Run Simulation.** After the simulation is completed, shiny rrisk will present the another screen, with the **general results** (by default) and **sensitivity plot.**
+After setting all the parameters, select **Run Simulation.** After the simulation is completed, shiny rrisk will present  **general results** and **sensitivity plot.**
 
 
 
-## General Results
+### General results 
 
-The results of all the nodes can be visualized from the drop down menu under Node. By default, shiny rrisk will start with the final node (eg. star shape node - or outcome).
+Under **general results** you can access the numerical as well as the graphical results of your model. The end node (final outcome of your model) is shown by default. The results of any other node can be shown as well by selecting the **Node** from the drop down menu.
 
-### Numerical result table
+#### One-dimensional (1D) simulation
 
+Shiny rrisk conducts a one-dimensional (1D) simulation, if none of the distribution nodes is defined to represent uncertainty. In this case, the numerical outcome consists of only one row of results, the **mean**, **median**, standard deviation (**sd**), a selection of **percentiles** (see Simulation settings) as well as the **unit**. This is shown using the  *Yersinia enterocolitica* in minced meat model as example. The median and 95th percentile of the outcome (N_cg) is 0 and 89 colony forming units (CFU), respectively (@fig-general_results_out_var).
+
+![Numerical results for a one-dimensional (1D) simulation (*Yersinia enterocolitica* in minced meat model).](images/general_results_out_1D.png){#fig-general_results_out_1D width="100%"}
+
+
+
+#### Two-dimensional (2D) simulation
+
+Shiny rrisk conducts a two-dimensional (2D) simulation, if at least one of the distribution nodes is defined to represent uncertainty. In this case, the numerical outcome consists of colums as defined for 1D models (see above) and rows for the **mean**, **median**, standard deviation (**sd**), a selection of **percentiles** that have been requested for the uncertainty dimension  (see Simulation settings). This is shown using the  *E. coli* in beef patties model  as example. The median and 95th percentile of the outcome (N_cg) is 0 and 89 colony forming units (CFU), respectively (@fig-general_results_out_2D).
+
+![Numerical results for a two-dimensional (2D) simulation (*E. coli* in beef patties model).](images/general_results_out_2D.png){#fig-general_results_out_2D width="100%"}
 The output table will provide the summary statistics of each node according to the dimensions in variability and uncertainty. In addition, shiny rrisk will provide three plots in the natural scale or log10 transformed scale for summarizing the results.
 
-#### One dimension Monte Carlo Model (1D MC) - Only Variability
 
-The table below shows the results of the one dimension simulation for the E. coli in beef patties model after selecting 5000 random samples.
 
-![](images/general_results_out_var.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"}
-
-For 1D models, the results will be presented in only one row representing the variability of the node.
 
 #### Two dimensions Monte Carlo Models (2D MC)- Variability and Uncertainty
 
@@ -122,30 +130,30 @@ The table below shows the results of the two dimension simulation for the E. col
 
 For 2D models, the summary statistics are presented in a matrix format, where rows represent uncertainty and the columns, the variability of the node.
 
-### Summary Plots
+### Graphical results
 
 #### Histogram
 
 This plot depicts the density distribution of the random values for a given node.
 
-![](images/hist_ecoli_2d.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+![](images/hist_ecoli_2D.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
 
 #### ECDF plot
 
 This is the empirical cumulative density function plot, it is presented as an ascending cumulative plot. See read more for the proper interpretation of the graph.
 
-![](images/ecdf_ecoli_2d.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+![](images/ecdf_ecoli_2D.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
 
 #### Convergence plot
 
 @Robert - how to interpret this one?
 
-![](images/conv_ecoli_2d.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+![](images/conv_ecoli_2D.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
 
 ::: {.callout-caution collapse="true"}
-## Read more - 2d MC Models
+## Read more - 2D MC Models
 
-The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2d MC). ![](images/clipboard-4283040366.png)
+The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2D MC). ![](images/clipboard-4283040366.png)
 
 The central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value in the y-axis of 0.5. The value is around 1e-11.
 
@@ -154,7 +162,7 @@ The 95th percentile (P95) provides an estimate of the risk that captures 95% of 
 The uncertainty of the median and 95th can be read from range of values across the red lines for each statistic. The red lines represents the 95% probability intervals for the median and 95th percentile. For instance, the upper boundary of a 95 % uncertainty range for the P95 estimate when accounting for uncertainty is 1e-10.
 :::
 
-## Sensitivity Plot
+#### Sensitivity Plot
 
 ![](images/sens_analysis-01.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
 

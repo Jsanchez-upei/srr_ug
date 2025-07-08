@@ -211,13 +211,11 @@ window.Quarto = {
   <li><a href="#running-a-simulation" id="toc-running-a-simulation" class="nav-link" data-scroll-target="#running-a-simulation">Running a simulation</a>
   <ul class="collapse">
   <li><a href="#simulation-settings" id="toc-simulation-settings" class="nav-link" data-scroll-target="#simulation-settings">Simulation settings</a></li>
-  <li><a href="#run-simulation" id="toc-run-simulation" class="nav-link" data-scroll-target="#run-simulation">Run simulation</a></li>
-  <li><a href="#general-results" id="toc-general-results" class="nav-link" data-scroll-target="#general-results">General Results</a>
+  <li><a href="#run-simulation" id="toc-run-simulation" class="nav-link" data-scroll-target="#run-simulation">Run simulation</a>
   <ul class="collapse">
-  <li><a href="#numerical-result-table" id="toc-numerical-result-table" class="nav-link" data-scroll-target="#numerical-result-table">Numerical result table</a></li>
-  <li><a href="#summary-plots" id="toc-summary-plots" class="nav-link" data-scroll-target="#summary-plots">Summary Plots</a></li>
+  <li><a href="#general-results" id="toc-general-results" class="nav-link" data-scroll-target="#general-results">General results</a></li>
+  <li><a href="#graphical-results" id="toc-graphical-results" class="nav-link" data-scroll-target="#graphical-results">Graphical results</a></li>
   </ul></li>
-  <li><a href="#sensitivity-plot" id="toc-sensitivity-plot" class="nav-link" data-scroll-target="#sensitivity-plot">Sensitivity Plot</a></li>
   </ul></li>
   <li><a href="#documenting-and-reporting" id="toc-documenting-and-reporting" class="nav-link" data-scroll-target="#documenting-and-reporting">Documenting and reporting</a>
   <ul class="collapse">
@@ -1182,7 +1180,7 @@ Figure&nbsp;17: Launching the simulation.
 </div>
 <section id="simulation-settings" class="level2">
 <h2 class="anchored" data-anchor-id="simulation-settings">Simulation settings</h2>
-<p>Before running the simulation, you may <strong>set run parameters</strong> to increase the efficiency and control the reproducibility of your model. Depending on whether your model involves a one-dimensional (1d) or two-dimensional (2d) simulation, the number of replicates is given in general or separately for variability and uncertainty (<a href="#fig-setrunparameter" class="quarto-xref">Figure&nbsp;18</a>).</p>
+<p>Before running the simulation, you may <strong>set run parameters</strong> to increase the efficiency and control the reproducibility of your model. Depending on whether your model involves a one-dimensional (1D) or two-dimensional (2D) simulation, the number of replicates is given in general or separately for variability and uncertainty (<a href="#fig-setrunparameter" class="quarto-xref">Figure&nbsp;18</a>).</p>
 <div id="fig-setrunparameter" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-setrunparameter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1190,23 +1188,23 @@ Figure&nbsp;17: Launching the simulation.
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/setrunpara_1d.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>1d model</figcaption>
+<p><img src="images/setrunpara_1D.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>1D model</figcaption>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/setrunpara_2d.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>2d model</figcaption>
+<p><img src="images/setrunpara_2D.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>2D model</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-setrunparameter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18: Setting run parameters for a one-dimensional (1d) and two-dimensional (2d) simulation.
+Figure&nbsp;18: Setting run parameters for a one-dimensional (1D) and two-dimensional (2D) simulation.
 </figcaption>
 </figure>
 </div>
@@ -1222,15 +1220,15 @@ Figure&nbsp;18: Setting run parameters for a one-dimensional (1d) and two-dimens
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Number of replicates<span style="color:Red">*</span></span></td>
-<td>Enter the number of random samples for all distribution nodes (1d model)</td>
+<td>Enter the number of random samples for all distribution nodes (1D model)</td>
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">Number of replicates<span style="color:Red">*</span> for variability</span></td>
-<td>Enter the number of random samples for nodes reflecting variability (2d model)</td>
+<td>Enter the number of random samples for nodes reflecting variability (2D model)</td>
 </tr>
 <tr class="even">
 <td><span style="color:#0d6efd">Number of replicates<span style="color:Red">*</span> for uncertainty</span></td>
-<td>Enter the number of random samples for nodes reflecting uncertainty (2d model)</td>
+<td>Enter the number of random samples for nodes reflecting uncertainty (2D model)</td>
 </tr>
 <tr class="odd">
 <td><span style="color:#0d6efd">Seed value</span></td>
@@ -1275,10 +1273,11 @@ Good practice - Number of replicates
 </div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples. Usually, the number of samples is selected based on standard “magic” numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number. For this you need the probability of the event (which is typically low in risk and exposure assessments) and the minimum number of events you wish to model to obtain a statistically meaningful result.</p>
+<p>Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples. Usually, the number of samples is selected based on standard “magic” numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number. For this you need the probability of the event being modelled as outcome (which is typically low in risk and exposure assessments) and the minimum number of events you wish to model to obtain a statistically meaningful result.</p>
 <p>Let <span class="math inline">\(p\)</span> denote the (low) true risk and <span class="math inline">\(n\)</span> the minimum expected number of occurrences of the event you wish to model. You can approximate the required number of replicates <span class="math inline">\(N\)</span> using</p>
 <p><span class="math display">\[N\ge n/p.\]</span></p>
-<p>For example, to observe at least <span class="math inline">\(n=5\)</span> events with a <span class="math inline">\(p = 1/10000=10^{-4}\)</span>, you will need <span class="math inline">\(N\ge=5*10^4\)</span>, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained.<span class="citation" data-cites="Javier">[@Javier: can we omit the sentence "Also, we can use consistent values within 0.005 for the 2.5% and 97.5% percentiles."]</span> The <strong>convergence plot</strong> presented below can also be used as a guidance about the number of samples required to obtain a consistent mean estimate.</p>
+<p>For example, to observe at least <span class="math inline">\(n=5\)</span> events with a <span class="math inline">\(p = 1/10000=10^{-4}\)</span>, you will need <span class="math inline">\(N\ge=5*10^4\)</span>, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained.<span class="citation" data-cites="Javier">[@Javier: can we omit the sentence "Also, we can use consistent values within 0.005 for the 2.5% and 97.5% percentiles."]</span></p>
+<p>The <strong>convergence plot</strong> is another tool for assessing the required number of replicates (see below). The convergence plot displays the numerical result of you model as a function of the number of replicates. Therefore, you can use this approach also if some other metric than number of adverse events is the outcome of your model.</p>
 </div>
 </div>
 </div>
@@ -1344,19 +1343,28 @@ Figure&nbsp;19: Scatter plot of two input quantities (80 sampling replicates).
 </section>
 <section id="run-simulation" class="level2">
 <h2 class="anchored" data-anchor-id="run-simulation">Run simulation</h2>
-<p>After setting all the parameters, select <strong>Run Simulation.</strong> After the simulation is completed, shiny rrisk will present the another screen, with the <strong>general results</strong> (by default) and <strong>sensitivity plot.</strong></p>
+<p>After setting all the parameters, select <strong>Run Simulation.</strong> After the simulation is completed, shiny rrisk will present <strong>general results</strong> and <strong>sensitivity plot.</strong></p>
+<section id="general-results" class="level3">
+<h3 class="anchored" data-anchor-id="general-results">General results</h3>
+<p>Under <strong>general results</strong> you can access the numerical as well as the graphical results of your model. The end node (final outcome of your model) is shown by default. The results of any other node can be shown as well by selecting the <strong>Node</strong> from the drop down menu.</p>
+<section id="one-dimensional-1d-simulation" class="level4">
+<h4 class="anchored" data-anchor-id="one-dimensional-1d-simulation">One-dimensional (1D) simulation</h4>
+<p>Shiny rrisk conducts a one-dimensional (1D) simulation, if none of the distribution nodes is defined to represent uncertainty. In this case, the numerical outcome consists of only one row of results, the <strong>mean</strong>, <strong>median</strong>, standard deviation (<strong>sd</strong>), a selection of <strong>percentiles</strong> (see Simulation settings) as well as the <strong>unit</strong>. This is shown using the <em>Yersinia enterocolitica</em> in minced meat model as example. The median and 95th percentile of the outcome (N_cg) is 0 and 89 colony forming units (CFU), respectively (<strong>?@fig-general_results_out_var</strong>).</p>
+<div id="fig-general_results_out_1D" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-general_results_out_1D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/general_results_out_1D.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-general_results_out_1D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;20: Numerical results for a one-dimensional (1D) simulation (<em>Yersinia enterocolitica</em> in minced meat model).
+</figcaption>
+</figure>
+</div>
 </section>
-<section id="general-results" class="level2">
-<h2 class="anchored" data-anchor-id="general-results">General Results</h2>
-<p>The results of all the nodes can be visualized from the drop down menu under Node. By default, shiny rrisk will start with the final node (eg. star shape node - or outcome).</p>
-<section id="numerical-result-table" class="level3">
-<h3 class="anchored" data-anchor-id="numerical-result-table">Numerical result table</h3>
-<p>The output table will provide the summary statistics of each node according to the dimensions in variability and uncertainty. In addition, shiny rrisk will provide three plots in the natural scale or log10 transformed scale for summarizing the results.</p>
-<section id="one-dimension-monte-carlo-model-1d-mc---only-variability" class="level4">
-<h4 class="anchored" data-anchor-id="one-dimension-monte-carlo-model-1d-mc---only-variability">One dimension Monte Carlo Model (1D MC) - Only Variability</h4>
-<p>The table below shows the results of the one dimension simulation for the E. coli in beef patties model after selecting 5000 random samples.</p>
-<p><img src="images/general_results_out_var.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);"></p>
-<p>For 1D models, the results will be presented in only one row representing the variability of the node.</p>
+<section id="two-dimensional-2d-simulation" class="level4">
+<h4 class="anchored" data-anchor-id="two-dimensional-2d-simulation">Two-dimensional (2D) simulation</h4>
+<p>Shiny rrisk conducts a two-dimensional (2D) simulation, if at least one of the distribution nodes is defined to represent uncertainty. In this case, the numerical outcome consists of colums as defined for 1D models (see above) and rows for the <strong>mean</strong>, <strong>median</strong>, standard deviation (<strong>sd</strong>), a selection of <strong>percentiles</strong> that have been requested for the uncertainty dimension (see Simulation settings). This is shown using the <em>E. coli</em> in beef patties model as example. The median and 95th percentile of the outcome (N_cg) is 0 and 89 colony forming units (CFU), respectively (<strong>?@fig-general_results_out_2D</strong>).</p>
+<p><img src="images/general_results_out_2D.png" id="fig-general_results_out_2D" class="img-fluid" style="width:100.0%" alt="Numerical results for a two-dimensional (2D) simulation (E. coli in beef patties model)."> The output table will provide the summary statistics of each node according to the dimensions in variability and uncertainty. In addition, shiny rrisk will provide three plots in the natural scale or log10 transformed scale for summarizing the results.</p>
 </section>
 <section id="two-dimensions-monte-carlo-models-2d-mc--variability-and-uncertainty" class="level4">
 <h4 class="anchored" data-anchor-id="two-dimensions-monte-carlo-models-2d-mc--variability-and-uncertainty">Two dimensions Monte Carlo Models (2D MC)- Variability and Uncertainty</h4>
@@ -1365,35 +1373,35 @@ Figure&nbsp;19: Scatter plot of two input quantities (80 sampling replicates).
 <p>For 2D models, the summary statistics are presented in a matrix format, where rows represent uncertainty and the columns, the variability of the node.</p>
 </section>
 </section>
-<section id="summary-plots" class="level3">
-<h3 class="anchored" data-anchor-id="summary-plots">Summary Plots</h3>
+<section id="graphical-results" class="level3">
+<h3 class="anchored" data-anchor-id="graphical-results">Graphical results</h3>
 <section id="histogram" class="level4">
 <h4 class="anchored" data-anchor-id="histogram">Histogram</h4>
 <p>This plot depicts the density distribution of the random values for a given node.</p>
-<p><img src="images/hist_ecoli_2d.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p><img src="images/hist_ecoli_2D.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 </section>
 <section id="ecdf-plot" class="level4">
 <h4 class="anchored" data-anchor-id="ecdf-plot">ECDF plot</h4>
 <p>This is the empirical cumulative density function plot, it is presented as an ascending cumulative plot. See read more for the proper interpretation of the graph.</p>
-<p><img src="images/ecdf_ecoli_2d.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p><img src="images/ecdf_ecoli_2D.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 </section>
 <section id="convergence-plot" class="level4">
 <h4 class="anchored" data-anchor-id="convergence-plot">Convergence plot</h4>
 <p><span class="citation" data-cites="Robert">@Robert</span> - how to interpret this one?</p>
-<p><img src="images/conv_ecoli_2d.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p><img src="images/conv_ecoli_2D.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Read more - 2d MC Models
+Read more - 2D MC Models
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2d MC). <img src="images/clipboard-4283040366.png" class="img-fluid"></p>
+<p>The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2D MC). <img src="images/clipboard-4283040366.png" class="img-fluid"></p>
 <p>The central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value in the y-axis of 0.5. The value is around 1e-11.</p>
 <p>The 95th percentile (P95) provides an estimate of the risk that captures 95% of the variability of the input parameters. It can be read from the graph by looking at the x-axis where upper red lines intersects with the dark blue line.</p>
 <p>The uncertainty of the median and 95th can be read from range of values across the red lines for each statistic. The red lines represents the 95% probability intervals for the median and 95th percentile. For instance, the upper boundary of a 95 % uncertainty range for the P95 estimate when accounting for uncertainty is 1e-10.</p>
@@ -1401,10 +1409,8 @@ Read more - 2d MC Models
 </div>
 </div>
 </section>
-</section>
-</section>
-<section id="sensitivity-plot" class="level2">
-<h2 class="anchored" data-anchor-id="sensitivity-plot">Sensitivity Plot</h2>
+<section id="sensitivity-plot" class="level4">
+<h4 class="anchored" data-anchor-id="sensitivity-plot">Sensitivity Plot</h4>
 <p><img src="images/sens_analysis-01.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <p>The sensitivity analyses results can be visualized by selecting the <strong>sensitivity plot</strong> tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two stasticts, “Pearson correlation coefficient” and “Spearman rho statistic” (the R2 statistic will be implemented in future versions of shiny rrisk).</p>
 <p>The following plots presents the 2D tornado plot using the Pearson statistic for the E. coli model. All the input variables are postively correlation withe outcome (eg. the larger is the value of the input, the larger is the risk). However there are major differences in the influence of each input variable on the outcome. For instance the initial concentration of the pathogen (log10_C0) has a Pearson correlation coefficient of approximately 0.6 followed by the reduction facors and concentration.</p>
@@ -1431,6 +1437,8 @@ Read more: Tornado plots
 </div>
 </div>
 </div>
+</section>
+</section>
 </section>
 </section>
 <section id="documenting-and-reporting" class="level1">
@@ -1462,7 +1470,7 @@ This section will introduce you to
 <img src="images/Documentation.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Documentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;20: Documentation of author names and a free text model description in shiny rrisk.
+Figure&nbsp;21: Documentation of author names and a free text model description in shiny rrisk.
 </figcaption>
 </figure>
 </div>
@@ -1537,14 +1545,14 @@ Markdown syntax
 </div>
 <div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;21</a>).</p>
+<p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;22</a>).</p>
 <div id="fig-Markdown" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/markdown.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;21: Selection of common markdown commands for use in free-text fields.
+Figure&nbsp;22: Selection of common markdown commands for use in free-text fields.
 </figcaption>
 </figure>
 </div>
