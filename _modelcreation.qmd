@@ -1,5 +1,4 @@
-
-# Building a model 
+# Building a model
 
 ::: {.callout-note appearance="minimal"}
 #### This section will introduce you to
@@ -7,15 +6,15 @@
 -   creating a model using a step-by-step process.
 :::
 
-Building a model is a complex process. Let's assume that you have already defined the objective and scope and that you have a sketch of all important elements of the model (see section "Getting started"). It seems that you are ready to go! 
+Building a model is a complex process. Let's assume that you have already defined the objective and scope and that you have a sketch of all important elements of the model (see section "Getting started"). It seems that you are ready to go!
 
 ![Main screen, second row of shiny rrisk.](images/ModelCreation.png){#fig-ModelCreation width="100%"}
 
 A model in shiny rrisk consists of so-called nodes. You may also define fixed parameters and functions available for the definition of nodes.
 
-|                                      |                                                                                                                |
-|--------------------|----------------------------------------------------|
-| [Add node]{style="color:#0d6efd"}    | Create a new node and launch its description and mathematical definition.                                      |
+|  |  |
+|----|----|
+| [Add node]{style="color:#0d6efd"} | Create a new node and launch its description and mathematical definition. |
 | [Check model]{style="color:#0d6efd"} | Verify that a simulation model can be built from the mathematical and numerical model input you have provided. |
 
 : {tbl-colwidths="\[18,82\]"}
@@ -34,21 +33,20 @@ Remember to save your model after adding each node.
 -   the integrated annotation template that is linked to the creation of a node and will guide you through a comprehensive documentation.
 :::
 
-A so-called "node" in shiny rrisk is what you would refer to as a parameter or numerical model input. You will see later on that model parameters are actually nodes if you represent your model as a graph. This enables us to use powerful tools for visualisation and analysis. 
-
+A so-called "node" in shiny rrisk is what you would refer to as a parameter or numerical model input. You will see later on that model parameters are actually nodes if you represent your model as a graph. This enables us to use powerful tools for visualisation and analysis.
 
 ![Descriptive part of node definition (note that "item" will be changed to "node" in future updates).](images/AddNode.png){#fig-AddNode width="100%"}
 
 Upon launching [Add node]{.underline}, a window pops-up with several free-text fields.
 
-|                                                      |                                                                                                                                                                                                                                                                                                                                             |
-|-----------------|-------------------------------------------------------|
-| [Name]{style="color:#0d6efd"}[\*]{style="color:Red"} | Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry.                                                                                                                                                                                      |
-| [Unit]{style="color:#0d6efd"}                        | The physical measurement unit should be entered here if applicable.                                                                                                                                                                                                                                                                         |
-| [Grouping]{style="color:#0d6efd"}                    | A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation. |
-| [Source]{style="color:#0d6efd"}                      | The source of information about the node should be provided according to good scientific practice. If a bibliographic reference is available it should be entered using the format “Author(s), Year (doi code )”.                                                                                                                           |
-| [Description]{style="color:#0d6efd"}                 | All relevant information required for documentation and verification should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax in section on Documentation).                                                                                               |
-| [\*]{style="color:Red"}                              | Required                                                                                                                                                                                                                                                                                                                                    |
+|  |  |
+|----|----|
+| [Name]{style="color:#0d6efd"}[\*]{style="color:Red"} | Each node has to have a unique name starting with a letter. Numbers and underscore are allowed. An error message occurs upon missing or invalid entry. |
+| [Unit]{style="color:#0d6efd"} | The physical measurement unit should be entered here if applicable. |
+| [Grouping]{style="color:#0d6efd"} | A grouping name may refer to a particular module of the model or step in the event tree. It is possible to define membership of one node to more than one group in which case the group names are comma-separated. The groups are visualised in the graphical representation of the model and are used to organise the model documentation. |
+| [Source]{style="color:#0d6efd"} | The source of information about the node should be provided according to good scientific practice. If a bibliographic reference is available it should be entered using the format “Author(s), Year (doi code )”. |
+| [Description]{style="color:#0d6efd"} | All relevant information required for documentation and verification should be provided. This may include any underlying assumptions and uncertainties. The text may be structured using sub-headers (see example for markdown syntax in section on Documentation). |
+| [\*]{style="color:Red"} | Required |
 
 : {tbl-colwidths="\[12,88\]"}
 
@@ -57,7 +55,6 @@ Upon launching [Add node]{.underline}, a window pops-up with several free-text f
 
 Remember to save your model after adding nodes and/or making important changes in the model
 :::
-
 
 ::: {.callout-tip collapse="true"}
 ### Good practice
@@ -82,7 +79,7 @@ Remember to save your model after adding nodes and/or making important changes i
 -   defining a node mathematically, which is the essential tasks in model creation.
 :::
 
-The mathematical buildings blocks available in shiny rrisk include expressions and distributions. Both can be defined in various ways to maximise your flexibility. 
+The mathematical buildings blocks available in shiny rrisk include expressions and distributions. Both can be defined in various ways to maximise your flexibility.
 
 ![Mathematical part of node definition.](images/MathematicalDefinition.png){#fig-MathematicalDefinition width="100%"}
 
@@ -92,8 +89,8 @@ Your options also include bootstrapping and the import from a distribution fitti
 
 ![Choose user defined to enter a mathematical expression (note that "Item Code" will be replaced with "Expression" in future updates).](images/NodeUserDefined.png){#fig-NodeUserDefined width="100%"}
 
-|                                     |                                                                                                                                                                                                                                                                                                                                                                                                 |
-|----------------|--------------------------------------------------------|
+|  |  |
+|----|----|
 | [Expression]{style="color:#0d6efd"} | A mathematical expression is entered here that can be evaluated similar to a line of code in the [software R](https://www.r-project.org/). At least one term of the expression is another (distribution) node, which is referred to as a "parent node". Parent nodes that do not yet exist in the model are referred to as “implicit nodes” and will be generated automatically by shiny rrisk. |
 
 : {tbl-colwidths="\[12,88\]"}
@@ -121,7 +118,7 @@ The user can start creating the model by defining the node $A$. As a result, shi
 
 -   Use the model graph (see later) to identify nodes that were implicitly generated based on a spelling mistake in the node definition.
 -   Code expressions may contain any function that is part of the R base package.
-- Use either explicit or implicit nodes in your model consistently to obtain a logical order of nodes. This will make it easier to review your model.
+-   Use either explicit or implicit nodes in your model consistently to obtain a logical order of nodes. This will make it easier to review your model.
 :::
 
 ::: {.callout-caution collapse="true"}
@@ -138,7 +135,7 @@ The tool’s ability to create implicit nodes allows users to define a model by 
 -   using probability distributions in in shiny rrisk, a prerequisite for reflecting variability and uncertainty in your model.
 :::
 
-The main characteristic of probabilistic risk models is the use of probability distributions to reflect either variability or uncertainty. 
+The main characteristic of probabilistic risk models is the use of probability distributions to reflect either variability or uncertainty.
 
 <!--- @JS can we fix this later: @MG [**variability and uncertainty can be reflected in general under the mathematical definition of a node, since it won't only apply to the distributions, but also to formulas using nodes represented by a distribution**] --->
 
@@ -146,8 +143,8 @@ The main characteristic of probabilistic risk models is the use of probability d
 
 Once you have selected [parametric distributions]{.underline} you can choose from a number of discrete and continuous distribution families (@fig-ParametricDistributions).
 
-|                                                         |                                                       |
-|-------------------------------------|-----------------------------------|
+|  |  |
+|----|----|
 | [Choose parametric distribution]{style="color:#0d6efd"} | Select here the distribution family for the new node. |
 
 : {tbl-colwidths="\[30,70\]"}
@@ -163,7 +160,6 @@ The following thirteen continuous distributions are available to generate a prob
 #### Special distributions
 
 Two special distributions, are provided, the sigma distribution to describe an uncertainty distribution for the variance estimate and the Yule-Furry process which can be used in an exponential growth model (read more details below).
-
 
 #### Variability and uncertainty
 
@@ -234,37 +230,32 @@ Last but not least consider a node in your model that directly represents a para
 
 #### Truncation versus censoring
 
-A truncated distribution for reflecting variability accounts for plausible lower or upper limits of the underlying quantity. It is important to note that "quantity" refers to the substantial phenomenon being modelled. For example, the concentration of a chemical in a food commodity has a lower truncation point of zero, meaning that values below zero are excluded. This should not be confused with censoring. In our example, the  measurement data of the chemical are typically censored due to the limit of detection and limit of quantification. The censored distribution of the measurement data is a surrogate for the underlying substance concentration. This introduces a bias which can be counteracted by estimating the distribution of the unobserved concentration data from the censored data set. 
+A truncated distribution for reflecting variability accounts for plausible lower or upper limits of the underlying quantity. It is important to note that "quantity" refers to the substantial phenomenon being modelled. For example, the concentration of a chemical in a food commodity has a lower truncation point of zero, meaning that values below zero are excluded. This should not be confused with censoring. In our example, the measurement data of the chemical are typically censored due to the limit of detection and limit of quantification. The censored distribution of the measurement data is a surrogate for the underlying substance concentration. This introduces a bias which can be counteracted by estimating the distribution of the unobserved concentration data from the censored data set.
 
-A truncated distribution for reflecting parameter uncertainty may be useful to ensure that the distribution parameters are within their respective boundaries. However, this is typically achieved by choosing adequate distribution families (e.g., choosing a beta distribution for a prevalence parameter rather than a [0,1]-truncated distribution). 
-
+A truncated distribution for reflecting parameter uncertainty may be useful to ensure that the distribution parameters are within their respective boundaries. However, this is typically achieved by choosing adequate distribution families (e.g., choosing a beta distribution for a prevalence parameter rather than a \[0,1\]-truncated distribution).
 :::
 
 ::: {.callout-caution collapse="true"}
 ## About special distributions implemented in shiny rrisk
 
-### Sigma distribution 
+### Sigma distribution
 
-The sigma distribution is a stochastic sampling distribution for the variance. This random distribution can be used when the variance is estimated from the data. The chi-square ($\chi^2$) test allows to determine the best estimate and confidence interval for the standard deviation of a normally distributed population, when the population mean is known, then  the sampling variance estimates the population variance from a sample of size $n$. The sampling distribution of the variance ($SD$) follows a chi-squared distribution: $(n-1)*s^2/sigma^2 ~ X^2_{n-1}$. From this relationship, the sample variance can be simulated. [David Vose, Risk Analysis: a quantitative guide, 3rd ed., John Wiley & Sons, 2008. This is described in the Chapter: Data and Statistics, paragraph 9.1.2 The chi-square test]
+The sigma distribution is a stochastic sampling distribution for the variance. This random distribution can be used when the variance is estimated from the data. The chi-square ($\chi^2$) test allows to determine the best estimate and confidence interval for the standard deviation of a normally distributed population, when the population mean is known, then the sampling variance estimates the population variance from a sample of size $n$. The sampling distribution of the variance ($SD$) follows a chi-squared distribution: $(n-1)*s^2/sigma^2 ~ X^2_{n-1}$. From this relationship, the sample variance can be simulated. \[David Vose, Risk Analysis: a quantitative guide, 3rd ed., John Wiley & Sons, 2008. This is described in the Chapter: Data and Statistics, paragraph 9.1.2 The chi-square test\]
 
+### The Yule-Furry process (Death only)
 
-### The Yule-Furry process (Death only) 
-The Yule-Furry process is the stochastic model for an exponential growth model. [David Vose, Risk Analysis: a quantitative guide, 3rd ed., John Wiley & Sons, 2008. The Yule-Furry process is described in the Chapter: Microbial food safety risk assessment, paragraph 21.1.2 Growth and attenuation models without memory].
+The Yule-Furry process is the stochastic model for an exponential growth model. \[David Vose, Risk Analysis: a quantitative guide, 3rd ed., John Wiley & Sons, 2008. The Yule-Furry process is described in the Chapter: Microbial food safety risk assessment, paragraph 21.1.2 Growth and attenuation models without memory\].
 :::
-
 
 ### Bootstrapping
 
 ::: {.callout-note appearance="minimal"}
-
 #### This section will introduce you to
 
 -   bootstrapping for generating distributions that represent statistical parameter uncertainty without specifying a distribution family.
 :::
 
-
-Using the non-parametric bootstrap algorithm you can generate a distribution for any summary statistic of a data set. The advantage of this approach is that you don't need to make any distributional assumption about the original data or the uncertainty distribution of the summary statistic you are interested in. 
-
+Using the non-parametric bootstrap algorithm you can generate a distribution for any summary statistic of a data set. The advantage of this approach is that you don't need to make any distributional assumption about the original data or the uncertainty distribution of the summary statistic you are interested in.
 
 ![Bootstrap nodes always represent parameter uncertainty.](images/BootstrapNode1.png){#fig-BootstrapNode1 width="100%"}
 
@@ -285,12 +276,12 @@ An exposure model for [Alizarin Red S (ARS) in eel]{.underline} has been develop
 
 ![Bootstrapping of the mean and standard deviation of individual consumption data (see text for more details and note that "variable name" will be changed to "Node name" in update version).](images/BootstrapNode2.png){#fig-BootstrapNode2 width="100%"}
 
-|                                            |                                                                                                                                                                                                                                                           |
-|-----------------|-------------------------------------------------------|
-| [Open data]{style="color:#0d6efd"}         | A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column. \| |
-| [Provided data]{style="color:#0d6efd"}     | Alternatively, comma-separated source data can be entered manually. Decimal point “.” should be used if required.                                                                                                                                         |
-| [Node name]{style="color:#0d6efd"}         | Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution. \|                                                                                     |
-| [Summary statistic]{style="color:#0d6efd"} | For each node a proper name of the requested statistic is to be provided using R terminology. \|                                                                                                                       |
+|  |  |
+|----|----|
+| [Open data]{style="color:#0d6efd"} | A local csv-data file may be uploaded as source data. The comma-separated data file should use decimal point “.”, must not contain a variable name and consist of only one column. \| |
+| [Provided data]{style="color:#0d6efd"} | Alternatively, comma-separated source data can be entered manually. Decimal point “.” should be used if required. |
+| [Node name]{style="color:#0d6efd"} | Up to five nodes can be defined which will be automatically generated and contain the joint bootstrap distribution. \| |
+| [Summary statistic]{style="color:#0d6efd"} | For each node a proper name of the requested statistic is to be provided using R terminology. \| |
 
 : {tbl-colwidths="\[15,85\]"}
 
@@ -301,7 +292,6 @@ The three steps in this example are the following.
 3.  Using the two nodes for defining a new node [C]{.underline} for the population variability in consumption of eel per body weight consumed on single meal (@fig-ARSnodeC).
 
 ![Using a joint bootstrap distribution for mean and standard deviation to parameterise a new node for varaibility (see text for more details and note that this version of shiny rrisk displays the distribution only if the parameters have been entered as numerical values).](images/ARSnodeC.png){#fig-ARSnodeC width="100%"}
-
 :::
 
 ::: {.callout-caution collapse="true"}
@@ -319,28 +309,25 @@ An advantage of non-parametric bootstrapping is that you don't need to make any 
 
 A further limitation of non-parametric bootstrap is that distributions take a discrete shape for very small size of the original data sample. Sampling with replacement of $n$ observations can result in exactly $2n-1\choose n-1$ possible permutations of sampling $n$ out of $n$. The table below shows that more than 5 observations are needed to obtain only 126 permutations can occur. If the original data set contains outlier values, the discreteness can present a further limitation.
 
-|                                                   |     |     |     |     |      |      |       |       |
-|-------------|--------|--------|--------|--------|--------|--------|--------|--------|
-| Size of original data ($n$)                       | 3   | 4   | 5   | 6   | 7    | 8    | 9     | 10    |
-| Number of possible permutations $2n-1\choose n-1$ | 10  | 35  | 126 | 462 | 1716 | 6435 | 24310 | 92378 |
+|  |  |  |  |  |  |  |  |  |
+|----|----|----|----|----|----|----|----|----|
+| Size of original data ($n$) | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| Number of possible permutations $2n-1\choose n-1$ | 10 | 35 | 126 | 462 | 1716 | 6435 | 24310 | 92378 |
 :::
 
 ### rrisk distributions import
 
 ::: {.callout-note appearance="minimal"}
-
 #### This section will introduce you to
 
 -   importing the mathematical definition of a distribution generated using rrisk distributions.
-
 :::
 
-Let's assume that you have used the "rrisk distribution" app for defining a distribution based on observed sample data or percentiles (see tutorial for more information). You need to upload the fitting result  for use in your shiny rrisk session.
-
+Let's assume that you have used the "rrisk distribution" app for defining a distribution based on observed sample data or percentiles (see tutorial for more information). You need to upload the fitting result for use in your shiny rrisk session.
 
 ![Uploading a distribution fitting file into the shiny rrisk session.](images/fitdistributionNode.png){#fig-fitdistributionNode width="100%"}
 
-After import of the rrisk distribution export file, the created node is completely defined.   
+After import of the rrisk distribution export file, the created node is completely defined.
 
 ## Node Table
 
@@ -381,3 +368,33 @@ In order to move down to the definition table, the user should move the mouse ou
 Once all the nodes have been properly defined, the user should select Check Model for model verification. The model verification features assures that all the nodes are linked and properly defined. An error will appear other wise. The user will need to check that there is no isolated nodes (which could be due to typo in the node’s names and/or an invalid equation)
 
 ## Fixed parameters and functions {#sec-fixedpar}
+
+Shiny rrisk allows users to develop their owns functions and parameters to be used in several nodes in the model. These features are considered advanced and requires some understanding of shiny mathematical architecture \[\@Robert – needs some input\] as well as knowledge in R programming.
+
+A function is a predefined set of commands and mathematical calculations where a variable can be plugged into to generate the results. A common function in exposure models is for instance the use of microbial growth models where the variable temperature can be used for different conditions.
+
+::: {.callout-note collapse="true"}
+### Example: Function from Yersinia enterocolitica model
+
+The function below is taken from the case model \*Yersinia enterocolitica\* in minced meat in shiny. The function below will allow bacteria to grow pending on different temperatures (C)
+
+Under Fixed Parameters and Functions in shiny rrisk, the user should select **Add new parameter or function,** and enter the text below in the window under Description.
+
+function(Temp)
+
+{
+
+    a \<- 0.0242  \# 1/h; growth rate at Temp = 0°C
+
+    Tref \<- 7.092  \# °C; if Temp = Tref, then growth_rate = a \* exp(1)
+
+    a \* exp(Temp/Tref)
+
+}
+
+The function should start with the word “function”. Then the word in brackets after the word function represents variable to be used in the equations. This word will be used in different parts in the equations between the curling brackets. The function just needs a word there that will be replaced by the user defined variable in the model.
+
+The node below describes the use of the function in the Yersinia model
+
+![](images/function.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+:::
