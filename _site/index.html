@@ -1035,15 +1035,15 @@ Figure&nbsp;15: Schematic representation of the bootstrap method (Greiner, 2022,
 <p>A further limitation of non-parametric bootstrap is that distributions take a discrete shape for very small size of the original data sample. Sampling with replacement of <span class="math inline">\(n\)</span> observations can result in exactly <span class="math inline">\(2n-1\choose n-1\)</span> possible permutations of sampling <span class="math inline">\(n\)</span> out of <span class="math inline">\(n\)</span>. The table below shows that more than 5 observations are needed to obtain only 126 permutations can occur. If the original data set contains outlier values, the discreteness can present a further limitation.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -1144,6 +1144,34 @@ Figure&nbsp;16: Uploading a distribution fitting file into the shiny rrisk sessi
 </section>
 <section id="sec-fixedpar" class="level2">
 <h2 class="anchored" data-anchor-id="sec-fixedpar">Fixed parameters and functions</h2>
+<p>Shiny rrisk allows users to develop their owns functions and parameters to be used in several nodes in the model. These features are considered advanced and requires some understanding of shiny mathematical architecture [@Robert – needs some input] as well as knowledge in R programming.</p>
+<p>A function is a predefined set of commands and mathematical calculations where a variable can be plugged into to generate the results. A common function in exposure models is for instance the use of microbial growth models where the variable temperature can be used for different conditions.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Function from Yersinia enterocolitica model
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The function below is taken from the case model *Yersinia enterocolitica* in minced meat in shiny. The function below will allow bacteria to grow pending on different temperatures (C)</p>
+<p>Under Fixed Parameters and Functions in shiny rrisk, the user should select <strong>Add new parameter or function,</strong> and enter the text below in the window under Description.</p>
+<p>function(Temp)</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp; a &lt;- 0.0242&nbsp; # 1/h; growth rate at Temp = 0°C</p>
+<p>&nbsp;&nbsp;&nbsp; Tref &lt;- 7.092&nbsp; # °C; if Temp = Tref, then growth_rate = a * exp(1)</p>
+<p>&nbsp;&nbsp;&nbsp; a * exp(Temp/Tref)</p>
+<p>}</p>
+<p>The function should start with the word “function”. Then the word in brackets after the word function represents variable to be used in the equations. This word will be used in different parts in the equations between the curling brackets. The function just needs a word there that will be replaced by the user defined variable in the model.</p>
+<p>The node below describes the use of the function in the Yersinia model</p>
+<p><img src="images/function.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="running-a-simulation" class="level1">
@@ -1262,7 +1290,7 @@ Memory
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1271,7 +1299,7 @@ Good practice - Number of replicates
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples. Usually, the number of samples is selected based on standard “magic” numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number. For this you need the probability of the event being modelled as outcome (which is typically low in risk and exposure assessments) and the minimum number of events you wish to model to obtain a statistically meaningful result.</p>
 <p>Let <span class="math inline">\(p\)</span> denote the (low) true risk and <span class="math inline">\(n\)</span> the minimum expected number of occurrences of the event you wish to model. You can approximate the required number of replicates <span class="math inline">\(N\)</span> using</p>
@@ -1282,7 +1310,7 @@ Good practice - Number of replicates
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1291,7 +1319,7 @@ Read more - Monte Carlo (MC) vs.&nbsp;latin hypercube (LH) sampling
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH) method is more efficient and will provide same accuracy as the Monte Carlo (MC) method with fewer samples. In addition the LH will assure that samples are taken from the whole distribution, which is also better for rare events. The LH might reduce the number of samples required by a factor of 10 compared with the MC method. The LH is the default method in shiny rrisk.</p>
 <p>The LH method divides each random variable’s range into equal probability intervals (strata) according the number of samples required in the simulation and then take one sample from each interval per variable. Then the full coverage of each variable is sampled.</p>
@@ -1390,7 +1418,7 @@ Figure&nbsp;20: Numerical results for a one-dimensional (1D) simulation (<em>Yer
 <p><span class="citation" data-cites="Robert">@Robert</span> - how to interpret this one?</p>
 <p><img src="images/conv_ecoli_2D.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1399,7 +1427,7 @@ Read more - 2D MC Models
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2D MC). <img src="images/clipboard-4283040366.png" class="img-fluid"></p>
 <p>The central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value in the y-axis of 0.5. The value is around 1e-11.</p>
@@ -1417,7 +1445,7 @@ Read more - 2D MC Models
 <p>Since this is a 2D model, the tornado plot also present the 95%. probability interval due to the uncertainty of the risk outcome.</p>
 <p><img src="images/tornado_pearson_ecoli.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1426,7 +1454,7 @@ Read more: Tornado plots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Tornado plots are commonly used in risk and exposure assessments models to assess the quantify the impact of input variables on the outcome of the model. This relationship is quantified using parametric (eg. Pearson correlation coefficient) or non-parametric (eg. Spearman rank correlation coefficient - rho -) statistics.</p>
 <p>The graphs is created using all the input variables on the y-axis and the statistic on the x-axis, then the relationship is depicted using horizontal bars where the length of the bar represents the value of the statistic. This value is constraint by the boundaries of the statistic (eg. between -1 and 1). Where values below 0 represent an inverse relationship and values greater than 0, otherwise. For instance negative values suggest that higher values of the input are associates with lower values of the outcome variable.</p>
@@ -1492,7 +1520,7 @@ Figure&nbsp;21: Documentation of author names and a free text model description 
 </table>
 <p>There is no commonly accepted standard structure to provide additional information about the model. Below you will find a few good practice recommendations that you can combine in the free text field to meet your specific reporting needs. A simple markdown syntax can be used to structure the description into sections and subsections. Moreover, the markdown syntax can be used to obtain some standard text formatting.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1501,7 +1529,7 @@ Good practice: Generic structure of a
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The user can enter the following information under <strong>Documentation and Reporting</strong></p>
 <ul>
@@ -1534,7 +1562,7 @@ Good practice: Generic structure of a
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1543,7 +1571,7 @@ Markdown syntax
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;22</a>).</p>
 <div id="fig-Markdown" class="quarto-figure quarto-figure-center quarto-float anchored">
