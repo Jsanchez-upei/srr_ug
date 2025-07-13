@@ -214,13 +214,13 @@ Good practice - Number of replicates
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Good practice - choice of percentiles for numerical results
+Good practice - Choice of percentiles for numerical results
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The median (as a measure of central tendency) and 95th percentile (as an upper are usually reported to characterize the variability of the outcome in exposure or risk models. If a 2D simulation has been conducted to account for (parameter) uncertainty, the outcome statistics are usually reported with a 95% uncertainty interval, i.e.&nbsp;an interval ranging from the 2.5th to the 97.5th percentile, [0.025, 0.975] in decimal notation of the uncertainty distribution. Other symmetrical uncertainty intervals such</p>
+<p>The median as a measure of central tendency and 95th percentile for characterizing the spread towards more extreme outcomes are usually reported to characterize the variability of the outcome in exposure or risk models. If a 2D simulation has been conducted to account for parameter uncertainty, these outcome statistics are usually reported with a 95% uncertainty interval, i.e.&nbsp;an interval ranging from the 2.5th to the 97.5th percentile of the uncertainty distribution. If this interval is too wide to convey useful information, more narrow symmetrical intervals such as 10th and 90th percentile may be appropriate.</p>
 </div>
 </div>
 </div>
@@ -236,7 +236,7 @@ Read more - Monte Carlo (MC) vs.&nbsp;latin hypercube (LH) sampling
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH) method is more efficient and will provide same accuracy as the Monte Carlo (MC) method with fewer samples. In addition the LH will assure that samples are taken from the whole distribution, which is also better for rare events. The LH might reduce the number of samples required by a factor of 10 compared with the MC method. The LH is the default method in shiny rrisk.</p>
+<p>Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH) method is more efficient and will provide the same accuracy as the Monte Carlo (MC) method with fewer samples. In addition the LH will assure that samples are taken from the whole distribution, which is also better for rare events. The LH might reduce the number of samples required by a factor of 10 compared with the MC method. The LH is the default method in shiny rrisk.</p>
 <p>The LH method divides each random variable’s range into equal probability intervals (strata) according the number of samples required in the simulation and then take one sample from each interval per variable. Then the full coverage of each variable is sampled.</p>
 <p><a href="#fig-mc_lh_v2" class="quarto-xref">Figure&nbsp;3</a> shows two input parameters of the simple risk model <span class="math inline">\(\mbox{Risk}=X_1*X_2\)</span>. Note that even with a small number of 80 sampling replicates, LH sampling results in a more homogeneous coverage of the sampling space as compared to the MC method.</p>
 <div id="fig-mc_lh_v2" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -289,7 +289,7 @@ Figure&nbsp;3: Scatter plot of two input quantities (80 sampling replicates).
 <p>After setting all the parameters, select <strong>Run Simulation.</strong> After the simulation is completed, shiny rrisk will present <strong>general results</strong> and <strong>sensitivity plot.</strong></p>
 <section id="general-results" class="level3">
 <h3 class="anchored" data-anchor-id="general-results">General results</h3>
-<p>Under <strong>general results</strong> you can access the numerical as well as the graphical results of your model. The end node (final outcome of your model) is shown by default. The results of any other node can be shown as well by selecting the <strong>Node</strong> from the drop-down menu.</p>
+<p>Under <strong>general results</strong> you can access the numerical as well as the graphical results of your model. The end node (final outcome of your model) is shown by default. The results of any other node can be shown by selecting the <strong>Node</strong> from the drop-down menu.</p>
 <section id="one-dimensional-1d-simulation" class="level4">
 <h4 class="anchored" data-anchor-id="one-dimensional-1d-simulation">One-dimensional (1D) simulation</h4>
 <p>Shiny rrisk conducts a one-dimensional (1D) simulation, if none of the distribution nodes is defined to represent uncertainty. In this case, the numerical outcome consists of only one row of results, the <strong>mean</strong>, <strong>median</strong>, standard deviation (<strong>sd</strong>), a selection of <strong>percentiles</strong> (see Simulation settings) as well as the <strong>unit</strong>. This is shown using the <em>Yersinia enterocolitica</em> in minced meat model as example. The median and 95th percentile of the outcome (N_cg) is 0 and 89 colony forming units (CFU), respectively (<a href="#fig-general_results_out_1D" class="quarto-xref">Figure&nbsp;4</a>).</p>
@@ -306,7 +306,7 @@ Figure&nbsp;4: Numerical results for a one-dimensional (1D) simulation (<em>Yers
 </section>
 <section id="two-dimensional-2d-simulation" class="level4">
 <h4 class="anchored" data-anchor-id="two-dimensional-2d-simulation">Two-dimensional (2D) simulation</h4>
-<p>Shiny rrisk conducts a two-dimensional (2D) simulation, if at least one of the distribution nodes is defined to represent uncertainty. In this case, the numerical outcome consists of colums as defined for 1D models (see above) and rows for the <strong>mean</strong>, <strong>median</strong>, standard deviation (<strong>sd</strong>), a selection of <strong>percentiles</strong> for the uncertainty dimension (see Simulation settings). This is shown using the <em>E. coli</em> in beef patties model as example. The 95% uncertainty interval for median and 95th percentile for the outcome (risk) is 0.002-0.135 and 0.3-1.0, respectively (<a href="#fig-general_results_out_2D" class="quarto-xref">Figure&nbsp;5</a>).</p>
+<p>Shiny rrisk conducts a two-dimensional (2D) simulation, if at least one of the distribution nodes is defined to represent uncertainty. In this case, the numerical outcome consists of colums as defined for 1D models (see above) and rows for the <strong>mean</strong>, <strong>median</strong>, standard deviation (<strong>sd</strong>), a selection of <strong>percentiles</strong> for the uncertainty dimension (see Simulation settings). This is shown using the <em>E. coli</em> in beef patties model as example. The 90% uncertainty interval for median and 95th percentile for the outcome (risk) is 0.003-0.087 and 0.442-1.0, respectively (<a href="#fig-general_results_out_2D" class="quarto-xref">Figure&nbsp;5</a>).</p>
 <div id="fig-general_results_out_2D" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-general_results_out_2D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -317,8 +317,43 @@ Figure&nbsp;5: Numerical results for a two-dimensional (2D) simulation (<em>E. c
 </figcaption>
 </figure>
 </div>
-<p>T### Graphical results</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read more - Interpretation of percentiles
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Percentiles of the outcome function evaluated using shiny rrisk can be regarded as unbiased in a statistical sense. This property of probabilistic modelling is advantageous in comparison to a deterministic approach that would give you a biased result under general conditions.</p>
+<p>Assume you were interested in the high, say 95th percentile of the outcome distribution. This is typically the case to account for the high end of the range of outcomes consistent with the information captured in the model. Using a <strong>deterministic approach</strong>, you would use the “high risk percentile” for each of the input variables. Note that a “high risk” percentile could be the 5th percentile if the quantity is in the denominator of the risk expression. The result of the</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read more - Monte Carlo (MC) vs.&nbsp;latin hypercube (LH) sampling
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH) you would would evaluate te mathematical in the pop,</p>
+</div>
+</div>
+</div>
 </section>
+</section>
+<section id="graphical-results" class="level3">
+<h3 class="anchored" data-anchor-id="graphical-results">Graphical results</h3>
 <section id="histogram" class="level4">
 <h4 class="anchored" data-anchor-id="histogram">Histogram</h4>
 <p>This plot depicts the density distribution of the random values for a given node.</p>
@@ -334,7 +369,7 @@ Figure&nbsp;5: Numerical results for a two-dimensional (2D) simulation (<em>E. c
 <p><span class="citation" data-cites="Robert">@Robert</span> - how to interpret this one?</p>
 <p><img src="images/conv_ecoli_2D.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -343,7 +378,7 @@ Read more - 2D MC Models
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2D MC). <img src="images/clipboard-4283040366.png" class="img-fluid"></p>
 <p>The central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value in the y-axis of 0.5. The value is around 1e-11.</p>
@@ -361,7 +396,7 @@ Read more - 2D MC Models
 <p>Since this is a 2D model, the tornado plot also present the 95%. probability interval due to the uncertainty of the risk outcome.</p>
 <p><img src="images/tornado_pearson_ecoli.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -370,7 +405,7 @@ Read more: Tornado plots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Tornado plots are commonly used in risk and exposure assessments models to assess the quantify the impact of input variables on the outcome of the model. This relationship is quantified using parametric (eg. Pearson correlation coefficient) or non-parametric (eg. Spearman rank correlation coefficient - rho -) statistics.</p>
 <p>The graphs is created using all the input variables on the y-axis and the statistic on the x-axis, then the relationship is depicted using horizontal bars where the length of the bar represents the value of the statistic. This value is constraint by the boundaries of the statistic (eg. between -1 and 1). Where values below 0 represent an inverse relationship and values greater than 0, otherwise. For instance negative values suggest that higher values of the input are associates with lower values of the outcome variable.</p>

@@ -69,16 +69,16 @@ For example, to observe at least $n=5$ events with a $p = 1/10000=10^{-4}$, you 
 :::
 
 ::: {.callout-tip collapse="true"}
-### Good practice - choice of percentiles for numerical results
+### Good practice - Choice of percentiles for numerical results
 
-The median  (as a measure of central tendency) and 95th percentile (as an upper are usually  reported to characterize the variability  of the outcome in exposure or  risk models. If a 2D simulation has been conducted to account for (parameter) uncertainty, the outcome statistics are usually reported with a 95% uncertainty interval, i.e. an interval ranging from the 2.5th to the 97.5th percentile, [0.025, 0.975] in decimal notation of the uncertainty distribution. Other symmetrical uncertainty intervals such  
+The median as a measure of central tendency and 95th percentile for characterizing the spread towards more extreme outcomes are usually  reported to characterize the variability  of the outcome in exposure or  risk models. If a 2D simulation has been conducted to account for parameter uncertainty, these outcome statistics are usually reported with a 95% uncertainty interval, i.e. an interval ranging from the 2.5th to the 97.5th percentile of the uncertainty distribution. If this interval is too wide to convey useful information, more narrow symmetrical intervals such as 10th and 90th percentile may be appropriate.   
 :::
 
 
 ::: {.callout-caution collapse="true"}
 ## Read more - Monte Carlo (MC) vs. latin hypercube (LH) sampling
 
-Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH) method is more efficient and will provide same accuracy as the Monte Carlo (MC) method with fewer samples. In addition the LH will assure that samples are taken from the whole distribution, which is also better for rare events. The LH might reduce the number of samples required by a factor of 10 compared with the MC method. The LH is the default method in shiny rrisk.
+Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH) method is more efficient and will provide the same accuracy as the Monte Carlo (MC) method with fewer samples. In addition the LH will assure that samples are taken from the whole distribution, which is also better for rare events. The LH might reduce the number of samples required by a factor of 10 compared with the MC method. The LH is the default method in shiny rrisk.
 
 The LH method divides each random variable's range into equal probability intervals (strata) according the number of samples required in the simulation and then take one sample from each interval per variable. Then the full coverage of each variable is sampled.
 
@@ -104,7 +104,7 @@ After setting all the parameters, select **Run Simulation.** After the simulatio
 
 ### General results 
 
-Under **general results** you can access the numerical as well as the graphical results of your model. The end node (final outcome of your model) is shown by default. The results of any other node can be shown as well by selecting the **Node** from the drop-down menu.
+Under **general results** you can access the numerical as well as the graphical results of your model. The end node (final outcome of your model) is shown by default. The results of any other node can be shown by selecting the **Node** from the drop-down menu.
 
 #### One-dimensional (1D) simulation
 
@@ -116,19 +116,21 @@ Shiny rrisk conducts a one-dimensional (1D) simulation, if none of the distribut
 
 #### Two-dimensional (2D) simulation
 
-Shiny rrisk conducts a two-dimensional (2D) simulation, if at least one of the distribution nodes is defined to represent uncertainty. In this case, the numerical outcome consists of colums as defined for 1D models (see above) and rows for the **mean**, **median**, standard deviation (**sd**), a selection of **percentiles** for the uncertainty dimension  (see Simulation settings). This is shown using the  *E. coli* in beef patties model  as example. The 95% uncertainty interval for median and 95th percentile for the outcome (risk) is 0.002-0.135 and 0.3-1.0, respectively (@fig-general_results_out_2D).
+Shiny rrisk conducts a two-dimensional (2D) simulation, if at least one of the distribution nodes is defined to represent uncertainty. In this case, the numerical outcome consists of colums as defined for 1D models (see above) and rows for the **mean**, **median**, standard deviation (**sd**), a selection of **percentiles** for the uncertainty dimension  (see Simulation settings). This is shown using the  *E. coli* in beef patties model  as example. The 90% uncertainty interval for median and 95th percentile for the outcome (risk) is 0.003-0.087 and 0.442-1.0, respectively (@fig-general_results_out_2D).
 
 
 ![Numerical results for a two-dimensional (2D) simulation (*E. coli* in beef patties model).](images/general_results_out_2D.png){#fig-general_results_out_2D width="100%"}
 
-
 ::: {.callout-caution collapse="true"}
+
 ## Read more - Interpretation of percentiles  
 Percentiles of the outcome function evaluated using shiny rrisk can be regarded as unbiased in a statistical sense. This property of probabilistic modelling is advantageous in comparison to a deterministic approach that would give you a biased result under general conditions. 
 
 Assume you were interested in the high, say 95th percentile of the outcome distribution. This is typically the case to account for the high end of the range of outcomes consistent with the information captured in the model. Using a **deterministic approach**, you would use the "high risk percentile" for each of the input variables. Note that a "high risk" percentile could be the 5th percentile if the quantity is in the denominator of the risk expression. The result of the  
+:::
 
 ::: {.callout-caution collapse="true"}
+
 ## Read more - Monte Carlo (MC) vs. latin hypercube (LH) sampling
 
 Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH)  you would would evaluate  te mathematical in the pop,     
