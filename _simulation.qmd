@@ -15,7 +15,7 @@ Start the simulation to change the default simulation settings and get the resul
 
 ## Simulation settings
 
-Before running the simulation, you may **set run parameters** to increase the efficiency and control the reproducibility of your model. Depending on whether your model involves a one-dimensional (1D) or two-dimensional (2D) simulation, the number of replicates is given in general or separately for variability and uncertainty (@fig-setrunparameter).      
+Before running the simulation, you may **set run parameters** to control the default settings for the simulation. This can be useful to increase the efficiency of the simulation. Depending on whether your model involves a one-dimensional (1D) or two-dimensional (2D) simulation, the number of replicates is given in general or separately for variability and uncertainty (@fig-setrunparameter).      
 
 
 ::: {#fig-setrunparameter layout-ncol=2}
@@ -46,7 +46,7 @@ The setting of the **Sampling technique**,  Monte Carlo (MC) versus mid latin hy
 
 The **Number of replicates** allows you to to set the sample size for the simulation that is adequate for the modelling task (read more about number of replicates below). 
 
-Documentation of the **Seed value** allows you to exactly reproduce the numerical results of your model. This is possible because the random number generation uses a fully deterministic process. However, for practical purposes, the numbers generated using both the MC and LH algorithms can be assumed to be random numbers.
+Documentation of the **Seed value** allows you to exactly reproduce the numerical results of your model. This is possible because the random number generation uses a fully deterministic process. However, for practical purposes, the numbers generated using both the MC and LH algorithms can be assumed to be random, independent and identically distributed.
 
 The default setting of the **Type** for calculating percentiles follows the recommendation given by the developers of R's "quantile" function (see [see documentation](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/quantile)), which is part of the R "stats" package (R Core Team, 2024. R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. <https://www.R-project.org/>).
 
@@ -61,21 +61,17 @@ The shiny rrisk server allocates a fixed size of memory to run the simulation. T
 ### Good practice - Number of replicates 
 
 
-Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend of the number of random samples. Usually, the number of samples is selected based on standard "magic" numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number. For this you need the probability of the event being modelled as outcome (which is typically low in risk and exposure assessments) and the minimum number of events you wish to model to obtain a statistically meaningful result.
-
-Let $p$ denote the (low) true risk and $n$ the minimum expected number of occurrences of the event you wish to model. You can approximate the required number of replicates $N$ using 
+Since the number of nodes is part of the structure of the model, the amount of memory used will mainly depend on the number of random samples. Usually, the number of samples is selected based on standard "magic" numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number. For the first approach you need the probability of the event being modelled as outcome (which is typically low in risk and exposure assessments) and the minimum expected **number of events you wish to model** to obtain a statistically meaningful result. Let $p$ denote the (low) true risk and $n$ the minimum expected number of occurrences of the event you wish to model. You can approximate the required number of replicates $N$ using 
 
 $$N\ge n/p.$$
 
-For example, to observe at least $n=5$ events with a $p = 1/10000=10^{-4}$, you will need $N\ge=5*10^4$, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained.[@Javier: can we omit the sentence "Also, we can use consistent values within 0.005 for the 2.5% and 97.5% percentiles."] 
-
-The  **convergence plot** is another tool for assessing the required number of replicates (see below).  The convergence plot displays the numerical result of you model as a function of the number of replicates. Therefore, you can use this approach also if some other metric than number of adverse events is the outcome of your model.
+For example, to observe at least $n=5$ events with a $p = 1/10000=10^{-4}$, you will need $N\ge=5*10^4$, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained. The second and more general approach for assessing the required number of replicates uses the **convergence plot** (see below).  The convergence plot displays the numerical result of you model as a function of the number of replicates. Therefore, you can use this approach also if some other metric than number of adverse events is the outcome of your model.
 :::
 
 ::: {.callout-tip collapse="true"}
 ### Good practice - choice of percentiles for numerical results
 
-The median and 95th percentile are usually  reported to characterize the variability  of the outcome in exposure or  risk models. If a 2D simulation has been conducted to account for (parameter) uncertainty, the outcome statistics are usually reported with a 95% uncertainty interval, i.e. an interval ranging from the 2.5th to the 97.5th percentile of the uncertainty distribution.
+The median  (as a measure of central tendency) and 95th percentile (as an upper are usually  reported to characterize the variability  of the outcome in exposure or  risk models. If a 2D simulation has been conducted to account for (parameter) uncertainty, the outcome statistics are usually reported with a 95% uncertainty interval, i.e. an interval ranging from the 2.5th to the 97.5th percentile, [0.025, 0.975] in decimal notation of the uncertainty distribution. Other symmetrical uncertainty intervals such  
 :::
 
 
@@ -125,7 +121,21 @@ Shiny rrisk conducts a two-dimensional (2D) simulation, if at least one of the d
 
 ![Numerical results for a two-dimensional (2D) simulation (*E. coli* in beef patties model).](images/general_results_out_2D.png){#fig-general_results_out_2D width="100%"}
 
-T### Graphical results
+
+::: {.callout-caution collapse="true"}
+## Read more - Interpretation of percentiles  
+Percentiles of the outcome function evaluated using shiny rrisk can be regarded as unbiased in a statistical sense. This property of probabilistic modelling is advantageous in comparison to a deterministic approach that would give you a biased result under general conditions. 
+
+Assume you were interested in the high, say 95th percentile of the outcome distribution. This is typically the case to account for the high end of the range of outcomes consistent with the information captured in the model. Using a **deterministic approach**, you would use the "high risk percentile" for each of the input variables. Note that a "high risk" percentile could be the 5th percentile if the quantity is in the denominator of the risk expression. The result of the  
+
+::: {.callout-caution collapse="true"}
+## Read more - Monte Carlo (MC) vs. latin hypercube (LH) sampling
+
+Two sampling methods can be used in shiny rrisk. The Latin Hypercube (LH)  you would would evaluate  te mathematical in the pop,     
+:::
+
+
+### Graphical results
 
 #### Histogram
 
