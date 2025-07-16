@@ -338,7 +338,7 @@ Read more - Interpretation of percentiles
 <img src="images/BiasedP95.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-BiasedP95-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Biased deterministic estimate of the 95th percentile of exposure (grey dotted line) in comparison to unbiased probabilistic estimte (red dotted line) (Greiner, 2022, unpublished course notes).
+Figure&nbsp;6: Biased deterministic estimate of the 95th percentile of exposure (grey dotted line) in comparison to unbiased probabilistic estimate (red dotted line) (Greiner, 2022, unpublished course notes).
 </figcaption>
 </figure>
 </div>
@@ -349,27 +349,75 @@ Figure&nbsp;6: Biased deterministic estimate of the 95th percentile of exposure 
 </section>
 <section id="graphical-results" class="level3">
 <h3 class="anchored" data-anchor-id="graphical-results">Graphical results</h3>
-<section id="histogram" class="level4">
-<h4 class="anchored" data-anchor-id="histogram">Histogram</h4>
-<p>This plot depicts the density distribution of the random values for a given node.</p>
-<p><img src="images/hist_ecoli_2D.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p>Under <strong>general results</strong> you can also access the graphical results of your model. The end node (final outcome of your model) is shown by default. As for the numerical results, any any other node can be shown by selecting the <strong>Node</strong> from the drop-down menu.</p>
+<section id="histogramme" class="level4">
+<h4 class="anchored" data-anchor-id="histogramme">Histogramme</h4>
+<p>The histogramme depicts the density distribution of the random values for the given node. There is no principal difference in appearance and interpretation between 1D and 2D models and between end nodes (outcome of the model) and any other distribution node (<a href="#fig-histogramme" class="quarto-xref">Figure&nbsp;7</a>). The histogramme may reveal a non-homegeneous distribution of the outcome, which can be due to the effect of some discrete parameters in the model (see 2D example below).</p>
+<div id="fig-histogramme" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-histogramme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/histogramme-1D.png" class="img-fluid figure-img" style="width:87.0%"></p>
+<figcaption>1D (<em>Yersinia enterocolitica</em> in minced meat model)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/histogramme-2D.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>2D (<em>E. coli</em> in beef patties model). Example for non-homogeneous distribution of the outcome.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogramme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Histogramme of outcome (end node for a one-dimensional (1D) and two-dimensional (2D) simulation.
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="ecdf-plot" class="level4">
 <h4 class="anchored" data-anchor-id="ecdf-plot">ECDF plot</h4>
-<p>This is the empirical cumulative density function plot, it is presented as an ascending cumulative plot. See read more for the proper interpretation of the graph.</p>
-<p><img src="images/ecdf_ecoli_2D.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
-</section>
-<section id="convergence-plot" class="level4">
-<h4 class="anchored" data-anchor-id="convergence-plot">Convergence plot</h4>
-<p><span class="citation" data-cites="Robert">@Robert</span> - how to interpret this one?</p>
-<p><img src="images/conv_ecoli_2D.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p>The empirical cumulative density function (ECDF) plot visualizes the distribution whereby the quantiles can be read from the y-axis. This feature allows the visualisation of the uncertainty of the outcome distribution. Thus, there is a principal difference in appearance and interpretation of the ECDF plot between 1D and 2D models. In case of 2D models the 95th (or other percentile) uncertainty envelope is shown (<a href="#fig-ecdf" class="quarto-xref">Figure&nbsp;8</a>).</p>
+<div id="fig-ecdf" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ecdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ecdf-1D.png" class="img-fluid figure-img" style="width:87.0%"></p>
+<figcaption>1D (<em>Yersinia enterocolitica</em> in minced meat model)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ecdf-2D.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>2D (<em>E. coli</em> in beef patties model).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ecdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: ECDF plots of outcome (end node for a one-dimensional (1D) and two-dimensional (2D) simulation.
+</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Read more - 2D MC Models
+Read more - Interpretation of 2D simulation plot
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -383,11 +431,17 @@ Read more - 2D MC Models
 </div>
 </div>
 </section>
+<section id="convergence-plot" class="level4">
+<h4 class="anchored" data-anchor-id="convergence-plot">Convergence plot</h4>
+<p><span class="citation" data-cites="Robert">@Robert</span> - how to interpret this one?</p>
+<p><img src="images/conv_ecoli_2D.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+</section>
 <section id="sensitivity-plot" class="level4">
 <h4 class="anchored" data-anchor-id="sensitivity-plot">Sensitivity Plot</h4>
 <p><img src="images/sens_analysis-01.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
-<p>The sensitivity analyses results can be visualized by selecting the <strong>sensitivity plot</strong> tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two stasticts, “Pearson correlation coefficient” and “Spearman rho statistic” (the R2 statistic will be implemented in future versions of shiny rrisk).</p>
-<p>The following plots presents the 2D tornado plot using the Pearson statistic for the E. coli model. All the input variables are postively correlation withe outcome (eg. the larger is the value of the input, the larger is the risk). However there are major differences in the influence of each input variable on the outcome. For instance the initial concentration of the pathogen (log10_C0) has a Pearson correlation coefficient of approximately 0.6 followed by the reduction facors and concentration.</p>
+<p>The sensitivity analyses results can be visualized by selecting the <strong>sensitivity plot</strong> tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two statistics, “Pearson correlation coefficient” and “Spearman rho statistic” (the R2 statistic will be implemented in future versions of shiny rrisk).</p>
+<p>The sensitivity analysis implemented in shiny rrisk consist of a correlation analysis with the options of <strong>Pearson</strong> correlation coefficient, <strong>Spearman</strong> rank correlation and <strong>R2</strong> (R-squared).</p>
+<p>The following plots presents the 2D tornado plot using the Pearson statistic for the E. coli model. All the input variables are positively correlation withe outcome (e.g.&nbsp;the larger is the value of the input, the larger is the risk). However there are major differences in the influence of each input variable on the outcome. For instance the initial concentration of the pathogen (log10_C0) has a Pearson correlation coefficient of approximately 0.6 followed by the reduction factors and concentration.</p>
 <p>Since this is a 2D model, the tornado plot also present the 95%. probability interval due to the uncertainty of the risk outcome.</p>
 <p><img src="images/tornado_pearson_ecoli.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -402,12 +456,12 @@ Read more: Tornado plots
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Tornado plots are commonly used in risk and exposure assessments models to assess the quantify the impact of input variables on the outcome of the model. This relationship is quantified using parametric (eg. Pearson correlation coefficient) or non-parametric (eg. Spearman rank correlation coefficient - rho -) statistics.</p>
-<p>The graphs is created using all the input variables on the y-axis and the statistic on the x-axis, then the relationship is depicted using horizontal bars where the length of the bar represents the value of the statistic. This value is constraint by the boundaries of the statistic (eg. between -1 and 1). Where values below 0 represent an inverse relationship and values greater than 0, otherwise. For instance negative values suggest that higher values of the input are associates with lower values of the outcome variable.</p>
+<p>Tornado plots are commonly used in risk and exposure assessments models to assess the quantify the impact of input variables on the outcome of the model. This relationship is quantified using parametric (e.g.&nbsp;Pearson correlation coefficient) or non-parametric (e.g.&nbsp;Spearman rank correlation coefficient - rho -) statistics.</p>
+<p>The graphs is created using all the input variables on the y-axis and the statistic on the x-axis, then the relationship is depicted using horizontal bars where the length of the bar represents the value of the statistic. This value is constraint by the boundaries of the statistic (e.g.&nbsp;between -1 and 1). Where values below 0 represent an inverse relationship and values greater than 0, otherwise. For instance negative values suggest that higher values of the input are associates with lower values of the outcome variable.</p>
 <p>In addition, for 2D models, each input variable has a line indicating the 95% probability interval of the relationship due to the uncertainty propagated in the model.</p>
 <p><strong>Pearson correlation coefficient</strong>. The relationship is captured assuming a linear relationship between the input variable and the outcome using the Pearson correlation coefficient.</p>
 <p><strong>Spearman rank correlation</strong>. The relationship is captured using the non-parametric rank correlation which does not assume any particulate shape of the relationship between the input and outcome.</p>
-<p>This graphs are called “tornado” because the shape of the graphs resembles a “tornado”, funnel like shape since the variables ara sorted from highest values on the top to the lowest at the bottom.</p>
+<p>This graphs are called “tornado” because the shape of the graphs resembles a “tornado”, funnel like shape since the variables are sorted from highest values on the top to the lowest at the bottom.</p>
 </div>
 </div>
 </div>

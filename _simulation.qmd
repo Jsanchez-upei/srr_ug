@@ -130,7 +130,7 @@ Assume you were interested in the high, say 95th percentile of the outcome distr
 
 This effect is demonstrated using illustrative distributions representing variability in food consumption (FC) and substance concentration (SC). The product of the 95th percentiles is an overestimation of the 95th percentile of the exposure Ex=FC*SC (@fig-BiasedP95).  
 
-![Biased deterministic estimate of the 95th percentile of exposure (grey dotted line)  in comparison to unbiased probabilistic estimte (red dotted line) (Greiner, 2022, unpublished course notes).](images/BiasedP95.png){#fig-BiasedP95 width="100%"}
+![Biased deterministic estimate of the 95th percentile of exposure (grey dotted line)  in comparison to unbiased probabilistic estimate (red dotted line) (Greiner, 2022, unpublished course notes).](images/BiasedP95.png){#fig-BiasedP95 width="100%"}
 
 
 :::
@@ -138,26 +138,37 @@ This effect is demonstrated using illustrative distributions representing variab
 
 ### Graphical results
 
-#### Histogram
+Under **general results** you can also access the graphical results of your model. The end node (final outcome of your model) is shown by default. As for the numerical results, any any other node can be shown by selecting the **Node** from the drop-down menu.
 
-This plot depicts the density distribution of the random values for a given node.
+#### Histogramme
 
-![](images/hist_ecoli_2D.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+The histogramme depicts the density distribution of the random values for the given node. There is no principal difference in appearance and interpretation between 1D and 2D models and between end nodes (outcome of the model) and any other distribution node (@fig-histogramme). The histogramme may reveal a non-homegeneous distribution of the outcome, which can be due to the effect of some discrete parameters in the model (see 2D example below).  
+
+::: {#fig-histogramme layout-ncol=2}
+
+![1D (*Yersinia enterocolitica* in minced meat model)](images/histogramme-1D.png){width="87%"}
+
+![2D (*E. coli* in beef patties model). Example for non-homogeneous distribution of the outcome. ](images/histogramme-2D.png){width="100%"}
+
+Histogramme of outcome (end node for a one-dimensional (1D) and two-dimensional (2D) simulation.
+:::
 
 #### ECDF plot
 
-This is the empirical cumulative density function plot, it is presented as an ascending cumulative plot. See read more for the proper interpretation of the graph.
+The empirical cumulative density function (ECDF) plot visualizes the distribution whereby the quantiles can be read from the y-axis. This feature allows the visualisation of the uncertainty of the outcome distribution. Thus, there is a principal difference in appearance and interpretation of the ECDF plot between 1D and 2D models. In case of 2D models the 95th (or other percentile) uncertainty envelope is shown (@fig-ecdf). 
 
-![](images/ecdf_ecoli_2D.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
 
-#### Convergence plot
+::: {#fig-ecdf layout-ncol=2}
 
-@Robert - how to interpret this one?
+![1D (*Yersinia enterocolitica* in minced meat model)](images/ecdf-1D.png){width="87%"}
 
-![](images/conv_ecoli_2D.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+![2D (*E. coli* in beef patties model). ](images/ecdf-2D.png){width="100%"}
+
+ECDF plots of outcome (end node for a one-dimensional (1D) and two-dimensional (2D) simulation.
+:::
 
 ::: {.callout-caution collapse="true"}
-## Read more - 2D MC Models
+## Read more - Interpretation of 2D simulation plot
 
 The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2D MC). ![](images/clipboard-4283040366.png)
 
@@ -168,13 +179,24 @@ The 95th percentile (P95) provides an estimate of the risk that captures 95% of 
 The uncertainty of the median and 95th can be read from range of values across the red lines for each statistic. The red lines represents the 95% probability intervals for the median and 95th percentile. For instance, the upper boundary of a 95 % uncertainty range for the P95 estimate when accounting for uncertainty is 1e-10.
 :::
 
+
+#### Convergence plot
+
+@Robert - how to interpret this one?
+
+![](images/conv_ecoli_2D.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+
+
 #### Sensitivity Plot
 
 ![](images/sens_analysis-01.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
 
-The sensitivity analyses results can be visualized by selecting the **sensitivity plot** tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two stasticts, "Pearson correlation coefficient" and "Spearman rho statistic" (the R2 statistic will be implemented in future versions of shiny rrisk).
+The sensitivity analyses results can be visualized by selecting the **sensitivity plot** tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two statistics, "Pearson correlation coefficient" and "Spearman rho statistic" (the R2 statistic will be implemented in future versions of shiny rrisk).
 
-The following plots presents the 2D tornado plot using the Pearson statistic for the E. coli model. All the input variables are postively correlation withe outcome (eg. the larger is the value of the input, the larger is the risk). However there are major differences in the influence of each input variable on the outcome. For instance the initial concentration of the pathogen (log10_C0) has a Pearson correlation coefficient of approximately 0.6 followed by the reduction facors and concentration.
+The sensitivity analysis implemented in shiny rrisk consist of a correlation analysis with the options of **Pearson** correlation coefficient, **Spearman** rank correlation and **R2** (R-squared).
+
+
+The following plots presents the 2D tornado plot using the Pearson statistic for the E. coli model. All the input variables are positively correlation withe outcome (e.g. the larger is the value of the input, the larger is the risk). However there are major differences in the influence of each input variable on the outcome. For instance the initial concentration of the pathogen (log10_C0) has a Pearson correlation coefficient of approximately 0.6 followed by the reduction factors and concentration.
 
 Since this is a 2D model, the tornado plot also present the 95%. probability interval due to the uncertainty of the risk outcome.
 
@@ -183,9 +205,9 @@ Since this is a 2D model, the tornado plot also present the 95%. probability int
 ::: {.callout-caution collapse="true"}
 ## Read more: Tornado plots
 
-Tornado plots are commonly used in risk and exposure assessments models to assess the quantify the impact of input variables on the outcome of the model. This relationship is quantified using parametric (eg. Pearson correlation coefficient) or non-parametric (eg. Spearman rank correlation coefficient - rho -) statistics.
+Tornado plots are commonly used in risk and exposure assessments models to assess the quantify the impact of input variables on the outcome of the model. This relationship is quantified using parametric (e.g. Pearson correlation coefficient) or non-parametric (e.g. Spearman rank correlation coefficient - rho -) statistics.
 
-The graphs is created using all the input variables on the y-axis and the statistic on the x-axis, then the relationship is depicted using horizontal bars where the length of the bar represents the value of the statistic. This value is constraint by the boundaries of the statistic (eg. between -1 and 1). Where values below 0 represent an inverse relationship and values greater than 0, otherwise. For instance negative values suggest that higher values of the input are associates with lower values of the outcome variable.
+The graphs is created using all the input variables on the y-axis and the statistic on the x-axis, then the relationship is depicted using horizontal bars where the length of the bar represents the value of the statistic. This value is constraint by the boundaries of the statistic (e.g. between -1 and 1). Where values below 0 represent an inverse relationship and values greater than 0, otherwise. For instance negative values suggest that higher values of the input are associates with lower values of the outcome variable.
 
 In addition, for 2D models, each input variable has a line indicating the 95% probability interval of the relationship due to the uncertainty propagated in the model.
 
@@ -193,6 +215,6 @@ In addition, for 2D models, each input variable has a line indicating the 95% pr
 
 **Spearman rank correlation**. The relationship is captured using the non-parametric rank correlation which does not assume any particulate shape of the relationship between the input and outcome.
 
-This graphs are called "tornado" because the shape of the graphs resembles a "tornado", funnel like shape since the variables ara sorted from highest values on the top to the lowest at the bottom.
+This graphs are called "tornado" because the shape of the graphs resembles a "tornado", funnel like shape since the variables are sorted from highest values on the top to the lowest at the bottom.
 :::
 
