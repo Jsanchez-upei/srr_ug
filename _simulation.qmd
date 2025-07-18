@@ -65,7 +65,7 @@ Since the number of nodes is given by the structure of the model, the amount of 
 
 $$N\ge n/p.$$
 
-For example, to observe at least $n=5$ events with a $p = 1/10000=10^{-4}$, you will need $N\ge=5*10^4$, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained. The second and more general approach for assessing the required number of replicates uses the **convergence plot** (see below).  The convergence plot displays the numerical result of you model as a function of the number of replicates. Therefore, this approach is also applicable if some other metric than number of adverse events is used as outcome of the model.
+For example, to observe at least $n=5$ events with a $p = 1/10000=10^{-4}$, you will need $N\ge=5*10^4$, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained. The second and more general approach for assessing the required number of replicates uses the **convergence plot** (see below).  
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -155,7 +155,7 @@ Histogramme of outcome (end node for a one-dimensional (1D) and two-dimensional 
 
 #### ECDF plot
 
-The empirical cumulative density function (ECDF) plot visualizes the distribution whereby the quantiles can be read from the y-axis. This feature allows the visualisation of the uncertainty of the outcome distribution. Thus, there is a principal difference in appearance and interpretation of the ECDF plot between 1D and 2D models. In case of 2D models the 95th (or other percentile) uncertainty envelope is shown (@fig-ecdf). 
+The empirical cumulative density function (ECDF) is a line plot connecting the empirical quantiles of the distribution (x-axis) plotted against the cumulative probability (y-axis). This feature allows that an uncertainty envelope is added in case of a 2D model. Thus, there is an important difference in appearance and interpretation of the ECDF plot between 1D and 2D models. Whereas uncertainty is not quantified in a 1D model, the uncertainty envelope (50% and 75% shown be default) visualizes the uncertainty at each cumulative probability for a 2D model (@fig-ecdf, see below for further details). 
 
 
 ::: {#fig-ecdf layout-ncol=2}
@@ -170,28 +170,64 @@ ECDF plots of outcome (end node for a one-dimensional (1D) and two-dimensional (
 ::: {.callout-caution collapse="true"}
 ## Read more - Interpretation of 2D simulation plot
 
-The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2D MC). ![](images/clipboard-4283040366.png)
+The ECDF plot for a 2D model depicts the outcome of the model in terms of both variability and uncertainty. The process of 2D modelling involves a repeated evaluation of the model whereby for each repetition single values are picked at random from the distributions representing uncertainty. This yields a large number of ECDF plots for variability which jointly visualize the effect of  parameter uncertainty on the final outcome distribution (@fig-eufora-2D).
 
-The central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value in the y-axis of 0.5. The value is around 1e-11.
+![Empirical cumulative density functions (ECDF) representing parameter uncertainty in a 2D model (Greiner, unpublished course notes).](images/eufora-2D.png){#fig-eufora-2D width="100%"}
 
-The 95th percentile (P95) provides an estimate of the risk that captures 95% of the variability of the input parameters. It can be read from the graph by looking at the x-axis where upper red lines intersects with the dark blue line.
+The central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value of 0.5 (x-axis). The value is around 1e-11.
 
-The uncertainty of the median and 95th can be read from range of values across the red lines for each statistic. The red lines represents the 95% probability intervals for the median and 95th percentile. For instance, the upper boundary of a 95 % uncertainty range for the P95 estimate when accounting for uncertainty is 1e-10.
+The 95th percentile (P95) provides an estimate of the risk that captures 95% of the variability of the input parameters. It can be read from the x-axis where the upper red line intersects with the dark blue line. The value is around 1e-11. 
+
+The uncertainty of the median and 95th can be read from range of x-values across the red lines for the two statistics. The uncertainty ranges are defined such that 95% (or another uncertainty interval) of the individual ECDF plots are covered at the given probability level.  
+
+The shiny rrisk version of the ECDF plot for 2D models connects all such uncertainty ranges resulting in an uncertainty envelope (see @fig-ecdf, right panel). Note that ECDF plot are for visualization only. Numerical values should be read from the result table. 
+
 :::
 
 
 #### Convergence plot
 
-@Robert - how to interpret this one?
+The convergence plot displays the numerical result of your model as a function of the cumulative number of replicates. Thus, it is a purely visual aid to access whether convergence has been reached, i.e. a  state where no more changes in outcomes are seen when adding more replicates. While a lot of random fluctuation is seen with low numbers of replicates, the outcome tends to become more stable with an increasing cumulative number (@fig-convergence).  Final inference should be made only on the basis of models that have converged.  
 
-![](images/conv_ecoli_2D.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+
+
+::: {#fig-convergence layout-ncol=2}
+
+![1D (*Yersinia enterocolitica* in minced meat model)](images/convergence-1D.png){width="91%"}
+
+![2D (*E. coli* in beef patties model). ](images/convergence-2D.png){width="100%"}
+
+Convergence plots of outcome (end node for a one-dimensional (1D) and two-dimensional (2D) simulation.
+:::
+
+
+::: {.callout-caution collapse="true"}
+## Read more - Convergence 
+
+
+Generally, it may take more replicates for a 2D to converge compared to a 1D model. However, convergence also depends on the number of distribution nodes and their respective shapes. Convergence may be improved by selecting latin hypercube sampling instead of Monte Carlo sampling (@fig-convergence-sampling).  
+
+::: {#fig-convergence-sampling layout-ncol=2}
+
+![Monte Carlo (MC) simulation (Alizarin red S in Eel model)](images/convergence-MC.png){width="100%"}
+
+![Latin hypercube (LH) simulation  (Alizarin red S in Eel model). ](images/convergence-LH.png){width="100%"}
+
+Convergence plots of the outcome in a 2D model (Alizarin red in Eel) with Monte Carlo (MC) compared to latin hypercube (LH) sampling. 
+@Robert, please check as there is no obvious difference. 
+:::
+
+:::
 
 
 #### Sensitivity Plot
 
-![](images/sens_analysis-01.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+The sensitivity analysis explores the effect of model input variables (mainly distribution nodes) on the model outcome. The results can be visualized by selecting the **sensitivity plot** tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two statistics, "Pearson correlation coefficient" and "Spearman rho statistic" (the R2 statistic will be implemented in future versions of shiny rrisk).
 
-The sensitivity analyses results can be visualized by selecting the **sensitivity plot** tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two statistics, "Pearson correlation coefficient" and "Spearman rho statistic" (the R2 statistic will be implemented in future versions of shiny rrisk).
+
+
+![Choosing the statistics to explore the association between model in put and output.](images/sens_analysis-01.png){@fig-sens_analysis-01 width="100%"}
+
 
 The sensitivity analysis implemented in shiny rrisk consist of a correlation analysis with the options of **Pearson** correlation coefficient, **Spearman** rank correlation and **R2** (R-squared).
 
