@@ -48,8 +48,6 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="documenting-and-reporting" class="level1">
 <h1>Documenting and reporting</h1>
-<section id="adding-general-model-description" class="level2">
-<h2 class="anchored" data-anchor-id="adding-general-model-description">Adding general model description</h2>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -62,13 +60,15 @@ This section will introduce you to
 <div class="callout-body-container callout-body">
 <ul>
 <li>using shiny rrisk’s interface for a general model description,</li>
-<li>structuring your description using simple markdown syntax and</li>
+<li>structuring your description using simple markdown syntax,</li>
 <li>adjusting the level of documentation to specific requirements</li>
+<li>launching the automatic reporting function.</li>
 </ul>
 </div>
 </div>
-<p>Quantitative risk and exposure assessment models are often complex and inhrently difficult to communicate to decision makers. Shiny rrisk has a unique feature that allows user to produce reports that can facilitate the communication of the model results to the end user. shiny rrisk provides the user many instances during the model creation to enter information about the each input variable that later will automatically be compiled into the report. Here we focus on the general information about the model.</p>
-<p>A key concept of shiny rrisk is the integrated documentation which you have already seen in the node definition. A complete documentation requires additional information about the model authors and a general description of the model (e.g., question of interest and model scope, methodology used, resources, etc). This part of documentation is optional but highly recommended.</p>
+<section id="adding-general-model-description" class="level2">
+<h2 class="anchored" data-anchor-id="adding-general-model-description">Adding general model description</h2>
+<p>Shiny rrisk has the unique feature that allows you to produce reports that can facilitate the communication of the model to interested parties. The key concept is an <strong>integrated model documentation</strong> that assists you in this important task. You have seen already the pre-structured documentation for each node. Here, we focus on the additional information you should provide at the level of the model (<a href="#fig-Documentation" class="quarto-xref">Figure&nbsp;1</a>). This part of documentation is optional but highly recommended.</p>
 <div id="fig-Documentation" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Documentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -79,62 +79,92 @@ Figure&nbsp;1: Documentation of author names and a free text model description i
 </figcaption>
 </figure>
 </div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><span style="color:#0d6efd">Author list</span></td>
-<td>Entry table for author names and contact information .</td>
-</tr>
-<tr class="even">
-<td><span style="color:#0d6efd">Model description</span></td>
-<td>Free text field for providing a general documentation of the model.</td>
-</tr>
-</tbody>
-</table>
-<p>There is no commonly accepted standard structure to provide additional information about the model. Below you will find a few good practice recommendations that you can combine in the free text field to meet your specific reporting needs. A simple markdown syntax can be used to structure the description into sections and subsections. Moreover, the markdown syntax can be used to obtain some standard text formatting.</p>
+<p>Under <strong>Author list</strong> you can disclose who assumes the scientific responsibility for the work. Later versions of shiny rrisk will allow that a corresponding author is indicated.</p>
+<p>Under <strong>Model description</strong> you will find a free text field that should be used for a general description of the model. There is no generally accepted standard structure to provide additional information about the model. Below are some recommendations for best practices that you can combine in the free text field to meet your specific reporting needs. A simple Markdown syntax can be used to structure the description into sections and subsections. Markdown syntax can also be used to generate some standard text formatting.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Good practice: Generic structure of a
+Good practice: Generic structure of a model report
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The user can enter the following information under <strong>Documentation and Reporting</strong></p>
+<p>The suggested first-level headers below can be pasted into the free text field for <strong>Model description</strong>. The `#’ symbol for each header ensures that the rendered model report uses the respective format. Use what meets your reportig requirement and delete what is not needed. See the Alizarin red in eel model for a quite comprehensive model description.</p>
+<section id="preamble" class="level1">
+<h1># Preamble</h1>
+<p>This section may provide a link to some other document to which this model report is an annex.</p>
+<section id="abbreviations" class="level3">
+<h3 class="anchored" data-anchor-id="abbreviations"># Abbreviations</h3>
+<p>e.g.; for example, ARS: Alizarin red S, bs: bootstrap</p>
+</section>
+<section id="background" class="level3">
+<h3 class="anchored" data-anchor-id="background"># Background</h3>
+<p>Provide</p>
+</section>
+<section id="objectives" class="level3">
+<h3 class="anchored" data-anchor-id="objectives"># Objectives</h3>
+</section>
+<section id="scope" class="level3">
+<h3 class="anchored" data-anchor-id="scope"># Scope</h3>
+</section>
+<section id="model-description" class="level3">
+<h3 class="anchored" data-anchor-id="model-description"># Model description</h3>
+</section>
+<section id="uncertainty-assessment-and-sensitivity-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="uncertainty-assessment-and-sensitivity-analysis"># Uncertainty assessment and sensitivity analysis</h3>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section">#</h4>
+<p>Scenario uncertainties This section summarises the qualitative assessments of scenario uncertainties,</p>
+<p><strong>Agents.</strong> No information has been found of whether the noxious agent (ARS) primarily occurs in combination with other hazardous noxious agents so that it is to be viewed as the indicator substance of a group of noxious agents. As described in the scope, the marking of eel with strontium has not been considered here.</p>
+<p><strong>Sources.</strong> Typical values for the concentrations of ARS in water are given in literature, but it cannot be excluded that in practice also other concentrations are used. For ARS, reduction via binding with other ions in water is reported, but degree of this effect not known. Thus, the source is known but quantification is problematic. However, a driving factor for uncertainty is that the fraction of marked European eel of the overall eel consumption is completely unknown. The assumption that all consumed eel is marked is assumed to be very conservative.</p>
+<p><strong>Populations.</strong> The human target population consists of consumers of eel in Germany. Only a few participants of the consumption survey and telephone interviews reported eel consumption. Despite the sparsity of data (which is quantified in this model using a bootstrap for mean intake), the study and target population is not considered a major source of uncertainty. However, children, which are not included in the consumption data might have considerable higher exposure due to their lower body weight, which constitutes a relevant bias. Furthermore, the sample size is too small to capture persons with specific dietary habits (e.g., anglers).</p>
+<p><strong>Microenvironment.</strong> The process of marking of eels could be described as compartmental model (marking solution, edible tissue, non-edible tissue). This results in an uncertainty, which may not sufficiently quantified via the respective model parameters.</p>
+<p><strong>Time.</strong> The grow h of eel results in dilution of ARS deposed in edible tissues. The effect is not assumed to be huge but may not sufficiently be covered by the respective model parameters.</p>
+<p><strong>Activities. </strong> The variability of average daily consumed eel weight in case of eel consumption for individual consumers has been ignored. However, it is assumed that this has little effect on the outcome. The data is too sparse to test this assumption.</p>
+<p><strong>Pathways.</strong> The exposure pathway is via intake of eel. There is no uncertainty related to pathways.</p>
+<p><strong>Space.</strong> The measured exposure events do not discriminate whether European or other eel species are consumed, which may affect the fraction of marked eel. A marked over-estimation is possible.</p>
+</section>
+</section>
+<section id="modelling-approach-uncertainties" class="level2">
+<h2 class="anchored" data-anchor-id="modelling-approach-uncertainties">Modelling approach uncertainties</h2>
+<p>This section summarises the qualitative assessments of modelling approach uncertainties.</p>
+<p><strong>Concept.</strong> The concept of the model is not considered as a relevant source of uncertainty.</p>
+<p><strong>Structure.</strong> The model structure and equations are not considered as relevant source of uncertainty.</p>
+<p><strong>Dependencies.</strong> Correlation between frequency of eel consumption and amount of daily consumed eel in case of a consumption incidence may distort the results. The effect and direction of potential bias due to omission of a potential correlation as well as confidence and subjectivity have not been assessed.</p>
+<p><strong>Outcome.</strong> The toxicological properties of ARS in humans are largely unknown.</p>
+</section>
+<section id="other-uncertainties" class="level2">
+<h2 class="anchored" data-anchor-id="other-uncertainties">Other uncertainties</h2>
+<p>This section summarises the qualitative assessments of other uncertainties.</p>
+<p><strong>Question formulation.</strong> The question formulation is sufficiently precise for the purpose of exposure assessment.</p>
+<p><strong>Context.</strong> The (original) model was developed to support an answer to a request from the German Federal Ministry of Food and Agriculture. There is no ambiguity of the context of this question.</p>
+<p><strong>Protection perspective.</strong> Consumer health is the protection perspective for this assignment and there is no uncertainty related to this.</p>
+<p><strong>Population group.</strong> The population as a whole is to be protected. Due to the lack of data on human toxicity there is some uncertainty whether age group-specific estimates would have been more appropriate to answer the risk question.</p>
+<p><strong>Protection goal.</strong> The avoidance of adverse health effects is the protection goal beyond any doubt.</p>
+<p><strong>Protection level.</strong> The protection level is not specified. This could be considered as source of uncertainty although a full exposure assessment has not been conducted.</p>
+<p><strong>Scope.</strong> There is no uncertainty due to possible exclusion of questions, such as additional exposure routes.</p>
+</section>
+</section>
+<section id="conclusions" class="level1">
+<h1>Conclusions</h1>
+<p>The implementation of the <a href="10.2903/sp.efsa.2018.EN-1472">Schendel et al., 2018, (pp.&nbsp;38-64)</a> model demonstrates shiny rrisk’s capability</p>
 <ul>
-<li><p>an overall summary of the model</p></li>
-<li><p>introduction to the problem</p></li>
-<li><p>questions addressed and those not addressed;</p></li>
-<li><p>overall discussion of data used and relation to model choice;</p>
-<ul>
-<li>methods of addressing decision questions with available information;</li>
-</ul></li>
-<li><p>overview of model structure, how the sections relate together</p></li>
-<li><p>major model assumptions and the impact on the results if incorrect;</p></li>
-<li><p>critique of model, comment on validation</p>
-<ul>
-<li><p>discussion of possible options for improvement,</p></li>
-<li><p>extra data that would change the model or its results</p></li>
-</ul></li>
+<li>To define, run and document two-dimensional Monte-Carlo models for probabilistic risk modelling accounting for parameter variability and uncertainty,</li>
+<li>To use bootstrap for quantifying parameter uncertainty (shown at the example of a joint bootstrap distribution for the mean and standard deviation of input data),</li>
+<li>To accommodate various documentary and editorial needs, including optional sections for abbreviations, background, objectives, scope, model description, uncertainty assessment, acknowledgement and references.</li>
 </ul>
-<p>During the node development, the user can think about this information, that later will be used in shiny rrisk to create the report</p>
-<ul>
-<li><p>available data (references and datasets)</p></li>
-<li><p>assumptions</p></li>
-<li><p>explanation of equation derivations</p></li>
-</ul>
-<p>Results</p>
-<ul>
-<li>guide on how to interpret and use statistical and graphical outputs</li>
-</ul>
+</section>
+<section id="acknowledgement" class="level1">
+<h1>Acknowledgement</h1>
+<p>We thank Dr.&nbsp;Thomas Schendel for reviewing the implementation of his model in an earlier version of shiny rrisk.</p>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+</section>
 </div>
 </div>
 </div>
@@ -168,22 +198,6 @@ Figure&nbsp;2: Selection of common markdown commands for use in free-text fields
 </section>
 <section id="automatic-reporting" class="level2">
 <h2 class="anchored" data-anchor-id="automatic-reporting">Automatic reporting</h2>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-This section will introduce you to
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>using shiny rrisk’s interface for a general model description,</li>
-<li>launching the automatic reporting function.</li>
-</ul>
-</div>
-</div>
 <p>Under this menu you can save the <strong>Model</strong> (*.rrisk) to your working device as explained before.</p>
 <p>The <strong>Report</strong> option will generate a word document report with all the information entered in shiny rrisk.</p>
 <p>The <strong>Results</strong> option will generate datasets in “*.csv” format <span class="citation" data-cites="Robert">[@Robert **- no working so not sure what I am getting**]</span></p>

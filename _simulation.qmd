@@ -142,13 +142,13 @@ Under **general results** you can also access the graphical results of your mode
 
 #### Histogramme
 
-The histogramme depicts the density distribution of the random values for the given node. There is no principal difference in appearance and interpretation between 1D and 2D models and between end nodes (outcome of the model) and any other distribution node (@fig-histogramme). The histogramme may reveal a non-homegeneous distribution of the outcome, which can be due to the effect of some discrete parameters in the model (see 2D example below).  
+The histogramme depicts the density distribution of the random values for the given node. There is no principal difference in appearance and interpretation of a histogramme between 1D and 2D models and between end nodes (outcome of the model) and any other distribution node (@fig-histogramme). The histogramme may reveal a non-homegeneous distribution of the outcome, which can be due to the effect of some discrete parameters in the model (see 2D example below).  
 
 ::: {#fig-histogramme layout-ncol=2}
 
 ![1D (*Yersinia enterocolitica* in minced meat model)](images/histogramme-1D.png){width="87%"}
 
-![2D (*E. coli* in beef patties model). Example for non-homogeneous distribution of the outcome. ](images/histogramme-2D.png){width="100%"}
+![2D (*E. coli* in beef patties model)](images/histogramme-2D.png){width="100%"}
 
 Histogramme of outcome (end node for a one-dimensional (1D) and two-dimensional (2D) simulation.
 :::
@@ -160,9 +160,9 @@ The empirical cumulative density function (ECDF) is a line plot connecting the e
 
 ::: {#fig-ecdf layout-ncol=2}
 
-![1D (*Yersinia enterocolitica* in minced meat model)](images/ecdf-1D.png){width="87%"}
+![1D (*Yersinia enterocolitica* in minced meat model)](images/ecdf-1D.png){width="85%"}
 
-![2D (*E. coli* in beef patties model). ](images/ecdf-2D.png){width="100%"}
+![2D (*E. coli* in beef patties model) ](images/ecdf-2D.png){width="100%"}
 
 ECDF plots of outcome (end node for a one-dimensional (1D) and two-dimensional (2D) simulation.
 :::
@@ -187,7 +187,7 @@ The shiny rrisk version of the ECDF plot for 2D models connects all such uncerta
 
 #### Convergence plot
 
-The convergence plot displays the numerical result of your model as a function of the cumulative number of replicates. Thus, it is a purely visual aid to access whether convergence has been reached, i.e. a  state where no more changes in outcomes are seen when adding more replicates. While a lot of random fluctuation is seen with low numbers of replicates, the outcome tends to become more stable with an increasing cumulative number (@fig-convergence).  Final inference should be made only on the basis of models that have converged.  
+The convergence plot displays the numerical result of your model as a function of the cumulative number of replicates. Thus, it is a visual aid to access whether convergence has been reached, i.e. a  state where no more changes in outcomes are seen when adding more replicates. While a lot of random fluctuation is seen with low numbers of replicates, the outcome tends to become more stable with an increasing cumulative number (@fig-convergence).  Final inference should be made only on the basis of models that have converged.  
 
 
 
@@ -195,9 +195,9 @@ The convergence plot displays the numerical result of your model as a function o
 
 ![1D (*Yersinia enterocolitica* in minced meat model)](images/convergence-1D.png){width="91%"}
 
-![2D (*E. coli* in beef patties model). ](images/convergence-2D.png){width="100%"}
+![2D (*E. coli* in beef patties model) ](images/convergence-2D.png){width="100%"}
 
-Convergence plots of outcome (end node for a one-dimensional (1D) and two-dimensional (2D) simulation.
+Convergence plots of outcome (end node) for a one-dimensional (1D) and two-dimensional (2D) simulation.
 :::
 
 
@@ -211,7 +211,7 @@ Generally, it may take more replicates for a 2D to converge compared to a 1D mod
 
 ![Monte Carlo (MC) simulation (Alizarin red S in Eel model)](images/convergence-MC.png){width="100%"}
 
-![Latin hypercube (LH) simulation  (Alizarin red S in Eel model). ](images/convergence-LH.png){width="100%"}
+![Latin hypercube (LH) simulation  (Alizarin red S in Eel model) ](images/convergence-LH.png){width="100%"}
 
 Convergence plots of the outcome in a 2D model (Alizarin red in Eel) with Monte Carlo (MC) compared to latin hypercube (LH) sampling. 
 @Robert, please check as there is no obvious difference. 
@@ -222,21 +222,40 @@ Convergence plots of the outcome in a 2D model (Alizarin red in Eel) with Monte 
 
 #### Sensitivity Plot
 
-The sensitivity analysis explores the effect of model input variables (mainly distribution nodes) on the model outcome. The results can be visualized by selecting the **sensitivity plot** tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two statistics, "Pearson correlation coefficient" and "Spearman rho statistic" (the R2 statistic will be implemented in future versions of shiny rrisk).
+The sensitivity analysis in shiny rrisk explores the effect of model input variables (distribution nodes) on the model outcome. The results can be visualized by selecting the **sensitivity plot** tab in the main screen after running the simulation (@fig-sens_analysis-01). 
+
+
+![Choosing the statistics to explore the association between model input and output.](images/sens_analysis-01.png){#fig-sens_analysis-01 width="80%"}
+
+
+|                                |                                                                                                                            |
+|------------------|------------------------------------------------------|
+| [Pearson]{style="color:#0d6efd"}   | Correlation between model input and output quantified using Pearson product-moment correlation.|
+| [Spearman]{style="color:#0d6efd"}   | Correlation between model input and output quantified using Spearman's rank correlation coefficient.|
+| [R2]{style="color:#0d6efd"}   | Correlation between model input and output quantified using r-squared (not yet implemented).|
+
+: {tbl-colwidths="\[12,88\]"}
 
 
 
-![Choosing the statistics to explore the association between model in put and output.](images/sens_analysis-01.png){@fig-sens_analysis-01 width="100%"}
+The correlation statistics are visualised as a vertical bar chart, whereby the bars are sorted from high to low, which is commonly referred to as a **tornado plot**. In case of 2d models, the statistics are presented with 95% uncertainty intervals. 
 
 
-The sensitivity analysis implemented in shiny rrisk consist of a correlation analysis with the options of **Pearson** correlation coefficient, **Spearman** rank correlation and **R2** (R-squared).
+The tornado plots below use the Pearson statistic for quantifying the sensitivity for two models (@fig-sensitivity-comparsion). The plot for the 1D model (*Yersinia enterocolitica* in minced meat) reveals that five distributions have a weak positive correlation, the number of *Y. enterocolitica* in one package of minced meat after storage at retail (N_rg) being the most influential one. The plot for the 2D model (*E. coli* in beef patties) shows that the distribution of the initial concentration based on 18 fictitious counts of *E. coli* O157:H7  (log10_C0) has a moderate positive correlation with the model outcome. Since this is a 2D model, the tornado plot also presents 95% uncertainty ranges. Thus, the impact of log10_CO in the model outcome is significantly higher compared to the reduction factor, also when accounting for parameter uncertainty (uncertainty intervals are not overlapping). 
 
 
-The following plots presents the 2D tornado plot using the Pearson statistic for the E. coli model. All the input variables are positively correlation withe outcome (e.g. the larger is the value of the input, the larger is the risk). However there are major differences in the influence of each input variable on the outcome. For instance the initial concentration of the pathogen (log10_C0) has a Pearson correlation coefficient of approximately 0.6 followed by the reduction factors and concentration.
 
-Since this is a 2D model, the tornado plot also present the 95%. probability interval due to the uncertainty of the risk outcome.
+::: {#fig-sensitivity-comparsion layout-ncol=2}
 
-![](images/tornado_pearson_ecoli.png){style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"}
+![1D model (*Yersinia enterocolitica* in minced meat model)](images/sensitivity-1D.png){width="96%"}
+
+![2D model (*E. coli* in beef patties model) ](images/sensitivity-2D.png){width="100%"}
+
+Tornado plots quantifying the sensitivity of outcome in terms of correlation with distribution nodes. 
+:::
+
+
+
 
 ::: {.callout-caution collapse="true"}
 ## Read more: Tornado plots

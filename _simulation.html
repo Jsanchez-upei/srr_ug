@@ -204,7 +204,7 @@ Good practice - Number of replicates
 <div class="callout-body-container callout-body">
 <p>Since the number of nodes is given by the structure of the model, the amount of memory used will mainly depend on the number of random samples. Usually, the number of samples is selected based on standard “magic” numbers, like 100, 1000, 10000, etc. However, there are some approaches that can be followed as a guidance to estimate an approximate number. For the first approach you need the probability of the event being modelled as outcome (which is typically low in risk and exposure assessments) and the minimum expected <strong>number of events you wish to model</strong> to obtain a statistically meaningful result. Let <span class="math inline">\(p\)</span> denote the (low) true risk and <span class="math inline">\(n\)</span> the minimum expected number of occurrences of the event you wish to model. You can approximate the required number of replicates <span class="math inline">\(N\)</span> using</p>
 <p><span class="math display">\[N\ge n/p.\]</span></p>
-<p>For example, to observe at least <span class="math inline">\(n=5\)</span> events with a <span class="math inline">\(p = 1/10000=10^{-4}\)</span>, you will need <span class="math inline">\(N\ge=5*10^4\)</span>, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained. The second and more general approach for assessing the required number of replicates uses the <strong>convergence plot</strong> (see below). The convergence plot displays the numerical result of you model as a function of the number of replicates. Therefore, this approach is also applicable if some other metric than number of adverse events is used as outcome of the model.</p>
+<p>For example, to observe at least <span class="math inline">\(n=5\)</span> events with a <span class="math inline">\(p = 1/10000=10^{-4}\)</span>, you will need <span class="math inline">\(N\ge=5*10^4\)</span>, at least 50,0000 samples. Finding the appropriate number of samples is an iterative process, where different simulations are run until consistent values for up to two/three digits of the mean or median are obtained. The second and more general approach for assessing the required number of replicates uses the <strong>convergence plot</strong> (see below).</p>
 </div>
 </div>
 </div>
@@ -352,7 +352,7 @@ Figure&nbsp;6: Biased deterministic estimate of the 95th percentile of exposure 
 <p>Under <strong>general results</strong> you can also access the graphical results of your model. The end node (final outcome of your model) is shown by default. As for the numerical results, any any other node can be shown by selecting the <strong>Node</strong> from the drop-down menu.</p>
 <section id="histogramme" class="level4">
 <h4 class="anchored" data-anchor-id="histogramme">Histogramme</h4>
-<p>The histogramme depicts the density distribution of the random values for the given node. There is no principal difference in appearance and interpretation between 1D and 2D models and between end nodes (outcome of the model) and any other distribution node (<a href="#fig-histogramme" class="quarto-xref">Figure&nbsp;7</a>). The histogramme may reveal a non-homegeneous distribution of the outcome, which can be due to the effect of some discrete parameters in the model (see 2D example below).</p>
+<p>The histogramme depicts the density distribution of the random values for the given node. There is no principal difference in appearance and interpretation of a histogramme between 1D and 2D models and between end nodes (outcome of the model) and any other distribution node (<a href="#fig-histogramme" class="quarto-xref">Figure&nbsp;7</a>). The histogramme may reveal a non-homegeneous distribution of the outcome, which can be due to the effect of some discrete parameters in the model (see 2D example below).</p>
 <div id="fig-histogramme" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-histogramme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -369,7 +369,7 @@ Figure&nbsp;6: Biased deterministic estimate of the 95th percentile of exposure 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/histogramme-2D.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>2D (<em>E. coli</em> in beef patties model). Example for non-homogeneous distribution of the outcome.</figcaption>
+<figcaption>2D (<em>E. coli</em> in beef patties model)</figcaption>
 </figure>
 </div>
 </div>
@@ -383,7 +383,7 @@ Figure&nbsp;7: Histogramme of outcome (end node for a one-dimensional (1D) and t
 </section>
 <section id="ecdf-plot" class="level4">
 <h4 class="anchored" data-anchor-id="ecdf-plot">ECDF plot</h4>
-<p>The empirical cumulative density function (ECDF) plot visualizes the distribution whereby the quantiles can be read from the y-axis. This feature allows the visualisation of the uncertainty of the outcome distribution. Thus, there is a principal difference in appearance and interpretation of the ECDF plot between 1D and 2D models. In case of 2D models the 95th (or other percentile) uncertainty envelope is shown (<a href="#fig-ecdf" class="quarto-xref">Figure&nbsp;8</a>).</p>
+<p>The empirical cumulative density function (ECDF) is a line plot connecting the empirical quantiles of the distribution (x-axis) plotted against the cumulative probability (y-axis). This feature allows that an uncertainty envelope is added in case of a 2D model. Thus, there is an important difference in appearance and interpretation of the ECDF plot between 1D and 2D models. Whereas uncertainty is not quantified in a 1D model, the uncertainty envelope (50% and 75% shown be default) visualizes the uncertainty at each cumulative probability for a 2D model (<a href="#fig-ecdf" class="quarto-xref">Figure&nbsp;8</a>, see below for further details).</p>
 <div id="fig-ecdf" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ecdf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -391,7 +391,7 @@ Figure&nbsp;7: Histogramme of outcome (end node for a one-dimensional (1D) and t
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/ecdf-1D.png" class="img-fluid figure-img" style="width:87.0%"></p>
+<p><img src="images/ecdf-1D.png" class="img-fluid figure-img" style="width:85.0%"></p>
 <figcaption>1D (<em>Yersinia enterocolitica</em> in minced meat model)</figcaption>
 </figure>
 </div>
@@ -400,7 +400,7 @@ Figure&nbsp;7: Histogramme of outcome (end node for a one-dimensional (1D) and t
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/ecdf-2D.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>2D (<em>E. coli</em> in beef patties model).</figcaption>
+<figcaption>2D (<em>E. coli</em> in beef patties model)</figcaption>
 </figure>
 </div>
 </div>
@@ -423,29 +423,163 @@ Read more - Interpretation of 2D simulation plot
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The following figure depicts the outcome of a probabilistic model that reflects both variability and uncertainty (2D MC). <img src="images/clipboard-4283040366.png" class="img-fluid"></p>
-<p>The central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value in the y-axis of 0.5. The value is around 1e-11.</p>
-<p>The 95th percentile (P95) provides an estimate of the risk that captures 95% of the variability of the input parameters. It can be read from the graph by looking at the x-axis where upper red lines intersects with the dark blue line.</p>
-<p>The uncertainty of the median and 95th can be read from range of values across the red lines for each statistic. The red lines represents the 95% probability intervals for the median and 95th percentile. For instance, the upper boundary of a 95 % uncertainty range for the P95 estimate when accounting for uncertainty is 1e-10.</p>
+<p>The ECDF plot for a 2D model depicts the outcome of the model in terms of both variability and uncertainty. The process of 2D modelling involves a repeated evaluation of the model whereby for each repetition single values are picked at random from the distributions representing uncertainty. This yields a large number of ECDF plots for variability which jointly visualize the effect of parameter uncertainty on the final outcome distribution (<a href="#fig-eufora-2D" class="quarto-xref">Figure&nbsp;9</a>).</p>
+<div id="fig-eufora-2D" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-eufora-2D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/eufora-2D.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eufora-2D-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Empirical cumulative density functions (ECDF) representing parameter uncertainty in a 2D model (Greiner, unpublished course notes).
+</figcaption>
+</figure>
+</div>
+<p>The central tendency (median) of the risk estimate can be read from the intersection of the dark blue line with the red line parallel to the x-axis at a probability value of 0.5 (x-axis). The value is around 1e-11.</p>
+<p>The 95th percentile (P95) provides an estimate of the risk that captures 95% of the variability of the input parameters. It can be read from the x-axis where the upper red line intersects with the dark blue line. The value is around 1e-11.</p>
+<p>The uncertainty of the median and 95th can be read from range of x-values across the red lines for the two statistics. The uncertainty ranges are defined such that 95% (or another uncertainty interval) of the individual ECDF plots are covered at the given probability level.</p>
+<p>The shiny rrisk version of the ECDF plot for 2D models connects all such uncertainty ranges resulting in an uncertainty envelope (see <a href="#fig-ecdf" class="quarto-xref">Figure&nbsp;8</a>, right panel). Note that ECDF plot are for visualization only. Numerical values should be read from the result table.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="convergence-plot" class="level4">
 <h4 class="anchored" data-anchor-id="convergence-plot">Convergence plot</h4>
-<p><span class="citation" data-cites="Robert">@Robert</span> - how to interpret this one?</p>
-<p><img src="images/conv_ecoli_2D.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p>The convergence plot displays the numerical result of your model as a function of the cumulative number of replicates. Thus, it is a visual aid to access whether convergence has been reached, i.e.&nbsp;a state where no more changes in outcomes are seen when adding more replicates. While a lot of random fluctuation is seen with low numbers of replicates, the outcome tends to become more stable with an increasing cumulative number (<a href="#fig-convergence" class="quarto-xref">Figure&nbsp;10</a>). Final inference should be made only on the basis of models that have converged.</p>
+<div id="fig-convergence" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-convergence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/convergence-1D.png" class="img-fluid figure-img" style="width:91.0%"></p>
+<figcaption>1D (<em>Yersinia enterocolitica</em> in minced meat model)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/convergence-2D.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>2D (<em>E. coli</em> in beef patties model)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-convergence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Convergence plots of outcome (end node) for a one-dimensional (1D) and two-dimensional (2D) simulation.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Read more - Convergence
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Generally, it may take more replicates for a 2D to converge compared to a 1D model. However, convergence also depends on the number of distribution nodes and their respective shapes. Convergence may be improved by selecting latin hypercube sampling instead of Monte Carlo sampling (<a href="#fig-convergence-sampling" class="quarto-xref">Figure&nbsp;11</a>).</p>
+<div id="fig-convergence-sampling" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-convergence-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/convergence-MC.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Monte Carlo (MC) simulation (Alizarin red S in Eel model)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/convergence-LH.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Latin hypercube (LH) simulation (Alizarin red S in Eel model)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-convergence-sampling-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Convergence plots of the outcome in a 2D model (Alizarin red in Eel) with Monte Carlo (MC) compared to latin hypercube (LH) sampling. <span class="citation" data-cites="Robert">@Robert</span>, please check as there is no obvious difference.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="sensitivity-plot" class="level4">
 <h4 class="anchored" data-anchor-id="sensitivity-plot">Sensitivity Plot</h4>
-<p><img src="images/sens_analysis-01.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
-<p>The sensitivity analyses results can be visualized by selecting the <strong>sensitivity plot</strong> tab in the main screen after running the simulation. Shiny rrisk will produce a tornado plot using two statistics, “Pearson correlation coefficient” and “Spearman rho statistic” (the R2 statistic will be implemented in future versions of shiny rrisk).</p>
-<p>The sensitivity analysis implemented in shiny rrisk consist of a correlation analysis with the options of <strong>Pearson</strong> correlation coefficient, <strong>Spearman</strong> rank correlation and <strong>R2</strong> (R-squared).</p>
-<p>The following plots presents the 2D tornado plot using the Pearson statistic for the E. coli model. All the input variables are positively correlation withe outcome (e.g.&nbsp;the larger is the value of the input, the larger is the risk). However there are major differences in the influence of each input variable on the outcome. For instance the initial concentration of the pathogen (log10_C0) has a Pearson correlation coefficient of approximately 0.6 followed by the reduction factors and concentration.</p>
-<p>Since this is a 2D model, the tornado plot also present the 95%. probability interval due to the uncertainty of the risk outcome.</p>
-<p><img src="images/tornado_pearson_ecoli.png" class="img-fluid" style="border: 2px solid black;  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);" width="500"></p>
+<p>The sensitivity analysis in shiny rrisk explores the effect of model input variables (distribution nodes) on the model outcome. The results can be visualized by selecting the <strong>sensitivity plot</strong> tab in the main screen after running the simulation (<a href="#fig-sens_analysis-01" class="quarto-xref">Figure&nbsp;12</a>).</p>
+<div id="fig-sens_analysis-01" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sens_analysis-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/sens_analysis-01.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sens_analysis-01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Choosing the statistics to explore the association between model input and output.
+</figcaption>
+</figure>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span style="color:#0d6efd">Pearson</span></td>
+<td>Correlation between model input and output quantified using Pearson product-moment correlation.</td>
+</tr>
+<tr class="even">
+<td><span style="color:#0d6efd">Spearman</span></td>
+<td>Correlation between model input and output quantified using Spearman’s rank correlation coefficient.</td>
+</tr>
+<tr class="odd">
+<td><span style="color:#0d6efd">R2</span></td>
+<td>Correlation between model input and output quantified using r-squared (not yet implemented).</td>
+</tr>
+</tbody>
+</table>
+<p>The correlation statistics are visualised as a vertical bar chart, whereby the bars are sorted from high to low, which is commonly referred to as a <strong>tornado plot</strong>. In case of 2d models, the statistics are presented with 95% uncertainty intervals.</p>
+<p>The tornado plots below use the Pearson statistic for quantifying the sensitivity for two models (<a href="#fig-sensitivity-comparsion" class="quarto-xref">Figure&nbsp;13</a>). The plot for the 1D model (<em>Yersinia enterocolitica</em> in minced meat) reveals that five distributions have a weak positive correlation, the number of <em>Y. enterocolitica</em> in one package of minced meat after storage at retail (N_rg) being the most influential one. The plot for the 2D model (<em>E. coli</em> in beef patties) shows that the distribution of the initial concentration based on 18 fictitious counts of <em>E. coli</em> O157:H7 (log10_C0) has a moderate positive correlation with the model outcome. Since this is a 2D model, the tornado plot also presents 95% uncertainty ranges. Thus, the impact of log10_CO in the model outcome is significantly higher compared to the reduction factor, also when accounting for parameter uncertainty (uncertainty intervals are not overlapping).</p>
+<div id="fig-sensitivity-comparsion" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sensitivity-comparsion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sensitivity-1D.png" class="img-fluid figure-img" style="width:96.0%"></p>
+<figcaption>1D model (<em>Yersinia enterocolitica</em> in minced meat model)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/sensitivity-2D.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>2D model (<em>E. coli</em> in beef patties model)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sensitivity-comparsion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Tornado plots quantifying the sensitivity of outcome in terms of correlation with distribution nodes.
+</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -454,7 +588,7 @@ Read more: Tornado plots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Tornado plots are commonly used in risk and exposure assessments models to assess the quantify the impact of input variables on the outcome of the model. This relationship is quantified using parametric (e.g.&nbsp;Pearson correlation coefficient) or non-parametric (e.g.&nbsp;Spearman rank correlation coefficient - rho -) statistics.</p>
 <p>The graphs is created using all the input variables on the y-axis and the statistic on the x-axis, then the relationship is depicted using horizontal bars where the length of the bar represents the value of the statistic. This value is constraint by the boundaries of the statistic (e.g.&nbsp;between -1 and 1). Where values below 0 represent an inverse relationship and values greater than 0, otherwise. For instance negative values suggest that higher values of the input are associates with lower values of the outcome variable.</p>
