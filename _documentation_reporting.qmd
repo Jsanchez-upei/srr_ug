@@ -7,32 +7,33 @@
 - using shiny rrisk's interface for a general model description,
 - structuring your description using simple markdown syntax,
 - adjusting the level of documentation to specific requirements 
-- launching the automatic reporting function.
+- launching the automatic reporting function and
+- embedding the reporting into the reviewing-editing-updating workflow.
 :::
 
 ## Adding general model description 
 
 
-A comprehensive documentation of a model requires a few more details to be provided. This part of documentation is optional but highly recommended (@fig-Documentation).
+A comprehensive documentation of a model requires some descriptions at the level of the model. This part of documentation is optional but highly recommended (@fig-Documentation).
 
 
 ![Documentation of author names and a free text model description in shiny rrisk.](images/Documentation.png){#fig-Documentation width="100%"}
 
 
-Under **Author list**  you can disclose who assumes the scientific responsibility for the work. Later versions of shiny rrisk will allow that a corresponding author is indicated. 
+Under **Author list**  you can disclose who assumes the scientific responsibility for the work. Future versions of shiny rrisk will allow you to indicate the corresponding author. 
 
-Under **Model description** you will find a free text field that is meant to capture the general description of the model. In the absence of a generally accepted standard structure for this purpose you have the flexibility to generate a structure that meets your needs. Below are some recommendations for best practices that you can combine in the free text field to meet your specific reporting needs. A simple Markdown syntax can be used to structure the description into sections and subsections. Markdown syntax can also be used to generate some standard text formatting.
+Under **Model description** you will find one free-text field for all the general descriptions of the model. In the absence of a generally accepted standard structure for this purpose you have the flexibility to generate a structure that meets your specific reporting needs. Below are some best practice recommendations for your consideration. A simple markdown syntax can be used to structure the description into sections and subsections. Markdown syntax can also be used to generate some standard text formatting (see below).
 
 
 ::: {.callout-tip collapse="true"}
-## Good practice: Generic structure for model description 
-The suggested first-level headers below can be pasted into the free text field for **Model description**. The symbol `\#' at the beginning of text lines  ensures that the rendered model report uses the  format for first order headers. Use whatever meets your reporting requirement and delete what is not needed. See the Alizarin red in eel model for a more elaborated model description. 
+## Good practice - Generic structure for model description 
+The suggested first-level headers below can be pasted into the free-text field for **Model description**. The symbol `\#' at the beginning of text lines  ensures that the rendered model report uses the  format for first order headers. Use whatever meets your reporting requirements and delete what is not needed. See the Alizarin red in eel model for a more elaborated model description. Future versions of shiny rrisk may offer a default structure which can be adapted as needed. 
 
 
 
 **\# Preamble** 
 
-This section may provide a link to some main document to which the model report is an annex.
+This section may provide an editorial introduction. Since a model is often an annex to some main report, a link to the main document can be given here.
 
 **\#  Abbreviations**
 
@@ -57,7 +58,7 @@ This section contains a summary description of the model. Parts or modules of th
 
 **\# Uncertainty assessment**
 
-We recommend that major sources of uncertainty are documented as described by [Heinemeyer et al., 2022](https://www.bfr.bund.de/cm/349/guidance-on-uncertainty-analysis-in-exposure-assessment.pdf). The Alizarin red S in Eel model provides an example for specifying uncertainties pertaining to the scenario (agents, sources, populations, microenvironment, time, activities, pathways, space), modelling approach (concept, structure, dependencies, outcome) and other sources (question formulation, context, protection perspective, population group, protection goal, protection level, scope.
+We recommend that major sources of uncertainty are documented as described by [Heinemeyer et al. (2022)](https://www.bfr.bund.de/cm/349/guidance-on-uncertainty-analysis-in-exposure-assessment.pdf). The Alizarin red S in Eel model provides an example for specifying uncertainties pertaining to the scenario (agents, sources, populations, microenvironment, time, activities, pathways, space), modelling approach (concept, structure, dependencies, outcome) and other sources (question formulation, context, protection perspective, population group, protection goal, protection level, scope).
 
 **\# Results **
 
@@ -80,26 +81,42 @@ This section may contain a list of references.
 :::
 
 ::: {.callout-caution collapse="true"}
-## Read more: Markdown syntax
+## Read more - Markdown syntax
 
-Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (@fig-Markdown).
+Markdown syntax is recommended for structuring the free-text fields with headers and subheaders and for other text formatting. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). A selection of common markdown commands available in free-text fields in shiny rrisk is given below. You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/authoring_basics.html) .
 
-![Selection of common markdown commands for use in free-text fields.](images/markdown.png){#fig-Markdown width="100%"}
 
-You can find more information at [RStudio, 2016](https://rmarkdown.rstudio.com/authoring_basics.html) .
+
+
+| Markdown in free-text field | Formatted result            |
+|-----------------------------|-----------------------------|
+| \# Header level 1	          | According to style template |
+| \## Header level 2          | According to style template |
+| \### Header level 3         | According to style template |
+| \*italics\*, \*\*bold\*\*     | *italics*, **bold**         |
+| superscript\$\^2\$, subscript\$_2\$ | superscript$^2$, subscript$_2$  |
+| mathematical notation \$Y=f(x)\$   | mathematical notation  $Y=f(x)$ |
+| in\[Reference\](URL or DOI)   | [Reference]{.underline} with link |
+| \`verbatim code\`           | `verbatim code`  |          
+
 :::
-
 
 
 ## Automatic reporting 
 
-Shiny rrisk has the unique feature that allows you to produce reports that can facilitate the communication of the model to interested parties. The key concept is the **integrated model documentation**. You have noted the pre-structured documentation for each node and the flexiblity to add documentation at the level of the model (see above). Now it is time to earn the benefit from this investment of time and effort (@fig-reporting).
+Shiny rrisk has the unique feature to produce reports that can facilitate the communication of the model to interested parties. The key concept is the **integrated model documentation**. You have noted the pre-structured documentation for each node and the flexiblity to add documentation at the level of the model (see above). Now it is time to earn the benefit from this investment of time and effort (@fig-reporting).
 
 
 
 ![Launching the automatic model reporting.](images/reporting.png){#fig-reporting width="100%"}
 
 
+Whereas downloading the **MODEL** is essential to save your entire model and downloading **RESULTS** gives you easy access to numerical model results (not yet implemented), the option **REPORT**  will launch the automatic reporting. This function will compile all your model definitions along with the model results. The model report is also a practical tool for reviewing and editing of the model definitions (see below).  
 
-The **Results** option will generate datasets in "\*.csv" format [@Robert **- no working so not sure what I am getting**]
 
+::: {.callout-tip collapse="true"}
+#### Good practice - Using the reporting function for review and editing
+
+We recommend using the model report for reviewing and editing during the model creation process. Updated descriptions can be generated  using spell-checker, tracked changes or other utilities available in your word processing software. The updated text then has to be pasted back into the respective free-text fields in your shiny rrisk session. After saving the updated model, a new model report can be generated as basis for the next revision. 
+
+:::

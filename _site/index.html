@@ -1718,13 +1718,14 @@ This section will introduce you to
 <li>using shiny rrisk’s interface for a general model description,</li>
 <li>structuring your description using simple markdown syntax,</li>
 <li>adjusting the level of documentation to specific requirements</li>
-<li>launching the automatic reporting function.</li>
+<li>launching the automatic reporting function and</li>
+<li>embedding the reporting into the reviewing-editing-updating workflow.</li>
 </ul>
 </div>
 </div>
 <section id="adding-general-model-description" class="level2">
 <h2 class="anchored" data-anchor-id="adding-general-model-description">Adding general model description</h2>
-<p>Shiny rrisk has the unique feature that allows you to produce reports that can facilitate the communication of the model to interested parties. The key concept is an <strong>integrated model documentation</strong> that assists you in this important task. You have seen already the pre-structured documentation for each node. Here, we focus on the additional information that belongs to a comprehensive model documentation (<a href="#fig-Documentation" class="quarto-xref">Figure&nbsp;30</a>). This part of documentation is optional but highly recommended.</p>
+<p>A comprehensive documentation of a model requires some descriptions at the level of the model. This part of documentation is optional but highly recommended (<a href="#fig-Documentation" class="quarto-xref">Figure&nbsp;30</a>).</p>
 <div id="fig-Documentation" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Documentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1735,23 +1736,23 @@ Figure&nbsp;30: Documentation of author names and a free text model description 
 </figcaption>
 </figure>
 </div>
-<p>Under <strong>Author list</strong> you can disclose who assumes the scientific responsibility for the work. Later versions of shiny rrisk will allow that a corresponding author is indicated.</p>
-<p>Under <strong>Model description</strong> you will find a free text field that is meant to capture the general description of the model. In the absence of a generally accepted standard structure for this purpose you have the flexibility to generate a structure that meets your needs. Below are some recommendations for best practices that you can combine in the free text field to meet your specific reporting needs. A simple Markdown syntax can be used to structure the description into sections and subsections. Markdown syntax can also be used to generate some standard text formatting.</p>
+<p>Under <strong>Author list</strong> you can disclose who assumes the scientific responsibility for the work. Future versions of shiny rrisk will allow you to indicate the corresponding author.</p>
+<p>Under <strong>Model description</strong> you will find one free-text field for all the general descriptions of the model. In the absence of a generally accepted standard structure for this purpose you have the flexibility to generate a structure that meets your specific reporting needs. Below are some best practice recommendations for your consideration. A simple markdown syntax can be used to structure the description into sections and subsections. Markdown syntax can also be used to generate some standard text formatting (see below).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Good practice: Generic structure for model description
+Good practice - Generic structure for model description
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The suggested first-level headers below can be pasted into the free text field for <strong>Model description</strong>. The symbol `#’ at the beginning of text lines ensures that the rendered model report uses the format for first order headers. Use whatever meets your reporting requirement and delete what is not needed. See the Alizarin red in eel model for a more elaborated model description.</p>
+<p>The suggested first-level headers below can be pasted into the free-text field for <strong>Model description</strong>. The symbol `#’ at the beginning of text lines ensures that the rendered model report uses the format for first order headers. Use whatever meets your reporting requirements and delete what is not needed. See the Alizarin red in eel model for a more elaborated model description. Future versions of shiny rrisk may offer a default structure which can be adapted as needed.</p>
 <p><strong># Preamble</strong></p>
-<p>This section may provide a link to some main document to which the model report is an annex.</p>
+<p>This section may provide an editorial introduction. Since a model is often an annex to some main report, a link to the main document can be given here.</p>
 <p><strong># Abbreviations</strong></p>
 <p>A list of abbreviations used in the documentation may useful.</p>
 <p><strong># Background</strong></p>
@@ -1763,7 +1764,7 @@ Good practice: Generic structure for model description
 <p><strong># Model description</strong></p>
 <p>This section contains a summary description of the model. Parts or modules of the model, when used in the definition of nodes, can be described separately using sub-sections, marked with `##’.</p>
 <p><strong># Uncertainty assessment</strong></p>
-<p>We recommend that major sources of uncertainty are documented as described by [Heinemeyer et al., 2022]{https://www.bfr.bund.de/cm/349/guidance-on-uncertainty-analysis-in-exposure-assessment.pdf}. The Alizarin red S in Eel model provides an example for specifying uncertainties pertaining to the scenario (agents, sources, populations, microenvironment, time, activities, pathways, space), modelling approach (concept, structure, dependencies, outcome) and other sources (question formulation, context, protection perspective, population group, protection goal, protection level, scope.</p>
+<p>We recommend that major sources of uncertainty are documented as described by <a href="https://www.bfr.bund.de/cm/349/guidance-on-uncertainty-analysis-in-exposure-assessment.pdf">Heinemeyer et al.&nbsp;(2022)</a>. The Alizarin red S in Eel model provides an example for specifying uncertainties pertaining to the scenario (agents, sources, populations, microenvironment, time, activities, pathways, space), modelling approach (concept, structure, dependencies, outcome) and other sources (question formulation, context, protection perspective, population group, protection goal, protection level, scope).</p>
 <p><strong># Results </strong></p>
 <p>This section may be used to summarise the main results of the model. Reference should be made to <strong>tables</strong> and <strong>graphs</strong> which are automatically embedded in the reporting document. It is recommended to describe the outcome of the model (end node) using <strong>median</strong> and appropriate upper <strong>percentile</strong>. The <strong>uncertainty intervals</strong> should be stated when a 2D model has been used. The results of the <strong>sensitivity analysis</strong> should be interpreted.</p>
 <p><strong># Conclusions</strong></p>
@@ -1781,33 +1782,93 @@ Good practice: Generic structure for model description
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Read more: Markdown syntax
+Read more - Markdown syntax
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-37" class="callout-37-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Markdown syntax is recommended to provide subheadings in free text fields. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). Markdown is also available in free text fields to generate formatted output in the report file. Some examples are given below (<a href="#fig-Markdown" class="quarto-xref">Figure&nbsp;31</a>).</p>
-<div id="fig-Markdown" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/markdown.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Markdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;31: Selection of common markdown commands for use in free-text fields.
-</figcaption>
-</figure>
-</div>
-<p>You can find more information at <a href="https://rmarkdown.rstudio.com/authoring_basics.html">RStudio, 2016</a> .</p>
+<p>Markdown syntax is recommended for structuring the free-text fields with headers and subheaders and for other text formatting. The Alizarin red S in Eel model provides an example of markdown in the description of the model and model parameters (e.g., bootstrapping). A selection of common markdown commands available in free-text fields in shiny rrisk is given below. You can find more information at <a href="https://rmarkdown.rstudio.com/authoring_basics.html">RStudio, 2016</a> .</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown in free-text field</th>
+<th>Formatted result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td># Header level 1</td>
+<td>According to style template</td>
+</tr>
+<tr class="even">
+<td>## Header level 2</td>
+<td>According to style template</td>
+</tr>
+<tr class="odd">
+<td>### Header level 3</td>
+<td>According to style template</td>
+</tr>
+<tr class="even">
+<td>*italics*, **bold**</td>
+<td><em>italics</em>, <strong>bold</strong></td>
+</tr>
+<tr class="odd">
+<td>superscript$^2$, subscript$_2$</td>
+<td>superscript<span class="math inline">\(^2\)</span>, subscript<span class="math inline">\(_2\)</span></td>
+</tr>
+<tr class="even">
+<td>mathematical notation $Y=f(x)$</td>
+<td>mathematical notation <span class="math inline">\(Y=f(x)\)</span></td>
+</tr>
+<tr class="odd">
+<td>in[Reference](URL or DOI)</td>
+<td><u>Reference</u> with link</td>
+</tr>
+<tr class="even">
+<td>`verbatim code`</td>
+<td><code>verbatim code</code></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 </section>
 <section id="automatic-reporting" class="level2">
 <h2 class="anchored" data-anchor-id="automatic-reporting">Automatic reporting</h2>
-<p>Under this menu you can save the <strong>Model</strong> (*.rrisk) to your working device as explained before.</p>
-<p>The <strong>Report</strong> option will generate a word document report with all the information entered in shiny rrisk.</p>
-<p>The <strong>Results</strong> option will generate datasets in “*.csv” format <span class="citation" data-cites="Robert">[@Robert **- no working so not sure what I am getting**]</span></p>
+<p>Shiny rrisk has the unique feature to produce reports that can facilitate the communication of the model to interested parties. The key concept is the <strong>integrated model documentation</strong>. You have noted the pre-structured documentation for each node and the flexiblity to add documentation at the level of the model (see above). Now it is time to earn the benefit from this investment of time and effort (<a href="#fig-reporting" class="quarto-xref">Figure&nbsp;31</a>).</p>
+<div id="fig-reporting" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-reporting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/reporting.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-reporting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;31: Launching the automatic model reporting.
+</figcaption>
+</figure>
+</div>
+<p>Whereas downloading the <strong>MODEL</strong> is essential to save your entire model and downloading <strong>RESULTS</strong> gives you easy access to numerical model results (not yet implemented), the option <strong>REPORT</strong> will launch the automatic reporting. This function will compile all your model definitions along with the model results. The model report is also a practical tool for reviewing and editing of the model definitions (see below).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Good practice - Using the reporting function for review and editing
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We recommend using the model report for reviewing and editing during the model creation process. Updated descriptions can be generated using spell-checker, tracked changes or other utilities available in your word processing software. The updated text then has to be pasted back into the respective free-text fields in your shiny rrisk session. After saving the updated model, a new model report can be generated as basis for the next revision.</p>
+</div>
+</div>
+</div>
 <!-- workflow for adding screenshots
   1. go to the app and adjust browser window size to fit the tutorial layout
   2. use any screenshot tool and paste the results into MS word
