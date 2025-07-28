@@ -165,14 +165,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a></li>
+  <li><a href="#fitting-a-probability-density-function-pdf" id="toc-fitting-a-probability-density-function-pdf" class="nav-link" data-scroll-target="#fitting-a-probability-density-function-pdf">Fitting a probability density function (pdf)</a>
   <ul class="collapse">
-  <li><a href="#sec-parametricdistr" id="toc-sec-parametricdistr" class="nav-link" data-scroll-target="#sec-parametricdistr">Fitting a probability density function (pdf)</a></li>
+  <li><a href="#distribution-families-and-goodness-of-fit" id="toc-distribution-families-and-goodness-of-fit" class="nav-link" data-scroll-target="#distribution-families-and-goodness-of-fit">Distribution families and goodness of fit</a></li>
+  </ul></li>
   <li><a href="#fitting-a-cumulative-density-function-cdf" id="toc-fitting-a-cumulative-density-function-cdf" class="nav-link" data-scroll-target="#fitting-a-cumulative-density-function-cdf">Fitting a cumulative density function (cdf)</a>
   <ul class="collapse">
   <li><a href="#expert-knowledge-elicitation-eke" id="toc-expert-knowledge-elicitation-eke" class="nav-link" data-scroll-target="#expert-knowledge-elicitation-eke">Expert knowledge elicitation (EKE)</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#documentaion-and-transfer-to-shiny-rrisk" id="toc-documentaion-and-transfer-to-shiny-rrisk" class="nav-link" data-scroll-target="#documentaion-and-transfer-to-shiny-rrisk">Documentaion and transfer to shiny rrisk</a></li>
   </ul>
 </nav>
     </div>
@@ -219,7 +221,10 @@ This section will introduce you to
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>fitting a distribution to your original data or expert knowledge elicitation results</li>
+<li>fitting a distribution to empirical data,</li>
+<li>fitting a distribution to your original data or expert knowledge elicitation results,</li>
+<li>generating the documentation and</li>
+<li>transferring the fitting objects into your shiny rrisk session.</li>
 </ul>
 </div>
 </div>
@@ -257,7 +262,7 @@ Figure&nbsp;1: Main screen, top row of rrisk distributions.
 </tr>
 </tbody>
 </table>
-<p>shiny rrisk distributions supports two approaches for fitting a distribution (<a href="#fig-distributionfitting" class="quarto-xref">Figure&nbsp;1</a>). The first approach involves fitting a probability density function (pdf) and requires you to upload a sample of empirical observations. The app then helps you to identify and parameterise candidate distributions that fit the provided data. The second approach involves fitting a cumulative density function (cdf), for which you must first define percentiles. These percentiles are then used as support points for distribution fitting. This option can also be used to fit a distribution to the results of an expert knowledge elicitation (EKE). In both cases, the results of the procedure can be imported into a shiny rrisk session.</p>
+<p>Click <strong>NEW</strong> to start a new fitting project. shiny rrisk distributions supports two approaches for fitting a distribution (<a href="#fig-distributionfitting" class="quarto-xref">Figure&nbsp;1</a>). The first approach allows you to fit a probability density function (pdf) to a sample of empirical observations. The app then helps you to identify and parameterise candidate distributions that fit the provided data. The second approach involves fitting a cumulative density function (cdf), for which you will define the required percentiles. The percentiles may be generated using an expert knowledge elicitation (EKE). The percentiles are then used as support points for distribution fitting.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 10%">
@@ -274,27 +279,25 @@ Figure&nbsp;1: Main screen, top row of rrisk distributions.
 </tr>
 </tbody>
 </table>
-<section id="sec-parametricdistr" class="level2">
-<h2 class="anchored" data-anchor-id="sec-parametricdistr">Fitting a probability density function (pdf)</h2>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout callout-style-simple callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-This section will introduce you to
+One distribution fitting project for each distribution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>fitting a probability density function (pdf) to empirical data.</li>
-</ul>
+<p>In a session with the application, one distribution can be fitted at a time, which can be used to inform a distribution node in the shiny rrisk application. Consequently, each fitted distribution in shiny rrisk is documented with a corresponding distribution fitting object.</p>
 </div>
 </div>
-<section id="distribution-families-and-goodness-of-fit" class="level4">
-<h4 class="anchored" data-anchor-id="distribution-families-and-goodness-of-fit">Distribution families and goodness of fit</h4>
-<p>The app currently supports the fit of Weibull, normal, gamma, triangular, log-normal, inverse gamma, cauchy and exponential distribution. You should be consult expert knowledge to select suitable candidate distributions for the data</p>
-<p>(see <a href="#sec-parametricdistr" class="quarto-xref">Section&nbsp;1.1</a> ).</p>
+</section>
+<section id="fitting-a-probability-density-function-pdf" class="level1">
+<h1>Fitting a probability density function (pdf)</h1>
+<section id="distribution-families-and-goodness-of-fit" class="level3">
+<h3 class="anchored" data-anchor-id="distribution-families-and-goodness-of-fit">Distribution families and goodness of fit</h3>
+<p>The app currently supports the fit of Weibull, normal, gamma, triangular, log-normal, inverse gamma, cauchy and exponential distribution. You should be consult expert knowledge to select suitable candidate distributions for the data.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -325,23 +328,8 @@ avg. neg. log-liklihood = 1.497</code></pre>
 <p>Von meinem iPad gesendet</p>
 </section>
 </section>
-<section id="fitting-a-cumulative-density-function-cdf" class="level2">
-<h2 class="anchored" data-anchor-id="fitting-a-cumulative-density-function-cdf">Fitting a cumulative density function (cdf)</h2>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-This section will introduce you to
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>fitting a cumulative density function (cdf) to percentiles</li>
-</ul>
-</div>
-</div>
+<section id="fitting-a-cumulative-density-function-cdf" class="level1">
+<h1>Fitting a cumulative density function (cdf)</h1>
 <section id="expert-knowledge-elicitation-eke" class="level3">
 <h3 class="anchored" data-anchor-id="expert-knowledge-elicitation-eke">Expert knowledge elicitation (EKE)</h3>
 <div class="callout callout-style-simple callout-note no-icon">
@@ -396,7 +384,7 @@ Figure&nbsp;2: EFSA EKE node for defining a Pert distribution node.
 <li>A distribution node parameterised using input from an EFSA EKE may refer to variability or uncertainty, depending on the question formulation of the EKE process. The final result of the EKE consists of five percentiles that to be entered manually for fitting a Pert distribution (<a href="#fig-EKE0" class="quarto-xref">Figure&nbsp;2</a>). Details are illustrated using the example below.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -405,7 +393,7 @@ Example for EFSA EKE (L. lignosellus in asparagus)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>(<a href="#fig-EKE1" class="quarto-xref">Figure&nbsp;3</a>).</p>
 <div id="fig-EKE1" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -438,7 +426,7 @@ Figure&nbsp;4: EKE2.
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -447,18 +435,21 @@ Read more
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <section id="efsa-eke" class="level4 callout-body-container callout-body">
 <h4 class="anchored" data-anchor-id="efsa-eke">EFSA EKE</h4>
 <p><span class="citation" data-cites="O">[@O or Thomas to contribute]</span> Brief description of the EFSA EKE or more description how shiny rrisk deals with EKE more generally.</p>
 </section>
 </div>
 </div>
+</section>
+</section>
+</section>
+<section id="documentaion-and-transfer-to-shiny-rrisk" class="level1">
+<h1>Documentaion and transfer to shiny rrisk</h1>
+<p>The results of the fitting procedure can be imported into a shiny rrisk session.</p>
 
 
-</section>
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
