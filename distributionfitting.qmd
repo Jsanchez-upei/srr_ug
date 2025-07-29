@@ -13,7 +13,11 @@ author:
 ::: {.callout-note appearance="minimal"}
 #### This section will introduce you to
 
-- fitting a distribution to your original data or expert knowledge elicitation results
+- fitting a distribution to empirical data, 
+- fitting a distribution to your original data or expert knowledge  elicitation results, 
+- generating the documentation and 
+- transferring the fitting objects into your shiny rrisk session.  
+
 :::
 
 
@@ -31,7 +35,7 @@ author:
 
 : {tbl-colwidths="\[10,90\]"}
 
-shiny rrisk distributions supports two approaches for fitting a distribution (@fig-distributionfitting). The first approach involves fitting a probability density function (pdf) and requires you to upload a sample of empirical observations. The app then helps you to identify and parameterise candidate distributions that fit the provided data. The second approach involves fitting a cumulative density function (cdf), for which you must first define percentiles. These percentiles are then used as support points for distribution fitting. This option can also be used to fit a distribution to the results of an expert knowledge elicitation (EKE).  In both cases, the results of the procedure can be imported into a shiny rrisk session.
+Click **NEW** to start a new fitting project. shiny rrisk distributions supports two approaches for fitting a distribution (@fig-distributionfitting). The first approach allows you to fit a probability density function (pdf) to a sample of empirical observations. The app then helps you to identify and parameterise candidate distributions that fit the provided data. The second approach involves fitting a cumulative density function (cdf), for which you will define the required percentiles. The percentiles may be generated using an expert knowledge elicitation (EKE). The percentiles are then used as support points for distribution fitting. 
 
 |                                |                                                                                                                            |
 |-----------------|-------------------------------------------------------|
@@ -40,21 +44,20 @@ shiny rrisk distributions supports two approaches for fitting a distribution (@f
 
 : {tbl-colwidths="\[10,90\]"}
 
-## Fitting a probability density function (pdf) {#sec-parametricdistr}
 
-::: {.callout-note appearance="minimal"}
-#### This section will introduce you to
+::: {.callout-warning appearance="simple"}
+#### One distribution fitting project for each distribution 
 
-- fitting a probability density function (pdf) to empirical data.
+In a session with the application, one distribution can be fitted at a time, which can be used to inform a distribution node in the shiny rrisk application. Consequently, each fitted distribution in shiny rrisk is documented with a corresponding distribution fitting object.
 :::
 
+# Fitting a probability density function (pdf)
 
-#### Distribution families and goodness of fit
 
-The app currently supports the fit of Weibull, normal, gamma, triangular, log-normal, inverse gamma, cauchy and exponential distribution. You should be consult expert knowledge to select suitable candidate distributions for the data 
 
-(see @sec-parametricdistr ).
+### Distribution families and goodness of fit
 
+The app currently supports the fit of Weibull, normal, gamma, triangular, log-normal, inverse gamma, cauchy and exponential distribution. You should be consult expert knowledge to select suitable candidate distributions for the data.
 
 
 ::: {.callout-caution collapse="true"}
@@ -90,13 +93,7 @@ This,
 
 Von meinem iPad gesendet
 
-## Fitting a cumulative density function (cdf)
-
-::: {.callout-note appearance="minimal"}
-#### This section will introduce you to
-
-- fitting a cumulative  density function (cdf) to percentiles
-:::
+# Fitting a cumulative density function (cdf)
 
 
 ### Expert knowledge elicitation (EKE)
@@ -148,3 +145,5 @@ The three steps in this example are the following.
 [@O or Thomas to contribute] Brief description of the EFSA EKE or more description how shiny rrisk deals with EKE more generally.
 :::
 
+# Documentaion and transfer to shiny rrisk 
+The results of the fitting procedure can be imported into a shiny rrisk session.
